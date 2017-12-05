@@ -4,9 +4,9 @@ import pickle, utils, os, time, sys
 
 if __name__ == '__main__':
     parser = OptionParser()
-    parser.add_option("--train", dest="conll_train", help="Annotated CONLL train file", metavar="FILE", default="../data/PTB_SD_3_3_0/train.conll")
-    parser.add_option("--dev", dest="conll_dev", help="Annotated CONLL dev file", metavar="FILE", default="../data/PTB_SD_3_3_0/dev.conll")
-    parser.add_option("--test", dest="conll_test", help="Annotated CONLL test file", metavar="FILE", default="../data/PTB_SD_3_3_0/test.conll")
+    parser.add_option("--train", dest="conll_train", help="Annotated CONLL train file", metavar="FILE", default="../../data/en-ud-train.conllu")
+    parser.add_option("--dev", dest="conll_dev", help="Annotated CONLL dev file", metavar="FILE", default="../../data/en-ud-dev.conllu")
+    parser.add_option("--test", dest="conll_test", help="Annotated CONLL test file", metavar="FILE", default="../../data/en-ud-test.conllu")
     parser.add_option("--params", dest="params", help="Parameters file", metavar="FILE", default="params.pickle")
     parser.add_option("--extrn", dest="external_embedding", help="External embeddings", metavar="FILE")
     parser.add_option("--model", dest="model", help="Load/Save model file", metavar="FILE", default="barchybrid.model")
@@ -33,6 +33,9 @@ if __name__ == '__main__':
     parser.add_option("--dynet-mem", type="int", dest="cnn_mem", default=512)
 
     (options, args) = parser.parse_args()
+
+    print options, args
+
     print 'Using external embedding:', options.external_embedding
 
     if not options.predictFlag:
@@ -41,6 +44,7 @@ if __name__ == '__main__':
             sys.exit()
 
         print 'Preparing vocab'
+        print options.conll_train
         words, w2i, pos, rels = utils.vocab(options.conll_train)
 
         with open(os.path.join(options.output, options.params), 'w') as paramsfp:

@@ -35,28 +35,28 @@ if __name__ == '__main__':
 
     (options, args) = parser.parse_args()
 
-    print options, args
+    print(options, args)
 
-    print 'Using external embedding:', options.external_embedding
+    print('Using external embedding:', options.external_embedding)
 
     if not options.predictFlag:
         if not (options.rlFlag or options.rlMostFlag or options.headFlag):
             print 'You must use either --userlmost or --userl or --usehead (you can use multiple)'
             sys.exit()
 
-        print 'Preparing vocab'
-        print options.conll_train
+        print('Preparing vocab')
+        print(options.conll_train)
         words, w2i, pos, rels = utils.vocab(options.conll_train)
 
         with open(os.path.join(options.output, options.params), 'w') as paramsfp:
             pickle.dump((words, w2i, pos, rels, options), paramsfp)
-        print 'Finished collecting vocab'
+        print('Finished collecting vocab')
 
-        print 'Initializing blstm arc hybrid:'
+        print('Initializing blstm arc hybrid:')
         parser = ArcHybridLSTM(words, pos, rels, w2i, options)
 
-        for epoch in xrange(options.epochs):
-            print 'Starting epoch', epoch
+        for epoch in range(options.epochs):
+            print('Starting epoch', epoch)
             parser.Train(options.conll_train)
             conllu = (os.path.splitext(options.conll_dev.lower())[1] == '.conllu')
             devpath = os.path.join(options.output, 'dev_epoch_' + str(epoch+1) + ('.conll' if not conllu else '.conllu'))
@@ -67,7 +67,7 @@ if __name__ == '__main__':
             else:
                 os.system('python src/utils/evaluation_script/conll17_ud_eval.py -v -w src/utils/evaluation_script/weights.clas ' + options.conll_dev + ' ' + devpath + ' > ' + devpath + '.txt')
             
-            print 'Finished predicting dev'
+            print('Finished predicting dev')
             parser.Save(os.path.join(options.output, options.model + str(epoch+1)))
     else:
         with open(options.params, 'r') as paramsfp:
@@ -89,5 +89,5 @@ if __name__ == '__main__':
         else:
             os.system('python src/utils/evaluation_script/conll17_ud_eval.py -v -w src/utils/evaluation_script/weights.clas ' + options.conll_test + ' ' + tespath + ' > ' + testpath + '.txt')
         
-        print 'Finished predicting test',te-ts
+        print('Finished predicting test',te-ts)
 

@@ -13,7 +13,7 @@ import numpy as np
 
 class ArcHybridLSTMModel(nn.Module):
     def __init__(self, words, pos, rels, w2i, options):
-        super(ArcHybridLSTM, self).__init__()
+        super(ArcHybridLSTMModel, self).__init__()
 
         random.seed(1)
         self.activations = {'tanh': F.tanh, 'sigmoid': F.sigmoid, 'relu': F.relu}
@@ -70,7 +70,7 @@ class ArcHybridLSTMModel(nn.Module):
                                      nn.LSTMCell(self.ldims, self.ldims * 0.5)]
         elif self.blstmFlag:
             if self.layers > 0:
-                self.surfaceBuilders = [nn.LSTMCell(self.layers, dims, self.ldims * 0.5), [nn.LSTMCell(self.layers, dims, self.ldims * 0.5)]
+                self.surfaceBuilders = [nn.LSTMCell(self.layers, dims, self.ldims * 0.5), nn.LSTMCell(self.layers, dims, self.ldims * 0.5)]
             else:
                 self.surfaceBuilders = [nn.RNNCell(dims, self.ldims * 0.5), nn.LSTMCell(dims, self.ldims * 0.5)]
 

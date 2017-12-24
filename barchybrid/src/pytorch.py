@@ -11,6 +11,42 @@ import utils, time, random
 import numpy as np
 
 
+def Parameter(shape=None, init=xavier_uniform):
+    if hasattr(init, 'shape'):
+        assert not shape
+        return nn.Parameter(torch.Tensor(init))
+    shape = (shape, 1) if type(shape) == int else shape
+    return nn.Parameter(init(torch.Tensor(*shape)))
+
+def scalar(f):
+    if type(f) == int:
+        return Variable(torch.LongTensor([f]))
+    if type(f) == float:
+        return Variable(torch.FloatTensor([f]))
+
+
+def cat(l, dimension=-1):
+    valid_l = filter(lambda x: x, l)
+    if dimension < 0:
+        dimension += len(valid_l[0].size())
+    return torch.cat(valid_l, dimension)
+
+
+class RNNState():
+    def __init__(self, cell, hidden=None):
+        self.cell = cell
+        self.hidden = hidden
+        if not hidden:
+            self.hidden = Variable(torch.zeros(1, self.cell.hidden_size)), \
+                          Variable(torch.zeros(1, self.cell.hidden_size))
+
+    def next(self, input):
+        return RNNState(self.cell, self.cell(input, self.hidden))
+
+    def __call__(self):
+        return self.hidden[0]
+
+
 class ArcHybridLSTMModel(nn.Module):
     def __init__(self, words, pos, rels, w2i, options):
         super(ArcHybridLSTMModel, self).__init__()
@@ -64,15 +100,15 @@ class ArcHybridLSTMModel(nn.Module):
         self.bibiFlag = options.bibiFlag
 
         if self.bibiFlag:
-            self.surfaceBuilders = [nn.LSTMCell(dims, self.ldims * 0.5),
+            self.builders = [nn.LSTMCell(dims, self.ldims * 0.5),
                                     nn.LSTMCell(dims, self.ldims * 0.5)]
-            self.bsurfaceBuilders = [nn.LSTMCell(self.ldims, self.ldims * 0.5),
+            self.bbuilders = [nn.LSTMCell(self.ldims, self.ldims * 0.5),
                                      nn.LSTMCell(self.ldims, self.ldims * 0.5)]
         elif self.blstmFlag:
             if self.layers > 0:
-                self.surfaceBuilders = [nn.LSTMCell(self.layers, dims, self.ldims * 0.5), nn.LSTMCell(self.layers, dims, self.ldims * 0.5)]
+                self.builders = [nn.LSTMCell(self.layers, dims, self.ldims * 0.5), nn.LSTMCell(self.layers, dims, self.ldims * 0.5)]
             else:
-                self.surfaceBuilders = [nn.RNNCell(dims, self.ldims * 0.5), nn.LSTMCell(dims, self.ldims * 0.5)]
+                self.builders = [nn.RNNCell(dims, self.ldims * 0.5), nn.LSTMCell(dims, self.ldims * 0.5)]
 
         self.hidden_units = options.hidden_units
         self.hidden2_units = options.hidden2_units
@@ -176,11 +212,103 @@ class ArcHybridLSTMModel(nn.Module):
                     [ (None, 2, scrs[0] + uscrs0) ] if shift_conditions else [] ]
         return ret
 
-    def getWordEmbeddings(self, sentence, train):
+    def GetWordEmbeddings(self, sentence, train):
+        for root in sentence:
+            c = float(self.wordsCount.get(root.norm, 0))
+            dropFlag =  not train or (random.random() < (c/(0.25+c)))
+            root.wordvec = self.wlookup[int(self.vocab.get(root.norm, 0)) if dropFlag else 0]
+            root.posvec = self.plookup[int(self.pos[root.pos])] if self.pdims > 0 else None
+
+            if self.external_embedding is not None:
+                #if not dropFlag and random.random() < 0.5:
+                #    root.evec = self.elookup[0]
+                if root.form in self.external_embedding:
+                    root.evec = self.elookup[self.extrnd[root.form]]
+                elif root.norm in self.external_embedding:
+                    root.evec = self.elookup[self.extrnd[root.norm]]
+                else:
+                    root.evec = self.elookup[0]
+            else:
+                root.evec = None
+            root.ivec = cat(filter(None, [root.wordvec, root.posvec, root.evec]))
+
+        if self.blstmFlag:
+            forward  = RNNState(self.builders[0])
+            backward = RNNState(self.builders[1])
+
+            for froot, rroot in zip(sentence, reversed(sentence)):
+                forward = forward.next( froot.ivec )
+                backward = backward.next( rroot.ivec )
+                froot.fvec = forward()
+                rroot.bvec = backward()
+            for root in sentence:
+                root.vec = cat( [root.fvec, root.bvec] )
+
+            if self.bibiFlag:
+                bforward  = RNNState(self.bbuilders[0])
+                bbackward = RNNState(self.bbuilders[1])
+
+                for froot, rroot in zip(sentence, reversed(sentence)):
+                    bforward = bforward.next( froot.vec )
+                    bbackward = bbackward.next( rroot.vec )
+                    froot.bfvec = bforward()
+                    rroot.bbvec = bbackward()
+                for root in sentence:
+                    root.vec = cat( [root.bfvec, root.bbvec] )
+
+        else:
+            for root in sentence:
+                root.ivec = torch.nn(self.word2lstm, root.ivec) + self.word2lstmbias
+                root.vec = tanh( root.ivec )
+
+    def Predict(self, sentence):
+        sentence = sentence[1:] + [sentence[0]]
+        self.GetWordEmbeddings(sentence, False)
+        stack = ParseForest([])
+        buf = ParseForest(sentence)
+
+        for root in sentence:
+            root.lstms = [root.vec for _ in range(self.nnvecs)]
+
+        hoffset = 1 if self.headFlag else 0
+
+        while not (len(buf) == 1 and len(stack) == 0):
+            scores = self.__evaluate(stack, buf, False)
+            best = max(chain(*scores), key = itemgetter(2) )
+
+            if best[1] == 2:
+                stack.roots.append(buf.roots[0])
+                del buf.roots[0]
+
+            elif best[1] == 0:
+                child = stack.roots.pop()
+                parent = buf.roots[0]
+
+                child.pred_parent_id = parent.id
+                child.pred_relation = best[0]
+
+                bestOp = 0
+                if self.rlMostFlag:
+                    parent.lstms[bestOp + hoffset] = child.lstms[bestOp + hoffset]
+                if self.rlFlag:
+                    parent.lstms[bestOp + hoffset] = child.vec
+
+            elif best[1] == 1:
+                child = stack.roots.pop()
+                parent = stack.roots[-1]
+
+                child.pred_parent_id = parent.id
+                child.pred_relation = best[0]
+
+                bestOp = 1
+                if self.rlMostFlag:
+                    parent.lstms[bestOp + hoffset] = child.lstms[bestOp + hoffset]
+                if self.rlFlag:
+                    parent.lstms[bestOp + hoffset] = child.vec
+
+    def Forward(self, sentence, errs, lerrs):
         pass
 
-    def predict(self, conll_path):
-        pass
 
 class ArcHybridLSTM:
     def __init__(self, vocab, pos, rels, w2i, options):
@@ -188,16 +316,164 @@ class ArcHybridLSTM:
         self.model = model.cuda(options.cuda_index) if options.cuda_index >= 0 else model
         self.trainer = get_optim(options.optim, self.model.parameters())
 
-    def save(self, fn):
+    def Save(self, fn):
         tmp = fn + '.tmp'
         torch.save(self.model.state_dict(), tmp)
         shutil.move(tmp, fn)
 
-    def load(self, fn):
+    def Load(self, fn):
         self.model.load_state_dict(torch.load(fn))
 
-    def init(self):
-        pass
-    
-    def train(self, conll_path):
-        pass
+    def Init(self):
+        evec = self.elookup[1] if self.external_embedding is not None else None
+        paddingWordVec = self.wlookup[1]
+        paddingPosVec = self.plookup[1] if self.pdims > 0 else None
+
+        paddingVec = tanh(torch.mm(
+            self.word2lstm,
+            cat(filter(None, [paddingWordVec, paddingPosVec, evec])) + self.word2lstmbias
+        ))
+        self.empty = paddingVec if self.nnvecs == 1 else cat([paddingVec for _ in range(self.nnvecs)])
+
+    def Predict(self, conll_path):
+        with open(conll_path, 'r') as conllFP:
+            for iSentence, sentence in enumerate(read_conll(conllFP, False)):
+                self.Init()
+                conll_sentence = [entry for entry in sentence if isinstance(entry, utils.ConllEntry)]
+                self.model.Predict(conll_sentence)
+                yield sentence
+
+    def Train(self, conll_path):
+        mloss = 0.0
+        errors = 0
+        batch = 0
+        eloss = 0.0
+        eerrors = 0
+        lerrors = 0
+        etotal = 0
+        ltotal = 0
+        ninf = -np.inf
+
+        hoffset = 1 if self.headFlag else 0
+
+        start = time.time()
+
+        with open(conll_path, 'r') as conllFP:
+            shuffledData = list(read_conll(conllFP, True))
+            random.shuffle(shuffledData)
+
+            errs = []
+            eeloss = 0.0
+
+            self.Init()
+
+            for iSentence, sentence in enumerate(shuffledData):
+                if iSentence % 100 == 0 and iSentence != 0:
+                    print('Processing sentence number:', iSentence, 'Loss:', eloss / etotal, 'Errors:', (float(eerrors)) / etotal, 'Labeled Errors:', (float(lerrors) / etotal) , 'Time', time.time()-start)
+                    start = time.time()
+                    eerrors = 0
+                    eloss = 0.0
+                    etotal = 0
+                    lerrors = 0
+                    ltotal = 0
+
+                conll_sentence = [entry for entry in sentence if isinstance(entry, utils.ConllEntry)]
+
+                sentence = sentence[1:] + [sentence[0]]
+                self.GetWordEmbeddings(sentence, True)
+                stack = ParseForest([])
+                buf = ParseForest(sentence)
+
+                for root in sentence:
+                    root.lstms = [root.vec for _ in xrange(self.nnvecs)]
+
+                hoffset = 1 if self.headFlag else 0
+
+                while not (len(buf) == 1 and len(stack) == 0):
+                    scores = self.__evaluate(stack, buf, True)
+                    scores.append([(None, 3, ninf ,None)])
+
+                    alpha = stack.roots[:-2] if len(stack) > 2 else []
+                    s1 = [stack.roots[-2]] if len(stack) > 1 else []
+                    s0 = [stack.roots[-1]] if len(stack) > 0 else []
+                    b = [buf.roots[0]] if len(buf) > 0 else []
+                    beta = buf.roots[1:] if len(buf) > 1 else []
+
+                    left_cost  = ( len([h for h in s1 + beta if h.id == s0[0].parent_id]) +
+                                    len([d for d in b + beta if d.parent_id == s0[0].id]) )  if len(scores[0]) > 0 else 1
+                    right_cost = ( len([h for h in b + beta if h.id == s0[0].parent_id]) +
+                                    len([d for d in b + beta if d.parent_id == s0[0].id]) )  if len(scores[1]) > 0 else 1
+                    shift_cost = ( len([h for h in s1 + alpha if h.id == b[0].parent_id]) +
+                                    len([d for d in s0 + s1 + alpha if d.parent_id == b[0].id]) )  if len(scores[2]) > 0 else 1
+                    costs = (left_cost, right_cost, shift_cost, 1)
+
+                    bestValid = max(( s for s in chain(*scores) if costs[s[1]] == 0 and ( s[1] == 2 or  s[0] == stack.roots[-1].relation ) ), key=itemgetter(2))
+                    bestWrong = max(( s for s in chain(*scores) if costs[s[1]] != 0 or  ( s[1] != 2 and s[0] != stack.roots[-1].relation ) ), key=itemgetter(2))
+                    best = bestValid if ( (not self.oracle) or (bestValid[2] - bestWrong[2] > 1.0) or (bestValid[2] > bestWrong[2] and random.random() > 0.1) ) else bestWrong
+
+                    if best[1] == 2:
+                        stack.roots.append(buf.roots[0])
+                        del buf.roots[0]
+
+                    elif best[1] == 0:
+                        child = stack.roots.pop()
+                        parent = buf.roots[0]
+
+                        child.pred_parent_id = parent.id
+                        child.pred_relation = best[0]
+
+                        bestOp = 0
+                        if self.rlMostFlag:
+                            parent.lstms[bestOp + hoffset] = child.lstms[bestOp + hoffset]
+                        if self.rlFlag:
+                            parent.lstms[bestOp + hoffset] = child.vec
+
+                    elif best[1] == 1:
+                        child = stack.roots.pop()
+                        parent = stack.roots[-1]
+
+                        child.pred_parent_id = parent.id
+                        child.pred_relation = best[0]
+
+                        bestOp = 1
+                        if self.rlMostFlag:
+                            parent.lstms[bestOp + hoffset] = child.lstms[bestOp + hoffset]
+                        if self.rlFlag:
+                            parent.lstms[bestOp + hoffset] = child.vec
+
+                    if bestValid[2] < bestWrong[2] + 1.0:
+                        loss = bestWrong[3] - bestValid[3]
+                        mloss += 1.0 + bestWrong[2] - bestValid[2]
+                        eloss += 1.0 + bestWrong[2] - bestValid[2]
+                        errs.append(loss)
+
+                    if best[1] != 2 and (child.pred_parent_id != child.parent_id or child.pred_relation != child.relation):
+                        lerrors += 1
+                        if child.pred_parent_id != child.parent_id:
+                            errors += 1
+                            eerrors += 1
+
+                    etotal += 1
+
+                if len(errs) > 50: # or True:
+                    #eerrs = ((esum(errs)) * (1.0/(float(len(errs)))))
+                    eerrs = esum(errs)
+                    scalar_loss = eerrs.scalar_value()
+                    eerrs.backward()
+                    self.trainer.update()
+                    errs = []
+                    lerrs = []
+
+                    self.Init()
+
+        if len(errs) > 0:
+            eerrs = (esum(errs)) # * (1.0/(float(len(errs))))
+            eerrs.scalar_value()
+            eerrs.backward()
+            self.trainer.update()
+
+            errs = []
+            lerrs = []
+
+        self.trainer.update_epoch()
+        print("Loss: ", mloss/iSentence)

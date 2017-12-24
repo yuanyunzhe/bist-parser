@@ -4,9 +4,9 @@ import pickle, utils, os, time, sys
 
 if __name__ == '__main__':
     parser = OptionParser()
-    parser.add_option("--train", dest="conll_train", help="Annotated CONLL train file", metavar="FILE", default="../../data/en-ud-train.conllu")
-    parser.add_option("--dev", dest="conll_dev", help="Annotated CONLL dev file", metavar="FILE", default="../../data/en-ud-dev.conllu")
-    parser.add_option("--test", dest="conll_test", help="Annotated CONLL test file", metavar="FILE", default="../../data/en-ud-test.conllu")
+    parser.add_option("--train", dest="conll_train", help="Annotated CONLL train file", metavar="FILE", default="../data/en-ud-train.conllu")
+    parser.add_option("--dev", dest="conll_dev", help="Annotated CONLL dev file", metavar="FILE", default="../data/en-ud-dev.conllu")
+    parser.add_option("--test", dest="conll_test", help="Annotated CONLL test file", metavar="FILE", default="../data/en-ud-test.conllu")
     parser.add_option("--params", dest="params", help="Parameters file", metavar="FILE", default="params.pickle")
     parser.add_option("--extrn", dest="external_embedding", help="External embeddings", metavar="FILE")
     parser.add_option("--model", dest="model", help="Load/Save model file", metavar="FILE", default="barchybrid.model")
@@ -21,7 +21,7 @@ if __name__ == '__main__':
     parser.add_option("--outdir", type="string", dest="output", default="results")
     parser.add_option("--activation", type="string", dest="activation", default="tanh")
     parser.add_option("--lstmlayers", type="int", dest="lstm_layers", default=2)
-    parser.add_option("--lstmdims", type="int", dest="lstm_dims", default=200)
+    parser.add_option("--lstmdims", type="int", dest="lstm_dims", default=125)
     parser.add_option("--dynet-seed", type="int", dest="seed", default=7)
     parser.add_option("--disableoracle", action="store_false", dest="oracle", default=True)
     parser.add_option("--disableblstm", action="store_false", dest="blstmFlag", default=True)

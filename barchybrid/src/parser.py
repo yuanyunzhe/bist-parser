@@ -31,6 +31,7 @@ if __name__ == '__main__':
     parser.add_option("--userl", action="store_true", dest="rlMostFlag", default=False)
     parser.add_option("--predict", action="store_true", dest="predictFlag", default=False)
     parser.add_option("--dynet-mem", type="int", dest="cnn_mem", default=512)
+    parser.add_option("--cuda_index", type="int", dest="cuda_index", default=-1)
 
     (options, args) = parser.parse_args()
 

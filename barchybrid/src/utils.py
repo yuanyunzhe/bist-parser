@@ -74,7 +74,7 @@ def vocab(conll_path):
     posCount = Counter()
     relCount = Counter()
 
-    with open(conll_path, 'r') as conllFP:
+    with open(conll_path, 'r', encoding='UTF-8') as conllFP:
         for sentence in read_conll(conllFP, True):
             wordsCount.update([node.norm for node in sentence if isinstance(node, ConllEntry)])
             posCount.update([node.pos for node in sentence if isinstance(node, ConllEntry)])
@@ -112,7 +112,7 @@ def read_conll(fh, proj):
 
 
 def write_conll(fn, conll_gen):
-    with open(fn, 'w') as fh:
+    with open(fn, 'w', encoding='UTF-8') as fh:
         for sentence in conll_gen:
             for entry in sentence[1:]:
                 fh.write(str(entry) + '\n')

@@ -1,5 +1,5 @@
 from optparse import OptionParser
-from arc_hybrid import ArcHybridLSTM
+from pytorch import ArcHybridLSTM
 import pickle, utils, os, time, sys
 
 if __name__ == '__main__':
@@ -31,6 +31,8 @@ if __name__ == '__main__':
     parser.add_option("--userl", action="store_true", dest="rlMostFlag", default=False)
     parser.add_option("--predict", action="store_true", dest="predictFlag", default=False)
     parser.add_option("--dynet-mem", type="int", dest="cnn_mem", default=512)
+
+    parser.add_option("--optim", type="string", dest="optim", default='adam')
     parser.add_option("--cuda_index", type="int", dest="cuda_index", default=-1)
 
     (options, args) = parser.parse_args()
@@ -41,16 +43,16 @@ if __name__ == '__main__':
 
     if not options.predictFlag:
         if not (options.rlFlag or options.rlMostFlag or options.headFlag):
-            print 'You must use either --userlmost or --userl or --usehead (you can use multiple)'
+            print('You must use either --userlmost or --userl or --usehead (you can use multiple)')
             sys.exit()
 
         print('Preparing vocab')
         print(options.conll_train)
         words, w2i, pos, rels = utils.vocab(options.conll_train)
 
-        with open(os.path.join(options.output, options.params), 'w') as paramsfp:
-            pickle.dump((words, w2i, pos, rels, options), paramsfp)
-        print('Finished collecting vocab')
+        # with open(os.path.join(options.output, options.params), 'w', encoding='UTF-8') as paramsfp:
+        #     pickle.dump((words, w2i, pos, rels, options), paramsfp)
+        # print('Finished collecting vocab')
 
         print('Initializing blstm arc hybrid:')
         parser = ArcHybridLSTM(words, pos, rels, w2i, options)
@@ -70,7 +72,7 @@ if __name__ == '__main__':
             print('Finished predicting dev')
             parser.Save(os.path.join(options.output, options.model + str(epoch+1)))
     else:
-        with open(options.params, 'r') as paramsfp:
+        with open(options.params, 'r', encoding='UTF-8') as paramsfp:
             words, w2i, pos, rels, stored_opt = pickle.load(paramsfp)
 
         stored_opt.external_embedding = options.external_embedding

@@ -340,7 +340,7 @@ class ArcHybridLSTMModel(nn.Module):
                     parent.lstms[bestOp + hoffset] = child.vec
 
     def Forward(self, sentence, errs, cache):
-        eloss, mloss, errors, eerrors, lerrors, etotal = cache
+        eloss, mloss, eerrors, lerrors, etotal = cache
         ninf = -np.inf
 
         sentence = sentence[1:] + [sentence[0]]
@@ -412,16 +412,13 @@ class ArcHybridLSTMModel(nn.Module):
                 mloss += 1.0 + bestWrong[2] - bestValid[2]
                 eloss += 1.0 + bestWrong[2] - bestValid[2]
                 errs.append(loss)
-
             if best[1] != 2 and (child.pred_parent_id != child.parent_id or child.pred_relation != child.relation):
                 lerrors += 1
                 if child.pred_parent_id != child.parent_id:
-                    errors += 1
                     eerrors += 1
-
             etotal += 1
 
-        return (eloss, mloss, errors, eerrors, lerrors, etotal)
+        return (eloss, mloss, eerrors, lerrors, etotal)
             
     def Init(self):
         evec = self.elookup(scalar(1, self.cuda_index)) if self.external_embedding is not None else None
@@ -469,7 +466,6 @@ class ArcHybridLSTM:
 
     def Train(self, conll_path):
         mloss = 0.0
-        errors = 0
         batch = 0
         eloss = 0.0
         eerrors = 0
@@ -483,11 +479,9 @@ class ArcHybridLSTM:
         with open(conll_path, 'r', encoding='UTF-8') as conllFP:
             shuffledData = list(read_conll(conllFP, True))
             random.shuffle(shuffledData)
-
             errs = []
             eeloss = 0.0
             self.model.Init()
-
             for iSentence, sentence in enumerate(shuffledData):
                 if iSentence % 100 == 0 and iSentence != 0:
                     print('Processing sentence number:', iSentence, 'Loss:', eloss / etotal, 'Errors:', (float(eerrors)) / etotal, 'Labeled Errors:', (float(lerrors) / etotal) , 'Time', time.time()-start)
@@ -499,15 +493,15 @@ class ArcHybridLSTM:
 
                 conll_sentence = [entry for entry in sentence if isinstance(entry, utils.ConllEntry)]
                 
-                cache = (eloss, mloss, errors, eerrors, lerrors, etotal)
-                eloss, mloss, errors, eerrors, lerrors, etotal = self.model.Forward(conll_sentence, errs, cache)
+                cache = (eloss, mloss, eerrors, lerrors, etotal)
+                eloss, mloss, eerrors, lerrors, etotal = self.model.Forward(conll_sentence, errs, cache)
 
                 if len(errs) > 50: # or True:
                     eerrs = torch.sum(cat(errs))
                     eerrs.backward()
                     self.trainer.step()
                     errs = []
-
+                    self.trainer.zero_grad()
                     self.model.Init()
 
         if len(errs) > 0:

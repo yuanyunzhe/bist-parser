@@ -65,9 +65,9 @@ if __name__ == '__main__':
             utils.write_conll(devpath, parser.Predict(options.conll_dev))
 
             if not conllu:
-                os.system('perl src/utils/eval.pl -g ' + options.conll_dev  + ' -s ' + devpath  + ' > ' + devpath + '.txt')
+                os.system('perl utils/eval.pl -g ' + options.conll_dev  + ' -s ' + devpath  + ' > ' + devpath + '.txt')
             else:
-                os.system('python src/utils/evaluation_script/conll17_ud_eval.py -v -w src/utils/evaluation_script/weights.clas ' + options.conll_dev + ' ' + devpath + ' > ' + devpath + '.txt')
+                os.system('python utils/evaluation_script/conll17_ud_eval.py -v -w utils/evaluation_script/weights.clas ' + options.conll_dev + ' ' + devpath + ' > ' + devpath + '.txt')
             
             print('Finished predicting dev')
             parser.Save(os.path.join(options.output, options.model + str(epoch+1)))

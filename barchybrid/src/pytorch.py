@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torch import optim
-from torch.autograd import Variable
+# from torch.autograd import Variable
 from torch.nn.init import *
 
 from utils import ParseForest, read_conll, write_conll
@@ -11,6 +11,21 @@ from itertools import chain
 import utils, time, random
 
 import numpy as np
+import shutil
+
+
+def get_data(x, index):
+    if index >= 0:
+        return x.data.cpu()
+    else:
+        return x.data
+
+
+def scalar(f, index):
+    if type(f) == int:
+        return Variable(torch.LongTensor([f]), index)
+    if type(f) == float:
+        return Variable(torch.FloatTensor([f]), index)
 
 
 def Parameter(shape=None, init=xavier_uniform):
@@ -20,34 +35,38 @@ def Parameter(shape=None, init=xavier_uniform):
     shape = (shape, 1) if type(shape) == int else shape
     return nn.Parameter(init(torch.Tensor(*shape)))
 
-def scalar(f):
-    if type(f) == int:
-        return Variable(torch.LongTensor([f]))
-    if type(f) == float:
-        return Variable(torch.FloatTensor([f]))
+
+def Variable(inner, index):
+    if index >= 0:
+        return torch.autograd.Variable(inner.cuda(index))
+    else:
+        return torch.autograd.Variable(inner)
 
 
 def cat(l, dimension=-1):
     valid_l = filter(lambda x: type(x) != type(None), l)
     valid_l = list(valid_l)
-    # print("_____\n",valid_l)
     if dimension < 0:
         dimension += len(valid_l[0].size())
-    # print(valid_l[0])
-    # print(dimension)
     return torch.cat(valid_l, dimension)
 
 
 class RNNState():
-    def __init__(self, cell, hidden=None):
-        self.cell = cell
+    def __init__(self, cell, index, hidden=None):
+        if index >= 0:
+            self.cell = cell.cuda(index)
+        else:
+            self.cell = cell
         self.hidden = hidden
+        self.index = index
         if not hidden:
-            self.hidden = Variable(torch.zeros(1, self.cell.hidden_size)), \
-                          Variable(torch.zeros(1, self.cell.hidden_size))
+            self.hidden = Variable(torch.zeros(1, self.cell.hidden_size), index), \
+                          Variable(torch.zeros(1, self.cell.hidden_size), index)
 
     def next(self, input):
-        return RNNState(self.cell, self.cell(input, self.hidden))
+        # print("lalala")
+        # print(type(self.cell), type(self.index), type(input.data), type(self.hidden[0].data), type(self.hidden[1].data), type(self.cell(input, self.hidden)[0]))
+        return RNNState(self.cell, self.index, self.cell(input, self.hidden))
 
     def __call__(self):
         return self.hidden[0]
@@ -58,6 +77,7 @@ class ArcHybridLSTMModel(nn.Module):
         super(ArcHybridLSTMModel, self).__init__()
 
         random.seed(1)
+        self.cuda_index = options.cuda_index
         self.activations = {'tanh': F.tanh, 'sigmoid': F.sigmoid, 'relu': F.relu}
         self.activation = self.activations[options.activation]
         self.oracle = options.oracle
@@ -114,7 +134,7 @@ class ArcHybridLSTMModel(nn.Module):
             if self.layers > 0:
                 self.builders = [nn.LSTMCell(self.layers, dims, self.ldims // 2), nn.LSTMCell(self.layers, dims, self.ldims // 2)]
             else:
-                self.builders = [nn.RNNCell(dims, self.ldims // 2), nn.LSTMCell(dims, self.ldims // 2)]
+                self.builders = [nn.RNNCell(dims, self.ldims // 2), nn.RNNCell(dims, self.ldims // 2)]
 
         self.hidden_units = options.hidden_units
         self.hidden2_units = options.hidden2_units
@@ -199,8 +219,9 @@ class ArcHybridLSTMModel(nn.Module):
                 self.activation(torch.mm(self.hidLayer, input) + self.hidBias)
             ) + self.outBias
 
-        scrs, uscrs = routput.data.numpy(), output.data.numpy()
-
+        scrs, uscrs = get_data(routput, self.cuda_index), get_data(output, self.cuda_index)
+        scrs = [s[0] for s in scrs]
+        uscrs = [s[0] for s in uscrs]
         #transition conditions
         left_arc_conditions = len(stack) > 0 and len(buf) > 0
         right_arc_conditions = len(stack) > 1 and stack.roots[-1].id != 0
@@ -230,39 +251,39 @@ class ArcHybridLSTMModel(nn.Module):
         for root in sentence:
             c = float(self.wordsCount.get(root.norm, 0))
             dropFlag =  not train or (random.random() < (c/(0.25+c)))
-            root.wordvec = self.wlookup(scalar(int(self.vocab.get(root.norm, 0)) if dropFlag else 0))
-            root.posvec = self.plookup(scalar(int(self.pos[root.pos]))) if self.pdims > 0 else None
+            root.wordvec = self.wlookup(scalar(int(self.vocab.get(root.norm, 0)) if dropFlag else 0, self.cuda_index))
+            root.posvec = self.plookup(scalar(int(self.pos[root.pos]), self.cuda_index)) if self.pdims > 0 else None
 
             if self.external_embedding is not None:
                 if root.form in self.external_embedding:
-                    root.evec = self.elookup(scalar(self.extrnd[root.form]))
+                    root.evec = self.elookup(scalar(self.extrnd[root.form], self.cuda_index))
                 elif root.norm in self.external_embedding:
-                    root.evec = self.elookup(scalar(self.extrnd[root.norm]))
+                    root.evec = self.elookup(scalar(self.extrnd[root.norm], self.cuda_index))
                 else:
-                    root.evec = self.elookup(scalar(0))
+                    root.evec = self.elookup(scalar(0, self.cuda_index))
             else:
                 root.evec = None
             root.ivec = cat([root.wordvec, root.posvec, root.evec])
 
         if self.blstmFlag:
-            forward  = RNNState(self.builders[0])
-            backward = RNNState(self.builders[1])
+            forward  = RNNState(self.builders[0], self.cuda_index)
+            backward = RNNState(self.builders[1], self.cuda_index)
 
             for froot, rroot in zip(sentence, reversed(sentence)):
-                forward = forward.next( froot.ivec )
-                backward = backward.next( rroot.ivec )
+                forward = forward.next( froot.ivec)
+                backward = backward.next( rroot.ivec)
                 froot.fvec = forward()
                 rroot.bvec = backward()
             for root in sentence:
                 root.vec = cat([root.fvec, root.bvec])
 
             if self.bibiFlag:
-                bforward  = RNNState(self.bbuilders[0])
-                bbackward = RNNState(self.bbuilders[1])
+                bforward  = RNNState(self.bbuilders[0], self.cuda_index)
+                bbackward = RNNState(self.bbuilders[1], self.cuda_index)
 
                 for froot, rroot in zip(sentence, reversed(sentence)):
-                    bforward = bforward.next( froot.vec )
-                    bbackward = bbackward.next( rroot.vec )
+                    bforward = bforward.next( froot.vec)
+                    bbackward = bbackward.next( rroot.vec)
                     froot.bfvec = bforward()
                     rroot.bbvec = bbackward()
                 for root in sentence:
@@ -352,6 +373,8 @@ class ArcHybridLSTMModel(nn.Module):
 
             bestValid = max(( s for s in chain(*scores) if costs[s[1]] == 0 and ( s[1] == 2 or  s[0] == stack.roots[-1].relation ) ), key=itemgetter(2))
             bestWrong = max(( s for s in chain(*scores) if costs[s[1]] != 0 or  ( s[1] != 2 and s[0] != stack.roots[-1].relation ) ), key=itemgetter(2))
+            # print(bestValid, "\n",bestWrong,"\n",bestValid[2] - bestWrong[2])
+            
             best = bestValid if ( (not self.oracle) or (bestValid[2] - bestWrong[2] > 1.0) or (bestValid[2] > bestWrong[2] and random.random() > 0.1) ) else bestWrong
 
             if best[1] == 2:
@@ -400,11 +423,10 @@ class ArcHybridLSTMModel(nn.Module):
 
         return (eloss, mloss, errors, eerrors, lerrors, etotal)
             
-
     def Init(self):
-        evec = self.elookup(scalar(1)) if self.external_embedding is not None else None
-        paddingWordVec = self.wlookup(scalar(1))
-        paddingPosVec = self.plookup(scalar(1)) if self.pdims > 0 else None
+        evec = self.elookup(scalar(1, self.cuda_index)) if self.external_embedding is not None else None
+        paddingWordVec = self.wlookup(scalar(1, self.cuda_index))
+        paddingPosVec = self.plookup(scalar(1, self.cuda_index)) if self.pdims > 0 else None
 
         paddingVec = torch.tanh(torch.mm(
             self.word2lstm,

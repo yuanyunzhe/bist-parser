@@ -32,7 +32,7 @@ def Parameter(shape=None, init=xavier_uniform):
     if hasattr(init, 'shape'):
         assert not shape
         return nn.Parameter(torch.Tensor(init))
-    shape = (shape, 1) if type(shape) == int else shape
+    shape = (1, shape) if type(shape) == int else shape
     return nn.Parameter(init(torch.Tensor(*shape)))
 
 
@@ -44,8 +44,7 @@ def Variable(inner, index):
 
 
 def cat(l, dimension=-1):
-    valid_l = filter(lambda x: type(x) != type(None), l)
-    valid_l = list(valid_l)
+    valid_l = [x for x in l if x is not None]
     if dimension < 0:
         dimension += len(valid_l[0].size())
     return torch.cat(valid_l, dimension)
@@ -64,8 +63,6 @@ class RNNState():
                           Variable(torch.zeros(1, self.cell.hidden_size), index)
 
     def next(self, input):
-        # print("lalala")
-        # print(type(self.cell), type(self.index), type(input.data), type(self.hidden[0].data), type(self.hidden[1].data), type(self.cell(input, self.hidden)[0]))
         return RNNState(self.cell, self.index, self.cell(input, self.hidden))
 
     def __call__(self):
@@ -75,7 +72,6 @@ class RNNState():
 class ArcHybridLSTMModel(nn.Module):
     def __init__(self, words, pos, rels, w2i, options):
         super(ArcHybridLSTMModel, self).__init__()
-
         random.seed(1)
         self.cuda_index = options.cuda_index
         self.activations = {'tanh': F.tanh, 'sigmoid': F.sigmoid, 'relu': F.relu}
@@ -91,40 +87,33 @@ class ArcHybridLSTMModel(nn.Module):
         self.pos = {word: ind+3 for ind, word in enumerate(pos)}
         self.rels = {word: ind for ind, word in enumerate(rels)}
         self.irels = rels
-
         self.headFlag = options.headFlag
         self.rlMostFlag = options.rlMostFlag
         self.rlFlag = options.rlFlag
         self.k = options.window
-
         self.nnvecs = (1 if self.headFlag else 0) + (2 if self.rlFlag or self.rlMostFlag else 0)
-
         self.external_embedding = None
         if options.external_embedding is not None:
             external_embedding_fp = open(options.external_embedding,'r', encoding='UTF-8')
             external_embedding_fp.readline()
             self.external_embedding = {line.split(' ')[0] : [float(f) for f in line.strip().split(' ')[1:]] for line in external_embedding_fp}
             external_embedding_fp.close()
-
-            self.edim = len(self.external_embedding.values()[0])
-            self.noextrn = [0.0 for _ in range(self.edim)]
+            self.edim = len(list(self.external_embedding.values()[0]))
             self.extrnd = {word: i + 3 for i, word in enumerate(self.external_embedding)}
             np_emb = np.zeros((len(self.external_embedding) + 3, self.edim))
             for word, i in self.extrnd.items():
                 np_emb[i] = self.external_embedding[word]
             self.elookup = nn.Embedding(*np_emb.shape)
-            self.elookup.weight = Parameter(np_emb)
+            self.elookup.weight = Parameter(init=np_emb)
             for word, i in self.extrnd.items():
                 self.elookup.init_row(i, self.external_embedding[word])
             self.extrnd['*PAD*'] = 1
             self.extrnd['*INITIAL*'] = 2
-
             print('Load external embedding. Vector dimensions', self.edim)
 
         dims = self.wdims + self.pdims + (self.edim if self.external_embedding is not None else 0)
         self.blstmFlag = options.blstmFlag
         self.bibiFlag = options.bibiFlag
-
         if self.bibiFlag:
             self.builders = [nn.LSTMCell(dims, self.ldims // 2),
                                     nn.LSTMCell(dims, self.ldims // 2)]
@@ -140,88 +129,72 @@ class ArcHybridLSTMModel(nn.Module):
         self.hidden2_units = options.hidden2_units
         self.vocab['*PAD*'] = 1
         self.pos['*PAD*'] = 1
-
         self.vocab['*INITIAL*'] = 2
         self.pos['*INITIAL*'] = 2
-
         self.wlookup = nn.Embedding(len(words) + 3, self.wdims)
         self.plookup = nn.Embedding(len(pos) + 3, self.pdims)
         self.rlookup = nn.Embedding(len(rels), self.rdims)
-
-        self.word2lstm = Parameter((self.ldims, self.wdims + self.pdims + (self.edim if self.external_embedding is not None else 0)))
+        self.word2lstm = Parameter((self.wdims + self.pdims + (self.edim if self.external_embedding is not None else 0), self.ldims))
         self.word2lstmbias = Parameter((self.ldims))
-        self.lstm2lstm = Parameter((self.ldims, self.ldims * self.nnvecs + self.rdims))
+        self.lstm2lstm = Parameter((self.ldims * self.nnvecs + self.rdims, self.ldims))
         self.lstm2lstmbias = Parameter((self.ldims))
-
-        self.hidLayer = Parameter((self.hidden_units, self.ldims * self.nnvecs * (self.k + 1)))
+        self.hidLayer = Parameter((self.ldims * self.nnvecs * (self.k + 1), self.hidden_units))
         self.hidBias = Parameter((self.hidden_units))
-
         if self.hidden2_units:
-            self.hid2Layer = Parameter((self.hidden2_units, self.hidden_units))
+            self.hid2Layer = Parameter((self.hidden_units, self.hidden2_units))
             self.hid2Bias = Parameter((self.hidden2_units))
-
-        self.outLayer = Parameter((3, self.hidden2_units if self.hidden2_units > 0 else self.hidden_units))
+        self.outLayer = Parameter((self.hidden2_units if self.hidden2_units > 0 else self.hidden_units, 3))
         self.outBias = Parameter((3))
-
-        self.rhidLayer = Parameter((self.hidden_units, self.ldims * self.nnvecs * (self.k + 1)))
+        self.rhidLayer = Parameter((self.ldims * self.nnvecs * (self.k + 1), self.hidden_units))
         self.rhidBias = Parameter((self.hidden_units))
-
         if self.hidden2_units:
-            self.rhid2Layer = Parameter((self.hidden2_units, self.hidden_units))
+            self.rhid2Layer = Parameter((self.hidden_units, self.hidden2_units))
             self.rhid2Bias = Parameter((self.hidden2_units))
 
-        self.routLayer = Parameter((2 * (len(self.irels) + 0) + 1, self.hidden2_units if self.hidden2_units > 0 else self.hidden_units))
+        self.routLayer = Parameter((self.hidden2_units if self.hidden2_units > 0 else self.hidden_units, 2 * (len(self.irels) + 0) + 1))
         self.routBias = Parameter((2 * (len(self.irels) + 0) + 1))
 
     def __evaluate(self, stack, buf, train):
-        topStack = [ stack.roots[-i-1].lstms if len(stack) > i else [self.empty.t()] for i in range(self.k) ]
-        topBuffer = [ buf.roots[i].lstms if len(buf) > i else [self.empty.t()] for i in range(1) ]
-
-        input = chain(*(topStack + topBuffer))
-        # print(self.rhidLayer.data.shape)
-        # print(self.empty.data.shape, buf.roots[0].lstms[0].data.shape)
-        # for i in input:
-            # print("    ",i.data.shape)
-        input = cat(input).t()
-        # print("!!!!!!!!!!!", input, input.t())
+        topStack = [ stack.roots[-i-1].lstms if len(stack) > i else [self.empty] for i in range(self.k) ]
+        topBuffer = [ buf.roots[i].lstms if len(buf) > i else [self.empty] for i in range(1) ]
+        input = cat(chain(*(topStack + topBuffer)))
 
         if self.hidden2_units > 0:
             routput = torch.mm(
-                self.routLayer,
                 self.activation(
                     self.rhid2Bias +
                     torch.mm(
-                        self.rhid2Layer,
-                        self.activation(torch.mm(self.rhidLayer, input) + self.rhidBias)
+                        self.activation(torch.mm(input, self.rhidLayer) + self.rhidBias),
+                        self.rhid2Layer
                     )
-                )
+                ),
+                self.routLayer
             ) + self.routBias
         else:
             routput = torch.mm(
-                self.routLayer,
-                self.activation(torch.mm(self.rhidLayer, input) + self.rhidBias)
+                self.activation(torch.mm(input, self.rhidLayer) + self.rhidBias),
+                self.routLayer
             ) + self.routBias
-
         if self.hidden2_units > 0:
             output = torch.mm(
-                self.outLayer,
                 self.activation(
                     self.hid2Bias +
                     torch.mm(
-                        self.hid2Layer,
-                        self.activation(torch.mm(self.hidLayer, input) + self.hidBias)
+                        self.activation(torch.mm(input, self.hidLayer) + self.hidBias),
+                        self.hid2Layer
                     )
-                )
+                ),
+                self.outLayer
             ) + self.outBias
         else:
             output = torch.mm(
-                self.outLayer,
-                self.activation(torch.mm(self.hidLayer, input) + self.hidBias)
+                self.activation(torch.mm(input, self.hidLayer) + self.hidBias),
+                self.outLayer
             ) + self.outBias
 
         scrs, uscrs = get_data(routput, self.cuda_index), get_data(output, self.cuda_index)
-        scrs = [s[0] for s in scrs]
-        uscrs = [s[0] for s in uscrs]
+        scrs = scrs[0]
+        uscrs = uscrs[0]
         #transition conditions
         left_arc_conditions = len(stack) > 0 and len(buf) > 0
         right_arc_conditions = len(stack) > 1 and stack.roots[-1].id != 0
@@ -231,12 +204,12 @@ class ArcHybridLSTMModel(nn.Module):
         uscrs1 = uscrs[1]
         uscrs2 = uscrs[2]
         if train:
-            output0 = output[0]
-            output1 = output[1]
-            output2 = output[2]
-            ret = [ [ (rel, 0, scrs[1 + j * 2] + uscrs1, routput[1 + j * 2 ] + output1) for j, rel in enumerate(self.irels) ] if left_arc_conditions else [],
-                    [ (rel, 1, scrs[2 + j * 2] + uscrs2, routput[2 + j * 2 ] + output2) for j, rel in enumerate(self.irels) ] if right_arc_conditions else [],
-                    [ (None, 2, scrs[0] + uscrs0, routput[0] + output0) ] if shift_conditions else [] ]
+            output0 = output[:, 0]
+            output1 = output[:, 1]
+            output2 = output[:, 2]
+            ret = [ [ (rel, 0, scrs[1 + j * 2] + uscrs1, routput[:, 1 + j * 2 ] + output1) for j, rel in enumerate(self.irels) ] if left_arc_conditions else [],
+                    [ (rel, 1, scrs[2 + j * 2] + uscrs2, routput[:, 2 + j * 2 ] + output2) for j, rel in enumerate(self.irels) ] if right_arc_conditions else [],
+                    [ (None, 2, scrs[0] + uscrs0, routput[:, 0] + output0) ] if shift_conditions else [] ]
         else:
             s1,r1 = max(zip(scrs[1::2],self.irels))
             s2,r2 = max(zip(scrs[2::2],self.irels))
@@ -253,7 +226,6 @@ class ArcHybridLSTMModel(nn.Module):
             dropFlag =  not train or (random.random() < (c/(0.25+c)))
             root.wordvec = self.wlookup(scalar(int(self.vocab.get(root.norm, 0)) if dropFlag else 0, self.cuda_index))
             root.posvec = self.plookup(scalar(int(self.pos[root.pos]), self.cuda_index)) if self.pdims > 0 else None
-
             if self.external_embedding is not None:
                 if root.form in self.external_embedding:
                     root.evec = self.elookup(scalar(self.extrnd[root.form], self.cuda_index))
@@ -268,7 +240,6 @@ class ArcHybridLSTMModel(nn.Module):
         if self.blstmFlag:
             forward  = RNNState(self.builders[0], self.cuda_index)
             backward = RNNState(self.builders[1], self.cuda_index)
-
             for froot, rroot in zip(sentence, reversed(sentence)):
                 forward = forward.next( froot.ivec)
                 backward = backward.next( rroot.ivec)
@@ -276,11 +247,9 @@ class ArcHybridLSTMModel(nn.Module):
                 rroot.bvec = backward()
             for root in sentence:
                 root.vec = cat([root.fvec, root.bvec])
-
             if self.bibiFlag:
                 bforward  = RNNState(self.bbuilders[0], self.cuda_index)
                 bbackward = RNNState(self.bbuilders[1], self.cuda_index)
-
                 for froot, rroot in zip(sentence, reversed(sentence)):
                     bforward = bforward.next( froot.vec)
                     bbackward = bbackward.next( rroot.vec)
@@ -288,7 +257,6 @@ class ArcHybridLSTMModel(nn.Module):
                     rroot.bbvec = bbackward()
                 for root in sentence:
                     root.vec = cat([root.bfvec, root.bbvec])
-
         else:
             for root in sentence:
                 root.ivec = torch.nn(self.word2lstm, root.ivec) + self.word2lstmbias
@@ -299,40 +267,31 @@ class ArcHybridLSTMModel(nn.Module):
         self.GetWordEmbeddings(sentence, False)
         stack = ParseForest([])
         buf = ParseForest(sentence)
-
         for root in sentence:
             root.lstms = [root.vec for _ in range(self.nnvecs)]
-
         hoffset = 1 if self.headFlag else 0
 
         while not (len(buf) == 1 and len(stack) == 0):
             scores = self.__evaluate(stack, buf, False)
             best = max(chain(*scores), key = itemgetter(2) )
-
             if best[1] == 2:
                 stack.roots.append(buf.roots[0])
                 del buf.roots[0]
-
             elif best[1] == 0:
                 child = stack.roots.pop()
                 parent = buf.roots[0]
-
                 child.pred_parent_id = parent.id
                 child.pred_relation = best[0]
-
                 bestOp = 0
                 if self.rlMostFlag:
                     parent.lstms[bestOp + hoffset] = child.lstms[bestOp + hoffset]
                 if self.rlFlag:
                     parent.lstms[bestOp + hoffset] = child.vec
-
             elif best[1] == 1:
                 child = stack.roots.pop()
                 parent = stack.roots[-1]
-
                 child.pred_parent_id = parent.id
                 child.pred_relation = best[0]
-
                 bestOp = 1
                 if self.rlMostFlag:
                     parent.lstms[bestOp + hoffset] = child.lstms[bestOp + hoffset]
@@ -342,27 +301,21 @@ class ArcHybridLSTMModel(nn.Module):
     def Forward(self, sentence, errs, cache):
         eloss, mloss, eerrors, lerrors, etotal = cache
         ninf = -np.inf
-
         sentence = sentence[1:] + [sentence[0]]
         self.GetWordEmbeddings(sentence, True)
         stack = ParseForest([])
         buf = ParseForest(sentence)
-
         for root in sentence:
             root.lstms = [root.vec for _ in range(self.nnvecs)]
-
         hoffset = 1 if self.headFlag else 0
-
         while not (len(buf) == 1 and len(stack) == 0):
             scores = self.__evaluate(stack, buf, True)
             scores.append([(None, 3, ninf ,None)])
-
             alpha = stack.roots[:-2] if len(stack) > 2 else []
             s1 = [stack.roots[-2]] if len(stack) > 1 else []
             s0 = [stack.roots[-1]] if len(stack) > 0 else []
             b = [buf.roots[0]] if len(buf) > 0 else []
             beta = buf.roots[1:] if len(buf) > 1 else []
-
             left_cost  = ( len([h for h in s1 + beta if h.id == s0[0].parent_id]) +
                             len([d for d in b + beta if d.parent_id == s0[0].id]) )  if len(scores[0]) > 0 else 1
             right_cost = ( len([h for h in b + beta if h.id == s0[0].parent_id]) +
@@ -370,43 +323,32 @@ class ArcHybridLSTMModel(nn.Module):
             shift_cost = ( len([h for h in s1 + alpha if h.id == b[0].parent_id]) +
                             len([d for d in s0 + s1 + alpha if d.parent_id == b[0].id]) )  if len(scores[2]) > 0 else 1
             costs = (left_cost, right_cost, shift_cost, 1)
-
             bestValid = max(( s for s in chain(*scores) if costs[s[1]] == 0 and ( s[1] == 2 or  s[0] == stack.roots[-1].relation ) ), key=itemgetter(2))
             bestWrong = max(( s for s in chain(*scores) if costs[s[1]] != 0 or  ( s[1] != 2 and s[0] != stack.roots[-1].relation ) ), key=itemgetter(2))
-            # print(bestValid, "\n",bestWrong,"\n",bestValid[2] - bestWrong[2])
-            
             best = bestValid if ( (not self.oracle) or (bestValid[2] - bestWrong[2] > 1.0) or (bestValid[2] > bestWrong[2] and random.random() > 0.1) ) else bestWrong
-
             if best[1] == 2:
                 stack.roots.append(buf.roots[0])
                 del buf.roots[0]
-
             elif best[1] == 0:
                 child = stack.roots.pop()
                 parent = buf.roots[0]
-
                 child.pred_parent_id = parent.id
                 child.pred_relation = best[0]
-
                 bestOp = 0
                 if self.rlMostFlag:
                     parent.lstms[bestOp + hoffset] = child.lstms[bestOp + hoffset]
                 if self.rlFlag:
                     parent.lstms[bestOp + hoffset] = child.vec
-
             elif best[1] == 1:
                 child = stack.roots.pop()
                 parent = stack.roots[-1]
-
                 child.pred_parent_id = parent.id
                 child.pred_relation = best[0]
-
                 bestOp = 1
                 if self.rlMostFlag:
                     parent.lstms[bestOp + hoffset] = child.lstms[bestOp + hoffset]
                 if self.rlFlag:
                     parent.lstms[bestOp + hoffset] = child.vec
-
             if bestValid[2] < bestWrong[2] + 1.0:
                 loss = bestWrong[3] - bestValid[3]
                 mloss += 1.0 + bestWrong[2] - bestValid[2]
@@ -417,17 +359,15 @@ class ArcHybridLSTMModel(nn.Module):
                 if child.pred_parent_id != child.parent_id:
                     eerrors += 1
             etotal += 1
-
         return (eloss, mloss, eerrors, lerrors, etotal)
             
     def Init(self):
         evec = self.elookup(scalar(1, self.cuda_index)) if self.external_embedding is not None else None
         paddingWordVec = self.wlookup(scalar(1, self.cuda_index))
         paddingPosVec = self.plookup(scalar(1, self.cuda_index)) if self.pdims > 0 else None
-
         paddingVec = torch.tanh(torch.mm(
-            self.word2lstm,
-            cat([paddingWordVec, paddingPosVec, evec]).t()
+            cat([paddingWordVec, paddingPosVec, evec]),
+            self.word2lstm
             ) 
             + self.word2lstmbias)
         self.empty = paddingVec if self.nnvecs == 1 else cat([paddingVec for _ in range(self.nnvecs)])
@@ -471,9 +411,7 @@ class ArcHybridLSTM:
         eerrors = 0
         lerrors = 0
         etotal = 0        
-
         hoffset = 1 if self.headFlag else 0
-
         start = time.time()
 
         with open(conll_path, 'r', encoding='UTF-8') as conllFP:
@@ -490,12 +428,9 @@ class ArcHybridLSTM:
                     eloss = 0.0
                     etotal = 0
                     lerrors = 0
-
                 conll_sentence = [entry for entry in sentence if isinstance(entry, utils.ConllEntry)]
-                
                 cache = (eloss, mloss, eerrors, lerrors, etotal)
                 eloss, mloss, eerrors, lerrors, etotal = self.model.Forward(conll_sentence, errs, cache)
-
                 if len(errs) > 50: # or True:
                     eerrs = torch.sum(cat(errs))
                     eerrs.backward()
@@ -503,13 +438,10 @@ class ArcHybridLSTM:
                     errs = []
                     self.trainer.zero_grad()
                     self.model.Init()
-
         if len(errs) > 0:
             eerrs = torch.sum(cat(errs)) # * (1.0/(float(len(errs))))
             eerrs.backward()
             self.trainer.step()
-
             errs = []
             self.trainer.zero_grad()
-        self.trainer.step()    
         print("Loss: ", mloss/iSentence)

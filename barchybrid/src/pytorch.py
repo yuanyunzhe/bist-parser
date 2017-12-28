@@ -510,6 +510,6 @@ class ArcHybridLSTM:
             self.trainer.step()
 
             errs = []
-
-        self.trainer.zero_grad()
+            self.trainer.zero_grad()
+        self.trainer.step()    
         print("Loss: ", mloss/iSentence)

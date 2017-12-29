@@ -431,7 +431,7 @@ class ArcHybridLSTM:
                 conll_sentence = [entry for entry in sentence if isinstance(entry, utils.ConllEntry)]
                 cache = (eloss, mloss, eerrors, lerrors, etotal)
                 eloss, mloss, eerrors, lerrors, etotal = self.model.Forward(conll_sentence, errs, cache)
-                if len(errs) > 50: # or True:
+                if len(errs) > 0: # or True:
                     eerrs = torch.sum(cat(errs))
                     eerrs.backward()
                     self.trainer.step()

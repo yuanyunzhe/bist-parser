@@ -436,12 +436,13 @@ class ArcHybridLSTM:
                     eerrs.backward()
                     self.trainer.step()
                     errs = []
-                self.trainer.zero_grad()
-                self.model.Init()
+                    self.trainer.zero_grad()
+                    self.model.Init()
         if len(errs) > 0:
             eerrs = torch.sum(cat(errs)) # * (1.0/(float(len(errs))))
             eerrs.backward()
             self.trainer.step()
-            # errs = []
-        self.trainer.zero_grad()
+            errs = []
+            self.trainer.zero_grad()
+        self.trainer.step()
         print("Loss: ", mloss/iSentence)

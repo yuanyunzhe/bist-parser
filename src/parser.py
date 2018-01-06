@@ -1,4 +1,4 @@
-#-*- coding：utf-8 -*-
+# -*- coding：utf-8 -*-
 from optparse import OptionParser
 from pytorch import ArcHybridLSTM
 import pickle, utils, os, time, sys, multiprocessing

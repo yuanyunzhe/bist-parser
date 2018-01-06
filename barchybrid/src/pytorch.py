@@ -205,7 +205,7 @@ class ArcHybridLSTMModel(nn.Module):
                    [(None, 2, scrs[0] + uscrs0)] if shift_conditions else []]
         return ret
 
-    def GetWordEmbeddings(self, sentence, train):
+    def getWordEmbeddings(self, sentence, train):
         for root in sentence:
             c = float(self.wordsCount.get(root.norm, 0))
             dropFlag = not train or (random.random() < (c/(0.25+c)))
@@ -237,8 +237,8 @@ class ArcHybridLSTMModel(nn.Module):
             lstm1 = res_back_2[num_vec - i - 1]
             sentence[i].vec = cat([lstm0, lstm1])
 
-    def Predict(self, sentence):
-        self.GetWordEmbeddings(sentence, False)
+    def predict(self, sentence):
+        self.getWordEmbeddings(sentence, False)
         stack = ParseForest([])
         buf = ParseForest(sentence)
         for root in sentence:
@@ -272,9 +272,9 @@ class ArcHybridLSTMModel(nn.Module):
                 if self.rlFlag:
                     parent.lstms[bestOp + hoffset] = child.vec
 
-    def Train(self, sentence, errs):
+    def train(self, sentence, errs):
         dloss, deerrors, dlerrors, detotal = 0, 0, 0, 0
-        self.GetWordEmbeddings(sentence, True)
+        self.getWordEmbeddings(sentence, True)
         stack = ParseForest([])
         buf = ParseForest(sentence)
         for root in sentence:
@@ -332,7 +332,7 @@ class ArcHybridLSTMModel(nn.Module):
             detotal += 1
         return dloss, deerrors, dlerrors, detotal
             
-    def Init(self):
+    def init(self):
         evec = self.elookup(scalar(1, self.cuda_index)) if self.external_embedding is not None else None
         paddingWordVec = self.wlookup(scalar(1, self.cuda_index))
         paddingPosVec = self.plookup(scalar(1, self.cuda_index)) if self.pdims > 0 else None
@@ -360,26 +360,26 @@ class ArcHybridLSTM:
         self.cuda_index = options.cuda_index
         # self.external_embedding = self.model.external_embedding
 
-    def Save(self, fn):
+    def save(self, fn):
         tmp = fn + '.tmp'
         torch.save(self.model.state_dict(), tmp)
         shutil.move(tmp, fn)
 
-    def Load(self, fn):
+    def load(self, fn):
         self.model.load_state_dict(torch.load(fn))
 
-    def Predict(self, conll_path):
-        self.model.Init()
+    def predict(self, conll_path):
+        self.model.init()
         with open(conll_path, 'r', encoding='UTF-8') as conllFP:
             for iSentence, sentence in enumerate(read_conll(conllFP, proj=False)):
                 self.model.hid_for_1, self.model.hid_back_1, self.model.hid_for_2, self.model.hid_back_2 = [self.model.init_hidden(self.model.ldims, self.cuda_index) for _ in range(4)]
                 conll_sentence = [entry for entry in sentence if isinstance(entry, utils.ConllEntry)]
                 conll_sentence = conll_sentence[1:] + [conll_sentence[0]]
-                self.model.Predict(conll_sentence)
+                self.model.predict(conll_sentence)
                 self.trainer.zero_grad()
                 yield sentence
 
-    def Train(self, conll_path):
+    def train(self, conll_path):
         mloss = 0.0
         batch = 0
         eloss = 0.0
@@ -390,11 +390,11 @@ class ArcHybridLSTM:
         start = time.time()
 
         with open(conll_path, 'r', encoding='UTF-8') as conllFP:
-            shuffledData = list(read_conll(conllFP, proj=False))
+            shuffledData = list(read_conll(conllFP, proj=True))
             random.shuffle(shuffledData)
             errs = []
             eeloss = 0.0
-            self.model.Init()
+            self.model.init()
             for iSentence, sentence in enumerate(shuffledData):
                 self.model.hid_for_1, self.model.hid_back_1, self.model.hid_for_2, self.model.hid_back_2 = [self.model.init_hidden(self.model.ldims, self.cuda_index) for _ in range(4)]
                 if iSentence % 100 == 0 and iSentence != 0:
@@ -406,7 +406,7 @@ class ArcHybridLSTM:
                     lerrors = 0
                 conll_sentence = [entry for entry in sentence if isinstance(entry, utils.ConllEntry)]
                 conll_sentence = conll_sentence[1:] + [conll_sentence[0]]
-                dloss, deerrors, dlerrors, detotal = self.model.Train(conll_sentence, errs)
+                dloss, deerrors, dlerrors, detotal = self.model.train(conll_sentence, errs)
                 eloss += dloss
                 mloss += dloss
                 eerrors += deerrors
@@ -418,7 +418,7 @@ class ArcHybridLSTM:
                     self.trainer.step()
                     errs = []
                     self.trainer.zero_grad()
-                    self.model.Init()
+                    self.model.init()
         if len(errs) > 0:
             eerrs = torch.sum(cat(errs)) # * (1.0/(float(len(errs))))
             eerrs.backward()

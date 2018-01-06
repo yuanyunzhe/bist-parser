@@ -1,3 +1,4 @@
+#-*- coding：utf-8 -*-
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -64,7 +65,7 @@ class ArcHybridLSTMModel(nn.Module):
         self.rdims = options.rembedding_dims
         self.edims = 0
         self.layers = options.lstm_layers
-        self.wordsCount = words
+        self.wordsCount = vocab
         self.vocab = {word: ind + 3 for word, ind in enum_word.items()}
         self.pos = {word: ind + 3 for ind, word in enumerate(pos)}
         self.onto = {word: ind + 3 for ind, word in enumerate(onto)}
@@ -108,7 +109,7 @@ class ArcHybridLSTMModel(nn.Module):
         self.vocab['*INITIAL*'] = 2
         self.pos['*INITIAL*'] = 2
 
-        self.wlookup = nn.Embedding(len(words) + 3, self.wdims)
+        self.wlookup = nn.Embedding(len(vocab) + 3, self.wdims)
         self.plookup = nn.Embedding(len(pos) + 3, self.pdims)
         self.rlookup = nn.Embedding(len(rels), self.rdims)
 

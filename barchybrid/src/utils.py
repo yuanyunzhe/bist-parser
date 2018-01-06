@@ -119,7 +119,7 @@ def vocab(conll_path):
     
     print('the amount of kind of words, pos-tag, relations, ontology, cpos_tag:',
           len(wordsCount), len(posCount), len(relCount), len(ontoCount), len(cposCount))
-    return (wordsCount, {w: i for i, w in enumerate(wordsCount.keys())}, posCount.keys(), relCount.keys())
+    return (wordsCount, {w: i for i, w in enumerate(wordsCount.keys())}, list(posCount.keys()), list(relCount.keys()), list(ontoCount.keys()), list(cposCount.keys()))
 
 
 def write_conll(fn, conll_gen):

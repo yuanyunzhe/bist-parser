@@ -13,9 +13,9 @@ if __name__ == '__main__':
 
     # I/O
     parser.add_option("--outdir", type="string", dest="output", default="results")
-    parser.add_option("--train", dest="conll_train", help="Annotated CONLL train file", metavar="FILE", default="../corpus/en-ud-train.conllu")
-    parser.add_option("--dev", dest="conll_dev", help="Annotated CONLL dev file", metavar="FILE", default="../corpus/en-ud-dev.conllu")
-    parser.add_option("--test", dest="conll_test", help="Annotated CONLL test file", metavar="FILE", default="../corpus/en-ud-test.conllu")
+    parser.add_option("--train", dest="conll_train", help="Annotated CONLL train file", metavar="FILE", default="corpus/en-ud-train.conllu")
+    parser.add_option("--dev", dest="conll_dev", help="Annotated CONLL dev file", metavar="FILE", default="corpus/en-ud-dev.conllu")
+    parser.add_option("--test", dest="conll_test", help="Annotated CONLL test file", metavar="FILE", default="corpus/en-ud-test.conllu")
     parser.add_option("--params", dest="params", help="Parameters file", metavar="FILE", default="params.pickle")
     parser.add_option("--extrn", dest="external_embedding", help="External embeddings", metavar="FILE")
     parser.add_option("--model", dest="model", help="Load/Save model file", metavar="FILE", default="barchybrid.model")

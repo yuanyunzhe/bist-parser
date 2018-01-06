@@ -4,38 +4,41 @@ import pickle, utils, os, time, sys
 
 if __name__ == '__main__':
     parser = OptionParser()
-    parser.add_option("--train", dest="conll_train", help="Annotated CONLL train file", metavar="FILE", default="../data/en-ud-train.conllu")
-    parser.add_option("--dev", dest="conll_dev", help="Annotated CONLL dev file", metavar="FILE", default="../data/en-ud-dev.conllu")
-    parser.add_option("--test", dest="conll_test", help="Annotated CONLL test file", metavar="FILE", default="../data/en-ud-test.conllu")
+    parser.add_option("--cuda_index", type="int", dest="cuda_index", default=-1)
+    parser.add_option("--numthread", type="int", dest="numthread", default=8)
+
+    parser.add_option("--outdir", type="string", dest="output", default="results")
+    parser.add_option("--train", dest="conll_train", help="Annotated CONLL train file", metavar="FILE", default="../corpus/en-ud-train.conllu")
+    parser.add_option("--dev", dest="conll_dev", help="Annotated CONLL dev file", metavar="FILE", default="../corpus/en-ud-dev.conllu")
+    parser.add_option("--test", dest="conll_test", help="Annotated CONLL test file", metavar="FILE", default="../corpus/en-ud-test.conllu")
     parser.add_option("--params", dest="params", help="Parameters file", metavar="FILE", default="params.pickle")
     parser.add_option("--extrn", dest="external_embedding", help="External embeddings", metavar="FILE")
     parser.add_option("--model", dest="model", help="Load/Save model file", metavar="FILE", default="barchybrid.model")
+    
+    parser.add_option("--epochs", type="int", dest="epochs", default=30)
     parser.add_option("--wembedding", type="int", dest="wembedding_dims", default=100)
     parser.add_option("--pembedding", type="int", dest="pembedding_dims", default=25)
     parser.add_option("--rembedding", type="int", dest="rembedding_dims", default=25)
-    parser.add_option("--epochs", type="int", dest="epochs", default=30)
     parser.add_option("--hidden", type="int", dest="hidden_units", default=100)
     parser.add_option("--hidden2", type="int", dest="hidden2_units", default=0)
+
     parser.add_option("--k", type="int", dest="window", default=3)
     parser.add_option("--lr", type="float", dest="learning_rate", default=0.1)
-    parser.add_option("--outdir", type="string", dest="output", default="results")
+    parser.add_option("--optim", type="string", dest="optim", default='adam')
     parser.add_option("--activation", type="string", dest="activation", default="tanh")
     parser.add_option("--lstmlayers", type="int", dest="lstm_layers", default=2)
     parser.add_option("--lstmdims", type="int", dest="lstm_dims", default=125)
+
     parser.add_option("--disableoracle", action="store_false", dest="oracle", default=True)
-    parser.add_option("--disableblstm", action="store_false", dest="blstmFlag", default=True)
-    parser.add_option("--bibi-lstm", action="store_true", dest="bibiFlag", default=False)
+    # parser.add_option("--disableblstm", action="store_false", dest="blstmFlag", default=True)
+    # parser.add_option("--bibi-lstm", action="store_true", dest="bibiFlag", default=False)
     parser.add_option("--usehead", action="store_true", dest="headFlag", default=False)
     parser.add_option("--userlmost", action="store_true", dest="rlFlag", default=False)
     parser.add_option("--userl", action="store_true", dest="rlMostFlag", default=False)
+
     parser.add_option("--predict", action="store_true", dest="predictFlag", default=False)
 
-    parser.add_option("--optim", type="string", dest="optim", default='adam')
-    parser.add_option("--cuda_index", type="int", dest="cuda_index", default=-1)
-
     (options, args) = parser.parse_args()
-
-    print(options, args)
 
     print('Using external embedding:', options.external_embedding)
 

@@ -51,7 +51,7 @@ def cat(l, dimension=-1):
 
 
 class ArcHybridLSTMModel(nn.Module):
-    def __init__(self, words, pos, rels, w2i, options):
+    def __init__(self, vocab, pos, rels, enum_word, options, onto, cpos):
         super(ArcHybridLSTMModel, self).__init__()
         random.seed(1)
         self.cuda_index = options.cuda_index
@@ -65,8 +65,10 @@ class ArcHybridLSTMModel(nn.Module):
         self.edims = 0
         self.layers = options.lstm_layers
         self.wordsCount = words
-        self.vocab = {word: ind+3 for word, ind in w2i.items()}
-        self.pos = {word: ind+3 for ind, word in enumerate(pos)}
+        self.vocab = {word: ind + 3 for word, ind in enum_word.items()}
+        self.pos = {word: ind + 3 for ind, word in enumerate(pos)}
+        self.onto = {word: ind + 3 for ind, word in enumerate(onto)}
+        self.cpos = {word: ind + 3 for ind, word in enumerate(cpos)}
         self.rels = {word: ind for ind, word in enumerate(rels)}
         self.irels = rels
         self.headFlag = options.headFlag
@@ -185,12 +187,13 @@ class ArcHybridLSTMModel(nn.Module):
         uscrs1 = uscrs[1]
         uscrs2 = uscrs[2]
         if train:
-            output0 = output[:, 0]
-            output1 = output[:, 1]
-            output2 = output[:, 2]
-            ret = [[(rel, 0, scrs[1 + j * 2] + uscrs1, routput[:, 1 + j * 2 ] + output1) for j, rel in enumerate(self.irels)] if left_arc_conditions else [],
-                   [(rel, 1, scrs[2 + j * 2] + uscrs2, routput[:, 2 + j * 2 ] + output2) for j, rel in enumerate(self.irels)] if right_arc_conditions else [],
-                   [(None, 2, scrs[0] + uscrs0, routput[:, 0] + output0) ] if shift_conditions else []]
+            output, routput = output.t(), routput.t()
+            output0 = output[0]
+            output1 = output[1]
+            output2 = output[2]
+            ret = [[(rel, 0, scrs[1 + j * 2] + uscrs1, routput[1 + j * 2 ] + output1) for j, rel in enumerate(self.irels)] if left_arc_conditions else [],
+                   [(rel, 1, scrs[2 + j * 2] + uscrs2, routput[2 + j * 2 ] + output2) for j, rel in enumerate(self.irels)] if right_arc_conditions else [],
+                   [(None, 2, scrs[0] + uscrs0, routput[0] + output0)] if shift_conditions else []]
         else:
             s1, r1 = max(zip(scrs[1::2],self.irels))
             s2, r2 = max(zip(scrs[2::2],self.irels))
@@ -348,8 +351,8 @@ def get_optim(opt, parameters):
 
 
 class ArcHybridLSTM:
-    def __init__(self, vocab, pos, rels, w2i, options):
-        model = ArcHybridLSTMModel(vocab, pos, rels, w2i, options)
+    def __init__(self, vocab, pos, rels, enum_word, options, onto, cpos):
+        model = ArcHybridLSTMModel(vocab, pos, rels, enum_word, options, onto, cpos)
         self.model = model.cuda(options.cuda_index) if options.cuda_index >= 0 else model
         self.trainer = get_optim(options.optim, self.model.parameters())
         self.headFlag = options.headFlag
@@ -367,7 +370,7 @@ class ArcHybridLSTM:
     def Predict(self, conll_path):
         self.model.Init()
         with open(conll_path, 'r', encoding='UTF-8') as conllFP:
-            for iSentence, sentence in enumerate(read_conll(conllFP, False)):
+            for iSentence, sentence in enumerate(read_conll(conllFP, proj=False)):
                 self.model.hid_for_1, self.model.hid_back_1, self.model.hid_for_2, self.model.hid_back_2 = [self.model.init_hidden(self.model.ldims, self.cuda_index) for _ in range(4)]
                 conll_sentence = [entry for entry in sentence if isinstance(entry, utils.ConllEntry)]
                 conll_sentence = conll_sentence[1:] + [conll_sentence[0]]
@@ -386,7 +389,7 @@ class ArcHybridLSTM:
         start = time.time()
 
         with open(conll_path, 'r', encoding='UTF-8') as conllFP:
-            shuffledData = list(read_conll(conllFP, True))
+            shuffledData = list(read_conll(conllFP, proj=False))
             random.shuffle(shuffledData)
             errs = []
             eeloss = 0.0

@@ -50,8 +50,8 @@ if __name__ == '__main__':
 
     (options, args) = parser.parse_args()
 
-    if torch.cuda.is_available() and gpu >= 0:
-        torch.cuda.set_device(gpu)
+    if torch.cuda.is_available() and options.gpu >= 0:
+        torch.cuda.set_device(options.gpu)
     
     max_thread = multiprocessing.cpu_count()
     active_thread = options.numthread if max_thread > options.numthread else max_thread

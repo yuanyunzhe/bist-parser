@@ -1,6 +1,6 @@
 # -*- coding：utf-8 -*-
 from optparse import OptionParser
-from pytorch import ArcHybridLSTM
+from transition import Transition
 import pickle, utils, os, time, sys, multiprocessing
 import torch
 
@@ -8,7 +8,7 @@ if __name__ == '__main__':
     parser = OptionParser()
 
     # GPU and multiprocessing
-    parser.add_option("--cuda_index", type="int", dest="cuda_index", default=-1)
+    parser.add_option("--gpu", type="int", dest="gpu", default=0)
     parser.add_option("--numthread", type="int", dest="numthread", default=8)
 
     # I/O
@@ -50,8 +50,11 @@ if __name__ == '__main__':
 
     (options, args) = parser.parse_args()
 
+    if torch.cuda.is_available() and gpu >= 0:
+        torch.cuda.set_device(gpu)
+    
     max_thread = multiprocessing.cpu_count()
-    active_thread = options.numthread if max_thread>options.numthread else max_thread
+    active_thread = options.numthread if max_thread > options.numthread else max_thread
     torch.set_num_threads(active_thread)
     print(active_thread, "threads are in use")
     
@@ -69,7 +72,7 @@ if __name__ == '__main__':
         print('Finished collecting vocab')
 
         print('Initializing blstm arc hybrid:')
-        parser = ArcHybridLSTM(words, pos, rels, enum_word, options, onto, cpos)
+        parser = Transition(words, pos, rels, enum_word, options, onto, cpos)
 
         for epoch in range(options.epochs):
             print('Starting epoch', epoch)
@@ -100,7 +103,7 @@ if __name__ == '__main__':
         stored_opt.external_embedding = options.external_embedding
 
         print('Initializing lstm mstparser:')
-        parser = ArcHybridLSTM(words, pos, rels, enum_word, stored_opt, onto, cpos)
+        parser = Transition(words, pos, rels, enum_word, stored_opt, onto, cpos)
         parser.load(options.model)
         conllu = (os.path.splitext(options.conll_test.lower())[1] == '.conllu')
         testpath = os.path.join(options.output, 'test_pred.conll' if not conllu else 'test_pred.conllu')

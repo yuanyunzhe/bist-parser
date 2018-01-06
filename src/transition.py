@@ -2,60 +2,22 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from torch import optim
-# from torch.autograd import Variable
-from torch.nn.init import *
 
 from utils import ParseForest, read_conll, write_conll
 from operator import itemgetter
 from itertools import chain
-import utils, time, random
+from extend import *
 
+import utils, time, random
 import numpy as np
 import shutil
 
 
-def get_data(x, index):
-    if index >= 0:
-        return x.data.cpu()
-    else:
-        return x.data
-
-
-def scalar(f, index):
-    if type(f) == int:
-        return Variable(torch.LongTensor([f]), index)
-    if type(f) == float:
-        return Variable(torch.FloatTensor([f]), index)
-
-
-def Parameter(shape=None, init=xavier_uniform):
-    if hasattr(init, 'shape'):
-        assert not shape
-        return nn.Parameter(torch.Tensor(init))
-    shape = (1, shape) if type(shape) == int else shape
-    return nn.Parameter(init(torch.Tensor(*shape)))
-
-
-def Variable(inner, index):
-    if index >= 0:
-        return torch.autograd.Variable(inner.cuda(index))
-    else:
-        return torch.autograd.Variable(inner)
-
-
-def cat(l, dimension=-1):
-    valid_l = [x for x in l if x is not None]
-    if dimension < 0:
-        dimension += len(valid_l[0].size())
-    return torch.cat(valid_l, dimension)
-
-
-class ArcHybridLSTMModel(nn.Module):
+class TransitionModel(nn.Module):
     def __init__(self, vocab, pos, rels, enum_word, options, onto, cpos):
-        super(ArcHybridLSTMModel, self).__init__()
+        super(TransitionModel, self).__init__()
         random.seed(1)
-        self.cuda_index = options.cuda_index
+        self.gpu = options.gpu
         self.activations = {'tanh': F.tanh, 'sigmoid': F.sigmoid, 'relu': F.relu}
         self.activation = self.activations[options.activation]
         self.oracle = options.oracle
@@ -100,7 +62,7 @@ class ArcHybridLSTMModel(nn.Module):
         self.lstm_for_2 = nn.LSTM(self.ldims * 2, self.ldims)
         self.lstm_back_2 = nn.LSTM(self.ldims * 2, self.ldims)
         self.hid_for_1, self.hid_back_1, self.hid_for_2, self.hid_back_2 = [
-            self.init_hidden(self.ldims, self.cuda_index) for _ in range(4)]
+            self.init_hidden(self.ldims) for _ in range(4)]
 
         self.hidden_units = options.hidden_units
         self.hidden2_units = options.hidden2_units
@@ -132,8 +94,8 @@ class ArcHybridLSTMModel(nn.Module):
             self.rhid2Layer = Parameter((self.hidden_units, self.hidden2_units))
             self.rhid2Bias = Parameter((self.hidden2_units))
 
-    def init_hidden(self, dim, index):
-        if index >= 0:
+    def init_hidden(self, dim):
+        if torch.cuda.is_available():
             m = torch.zeros(1, 1, dim).cuda()
         else:
             m = torch.zeros(1, 1, dim)
@@ -177,7 +139,7 @@ class ArcHybridLSTMModel(nn.Module):
                 self.outLayer
             ) + self.outBias
 
-        scrs, uscrs = get_data(routput, self.cuda_index), get_data(output, self.cuda_index)
+        scrs, uscrs = get_data(routput), get_data(output)
         scrs = scrs[0]
         uscrs = uscrs[0]
         #transition conditions
@@ -209,15 +171,15 @@ class ArcHybridLSTMModel(nn.Module):
         for root in sentence:
             c = float(self.wordsCount.get(root.norm, 0))
             dropFlag = not train or (random.random() < (c/(0.25+c)))
-            root.wordvec = self.wlookup(scalar(int(self.vocab.get(root.norm, 0)) if dropFlag else 0, self.cuda_index))
-            root.posvec = self.plookup(scalar(int(self.pos[root.pos]), self.cuda_index)) if self.pdims > 0 else None
+            root.wordvec = self.wlookup(scalar(int(self.vocab.get(root.norm, 0)) if dropFlag else 0))
+            root.posvec = self.plookup(scalar(int(self.pos[root.pos]))) if self.pdims > 0 else None
             if self.external_embedding is not None:
                 if root.form in self.external_embedding:
-                    root.evec = self.elookup(scalar(self.extrnd[root.form], self.cuda_index))
+                    root.evec = self.elookup(scalar(self.extrnd[root.form]))
                 elif root.norm in self.external_embedding:
-                    root.evec = self.elookup(scalar(self.extrnd[root.norm], self.cuda_index))
+                    root.evec = self.elookup(scalar(self.extrnd[root.norm]))
                 else:
-                    root.evec = self.elookup(scalar(0, self.cuda_index))
+                    root.evec = self.elookup(scalar(0))
             else:
                 root.evec = None
             root.ivec = cat([root.wordvec, root.posvec, root.evec])
@@ -333,9 +295,9 @@ class ArcHybridLSTMModel(nn.Module):
         return dloss, deerrors, dlerrors, detotal
             
     def init(self):
-        evec = self.elookup(scalar(1, self.cuda_index)) if self.external_embedding is not None else None
-        paddingWordVec = self.wlookup(scalar(1, self.cuda_index))
-        paddingPosVec = self.plookup(scalar(1, self.cuda_index)) if self.pdims > 0 else None
+        evec = self.elookup(scalar(1)) if self.external_embedding is not None else None
+        paddingWordVec = self.wlookup(scalar(1))
+        paddingPosVec = self.plookup(scalar(1)) if self.pdims > 0 else None
         paddingVec = torch.tanh(torch.mm(
             cat([paddingWordVec, paddingPosVec, evec]),
             self.word2lstm
@@ -344,20 +306,13 @@ class ArcHybridLSTMModel(nn.Module):
         self.empty = paddingVec if self.nnvecs == 1 else cat([paddingVec for _ in range(self.nnvecs)])
 
 
-def get_optim(opt, parameters):
-    if opt == 'sgd':
-        return optim.SGD(parameters, lr=opt.lr)
-    elif opt == 'adam':
-        return optim.Adam(parameters)
-
-
-class ArcHybridLSTM:
+class Transition:
     def __init__(self, vocab, pos, rels, enum_word, options, onto, cpos):
-        model = ArcHybridLSTMModel(vocab, pos, rels, enum_word, options, onto, cpos)
-        self.model = model.cuda(options.cuda_index) if options.cuda_index >= 0 else model
+        model = TransitionModel(vocab, pos, rels, enum_word, options, onto, cpos)
+        self.model = model.cuda() if torch.cuda.is_available() else model
         self.trainer = get_optim(options.optim, self.model.parameters())
         self.headFlag = options.headFlag
-        self.cuda_index = options.cuda_index
+        self.gpu = options.gpu
         # self.external_embedding = self.model.external_embedding
 
     def save(self, fn):
@@ -372,7 +327,7 @@ class ArcHybridLSTM:
         self.model.init()
         with open(conll_path, 'r', encoding='UTF-8') as conllFP:
             for iSentence, sentence in enumerate(read_conll(conllFP, proj=False)):
-                self.model.hid_for_1, self.model.hid_back_1, self.model.hid_for_2, self.model.hid_back_2 = [self.model.init_hidden(self.model.ldims, self.cuda_index) for _ in range(4)]
+                self.model.hid_for_1, self.model.hid_back_1, self.model.hid_for_2, self.model.hid_back_2 = [self.model.init_hidden(self.model.ldims) for _ in range(4)]
                 conll_sentence = [entry for entry in sentence if isinstance(entry, utils.ConllEntry)]
                 conll_sentence = conll_sentence[1:] + [conll_sentence[0]]
                 self.model.predict(conll_sentence)
@@ -396,7 +351,7 @@ class ArcHybridLSTM:
             eeloss = 0.0
             self.model.init()
             for iSentence, sentence in enumerate(shuffledData):
-                self.model.hid_for_1, self.model.hid_back_1, self.model.hid_for_2, self.model.hid_back_2 = [self.model.init_hidden(self.model.ldims, self.cuda_index) for _ in range(4)]
+                self.model.hid_for_1, self.model.hid_back_1, self.model.hid_for_2, self.model.hid_back_2 = [self.model.init_hidden(self.model.ldims) for _ in range(4)]
                 if iSentence % 100 == 0 and iSentence != 0:
                     print('Processing sentence number:', iSentence, 'Loss:', eloss / etotal, 'Errors:', (float(eerrors)) / etotal, 'Labeled Errors:', (float(lerrors) / etotal) , 'Time', time.time()-start)
                     start = time.time()

@@ -13,70 +13,19 @@ import numpy as np
 import shutil
 
 
-class TransitionModel(nn.Module):
+class TransitionModel(DependencyModel):
     def __init__(self, vocab, pos, rels, enum_word, options, onto, cpos, lstm_for_1, lstm_back_1):
-        super(TransitionModel, self).__init__()
-        random.seed(1)
-        self.gpu = options.gpu
-        self.activations = {'tanh': F.tanh, 'sigmoid': F.sigmoid, 'relu': F.relu}
-        self.activation = self.activations[options.activation]
+        DependencyModel.__init__(self, vocab, pos, rels, enum_word, options, onto, cpos, lstm_for_1, lstm_back_1)
+
         self.oracle = options.oracle
-        self.ldims = options.lstm_dims
-        self.wdims = options.wembedding_dims
-        self.pdims = options.pembedding_dims
-        self.rdims = options.rembedding_dims
-        self.edims = 0
-        self.layers = options.lstm_layers
-        self.wordsCount = vocab
-        self.vocab = {word: ind + 3 for word, ind in enum_word.items()}
-        self.pos = {word: ind + 3 for ind, word in enumerate(pos)}
-        self.onto = {word: ind + 3 for ind, word in enumerate(onto)}
-        self.cpos = {word: ind + 3 for ind, word in enumerate(cpos)}
-        self.rels = {word: ind for ind, word in enumerate(rels)}
-        self.irels = rels
         self.headFlag = options.headFlag
         self.rlMostFlag = options.rlMostFlag
         self.rlFlag = options.rlFlag
+
         self.k = options.window
         self.nnvecs = (1 if self.headFlag else 0) + (2 if self.rlFlag or self.rlMostFlag else 0)
-        self.external_embedding = None
-        if options.external_embedding is not None:
-            external_embedding_fp = open(options.external_embedding,'r', encoding='UTF-8')
-            external_embedding_fp.readline()
-            self.external_embedding = {line.split(' ')[0] : [float(f) for f in line.strip().split(' ')[1:]] for line in external_embedding_fp}
-            external_embedding_fp.close()
-            self.edims = len(list(self.external_embedding.values()[0]))
-            self.extrnd = {word: i + 3 for i, word in enumerate(self.external_embedding)}
-            np_emb = np.zeros((len(self.external_embedding) + 3, self.edims))
-            for word, i in self.extrnd.items():
-                np_emb[i] = self.external_embedding[word]
-            self.elookup = nn.Embedding(*np_emb.shape)
-            self.elookup.weight = Parameter(init=np_emb)
-            self.extrnd['*PAD*'] = 1
-            self.extrnd['*INITIAL*'] = 2
-            print('Load external embedding. Vector dimensions', self.edims)
 
         dims = self.wdims + self.pdims + self.edims
-        # self.lstm_for_1 = nn.LSTM(dims, self.ldims)
-        # self.lstm_back_1 = nn.LSTM(dims, self.ldims)
-        self.lstm_for_1 = lstm_for_1
-        self.lstm_back_1 = lstm_back_1
-        self.lstm_for_2 = nn.LSTM(self.ldims * 2, self.ldims)
-        self.lstm_back_2 = nn.LSTM(self.ldims * 2, self.ldims)
-        self.hid_for_1, self.hid_back_1, self.hid_for_2, self.hid_back_2 = [
-            self.init_hidden(self.ldims) for _ in range(4)]
-
-        self.hidden_units = options.hidden_units
-        self.hidden2_units = options.hidden2_units
-        self.vocab['*PAD*'] = 1
-        self.pos['*PAD*'] = 1
-        self.vocab['*INITIAL*'] = 2
-        self.pos['*INITIAL*'] = 2
-
-        self.wlookup = nn.Embedding(len(vocab) + 3, self.wdims)
-        self.plookup = nn.Embedding(len(pos) + 3, self.pdims)
-        self.rlookup = nn.Embedding(len(rels), self.rdims)
-
         self.word2lstm = Parameter((dims, self.ldims * 2))
         self.word2lstmbias = Parameter((self.ldims * 2))
         self.lstm2lstm = Parameter((self.ldims * 2 * self.nnvecs + self.rdims, self.ldims))
@@ -95,13 +44,6 @@ class TransitionModel(nn.Module):
             self.hid2Bias = Parameter((self.hidden2_units))
             self.rhid2Layer = Parameter((self.hidden_units, self.hidden2_units))
             self.rhid2Bias = Parameter((self.hidden2_units))
-
-    def init_hidden(self, dim):
-        if torch.cuda.is_available():
-            m = torch.zeros(1, 1, dim).cuda()
-        else:
-            m = torch.zeros(1, 1, dim)
-        return (torch.autograd.Variable(m), torch.autograd.Variable(m))
 
     def __evaluate(self, stack, buf, train):
         topStack = [ stack.roots[-i-1].lstms if len(stack) > i else [self.empty] for i in range(self.k) ]
@@ -170,39 +112,11 @@ class TransitionModel(nn.Module):
         return ret
 
     def getWordEmbeddings(self, sentence, train):
-        for root in sentence:
-            c = float(self.wordsCount.get(root.norm, 0))
-            dropFlag = not train or (random.random() < (c/(0.25+c)))
-            root.wordvec = self.wlookup(scalar(int(self.vocab.get(root.norm, 0)) if dropFlag else 0))
-            root.posvec = self.plookup(scalar(int(self.pos[root.pos]))) if self.pdims > 0 else None
-            if self.external_embedding is not None:
-                if root.form in self.external_embedding:
-                    root.evec = self.elookup(scalar(self.extrnd[root.form]))
-                elif root.norm in self.external_embedding:
-                    root.evec = self.elookup(scalar(self.extrnd[root.norm]))
-                else:
-                    root.evec = self.elookup(scalar(0))
-            else:
-                root.evec = None
-            root.ivec = cat([root.wordvec, root.posvec, root.evec])
-
-        num_vec = len(sentence)
-        vec_for = torch.cat([root.ivec for root in sentence]).view(num_vec, 1, -1)
-        vec_back = torch.cat([root.ivec for root in reversed(sentence)]).view(num_vec, 1, -1)
-        res_for_1, hid_for_1 = self.lstm_for_1(vec_for, self.hid_for_1)
-        res_back_1, hid_back_1 = self.lstm_back_1(vec_back, self.hid_back_1)
-        vec_cat = [cat([res_for_1[i], res_back_1[num_vec - i - 1]]) for i in range(num_vec)]
-        vec_for_2 = torch.cat(vec_cat).view(num_vec, 1, -1)
-        vec_back_2 = torch.cat(list(reversed(vec_cat))).view(num_vec, 1, -1)
-        res_for_2, self.hid_for_2 = self.lstm_for_2(vec_for_2, self.hid_for_2)
-        res_back_2, self.hid_back_2 = self.lstm_back_2(vec_back_2, self.hid_back_2)
-        for i in range(num_vec):
-            lstm0 = res_for_2[i]
-            lstm1 = res_back_2[num_vec - i - 1]
-            sentence[i].vec = cat([lstm0, lstm1])
+        DependencyModel.getWordEmbeddings(self, sentence, train)
 
     def predict(self, sentence):
         self.getWordEmbeddings(sentence, False)
+
         stack = ParseForest([])
         buf = ParseForest(sentence)
         for root in sentence:
@@ -236,9 +150,10 @@ class TransitionModel(nn.Module):
                 if self.rlFlag:
                     parent.lstms[bestOp + hoffset] = child.vec
 
-    def train(self, sentence, errs):
-        dloss, deerrors, dlerrors, detotal = 0, 0, 0, 0
+    def forward(self, sentence, errs):
         self.getWordEmbeddings(sentence, True)
+
+        dloss, deerrors, dlerrors, detotal = 0, 0, 0, 0
         stack = ParseForest([])
         buf = ParseForest(sentence)
         for root in sentence:
@@ -300,11 +215,7 @@ class TransitionModel(nn.Module):
         evec = self.elookup(scalar(1)) if self.external_embedding is not None else None
         paddingWordVec = self.wlookup(scalar(1))
         paddingPosVec = self.plookup(scalar(1)) if self.pdims > 0 else None
-        paddingVec = torch.tanh(torch.mm(
-            cat([paddingWordVec, paddingPosVec, evec]),
-            self.word2lstm
-            )
-            + self.word2lstmbias)
+        paddingVec = torch.tanh(torch.mm(cat([paddingWordVec, paddingPosVec, evec]), self.word2lstm) + self.word2lstmbias)
         self.empty = paddingVec if self.nnvecs == 1 else cat([paddingVec for _ in range(self.nnvecs)])
 
 

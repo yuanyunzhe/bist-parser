@@ -1,15 +1,15 @@
 # -*- coding：utf-8 -*-
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 
+from torch import optim
 from utils import ParseForest, read_conll, write_conll
 from extend import *
 
 import utils, time, random
-import numpy as np
 import shutil
 
-import torch.autograd as autograd
 from graph import GraphModel
 from transition import TransitionModel
 
@@ -28,12 +28,16 @@ class HybridModel(nn.Module):
         self.graphTrainer = get_optim(options.optim, self.graphModel.parameters())
         self.transitionTrainer = get_optim(options.optim, self.transitionModel.parameters())
 
+        classifier = LinearClassifier(options.lstm_dims * 4)
+        self.classifier = classifier.cuda() if torch.cuda.is_available() else classifier
+        self.loss = nn.CrossEntropyLoss()
+        self.optimizer = optim.Adam(classifier.parameters(), lr=0.1)
+
     def predict(self, conll_path):
         self.transitionModel.init()
+        num_g, num_t = 0, 0
         with open(conll_path, "r") as conllFP:
             for iSentence, sentence in enumerate(read_conll(conllFP,False)):
-                rank = random.randint(0,1)
-
                 self.graphModel.hid_for_1, self.graphModel.hid_back_1, self.graphModel.hid_for_2, self.graphModel.hid_back_2 = [
                     self.graphModel.init_hidden(self.graphModel.ldims) for _ in range(4)]
                 conll_sentence0 = [entry for entry in sentence if isinstance(entry, utils.ConllEntry)]
@@ -46,7 +50,21 @@ class HybridModel(nn.Module):
                 conll_sentence1 = conll_sentence1[1:] + [conll_sentence1[0]]
                 self.transitionModel.predict(conll_sentence1)
 
+                vec = torch.cat((self.graphModel.vec, self.transitionModel.vec), 1)
+                vec = Variable(vec)
+
+                output = self.classifier(vec).data
+                \
+                if output[0, 0] > output[0, 1]:
+                    rank = 0
+                    num_g += 1
+                else:
+                    rank = 1
+                    num_t += 1
+
+                # rank = random.randint(0, 1)
                 yield conll_sentence[rank]
+        print("Graph-based:", num_g, "\nTransition-based:", num_t)
 
     def train(self, conll_path):
 
@@ -81,19 +99,25 @@ class HybridModel(nn.Module):
                     etotal = 0
 
                 conll_sentence0 = [entry for entry in sentence if isinstance(entry, utils.ConllEntry)]
-                e = self.graphModel.forward(conll_sentence0, errs_g, lerrs)
-                eerrors += e
-                eloss += e
-                mloss += e
+                graphLoss = self.graphModel.forward(conll_sentence0, errs_g, lerrs)
+                eerrors += graphLoss
+                eloss += graphLoss
+                mloss += graphLoss
                 etotal += len(sentence)
 
                 conll_sentence1 = [entry for entry in sentence if isinstance(entry, utils.ConllEntry)]
                 conll_sentence1 = conll_sentence1[1:] + [conll_sentence1[0]]
-                dloss, deerrors, dlerrors, detotal = self.transitionModel.train(conll_sentence1, errs_t)
-                eloss += dloss
-                mloss += dloss
+                transitionLoss, deerrors, dlerrors, detotal = self.transitionModel.forward(conll_sentence1, errs_t)
+                eloss += transitionLoss
+                mloss += transitionLoss
                 eerrors += deerrors
                 etotal += detotal
+
+                vec = torch.cat((self.graphModel.vec, self.transitionModel.vec), 1)
+                vec = Variable(vec)
+                self.selection(vec, graphLoss < transitionLoss)
+
+                # print((self.graphModel.vec - self.transitionModel.vec) / self.graphModel.vec)
 
                 if len(errs_g) > 0 or len(lerrs) > 0:
                     eerrs_g = torch.sum(cat(errs_g + lerrs))
@@ -126,6 +150,19 @@ class HybridModel(nn.Module):
         self.transitionTrainer.zero_grad()
         print("Loss: ", mloss / iSentence)
 
+    def selection(self, vec, isGraph):
+        # label = [[1, 0]] if isGraph else [[0, 1]]
+        label = [0] if isGraph else [1]
+
+        label = Variable(torch.LongTensor(label))
+
+        output = self.classifier(vec)
+        output = self.loss(output, label)
+        self.optimizer.zero_grad()
+        output.backward()
+        self.optimizer.step()
+
+
 class Hybrid:
     def __init__(self, vocab, pos, rels, enum_word, options, onto, cpos):
         model = HybridModel(vocab, pos, rels, enum_word, options, onto, cpos)
@@ -144,3 +181,18 @@ class Hybrid:
 
     def train(self, conll_path):
         self.model.train(conll_path)
+
+
+class LinearClassifier(nn.Module):
+    def __init__(self, dim):
+        super(LinearClassifier, self).__init__()
+        self.main = nn.Sequential(
+            nn.Linear(dim, dim // 2),
+            nn.ReLU(),
+            nn.Linear(dim // 2, dim // 5),
+            nn.ReLU(),
+            nn.Linear(dim // 5, 2)
+        )
+
+    def forward(self, x):
+        return self.main(x)

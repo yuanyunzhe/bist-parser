@@ -15,77 +15,9 @@ import shutil
 import decoder
 import torch.autograd as autograd
 
-class GraphModel(nn.Module):
+class GraphModel(DependencyModel):
     def __init__(self, vocab, pos, rels, enum_word, options, onto, cpos, lstm_for_1, lstm_back_1):
-        super(GraphModel, self).__init__()
-        random.seed(1)
-        self.activations = {'tanh': F.tanh,
-                            'sigmoid': F.sigmoid, 'relu': F.relu}
-        self.activation = self.activations[options.activation]
-
-        self.ldims = options.lstm_dims
-        self.wdims = options.wembedding_dims
-        self.pdims = options.pembedding_dims
-        self.rdims = options.rembedding_dims
-        self.odims = options.oembedding_dims
-        self.cdims = options.cembedding_dims
-        self.layers = options.lstm_layers
-        self.wordsCount = vocab
-        self.vocab = {word: ind + 3 for word, ind in enum_word.items()}
-        self.pos = {word: ind + 3 for ind, word in enumerate(pos)}
-        self.onto = {word: ind + 3 for ind, word in enumerate(onto)}
-        self.cpos = {word: ind + 3 for ind, word in enumerate(cpos)}
-        self.rels = {word: ind for ind, word in enumerate(rels)}
-        self.rel_list = rels
-        self.hidden_units = options.hidden_units
-        self.hidden2_units = options.hidden2_units
-
-        self.vocab['*PAD*'] = 1
-        self.pos['*PAD*'] = 1
-        self.onto['*PAD*'] = 1
-        self.cpos['*PAD*'] = 1
-        self.vocab['*INITIAL*'] = 2
-        self.pos['*INITIAL*'] = 2
-        self.onto['*INITIAL*'] = 2
-        self.cpos['*INITIAL*'] = 2
-
-        self.external_embedding, self.edim = None, 0
-
-        if options.external_embedding is not None:
-            external_embedding_fp = open(options.external_embedding, 'r')
-            external_embedding_fp.readline()
-            self.external_embedding = {line.split(' ')[0]: [float(f) for f in line.strip().split(' ')[1:]] for line in
-                                       external_embedding_fp}
-            external_embedding_fp.close()
-            self.edim = len(list(self.external_embedding.values())[0])
-            self.extrnd = {word: i + 3 for i,
-                           word in enumerate(self.external_embedding)}
-            np_emb = np.zeros((len(self.external_embedding) + 3, self.edim))
-            for word, i in self.extrnd.items():
-                np_emb[i] = self.external_embedding[word]
-            self.elookup = nn.Embedding(*np_emb.shape)
-            self.elookup.weight = Parameter(init=np_emb)
-            self.extrnd['*PAD*'] = 1
-            self.extrnd['*INITIAL*'] = 2
-            print('Load external embedding. Vector dimensions', self.edim)
-
-        # prepare LSTM
-        # self.lstm_for_1 = nn.LSTM(
-        #     self.wdims + self.pdims + self.edim + self.odims + self.cdims, self.ldims)
-        # self.lstm_back_1 = nn.LSTM(
-        #     self.wdims + self.pdims + self.edim + self.odims + self.cdims, self.ldims)
-        self.lstm_for_1 = lstm_for_1
-        self.lstm_back_1 = lstm_back_1
-        self.lstm_for_2 = nn.LSTM(self.ldims * 2, self.ldims)
-        self.lstm_back_2 = nn.LSTM(self.ldims * 2, self.ldims)
-        self.hid_for_1, self.hid_back_1, self.hid_for_2, self.hid_back_2 = [
-            self.init_hidden(self.ldims) for _ in range(4)]
-
-        self.wlookup = nn.Embedding(len(vocab) + 3, self.wdims)
-        self.plookup = nn.Embedding(len(pos) + 3, self.pdims)
-        self.rlookup = nn.Embedding(len(rels), self.rdims)
-        self.olookup = nn.Embedding(len(onto) + 3, self.odims)
-        self.clookup = nn.Embedding(len(cpos) + 3, self.cdims)
+        DependencyModel.__init__(self, vocab, pos, rels, enum_word, options, onto, cpos, lstm_for_1, lstm_back_1)
 
         self.hidLayerFOH = Parameter((self.ldims * 2, self.hidden_units))
         self.hidLayerFOM = Parameter((self.ldims * 2, self.hidden_units))
@@ -95,7 +27,6 @@ class GraphModel(nn.Module):
         self.rhidLayerFOM = Parameter((2 * self.ldims, self.hidden_units))
         self.rhidBias = Parameter((self.hidden_units))
         self.rcatBias = Parameter((self.hidden_units * 2))
-        #
         if self.hidden2_units:
             self.hid2Layer = Parameter(
                 (self.hidden_units * 2, self.hidden2_units))
@@ -103,27 +34,20 @@ class GraphModel(nn.Module):
             self.rhid2Layer = Parameter(
                 (self.hidden_units * 2, self.hidden2_units))
             self.rhid2Bias = Parameter((self.hidden2_units))
-
         self.outLayer = Parameter(
             (self.hidden2_units if self.hidden2_units > 0 else self.hidden_units, 1))
         self.outBias = 0  # Parameter(1)
         self.routLayer = Parameter(
-            (self.hidden2_units if self.hidden2_units > 0 else self.hidden_units, len(self.rel_list)))
-        self.routBias = Parameter((len(self.rel_list)))
-
-    def init_hidden(self, dim):
-        return (autograd.Variable(torch.zeros(1, 1, dim).cuda() if torch.cuda.is_available() else torch.zeros(1, 1, dim)),
-                autograd.Variable(torch.zeros(1, 1, dim).cuda() if torch.cuda.is_available() else torch.zeros(1, 1, dim)))
+            (self.hidden2_units if self.hidden2_units > 0 else self.hidden_units, len(self.irels)))
+        self.routBias = Parameter((len(self.irels)))
 
     def __getExpr(self, sentence, i, j, train):
 
         if sentence[i].headfov is None:
-            sentence[i].headfov = torch.mm(cat([sentence[i].lstms[0], sentence[i].lstms[1]]),
-                                           self.hidLayerFOH)
+            sentence[i].headfov = torch.mm(sentence[i].vec, self.hidLayerFOH)
 
         if sentence[j].modfov is None:
-            sentence[j].modfov = torch.mm(cat([sentence[j].lstms[0], sentence[j].lstms[1]]),
-                                          self.hidLayerFOM)
+            sentence[j].modfov = torch.mm(sentence[i].vec, self.hidLayerFOM)
 
         if self.hidden2_units > 0:
             output = torch.mm(
@@ -152,12 +76,10 @@ class GraphModel(nn.Module):
 
     def __evaluateLabel(self, sentence, i, j):
         if sentence[i].rheadfov is None:
-            sentence[i].rheadfov = torch.mm(cat([sentence[i].lstms[0], sentence[i].lstms[1]]),
-                                            self.rhidLayerFOH)
+            sentence[i].rheadfov = torch.mm(sentence[i].vec, self.rhidLayerFOH)
 
         if sentence[j].rmodfov is None:
-            sentence[j].rmodfov = torch.mm(cat([sentence[j].lstms[0], sentence[j].lstms[1]]),
-                                           self.rhidLayerFOM)
+            sentence[j].rmodfov = torch.mm(sentence[i].vec, self.rhidLayerFOM)
 
         if self.hidden2_units > 0:
             output = torch.mm(
@@ -180,20 +102,9 @@ class GraphModel(nn.Module):
 
         return get_data(output).numpy()[0], output[0]
 
-    def predict(self, sentence):
+    def getWordEmbeddings(self, sentence, train):
+        DependencyModel.getWordEmbeddings(self, sentence, train)
         for entry in sentence:
-            wordvec = self.wlookup(
-                scalar(int(self.vocab.get(entry.norm, 0)))) if self.wdims > 0 else None
-            posvec = self.plookup(
-                scalar(int(self.pos[entry.pos]))) if self.pdims > 0 else None
-            ontovec = self.olookup(
-                scalar(int(self.onto[entry.onto]))) if self.odims > 0 else None
-            cposvec = self.clookup(
-                scalar(int(self.cpos[entry.cpos]))) if self.cdims > 0 else None
-            evec = self.elookup(scalar(int(self.extrnd.get(entry.form,
-                                                           self.extrnd.get(entry.norm, 0))))) if self.external_embedding is not None else None
-            entry.vec = cat([wordvec, posvec, ontovec, cposvec, evec])
-
             entry.lstms = [entry.vec, entry.vec]
             entry.headfov = None
             entry.modfov = None
@@ -201,27 +112,8 @@ class GraphModel(nn.Module):
             entry.rheadfov = None
             entry.rmodfov = None
 
-        num_vec = len(sentence)
-        vec_for = torch.cat(
-            [entry.vec for entry in sentence]).view(num_vec, 1, -1)
-        vec_back = torch.cat(
-            [entry.vec for entry in reversed(sentence)]).view(num_vec, 1, -1)
-        res_for_1, self.hid_for_1 = self.lstm_for_1(vec_for, self.hid_for_1)
-        res_back_1, self.hid_back_1 = self.lstm_back_1(
-            vec_back, self.hid_back_1)
-
-        vec_cat = [cat([res_for_1[i], res_back_1[num_vec - i - 1]])
-                   for i in range(num_vec)]
-
-        vec_for_2 = torch.cat(vec_cat).view(num_vec, 1, -1)
-        vec_back_2 = torch.cat(list(reversed(vec_cat))).view(num_vec, 1, -1)
-        res_for_2, self.hid_for_2 = self.lstm_for_2(vec_for_2, self.hid_for_2)
-        res_back_2, self.hid_back_2 = self.lstm_back_2(
-            vec_back_2, self.hid_back_2)
-
-        for i in range(num_vec):
-            sentence[i].lstms[0] = res_for_2[i]
-            sentence[i].lstms[1] = res_back_2[num_vec - i - 1]
+    def predict(self, sentence):
+        self.getWordEmbeddings(sentence, False)
 
         scores, exprs = self.__evaluate(sentence, True)
         heads = decoder.parse_proj(scores)
@@ -234,64 +126,11 @@ class GraphModel(nn.Module):
         for modifier, head in enumerate(head_list[1:]):
             scores, exprs = self.__evaluateLabel(
                 sentence, head, modifier + 1)
-            sentence[modifier + 1].pred_relation = self.rel_list[max(
+            sentence[modifier + 1].pred_relation = self.irels[max(
                 enumerate(scores), key=itemgetter(1))[0]]
 
     def forward(self, sentence, errs, lerrs):
-
-        for entry in sentence:
-            c = float(self.wordsCount.get(entry.norm, 0))
-            dropFlag = (random.random() < (c / (0.33 + c)))
-            wordvec = self.wlookup(scalar(
-                int(self.vocab.get(entry.norm, 0)) if dropFlag else 0)) if self.wdims > 0 else None
-
-            ontovec = self.olookup(
-                scalar(int(self.onto[entry.onto]))) if self.odims > 0 else None
-            cposvec = self.clookup(
-                scalar(int(self.cpos[entry.cpos]))) if self.cdims > 0 else None
-            posvec = self.plookup(
-                scalar(int(self.pos[entry.pos]))) if self.pdims > 0 else None
-            # posvec = self.plookup(
-            #     scalar(0 if dropFlag and random.random() < 0.1 else int(self.pos[entry.pos]))) if self.pdims > 0 else None
-            # ontovec = self.olookup(scalar(int(self.onto[entry.onto]) if random.random(
-            # ) < 0.9 else 0)) if self.odims > 0 else None
-            # cposvec = self.clookup(scalar(int(self.cpos[entry.cpos]) if random.random(
-            # ) < 0.9 else 0)) if self.cdims > 0 else None
-            evec = None
-            if self.external_embedding is not None:
-                evec = self.elookup(scalar(self.extrnd.get(entry.form, self.extrnd.get(entry.norm, 0)) if (
-                    dropFlag or (random.random() < 0.5)) else 0))
-
-            entry.vec = cat([wordvec, posvec, ontovec, cposvec, evec])
-            entry.lstms = [entry.vec, entry.vec]
-            entry.headfov = None
-            entry.modfov = None
-
-            entry.rheadfov = None
-            entry.rmodfov = None
-
-        num_vec = len(sentence)
-        vec_for = torch.cat(
-            [entry.vec for entry in sentence]).view(num_vec, 1, -1)
-        vec_back = torch.cat(
-            [entry.vec for entry in reversed(sentence)]).view(num_vec, 1, -1)
-
-        res_for_1, self.hid_for_1 = self.lstm_for_1(vec_for, self.hid_for_1)
-        res_back_1, self.hid_back_1 = self.lstm_back_1(
-            vec_back, self.hid_back_1)
-
-        vec_cat = [cat([res_for_1[i], res_back_1[num_vec - i - 1]])
-                   for i in range(num_vec)]
-
-        vec_for_2 = torch.cat(vec_cat).view(num_vec, 1, -1)
-        vec_back_2 = torch.cat(list(reversed(vec_cat))).view(num_vec, 1, -1)
-        res_for_2, self.hid_for_2 = self.lstm_for_2(vec_for_2, self.hid_for_2)
-        res_back_2, self.hid_back_2 = self.lstm_back_2(
-            vec_back_2, self.hid_back_2)
-
-        for i in range(num_vec):
-            sentence[i].lstms[0] = res_for_2[i]
-            sentence[i].lstms[1] = res_back_2[num_vec - i - 1]
+        self.getWordEmbeddings(sentence, True)
 
         scores, exprs = self.__evaluate(sentence, True)
         gold = [entry.parent_id for entry in sentence]

@@ -17,14 +17,13 @@ class ParseForest:
             root.children = []
             root.scores = None
             root.parent = None
-            root.pred_parent_id = 0 # None
-            root.pred_relation = 'rroot' # None
+            root.pred_parent_id = 0  # None
+            root.pred_relation = 'rroot'  # None
             root.vecs = None
             root.lstms = None
 
     def __len__(self):
         return len(self.roots)
-
 
     def Attach(self, parent_index, child_index):
         parent = self.roots[parent_index]
@@ -53,7 +52,9 @@ class ConllEntry:
         self.pred_relation = None
 
     def __str__(self):
-        values = [str(self.id), self.form, self.onto, self.pos, self.cpos, self.feats, str(self.pred_parent_id) if self.pred_parent_id is not None else None, self.pred_relation, self.deps, self.misc]
+        values = [str(self.id), self.form, self.onto, self.pos, self.cpos, self.feats,
+                  str(self.pred_parent_id) if self.pred_parent_id is not None else None, self.pred_relation, self.deps,
+                  self.misc]
         return '\t'.join(['_' if v is None else v for v in values])
 
 
@@ -63,13 +64,13 @@ def isProj(sentence):
 
     for _ in range(len(sentence)):
         for i in range(len(forest.roots) - 1):
-            if forest.roots[i].parent_id == forest.roots[i+1].id and unassigned[forest.roots[i].id] == 0:
-                unassigned[forest.roots[i+1].id]-=1
-                forest.Attach(i+1, i)
+            if forest.roots[i].parent_id == forest.roots[i + 1].id and unassigned[forest.roots[i].id] == 0:
+                unassigned[forest.roots[i + 1].id] -= 1
+                forest.Attach(i + 1, i)
                 break
-            if forest.roots[i+1].parent_id == forest.roots[i].id and unassigned[forest.roots[i+1].id] == 0:
-                unassigned[forest.roots[i].id]-=1
-                forest.Attach(i, i+1)
+            if forest.roots[i + 1].parent_id == forest.roots[i].id and unassigned[forest.roots[i + 1].id] == 0:
+                unassigned[forest.roots[i].id] -= 1
+                forest.Attach(i, i + 1)
                 break
 
     return len(forest.roots) == 1
@@ -87,7 +88,7 @@ def read_conll(fh, proj=False):
                 if not proj or isProj([t for t in tokens if isinstance(t, ConllEntry)]):
                     yield tokens
                 else:
-                    #print 'Non-projective sentence dropped'
+                    # print 'Non-projective sentence dropped'
                     dropped += 1
                 read += 1
             tokens = [root]
@@ -95,7 +96,8 @@ def read_conll(fh, proj=False):
             if line[0] == '#' or '-' in tok[0] or '.' in tok[0]:
                 tokens.append(line.strip())
             else:
-                tokens.append(ConllEntry(int(tok[0]), tok[1], tok[2], tok[4], tok[3], tok[5], int(tok[6]) if tok[6] != '_' else -1, tok[7], tok[8], tok[9]))
+                tokens.append(ConllEntry(int(tok[0]), tok[1], tok[2], tok[4], tok[3], tok[5],
+                                         int(tok[6]) if tok[6] != '_' else -1, tok[7], tok[8], tok[9]))
     if len(tokens) > 1:
         yield tokens
 
@@ -117,10 +119,11 @@ def vocab(conll_path):
             relCount.update([node.relation for node in sentence if isinstance(node, ConllEntry)])
             ontoCount.update([node.onto for node in sentence if isinstance(node, ConllEntry)])
             cposCount.update([node.cpos for node in sentence if isinstance(node, ConllEntry)])
-    
+
     print('the amount of kind of words, pos-tag, relations, ontology, cpos_tag:',
           len(wordsCount), len(posCount), len(relCount), len(ontoCount), len(cposCount))
-    return (wordsCount, {w: i for i, w in enumerate(wordsCount.keys())}, list(posCount.keys()), list(relCount.keys()), list(ontoCount.keys()), list(cposCount.keys()))
+    return (wordsCount, {w: i for i, w in enumerate(wordsCount.keys())}, list(posCount.keys()), list(relCount.keys()),
+            list(ontoCount.keys()), list(cposCount.keys()))
 
 
 def write_conll(fn, conll_gen):
@@ -131,8 +134,12 @@ def write_conll(fn, conll_gen):
             fh.write('\n')
 
 
-cposTable = {"PRP$": "PRON", "VBG": "VERB", "VBD": "VERB", "VBN": "VERB", ",": ".", "''": ".", "VBP": "VERB", "WDT": "DET", "JJ": "ADJ", "WP": "PRON", "VBZ": "VERB", 
-             "DT": "DET", "#": ".", "RP": "PRT", "$": ".", "NN": "NOUN", ")": ".", "(": ".", "FW": "X", "POS": "PRT", ".": ".", "TO": "PRT", "PRP": "PRON", "RB": "ADV", 
-             ":": ".", "NNS": "NOUN", "NNP": "NOUN", "``": ".", "WRB": "ADV", "CC": "CONJ", "LS": "X", "PDT": "DET", "RBS": "ADV", "RBR": "ADV", "CD": "NUM", "EX": "DET", 
-             "IN": "ADP", "WP$": "PRON", "MD": "VERB", "NNPS": "NOUN", "JJS": "ADJ", "JJR": "ADJ", "SYM": "X", "VB": "VERB", "UH": "X", "ROOT-POS": "ROOT-CPOS", 
+cposTable = {"PRP$": "PRON", "VBG": "VERB", "VBD": "VERB", "VBN": "VERB", ",": ".", "''": ".", "VBP": "VERB",
+             "WDT": "DET", "JJ": "ADJ", "WP": "PRON", "VBZ": "VERB",
+             "DT": "DET", "#": ".", "RP": "PRT", "$": ".", "NN": "NOUN", ")": ".", "(": ".", "FW": "X", "POS": "PRT",
+             ".": ".", "TO": "PRT", "PRP": "PRON", "RB": "ADV",
+             ":": ".", "NNS": "NOUN", "NNP": "NOUN", "``": ".", "WRB": "ADV", "CC": "CONJ", "LS": "X", "PDT": "DET",
+             "RBS": "ADV", "RBR": "ADV", "CD": "NUM", "EX": "DET",
+             "IN": "ADP", "WP$": "PRON", "MD": "VERB", "NNPS": "NOUN", "JJS": "ADJ", "JJR": "ADJ", "SYM": "X",
+             "VB": "VERB", "UH": "X", "ROOT-POS": "ROOT-CPOS",
              "-LRB-": ".", "-RRB-": "."}

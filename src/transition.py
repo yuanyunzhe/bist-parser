@@ -14,7 +14,7 @@ import shutil
 
 
 class TransitionModel(nn.Module):
-    def __init__(self, vocab, pos, rels, enum_word, options, onto, cpos):
+    def __init__(self, vocab, pos, rels, enum_word, options, onto, cpos, lstm_for_1, lstm_back_1):
         super(TransitionModel, self).__init__()
         random.seed(1)
         self.gpu = options.gpu
@@ -57,8 +57,10 @@ class TransitionModel(nn.Module):
             print('Load external embedding. Vector dimensions', self.edims)
 
         dims = self.wdims + self.pdims + self.edims
-        self.lstm_for_1 = nn.LSTM(dims, self.ldims)
-        self.lstm_back_1 = nn.LSTM(dims, self.ldims)
+        # self.lstm_for_1 = nn.LSTM(dims, self.ldims)
+        # self.lstm_back_1 = nn.LSTM(dims, self.ldims)
+        self.lstm_for_1 = lstm_for_1
+        self.lstm_back_1 = lstm_back_1
         self.lstm_for_2 = nn.LSTM(self.ldims * 2, self.ldims)
         self.lstm_back_2 = nn.LSTM(self.ldims * 2, self.ldims)
         self.hid_for_1, self.hid_back_1, self.hid_for_2, self.hid_back_2 = [
@@ -293,7 +295,7 @@ class TransitionModel(nn.Module):
                     deerrors += 1
             detotal += 1
         return dloss, deerrors, dlerrors, detotal
-            
+
     def init(self):
         evec = self.elookup(scalar(1)) if self.external_embedding is not None else None
         paddingWordVec = self.wlookup(scalar(1))
@@ -301,7 +303,7 @@ class TransitionModel(nn.Module):
         paddingVec = torch.tanh(torch.mm(
             cat([paddingWordVec, paddingPosVec, evec]),
             self.word2lstm
-            ) 
+            )
             + self.word2lstmbias)
         self.empty = paddingVec if self.nnvecs == 1 else cat([paddingVec for _ in range(self.nnvecs)])
 
@@ -340,7 +342,7 @@ class Transition:
         eloss = 0.0
         eerrors = 0
         lerrors = 0
-        etotal = 0        
+        etotal = 0
         hoffset = 1 if self.headFlag else 0
         start = time.time()
 

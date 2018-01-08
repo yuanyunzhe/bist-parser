@@ -16,9 +16,9 @@ if __name__ == '__main__':
 
     # I/O
     parser.add_option("--outdir", type="string", dest="output", default="results")
-    parser.add_option("--train", dest="conll_train", help="Annotated CONLL train file", metavar="FILE", default="corpus/en-ud-train.conllu")
-    parser.add_option("--dev", dest="conll_dev", help="Annotated CONLL dev file", metavar="FILE", default="corpus/en-ud-dev.conllu")
-    parser.add_option("--test", dest="conll_test", help="Annotated CONLL test file", metavar="FILE", default="corpus/en-ud-test.conllu")
+    parser.add_option("--train", dest="conll_train", help="Annotated CONLL train file", metavar="FILE", default="corpus/en-ud-train-dropped.conllu")
+    parser.add_option("--dev", dest="conll_dev", help="Annotated CONLL dev file", metavar="FILE", default="corpus/en-ud-dev-dropped.conllu")
+    parser.add_option("--test", dest="conll_test", help="Annotated CONLL test file", metavar="FILE", default="corpus/en-ud-test-dropped.conllu")
     parser.add_option("--params", dest="params", help="Parameters file", metavar="FILE", default="params.pickle")
     parser.add_option("--extrn", dest="external_embedding", help="External embeddings", metavar="FILE")
     parser.add_option("--model", dest="model", help="Load/Save model file", metavar="FILE", default="barchybrid.model")
@@ -29,7 +29,7 @@ if __name__ == '__main__':
     parser.add_option("--pembedding", type="int", dest="pembedding_dims", default=25)
     parser.add_option("--rembedding", type="int", dest="rembedding_dims", default=25)
     parser.add_option("--oembedding", type="int", dest="oembedding_dims", default=0) #ontology
-    parser.add_option("--cembedding", type="int", dest="cembedding_dims", default=0) #cpos
+    parser.add_option("--cembedding", type="int", dest="cembedding_dims", default=10) #cpos
 
     # Learning
     parser.add_option("--epochs", type="int", dest="epochs", default=30)

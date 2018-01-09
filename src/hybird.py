@@ -52,9 +52,8 @@ class HybridModel(nn.Module):
 
                 input = torch.cat((self.graphModel.vec, self.transitionModel.vec), 1)
                 output = self.classifier(Variable(input))
-                # print(output)
 
-                _, rank = torch.max(output.data, 1)
+                _, rank = torch.max(torch.abs(output.data), 1)
                 rank = rank[0]
                 if rank == 0:
                     num_g += 1
@@ -117,12 +116,6 @@ class HybridModel(nn.Module):
 
                 parse_vec.append(torch.cat((self.graphModel.vec, self.transitionModel.vec), 1))
                 parse_lbl.append(0 if graphLoss * 3 < transitionLoss else 1)
-                if len(parse_vec) > 100:
-                    input = torch.cat(parse_vec, 0)
-                    label = torch.LongTensor(parse_lbl)
-                    self.selection(input, label)
-                    parse_vec = []
-                    parse_lbl = []
 
                 # print((self.graphModel.vec - self.transitionModel.vec) / self.graphModel.vec)
 
@@ -161,16 +154,12 @@ class HybridModel(nn.Module):
         self.transitionTrainer.zero_grad()
         print("Loss: ", mloss / iSentence)
 
-    def selection(self, input, label):
-        # print(input.data.shape)
-        input, label = Variable(input), Variable(label)
-        for i in range(50):
+        input = Variable(torch.cat(parse_vec, 0))
+        label = Variable(torch.LongTensor(parse_lbl))
+
+        for i in range(100):
             output = self.classifier(input)
-            # print(output[0][0], output[0][1], "  ~~~~~~~~~", )
-            # print(output.data.shape, label.data.shape)
             output = self.loss(output, label)
-            # print("         ", output[0][0], output[0][1])
-            # print(output)
             self.optimizer.zero_grad()
             output.backward()
             self.optimizer.step()

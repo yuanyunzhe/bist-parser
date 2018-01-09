@@ -29,7 +29,7 @@ if __name__ == '__main__':
     parser.add_option("--pembedding", type="int", dest="pembedding_dims", default=25)
     parser.add_option("--rembedding", type="int", dest="rembedding_dims", default=25)
     parser.add_option("--oembedding", type="int", dest="oembedding_dims", default=0) #ontology
-    parser.add_option("--cembedding", type="int", dest="cembedding_dims", default=10) #cpos
+    parser.add_option("--cembedding", type="int", dest="cembedding_dims", default=25) #cpos
 
     # Learning
     parser.add_option("--epochs", type="int", dest="epochs", default=30)

@@ -5,7 +5,6 @@
 5	几天	m	服装尺码	m	-	4	XS	-	-
 6	发货	v	v	v	-	4	LD	-	-
 
-
 1	到货	vn	vn	vn	-	0	ROOT	-	-
 2	会	v	v	v	-	5	QTZ	-	-
 3	不会	v	v	v	-	2	BL	-	-
@@ -16,7 +15,6 @@
 8	啊	y	y	y	-	7	QZ	-	-
 9	?	w	w	w	-	7	DP	-	-
 
-
 1	我	rr	rr	rr	-	3	ZW	-	-
 2	已经	时间副词	副词	d	-	3	XS	-	-
 3	发	物流动作	动作	v	-	0	ROOT	-	-
@@ -24,7 +22,6 @@
 5	退货	交易动作	动作	vi	-	6	XS	-	-
 6	申请	申请	v	v	-	3	DB	-	-
 7	了	ule	ule	ule	-	3	WZ	-	-
-
 
 1	我	rr	rr	rr	-	2	XS	-	-
 2	剩下	v	v	v	-	5	XS	-	-
@@ -36,7 +33,6 @@
 8	发货	vi	vi	vi	-	0	ROOT	-	-
 9	呢	y	y	y	-	8	QZ	-	-
 
-
 1	好滴	u	u	u	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	等	udeng	udeng	udeng	-	0	ROOT	-	-
@@ -45,13 +41,11 @@
 6	谢谢	v	v	v	-	0	ROOT	-	-
 7	/:087	l	服装尺码	l	-	0	ROOT	-	-
 
-
 1	好	a	a	a	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	不要	d	d	d	-	4	XS	-	-
 4	等	udeng	udeng	udeng	-	0	ROOT	-	-
 5	太久	nz	nz	nz	-	4	DB	-	-
-
 
 1	请问	语气助动词	副词	v	-	0	ROOT	-	-
 2	166	m	服装尺码	m	-	0	ROOT	-	-
@@ -63,14 +57,12 @@
 8	大	商品状态	状态	a	-	6	DB	-	-
 9	的	uj	uj	uj	-	8	XZ	-	-
 
-
 1	15天	m	服装尺码	m	-	3	XS	-	-
 2	的	ude1	ude1	ude1	-	1	XZ	-	-
 3	时候	n	n	n	-	5	XS	-	-
 4	才	d	d	d	-	5	XS	-	-
 5	发货	vi	vi	vi	-	0	ROOT	-	-
 6	?	w	w	w	-	5	DP	-	-
-
 
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -79,13 +71,11 @@
 5	发货	vi	vi	vi	-	0	ROOT	-	-
 6	最慢	速度状态	状态	nz	-	5	XS	-	-
 
-
 1	双11	t	t	t	-	3	XS	-	-
 2	什么	什么	疑问词	ry	-	3	XS	-	-
 3	活动	vn	vn	vn	-	0	ROOT	-	-
 4	呢	y	y	y	-	3	QZ	-	-
 5	?	w	w	w	-	3	DP	-	-
-
 
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	120斤	m	服装尺码	m	-	0	ROOT	-	-
@@ -94,7 +84,6 @@
 5	穿	商品动作	动作	v	-	0	ROOT	-	-
 6	吗	y	y	y	-	5	QZ	-	-
 7	?	w	w	w	-	5	DP	-	-
-
 
 1	选	v	v	v	-	0	ROOT	-	-
 2	好	a	a	a	-	1	XS	-	-
@@ -112,7 +101,6 @@
 14	很	程度副词	副词	d	-	15	XS	-	-
 15	好	a	a	a	-	0	ROOT	-	-
 
-
 1	检查	vn	vn	vn	-	0	ROOT	-	-
 2	好	a	a	a	-	1	XS	-	-
 3	，	w	w	w	-	1	DP	-	-
@@ -120,13 +108,11 @@
 5	再有	v	v	v	-	0	ROOT	-	-
 6	问题	问题	商品信息	n	-	5	DB	-	-
 
-
 1	五天	mq	mq	mq	-	5	XS	-	-
 2	了	ule	ule	ule	-	1	WZ	-	-
 3	还	d	d	d	-	4	XS	-	-
 4	不	否定副词	副词	d	-	5	XS	-	-
 5	发货	vi	vi	vi	-	0	ROOT	-	-
-
 
 1	以后	时间副词	副词	f	-	4	XS	-	-
 2	也	d	d	d	-	4	XS	-	-
@@ -134,7 +120,6 @@
 4	进	vf	vf	vf	-	0	ROOT	-	-
 5	了	ule	ule	ule	-	4	WZ	-	-
 6	吗	y	y	y	-	4	QZ	-	-
-
 
 1	两件	mq	mq	mq	-	2	XS	-	-
 2	衣服	衣物类	商品	n	-	4	DB	-	-
@@ -149,7 +134,6 @@
 11	吗	y	y	y	-	10	QZ	-	-
 12	?	w	w	w	-	10	DP	-	-
 
-
 1	刚	d	d	d	-	2	XS	-	-
 2	收到	v	v	v	-	0	ROOT	-	-
 3	的	uj	uj	uj	-	2	XZ	-	-
@@ -158,7 +142,6 @@
 6	烂	负面	评价	v	-	0	ROOT	-	-
 7	个	q	q	q	-	8	XS	-	-
 8	洞	n	n	n	-	6	DB	-	-
-
 
 1	在	p	p	p	-	2	JZ	-	-
 2	你家	店家称谓	称谓	r	-	3	XS	-	-
@@ -170,12 +153,10 @@
 8	不	否定副词	副词	d	-	9	XS	-	-
 9	合适	商品状态	状态	a	-	7	LD	-	-
 
-
 1	好	a	a	a	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	发	物流动作	动作	v	-	4	XS	-	-
 4	申通	物流方式	物流相关	nz	-	0	ROOT	-	-
-
 
 1	这个	rz	rz	rz	-	2	XS	-	-
 2	裤	裤类	商品	n	-	0	ROOT	-	-
@@ -188,7 +169,6 @@
 9	号	号	服装尺码	q	-	7	DB	-	-
 10	啊	y	y	y	-	7	QZ	-	-
 
-
 1	我	r	r	r	-	2	XS	-	-
 2	身高	身高	人物属性	n	-	3	ZW	-	-
 3	163	m	服装尺码	m	-	0	ROOT	-	-
@@ -200,13 +180,11 @@
 9	就	时间副词	副词	d	-	10	XS	-	-
 10	ok	en	en	en	-	0	ROOT	-	-
 
-
 1	慢	速度状态	状态	a	-	4	ZW	-	-
 2	也	d	d	d	-	4	XS	-	-
 3	要	意向动作	动作	v	-	4	QTZ	-	-
 4	适可而止	vl	vl	vl	-	0	ROOT	-	-
 5	吧	y	y	y	-	4	QZ	-	-
-
 
 1	但是	c	c	c	-	3	LZ	-	-
 2	我	rr	rr	rr	-	3	ZW	-	-
@@ -217,7 +195,6 @@
 7	都	d	d	d	-	8	XS	-	-
 8	大	商品状态	状态	a	-	0	ROOT	-	-
 9	了	ule	ule	ule	-	8	WZ	-	-
-
 
 1	我	r	r	r	-	2	ZW	-	-
 2	170	m	服装尺码	m	-	0	ROOT	-	-
@@ -233,14 +210,12 @@
 12	呢	y	y	y	-	9	QZ	-	-
 13	？	w	w	w	-	9	DP	-	-
 
-
 1	你	rr	rr	rr	-	5	ZW	-	-
 2	就	时间副词	副词	d	-	5	XS	-	-
 3	给	p	p	p	-	4	JZ	-	-
 4	我	rr	rr	rr	-	5	XS	-	-
 5	便宜	a	a	a	-	0	ROOT	-	-
 6	吧	y	y	y	-	5	QZ	-	-
-
 
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	忘	失误动作	动作	v	-	0	ROOT	-	-
@@ -250,20 +225,17 @@
 6	已经	时间副词	副词	d	-	7	XS	-	-
 7	购	交易动作	动作	v	-	0	ROOT	-	-
 
-
 1	哦	e	e	e	-	0	ROOT	-	-
 2	哦	e	e	e	-	0	ROOT	-	-
 3	,	w	w	w	-	2	DP	-	-
 4	那	rzv	rzv	rzv	-	5	LZ	-	-
 5	好吧	u	u	u	-	0	ROOT	-	-
 
-
 1	今天	t	t	t	-	2	XS	-	-
 2	收到	v	v	v	-	0	ROOT	-	-
 3	你家	店家称谓	称谓	r	-	5	XS	-	-
 4	的	ude1	ude1	ude1	-	3	XZ	-	-
 5	衣服	衣物类	商品	n	-	2	DB	-	-
-
 
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -275,7 +247,6 @@
 8	价格	价格	商品信息	n	-	6	DB	-	-
 9	吗	y	y	y	-	6	QZ	-	-
 
-
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	购	交易动作	动作	v	-	4	XS	-	-
 3	的	ude1	ude1	ude1	-	2	XZ	-	-
@@ -286,14 +257,12 @@
 8	吗	y	y	y	-	7	QZ	-	-
 9	?	w	w	w	-	7	DP	-	-
 
-
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	请问	语气助动词	副词	v	-	0	ROOT	-	-
 4	在	p	p	p	-	3	LD	-	-
 5	吗	y	y	y	-	3	QZ	-	-
 6	?	w	w	w	-	3	DP	-	-
-
 
 1	这	r	r	r	-	2	XS	-	-
 2	裙	裙类	商品	n	-	3	ZW	-	-
@@ -305,7 +274,6 @@
 8	吗	y	y	y	-	7	QZ	-	-
 9	？	w	w	w	-	7	DP	-	-
 
-
 1	双11	t	t	t	-	4	XS	-	-
 2	还	d	d	d	-	4	XS	-	-
 3	会	v	v	v	-	4	QTZ	-	-
@@ -313,14 +281,12 @@
 5	吗	y	y	y	-	4	QZ	-	-
 6	?	w	w	w	-	4	DP	-	-
 
-
 1	太大	商品状态	状态	d	-	0	ROOT	-	-
 2	了	ule	ule	ule	-	1	WZ	-	-
 3	,	w	w	w	-	1	DP	-	-
 4	没人	l	服装尺码	l	-	6	ZW	-	-
 5	能	v	v	v	-	6	QTZ	-	-
 6	穿	商品动作	动作	v	-	0	ROOT	-	-
-
 
 1	怎么	ryv	ryv	ryv	-	2	XS	-	-
 2	物流	n	n	n	-	4	XS	-	-
@@ -330,14 +296,12 @@
 6	收件	物流动作	动作	nz	-	4	LD	-	-
 7	呢	y	y	y	-	4	QZ	-	-
 
-
 1	到	v	v	v	-	2	JZ	-	-
 2	11	m	服装尺码	m	-	5	XS	-	-
 3	才	d	d	d	-	5	XS	-	-
 4	可以	v	v	v	-	5	QTZ	-	-
 5	购	交易动作	动作	v	-	0	ROOT	-	-
 6	吗	y	y	y	-	5	QZ	-	-
-
 
 1	嗯	e	e	e	-	0	ROOT	-	-
 2	嗯	e	e	e	-	0	ROOT	-	-
@@ -348,7 +312,6 @@
 7	冷	天气状态	状态	a	-	5	LD	-	-
 8	吧	y	y	y	-	5	QZ	-	-
 
-
 1	今天	t	t	t	-	2	XS	-	-
 2	购	交易动作	动作	v	-	7	XS	-	-
 3	的	ude1	ude1	ude1	-	2	XZ	-	-
@@ -357,7 +320,6 @@
 6	能	v	v	v	-	7	QTZ	-	-
 7	发	物流动作	动作	v	-	0	ROOT	-	-
 
-
 1	你	rr	rr	rr	-	2	ZW	-	-
 2	发	物流动作	动作	v	-	0	ROOT	-	-
 3	个	q	q	q	-	4	XS	-	-
@@ -365,7 +327,6 @@
 5	给	p	p	p	-	6	JZ	-	-
 6	我	rr	rr	rr	-	2	XS	-	-
 7	ba	en	en	en	-	2	DP	-	-
-
 
 1	亲	通用称谓	称谓	v	-	0	ROOT	-	-
 2	我	r	r	r	-	3	XS	-	-
@@ -379,7 +340,6 @@
 10	大	商品状态	状态	a	-	8	DB	-	-
 11	的	uj	uj	uj	-	10	XZ	-	-
 
-
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	怎么	ryv	ryv	ryv	-	4	XS	-	-
@@ -387,7 +347,6 @@
 5	邮费	费用	商品信息	n	-	4	DB	-	-
 6	呢	y	y	y	-	4	QZ	-	-
 7	?	w	w	w	-	4	DP	-	-
-
 
 1	我	rr	rr	rr	-	6	ZW	-	-
 2	也	d	d	d	-	6	XS	-	-
@@ -397,7 +356,6 @@
 6	常客	消费者类	人物	n	-	0	ROOT	-	-
 7	啦	y	y	y	-	6	QZ	-	-
 
-
 1	我	r	r	r	-	3	ZW	-	-
 2	要	意向动作	动作	v	-	3	QTZ	-	-
 3	出门	v	v	v	-	0	ROOT	-	-
@@ -405,20 +363,17 @@
 5	邮	物流动作	动作	v	-	4	LD	-	-
 6	了	ul	ul	ul	-	3	WZ	-	-
 
-
 1	怎么	ryv	ryv	ryv	-	4	XS	-	-
 2	价格	价格	商品信息	n	-	4	ZW	-	-
 3	不	否定副词	副词	d	-	4	XS	-	-
 4	一样	uyy	uyy	uyy	-	0	ROOT	-	-
 5	啊	y	y	y	-	4	QZ	-	-
 
-
 1	再	d	d	d	-	2	XS	-	-
 2	晚	时间状态	状态	tg	-	3	XS	-	-
 3	收不到	v	v	v	-	0	ROOT	-	-
 4	货	物流物品	物流相关	n	-	3	DB	-	-
 5	了	ule	ule	ule	-	3	WZ	-	-
-
 
 1	哦	e	e	e	-	0	ROOT	-	-
 2	!	w	w	w	-	1	DP	-	-
@@ -429,7 +384,6 @@
 7	?	w	w	w	-	5	DP	-	-
 8	?	w	w	w	-	5	DP	-	-
 
-
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	160	m	服装尺码	m	-	6	ZW	-	-
@@ -439,13 +393,11 @@
 7	什么	什么	疑问词	ry	-	8	XS	-	-
 8	码	码	服装尺码	v	-	6	DB	-	-
 
-
 1	双十一	nz	nz	nz	-	2	XS	-	-
 2	没	d	d	d	-	0	ROOT	-	-
 3	活动	vn	vn	vn	-	2	DB	-	-
 4	么	y	y	y	-	2	QZ	-	-
 5	?	w	w	w	-	2	DP	-	-
-
 
 1	这个	r	r	r	-	4	ZW	-	-
 2	是	v	v	v	-	4	JZ	-	-
@@ -453,7 +405,6 @@
 4	腰	上半身部位	身体部位	n	-	0	ROOT	-	-
 5	的	uj	uj	uj	-	4	XZ	-	-
 6	吗	y	y	y	-	4	QZ	-	-
-
 
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	!	w	w	w	-	1	DP	-	-
@@ -463,7 +414,6 @@
 6	能	v	v	v	-	7	QTZ	-	-
 7	发货	vi	vi	vi	-	3	DB	-	-
 8	?	w	w	w	-	3	DP	-	-
-
 
 1	商品	商品	商品	n	-	0	ROOT	-	-
 2	，	w	w	w	-	1	DP	-	-
@@ -475,7 +425,6 @@
 8	肥	商品状态	状态	v	-	0	ROOT	-	-
 9	了	ul	ul	ul	-	8	WZ	-	-
 
-
 1	跟	p	p	p	-	2	JZ	-	-
 2	我	r	r	r	-	3	XS	-	-
 3	给	p	p	p	-	7	ZW	-	-
@@ -484,7 +433,6 @@
 6	时间	n	n	n	-	3	DB	-	-
 7	也好	y	y	y	-	0	ROOT	-	-
 8	啊	y	y	y	-	7	QZ	-	-
-
 
 1	我	r	r	r	-	2	ZW	-	-
 2	购	交易动作	动作	v	-	6	ZW	-	-
@@ -501,14 +449,12 @@
 13	s	s	服装尺码	en	-	14	XS	-	-
 14	码	码	服装尺码	v	-	0	ROOT	-	-
 
-
 1	你们	店家称谓	称谓	rr	-	4	ZW	-	-
 2	就	时间副词	副词	d	-	4	XS	-	-
 3	那么	c	c	c	-	4	XS	-	-
 4	忙	人物状态	状态	v	-	0	ROOT	-	-
 5	吗	y	y	y	-	4	QZ	-	-
 6	!	w	w	w	-	4	DP	-	-
-
 
 1	亲	通用称谓	称谓	v	-	0	ROOT	-	-
 2	，	w	w	w	-	1	DP	-	-
@@ -520,7 +466,6 @@
 8	颜色	颜色	商品信息	n	-	6	DB	-	-
 9	好	a	a	a	-	0	ROOT	-	-
 10	呢	y	y	y	-	9	QZ	-	-
-
 
 1	我	rr	rr	rr	-	3	ZW	-	-
 2	想	情态动词词缀	副词	v	-	3	QTZ	-	-
@@ -537,20 +482,17 @@
 13	皮肤	n	n	n	-	14	ZW	-	-
 14	偏黄	商品状态	状态	n	-	0	ROOT	-	-
 
-
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	售后	客服类	人物	vi	-	4	ZW	-	-
 4	在	p	p	p	-	0	ROOT	-	-
 5	吗	y	y	y	-	4	QZ	-	-
 
-
 1	会	v	v	v	-	3	QTZ	-	-
 2	不会	v	v	v	-	1	BL	-	-
 3	长	商品状态	状态	a	-	0	ROOT	-	-
 4	啊	y	y	y	-	3	QZ	-	-
 5	?	w	w	w	-	3	DP	-	-
-
 
 1	你们	店家称谓	称谓	rr	-	2	XS	-	-
 2	家	q	q	q	-	5	ZW	-	-
@@ -560,7 +502,6 @@
 6	的	ude1	ude1	ude1	-	5	XZ	-	-
 7	啊	y	y	y	-	5	QZ	-	-
 
-
 1	我	r	r	r	-	3	ZW	-	-
 2	想	情态动词词缀	副词	v	-	3	QTZ	-	-
 3	问下	沟通动作	动作	n	-	0	ROOT	-	-
@@ -569,7 +510,6 @@
 6	发货	vi	vi	vi	-	0	ROOT	-	-
 7	吗	y	y	y	-	6	QZ	-	-
 
-
 1	我	rr	rr	rr	-	4	ZW	-	-
 2	把	pba	pba	pba	-	4	WZ	-	-
 3	衣服	衣物类	商品	n	-	4	DB	-	-
@@ -577,14 +517,12 @@
 5	回去	v	v	v	-	4	XS	-	-
 6	了	ule	ule	ule	-	4	WZ	-	-
 
-
 1	今天	t	t	t	-	2	XS	-	-
 2	购	交易动作	动作	v	-	6	XS	-	-
 3	什么	什么	疑问词	ry	-	4	XS	-	-
 4	时间	n	n	n	-	6	XS	-	-
 5	能	v	v	v	-	6	QTZ	-	-
 6	发货	vi	vi	vi	-	0	ROOT	-	-
-
 
 1	因为	c	c	c	-	3	LZ	-	-
 2	我	r	r	r	-	3	ZW	-	-
@@ -595,20 +533,17 @@
 7	25天	m	服装尺码	m	-	8	XS	-	-
 8	发货	vi	vi	vi	-	3	DB	-	-
 
-
 1	到底	d	d	d	-	4	XS	-	-
 2	要	意向动作	动作	v	-	4	QTZ	-	-
 3	不要	d	d	d	-	2	BL	-	-
 4	发货	vi	vi	vi	-	0	ROOT	-	-
 5	了	ule	ule	ule	-	4	WZ	-	-
 
-
 1	发	物流动作	动作	v	-	0	ROOT	-	-
 2	的	ude1	ude1	ude1	-	1	XZ	-	-
 3	什么	什么	疑问词	ry	-	4	XS	-	-
 4	快递	物流方式	物流相关	v	-	5	XS	-	-
 5	公司	公司	组织	n	-	1	DB	-	-
-
 
 1	哦	e	e	e	-	0	ROOT	-	-
 2	！	w	w	w	-	1	DP	-	-
@@ -626,7 +561,6 @@
 14	吗	y	y	y	-	13	QZ	-	-
 15	？	w	w	w	-	7	DP	-	-
 
-
 1	催	沟通动作	动作	v	-	0	ROOT	-	-
 2	个	q	q	q	-	3	XS	-	-
 3	35元	m	服装尺码	m	-	1	DB	-	-
@@ -640,13 +574,11 @@
 11	困难	an	an	an	-	0	ROOT	-	-
 12	吗	y	y	y	-	11	QZ	-	-
 
-
 1	好吧	u	u	u	-	0	ROOT	-	-
 2	SPACE	null	null	null	-	0	ROOT	-	-
 3	麻烦	语气助动词	副词	an	-	0	ROOT	-	-
 4	你	rr	rr	rr	-	3	DB	-	-
 5	了	ule	ule	ule	-	3	WZ	-	-
-
 
 1	今天	t	t	t	-	3	XS	-	-
 2	不能	v	v	v	-	3	QTZ	-	-
@@ -654,14 +586,12 @@
 4	嘛	y	y	y	-	3	QZ	-	-
 5	?	w	w	w	-	3	DP	-	-
 
-
 1	好	a	a	a	-	0	ROOT	-	-
 2	了	ule	ule	ule	-	1	WZ	-	-
 3	啊	y	y	y	-	1	QZ	-	-
 4	SPACE	null	null	null	-	0	ROOT	-	-
 5	还没	z	z	z	-	6	XS	-	-
 6	付款	交易动作	动作	vi	-	0	ROOT	-	-
-
 
 1	我	r	r	r	-	3	ZW	-	-
 2	今天	t	t	t	-	3	XS	-	-
@@ -672,7 +602,6 @@
 7	发货	vi	vi	vi	-	0	ROOT	-	-
 8	吧	y	y	y	-	7	QZ	-	-
 
-
 1	购	交易动作	动作	v	-	0	ROOT	-	-
 2	这	rzv	rzv	rzv	-	3	XS	-	-
 3	两件	mq	mq	mq	-	1	DB	-	-
@@ -682,20 +611,17 @@
 7	购	交易动作	动作	v	-	0	ROOT	-	-
 8	了	ule	ule	ule	-	7	WZ	-	-
 
-
 1	处理	交易动作	动作	vn	-	0	ROOT	-	-
 2	下	f	f	f	-	1	XS	-	-
 3	退货	交易动作	动作	vi	-	4	XS	-	-
 4	申请	申请	v	v	-	1	DB	-	-
 5	吧	y	y	y	-	1	QZ	-	-
 
-
 1	你	rr	rr	rr	-	2	ZW	-	-
 2	帮	v	v	v	-	0	ROOT	-	-
 3	我	rr	rr	rr	-	2	DB	-	-
 4	处理	交易动作	动作	vn	-	2	LD	-	-
 5	下	f	f	f	-	4	XS	-	-
-
 
 1	这边	r	r	r	-	6	ZW	-	-
 2	是	v	v	v	-	6	JZ	-	-
@@ -709,14 +635,12 @@
 10	吧	y	y	y	-	6	QZ	-	-
 11	？	w	w	w	-	6	DP	-	-
 
-
 1	今天	t	t	t	-	2	XS	-	-
 2	购	交易动作	动作	v	-	5	XS	-	-
 3	明天	t	t	t	-	5	XS	-	-
 4	可以	v	v	v	-	5	QTZ	-	-
 5	发货	vi	vi	vi	-	0	ROOT	-	-
 6	吗	y	y	y	-	5	QZ	-	-
-
 
 1	还有	v	v	v	-	5	LZ	-	-
 2	这个	rz	rz	rz	-	3	XS	-	-
@@ -730,7 +654,6 @@
 10	我	r	r	r	-	9	XS	-	-
 11	吧	y	y	y	-	9	QZ	-	-
 
-
 1	明天	t	t	t	-	3	XS	-	-
 2	可以	v	v	v	-	3	QTZ	-	-
 3	帮	v	v	v	-	0	ROOT	-	-
@@ -739,14 +662,12 @@
 6	吗	y	y	y	-	3	QZ	-	-
 7	？	w	w	w	-	3	DP	-	-
 
-
 1	怎么	ryv	ryv	ryv	-	4	XS	-	-
 2	还是	c	c	c	-	4	LZ	-	-
 3	在	p	p	p	-	4	WZ	-	-
 4	揽	v	v	v	-	0	ROOT	-	-
 5	件	q	q	q	-	4	DB	-	-
 6	?	w	w	w	-	4	DP	-	-
-
 
 1	在	p	p	p	-	0	ROOT	-	-
 2	吗	y	y	y	-	1	QZ	-	-
@@ -757,7 +678,6 @@
 7	退货	交易动作	动作	vi	-	6	DB	-	-
 8	退款	金额动作	动作	vi	-	7	BL	-	-
 
-
 1	不然	联系词缀	副词	c	-	4	LZ	-	-
 2	我	r	r	r	-	4	ZW	-	-
 3	就	时间副词	副词	d	-	4	XS	-	-
@@ -766,7 +686,6 @@
 6	，	w	w	w	-	4	DP	-	-
 7	太慢	速度状态	状态	d	-	0	ROOT	-	-
 8	了	ul	ul	ul	-	7	WZ	-	-
-
 
 1	哦	e	e	e	-	0	ROOT	-	-
 2	SPACE	null	null	null	-	0	ROOT	-	-
@@ -784,7 +703,6 @@
 14	了	ule	ule	ule	-	12	WZ	-	-
 15	吗	y	y	y	-	12	QZ	-	-
 
-
 1	厚度	厚度	商品信息	n	-	2	ZW	-	-
 2	怎么样	ryv	ryv	ryv	-	0	ROOT	-	-
 3	,	w	w	w	-	2	DP	-	-
@@ -793,13 +711,11 @@
 6	过冬	vi	vi	vi	-	0	ROOT	-	-
 7	吗	y	y	y	-	6	QZ	-	-
 
-
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	可以	v	v	v	-	4	QTZ	-	-
 4	包邮	包邮	商品属性	a	-	0	ROOT	-	-
 5	吗	y	y	y	-	4	QZ	-	-
-
 
 1	但是	c	c	c	-	3	LZ	-	-
 2	我	r	r	r	-	3	ZW	-	-
@@ -808,7 +724,6 @@
 5	，	w	w	w	-	3	DP	-	-
 6	有点	程度副词	副词	d	-	7	XS	-	-
 7	小	商品状态	状态	a	-	0	ROOT	-	-
-
 
 1	我	rr	rr	rr	-	4	ZW	-	-
 2	也	d	d	d	-	4	XS	-	-
@@ -819,14 +734,12 @@
 7	来	vf	vf	vf	-	4	LD	-	-
 8	的	ude1	ude1	ude1	-	7	XZ	-	-
 
-
 1	是	v	v	v	-	3	ZW	-	-
 2	棉	棉类	材料	ng	-	3	XS	-	-
 3	服	v	v	v	-	0	ROOT	-	-
 4	还是	c	c	c	-	5	JZ	-	-
 5	羽绒	绒类	材料	n	-	3	BL	-	-
 6	的	uj	uj	uj	-	5	XZ	-	-
-
 
 1	袖子	袖部	商品部位	n	-	2	DB	-	-
 2	扭	v	v	v	-	0	ROOT	-	-
@@ -837,7 +750,6 @@
 7	了	ul	ul	ul	-	6	WZ	-	-
 8	一颗	mq	mq	mq	-	6	DB	-	-
 
-
 1	我	rr	rr	rr	-	3	ZW	-	-
 2	已经	时间副词	副词	d	-	3	XS	-	-
 3	收藏	网站相关动作	动作	v	-	0	ROOT	-	-
@@ -845,7 +757,6 @@
 5	你们	店家称谓	称谓	rr	-	6	XS	-	-
 6	家	q	q	q	-	3	DB	-	-
 7	了	ule	ule	ule	-	3	WZ	-	-
-
 
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -863,7 +774,6 @@
 14	么	y	y	y	-	12	QZ	-	-
 15	?	w	w	w	-	12	DP	-	-
 
-
 1	对了	vl	vl	vl	-	0	ROOT	-	-
 2	，	w	w	w	-	1	DP	-	-
 3	邮费险	n	n	n	-	5	DB	-	-
@@ -878,7 +788,6 @@
 12	啊	y	y	y	-	11	QZ	-	-
 13	？	w	w	w	-	11	DP	-	-
 
-
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	我	rr	rr	rr	-	4	XS	-	-
 3	的	ude1	ude1	ude1	-	2	XZ	-	-
@@ -887,20 +796,17 @@
 6	没有	v	v	v	-	5	XS	-	-
 7	啊	y	y	y	-	5	QZ	-	-
 
-
 1	今天	t	t	t	-	4	XS	-	-
 2	是	vshi	vshi	vshi	-	4	JZ	-	-
 3	什么	什么	疑问词	ry	-	4	XS	-	-
 4	活动	vn	vn	vn	-	0	ROOT	-	-
 5	啊	y	y	y	-	4	QZ	-	-
 
-
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	你	rr	rr	rr	-	3	XS	-	-
 3	地址	地址	人物属性	n	-	4	ZW	-	-
 4	多少	ry	ry	ry	-	0	ROOT	-	-
 5	啊	y	y	y	-	4	QZ	-	-
-
 
 1	那	r	r	r	-	3	LZ	-	-
 2	你	r	r	r	-	3	ZW	-	-
@@ -917,13 +823,11 @@
 13	不能	v	v	v	-	12	BL	-	-
 14	发货	vi	vi	vi	-	0	ROOT	-	-
 
-
 1	会	v	v	v	-	3	QTZ	-	-
 2	不会	v	v	v	-	1	BL	-	-
 3	小	商品状态	状态	a	-	0	ROOT	-	-
 4	了	ule	ule	ule	-	3	WZ	-	-
 5	?	w	w	w	-	3	DP	-	-
-
 
 1	之前	f	f	f	-	3	XS	-	-
 2	的	uj	uj	uj	-	1	XZ	-	-
@@ -932,7 +836,6 @@
 5	退	交易动作	动作	v	-	0	ROOT	-	-
 6	掉	v	v	v	-	5	XS	-	-
 
-
 1	一直	d	d	d	-	3	XS	-	-
 2	没	d	d	d	-	3	XS	-	-
 3	返	优惠动作	动作	v	-	0	ROOT	-	-
@@ -940,14 +843,12 @@
 5	我	rr	rr	rr	-	4	DB	-	-
 6	呢	y	y	y	-	4	QZ	-	-
 
-
 1	我	r	r	r	-	5	ZW	-	-
 2	其他	rzv	rzv	rzv	-	3	XS	-	-
 3	快递	物流方式	物流相关	v	-	5	DB	-	-
 4	都	d	d	d	-	5	XS	-	-
 5	收到	v	v	v	-	0	ROOT	-	-
 6	了	ul	ul	ul	-	5	WZ	-	-
-
 
 1	奥	b	b	b	-	0	ROOT	-	-
 2	SPACE	null	null	null	-	0	ROOT	-	-
@@ -961,14 +862,12 @@
 10	发货	vi	vi	vi	-	0	ROOT	-	-
 11	呀	y	y	y	-	10	QZ	-	-
 
-
 1	怎么	ryv	ryv	ryv	-	2	XS	-	-
 2	显示	系动词	动作	v	-	0	ROOT	-	-
 3	签收	v	v	v	-	2	DB	-	-
 4	了	ule	ule	ule	-	2	WZ	-	-
 5	呢	y	y	y	-	2	QZ	-	-
 6	?	w	w	w	-	2	DP	-	-
-
 
 1	我	r	r	r	-	3	ZW	-	-
 2	前两天	i	i	i	-	3	XS	-	-
@@ -985,7 +884,6 @@
 13	退货	交易动作	动作	vi	-	11	LD	-	-
 14	吗	y	y	y	-	11	QZ	-	-
 
-
 1	这	r	r	r	-	2	XS	-	-
 2	款	n	n	n	-	3	XS	-	-
 3	衣服	衣物类	商品	n	-	5	ZW	-	-
@@ -993,7 +891,6 @@
 5	有	v	v	v	-	0	ROOT	-	-
 6	什么	什么	疑问词	r	-	7	XS	-	-
 7	优惠	vn	vn	vn	-	5	DB	-	-
-
 
 1	你	rr	rr	rr	-	2	ZW	-	-
 2	帮	v	v	v	-	0	ROOT	-	-
@@ -1007,14 +904,12 @@
 10	发出	物流动作	动作	v	-	0	ROOT	-	-
 11	吗	y	y	y	-	10	QZ	-	-
 
-
 1	今天	t	t	t	-	2	XS	-	-
 2	购	交易动作	动作	v	-	5	XS	-	-
 3	什么	什么	疑问词	ry	-	4	XS	-	-
 4	时候	n	n	n	-	5	XS	-	-
 5	发货	vi	vi	vi	-	0	ROOT	-	-
 6	啊	y	y	y	-	5	QZ	-	-
-
 
 1	两个	mq	mq	mq	-	2	XS	-	-
 2	颜色	颜色	商品信息	n	-	6	ZW	-	-
@@ -1023,7 +918,6 @@
 5	不	否定副词	副词	d	-	6	XS	-	-
 6	一样	uyy	uyy	uyy	-	0	ROOT	-	-
 
-
 1	好的	u	u	u	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	一定	b	b	b	-	5	XS	-	-
@@ -1031,13 +925,11 @@
 5	快点	快点	要求	d	-	0	ROOT	-	-
 6	哦	e	e	e	-	5	QZ	-	-
 
-
 1	双十一	nz	nz	nz	-	3	XS	-	-
 2	的	ude1	ude1	ude1	-	1	XZ	-	-
 3	价格	价格	商品信息	n	-	5	ZW	-	-
 4	是	vshi	vshi	vshi	-	5	JZ	-	-
 5	多少	ry	ry	ry	-	0	ROOT	-	-
-
 
 1	嗯	e	e	e	-	0	ROOT	-	-
 2	SPACE	null	null	null	-	0	ROOT	-	-
@@ -1046,14 +938,12 @@
 5	发	物流动作	动作	v	-	0	ROOT	-	-
 6	?	w	w	w	-	5	DP	-	-
 
-
 1	您	rr	rr	rr	-	2	XS	-	-
 2	家	q	q	q	-	4	ZW	-	-
 3	几点	mq	mq	mq	-	4	XS	-	-
 4	开始	v	v	v	-	0	ROOT	-	-
 5	优惠	vn	vn	vn	-	4	DB	-	-
 6	啊	y	y	y	-	4	QZ	-	-
-
 
 1	我	rr	rr	rr	-	4	ZW	-	-
 2	就	时间副词	副词	d	-	4	XS	-	-
@@ -1068,7 +958,6 @@
 11	顺丰	物流方式	物流相关	nz	-	10	XS	-	-
 12	吧	y	y	y	-	10	QZ	-	-
 
-
 1	不会	v	v	v	-	4	QTZ	-	-
 2	因为	c	c	c	-	4	LZ	-	-
 3	订单	订单	单据	n	-	4	ZW	-	-
@@ -1080,7 +969,6 @@
 9	吧	y	y	y	-	8	QZ	-	-
 10	?	w	w	w	-	8	DP	-	-
 
-
 1	妞	ng	ng	ng	-	0	ROOT	-	-
 2	这	r	r	r	-	3	XS	-	-
 3	衣服	衣物类	商品	n	-	6	XS	-	-
@@ -1090,7 +978,6 @@
 7	可以	v	v	v	-	8	QTZ	-	-
 8	拆	v	v	v	-	0	ROOT	-	-
 9	吗	y	y	y	-	8	QZ	-	-
-
 
 1	我	r	r	r	-	5	ZW	-	-
 2	在	p	p	p	-	4	JZ	-	-
@@ -1104,7 +991,6 @@
 10	到	v	v	v	-	0	ROOT	-	-
 11	了	ul	ul	ul	-	10	WZ	-	-
 
-
 1	我	r	r	r	-	3	ZW	-	-
 2	已经	时间副词	副词	d	-	3	XS	-	-
 3	发	物流动作	动作	v	-	0	ROOT	-	-
@@ -1116,7 +1002,6 @@
 9	个	q	q	q	-	10	XS	-	-
 10	地址	地址	人物属性	n	-	7	DB	-	-
 11	。	w	w	w	-	7	DP	-	-
-
 
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	好评	正面	评价	n	-	0	ROOT	-	-
@@ -1131,7 +1016,6 @@
 11	SPACE	null	null	null	-	0	ROOT	-	-
 12	不得了	l	服装尺码	l	-	0	ROOT	-	-
 
-
 1	我	r	r	r	-	2	ZW	-	-
 2	购	交易动作	动作	v	-	5	XS	-	-
 3	的	uj	uj	uj	-	2	XZ	-	-
@@ -1144,14 +1028,12 @@
 10	没有	v	v	v	-	0	ROOT	-	-
 11	的	uj	uj	uj	-	10	XZ	-	-
 
-
 1	你们	店家称谓	称谓	rr	-	5	ZW	-	-
 2	今天	t	t	t	-	5	XS	-	-
 3	还	d	d	d	-	4	XS	-	-
 4	不	否定副词	副词	d	-	5	XS	-	-
 5	发货	vi	vi	vi	-	0	ROOT	-	-
 6	吗	y	y	y	-	5	QZ	-	-
-
 
 1	红色	n	n	n	-	2	XS	-	-
 2	大衣	衣物类	商品	n	-	5	XS	-	-
@@ -1160,7 +1042,6 @@
 5	表	n	n	n	-	6	DB	-	-
 6	有	v	v	v	-	0	ROOT	-	-
 7	没有	v	v	v	-	6	BL	-	-
-
 
 1	亲	通用称谓	称谓	v	-	0	ROOT	-	-
 2	我	r	r	r	-	4	XS	-	-
@@ -1171,13 +1052,11 @@
 7	发货	vi	vi	vi	-	0	ROOT	-	-
 8	啊	y	y	y	-	7	QZ	-	-
 
-
 1	冬天	t	t	t	-	2	XS	-	-
 2	穿	商品动作	动作	v	-	0	ROOT	-	-
 3	会	v	v	v	-	5	BL	-	-
 4	不会	v	v	v	-	3	BL	-	-
 5	冷	天气状态	状态	a	-	2	LD	-	-
-
 
 1	请	语气助动词	副词	v	-	0	ROOT	-	-
 2	帮	v	v	v	-	1	LD	-	-
@@ -1186,13 +1065,11 @@
 5	下	f	f	f	-	4	XS	-	-
 6	价格	价格	商品信息	n	-	4	DB	-	-
 
-
 1	我	rr	rr	rr	-	3	ZW	-	-
 2	平时	t	t	t	-	3	XS	-	-
 3	穿	商品动作	动作	v	-	0	ROOT	-	-
 4	37	m	服装尺码	m	-	3	DB	-	-
 5	的	ude1	ude1	ude1	-	4	XZ	-	-
-
 
 1	价格	价格	商品信息	n	-	3	ZW	-	-
 2	能	v	v	v	-	3	QTZ	-	-
@@ -1201,13 +1078,11 @@
 5	吗	y	y	y	-	3	QZ	-	-
 6	?	w	w	w	-	3	DP	-	-
 
-
 1	可以	v	v	v	-	2	QTZ	-	-
 2	优惠	vn	vn	vn	-	0	ROOT	-	-
 3	20元	m	服装尺码	m	-	2	DB	-	-
 4	对	对错	状态	p	-	0	ROOT	-	-
 5	吧	y	y	y	-	4	QZ	-	-
-
 
 1	半个	mq	mq	mq	-	2	XS	-	-
 2	月	n	n	n	-	4	DB	-	-
@@ -1215,13 +1090,11 @@
 4	过	uguo	uguo	uguo	-	0	ROOT	-	-
 5	了	ule	ule	ule	-	4	WZ	-	-
 
-
 1	不能	v	v	v	-	2	QTZ	-	-
 2	发	物流动作	动作	v	-	4	XS	-	-
 3	我	rr	rr	rr	-	4	ZW	-	-
 4	退款	金额动作	动作	vi	-	0	ROOT	-	-
 5	了	ule	ule	ule	-	4	WZ	-	-
-
 
 1	那	r	r	r	-	3	LZ	-	-
 2	我	r	r	r	-	3	ZW	-	-
@@ -1230,13 +1103,11 @@
 5	直接	动作副词	副词	ad	-	6	XS	-	-
 6	购	交易动作	动作	v	-	0	ROOT	-	-
 
-
 1	怎么	ryv	ryv	ryv	-	4	XS	-	-
 2	还	d	d	d	-	3	XS	-	-
 3	没有	v	v	v	-	4	XS	-	-
 4	发货	vi	vi	vi	-	0	ROOT	-	-
 5	啊	y	y	y	-	4	QZ	-	-
-
 
 1	顺丰	物流方式	物流相关	nz	-	2	ZW	-	-
 2	有	v	v	v	-	0	ROOT	-	-
@@ -1246,7 +1117,6 @@
 6	一个	mq	mq	mq	-	8	XS	-	-
 7	路	n	n	n	-	8	XS	-	-
 8	邮	物流动作	动作	v	-	5	DB	-	-
-
 
 1	等	u	u	u	-	2	JZ	-	-
 2	送	v	v	v	-	6	XS	-	-
@@ -1260,7 +1130,6 @@
 10	冷	天气状态	状态	a	-	0	ROOT	-	-
 11	了	ul	ul	ul	-	10	WZ	-	-
 
-
 1	我	r	r	r	-	2	ZW	-	-
 2	108斤	m	服装尺码	m	-	0	ROOT	-	-
 3	身高	身高	人物属性	n	-	4	ZW	-	-
@@ -1268,7 +1137,6 @@
 5	穿	商品动作	动作	v	-	0	ROOT	-	-
 6	什么	什么	疑问词	r	-	7	XS	-	-
 7	号	号	服装尺码	q	-	5	DB	-	-
-
 
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	这	r	r	r	-	3	XS	-	-
@@ -1283,7 +1151,6 @@
 11	薄	a	a	a	-	9	BL	-	-
 12	？	w	w	w	-	9	DP	-	-
 
-
 1	因为	c	c	c	-	4	LZ	-	-
 2	我	r	r	r	-	4	ZW	-	-
 3	要	意向动作	动作	v	-	4	QTZ	-	-
@@ -1292,13 +1159,11 @@
 6	换	交易动作	动作	v	-	0	ROOT	-	-
 7	地址	地址	人物属性	n	-	6	DB	-	-
 
-
 1	双11	t	t	t	-	2	XS	-	-
 2	购	交易动作	动作	v	-	4	XS	-	-
 3	是	vshi	vshi	vshi	-	4	JZ	-	-
 4	550	m	服装尺码	m	-	0	ROOT	-	-
 5	?	w	w	w	-	4	DP	-	-
-
 
 1	不是	c	c	c	-	2	JZ	-	-
 2	牌子	牌子	商品信息	n	-	0	ROOT	-	-
@@ -1308,13 +1173,11 @@
 6	贵	a	a	a	-	0	ROOT	-	-
 7	了	ule	ule	ule	-	6	WZ	-	-
 
-
 1	大概	d	d	d	-	3	XS	-	-
 2	什么	什么	疑问词	ry	-	3	XS	-	-
 3	时间	n	n	n	-	0	ROOT	-	-
 4	啊	y	y	y	-	3	QZ	-	-
 5	,	w	w	w	-	3	DP	-	-
-
 
 1	m	m	服装尺码	en	-	4	ZW	-	-
 2	是	vshi	vshi	vshi	-	4	JZ	-	-
@@ -1322,13 +1185,11 @@
 4	大	商品状态	状态	a	-	0	ROOT	-	-
 5	的	ude1	ude1	ude1	-	4	XZ	-	-
 
-
 1	今天	t	t	t	-	3	XS	-	-
 2	该	rz	rz	rz	-	3	QTZ	-	-
 3	发货	vi	vi	vi	-	0	ROOT	-	-
 4	了	ule	ule	ule	-	3	WZ	-	-
 5	吧	y	y	y	-	3	QZ	-	-
-
 
 1	衣服	衣物类	商品	n	-	3	XS	-	-
 2	又	d	d	d	-	3	XS	-	-
@@ -1345,7 +1206,6 @@
 13	不	否定副词	副词	d	-	14	XS	-	-
 14	发货	v	v	v	-	0	ROOT	-	-
 
-
 1	亲爱的	通用称谓	称谓	n	-	0	ROOT	-	-
 2	啊	y	y	y	-	1	QZ	-	-
 3	,	w	w	w	-	1	DP	-	-
@@ -1353,14 +1213,12 @@
 5	发货	vi	vi	vi	-	0	ROOT	-	-
 6	啊	y	y	y	-	5	QZ	-	-
 
-
 1	双11	t	t	t	-	4	XS	-	-
 2	还	d	d	d	-	4	XS	-	-
 3	会	v	v	v	-	4	QTZ	-	-
 4	有	vyou	vyou	vyou	-	0	ROOT	-	-
 5	优惠	vn	vn	vn	-	4	DB	-	-
 6	吗	y	y	y	-	4	QZ	-	-
-
 
 1	我	r	r	r	-	3	XS	-	-
 2	的	uj	uj	uj	-	1	XZ	-	-
@@ -1372,13 +1230,11 @@
 8	我	r	r	r	-	9	XS	-	-
 9	处理	交易动作	动作	v	-	0	ROOT	-	-
 
-
 1	怎么	ryv	ryv	ryv	-	4	XS	-	-
 2	还	d	d	d	-	3	XS	-	-
 3	没有	v	v	v	-	4	XS	-	-
 4	处理	交易动作	动作	vn	-	0	ROOT	-	-
 5	?	w	w	w	-	4	DP	-	-
-
 
 1	总	b	b	b	-	3	XS	-	-
 2	应该	v	v	v	-	3	QTZ	-	-
@@ -1387,20 +1243,17 @@
 5	时间	n	n	n	-	3	DB	-	-
 6	呗	y	y	y	-	3	QZ	-	-
 
-
 1	又	d	d	d	-	3	XS	-	-
 2	重新	时间副词	副词	d	-	3	XS	-	-
 3	购	交易动作	动作	v	-	0	ROOT	-	-
 4	了	ule	ule	ule	-	3	WZ	-	-
 5	一件	mq	mq	mq	-	3	DB	-	-
 
-
 1	好的	u	u	u	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	什么	什么	疑问词	ry	-	4	XS	-	-
 4	时候	n	n	n	-	5	XS	-	-
 5	打	v	v	v	-	0	ROOT	-	-
-
 
 1	购	交易动作	动作	v	-	5	XS	-	-
 2	两件	mq	mq	mq	-	1	DB	-	-
@@ -1409,7 +1262,6 @@
 5	优惠	vn	vn	vn	-	0	ROOT	-	-
 6	吗	y	y	y	-	5	DP	-	-
 
-
 1	今天	t	t	t	-	2	XS	-	-
 2	购	交易动作	动作	v	-	6	XS	-	-
 3	了	ule	ule	ule	-	2	WZ	-	-
@@ -1417,13 +1269,11 @@
 5	啥时候	r	r	r	-	6	XS	-	-
 6	发货	vi	vi	vi	-	0	ROOT	-	-
 
-
 1	发	物流动作	动作	v	-	0	ROOT	-	-
 2	的	ude1	ude1	ude1	-	1	XZ	-	-
 3	36	m	服装尺码	m	-	1	DB	-	-
 4	的	ude1	ude1	ude1	-	3	XZ	-	-
 5	?	w	w	w	-	1	DP	-	-
-
 
 1	你好	l	服装尺码	l	-	0	ROOT	-	-
 2	，	w	w	w	-	1	DP	-	-
@@ -1434,13 +1284,11 @@
 7	能	v	v	v	-	8	QTZ	-	-
 8	发	物流动作	动作	v	-	0	ROOT	-	-
 
-
 1	加	v	v	v	-	0	ROOT	-	-
 2	棉	棉类	材料	ng	-	1	DB	-	-
 3	了	ule	ule	ule	-	1	WZ	-	-
 4	吗	y	y	y	-	1	QZ	-	-
 5	?	w	w	w	-	1	DP	-	-
-
 
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	SPACE	null	null	null	-	0	ROOT	-	-
@@ -1449,7 +1297,6 @@
 5	给	p	p	p	-	6	JZ	-	-
 6	发货	vi	vi	vi	-	0	ROOT	-	-
 7	哦	e	e	e	-	6	QZ	-	-
-
 
 1	双十一	nz	nz	nz	-	3	XS	-	-
 2	会	v	v	v	-	3	QTZ	-	-
@@ -1460,13 +1307,11 @@
 7	/:^$^	l	服装尺码	l	-	0	ROOT	-	-
 8	/:^$^	l	服装尺码	l	-	0	ROOT	-	-
 
-
 1	你	rr	rr	rr	-	3	ZW	-	-
 2	先	d	d	d	-	3	XS	-	-
 3	发下	网站相关动作	动作	v	-	0	ROOT	-	-
 4	退货	交易动作	动作	vi	-	5	XS	-	-
 5	地址	地址	人物属性	n	-	3	DB	-	-
-
 
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	我	rr	rr	rr	-	4	ZW	-	-
@@ -1475,14 +1320,12 @@
 5	退款	金额动作	动作	vi	-	4	DB	-	-
 6	了	ule	ule	ule	-	4	WZ	-	-
 
-
 1	大概	d	d	d	-	2	XS	-	-
 2	多	数量状态	状态	a	-	4	XS	-	-
 3	会	v	v	v	-	4	QTZ	-	-
 4	发货	vi	vi	vi	-	0	ROOT	-	-
 5	呀	y	y	y	-	4	QZ	-	-
 6	?	w	w	w	-	4	DP	-	-
-
 
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	160	m	服装尺码	m	-	0	ROOT	-	-
@@ -1494,13 +1337,11 @@
 8	肥	商品状态	状态	n	-	5	LD	-	-
 9	?	w	w	w	-	5	DP	-	-
 
-
 1	大衣	衣物类	商品	n	-	3	DB	-	-
 2	还没	z	z	z	-	3	XS	-	-
 3	发	物流动作	动作	v	-	0	ROOT	-	-
 4	么	y	y	y	-	3	QZ	-	-
 5	?	w	w	w	-	3	DP	-	-
-
 
 1	我	rr	rr	rr	-	3	ZW	-	-
 2	刚	d	d	d	-	3	XS	-	-
@@ -1512,7 +1353,6 @@
 8	仿	v	v	v	-	0	ROOT	-	-
 9	的	ude1	ude1	ude1	-	8	XZ	-	-
 
-
 1	退款	金额动作	动作	vi	-	3	ZW	-	-
 2	是	v	v	v	-	3	JZ	-	-
 3	写成	v	v	v	-	0	ROOT	-	-
@@ -1520,13 +1360,11 @@
 5	退款	金额动作	动作	vi	-	4	BL	-	-
 6	吗	y	y	y	-	3	QZ	-	-
 
-
 1	不	否定副词	副词	d	-	2	XS	-	-
 2	合适	商品状态	状态	a	-	4	XS	-	-
 3	可以	v	v	v	-	4	QTZ	-	-
 4	退货	交易动作	动作	vi	-	0	ROOT	-	-
 5	么	y	y	y	-	4	QZ	-	-
-
 
 1	刚	d	d	d	-	3	XS	-	-
 2	还	d	d	d	-	3	XS	-	-
@@ -1535,13 +1373,11 @@
 5	呀	y	y	y	-	3	QZ	-	-
 6	?	w	w	w	-	3	DP	-	-
 
-
 1	发	物流动作	动作	v	-	0	ROOT	-	-
 2	的	ude1	ude1	ude1	-	1	XZ	-	-
 3	哪个	ry	ry	ry	-	4	XS	-	-
 4	快递	物流方式	物流相关	v	-	1	DB	-	-
 5	?	w	w	w	-	1	DP	-	-
-
 
 1	我	rr	rr	rr	-	5	ZW	-	-
 2	可以	v	v	v	-	3	QTZ	-	-
@@ -1553,7 +1389,6 @@
 8	好	a	a	a	-	0	ROOT	-	-
 9	吗	y	y	y	-	8	QZ	-	-
 
-
 1	这个	rz	rz	rz	-	2	XS	-	-
 2	给	p	p	p	-	0	ROOT	-	-
 3	我	r	r	r	-	2	DB	-	-
@@ -1562,7 +1397,6 @@
 6	太	程度副词	副词	d	-	7	XS	-	-
 7	忽悠	z	z	z	-	4	XS	-	-
 8	了	ul	ul	ul	-	7	WZ	-	-
-
 
 1	你	rr	rr	rr	-	2	ZW	-	-
 2	确认	交易动作	动作	v	-	0	ROOT	-	-
@@ -1573,7 +1407,6 @@
 7	是	vshi	vshi	vshi	-	8	JZ	-	-
 8	l	l	服装尺码	en	-	4	ZW	-	-
 9	吗	y	y	y	-	8	QZ	-	-
-
 
 1	你	r	r	r	-	2	ZW	-	-
 2	帮	v	v	v	-	0	ROOT	-	-
@@ -1588,7 +1421,6 @@
 11	给	p	p	p	-	0	ROOT	-	-
 12	我	r	r	r	-	11	XS	-	-
 
-
 1	什么	什么	疑问词	ry	-	2	XS	-	-
 2	时候	n	n	n	-	5	XS	-	-
 3	给	p	p	p	-	4	JZ	-	-
@@ -1597,13 +1429,11 @@
 6	啊	y	y	y	-	5	QZ	-	-
 7	?	w	w	w	-	5	DP	-	-
 
-
 1	不	否定副词	副词	d	-	2	XS	-	-
 2	发货	vi	vi	vi	-	4	XS	-	-
 3	就	时间副词	副词	d	-	4	XS	-	-
 4	退货	交易动作	动作	vi	-	0	ROOT	-	-
 5	了	ule	ule	ule	-	4	WZ	-	-
-
 
 1	好	a	a	a	-	0	ROOT	-	-
 2	的	uj	uj	uj	-	1	XZ	-	-
@@ -1612,7 +1442,6 @@
 5	我	r	r	r	-	6	ZW	-	-
 6	收藏	网站相关动作	动作	v	-	0	ROOT	-	-
 7	了	ul	ul	ul	-	6	WZ	-	-
-
 
 1	你们	店家称谓	称谓	rr	-	2	ZW	-	-
 2	帮	v	v	v	-	0	ROOT	-	-
@@ -1627,14 +1456,12 @@
 11	款式	款式	商品信息	n	-	9	DB	-	-
 12	吧	y	y	y	-	9	QZ	-	-
 
-
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	购	交易动作	动作	v	-	4	XS	-	-
 3	的	ude1	ude1	ude1	-	2	XZ	-	-
 4	衣服	衣物类	商品	n	-	5	ZW	-	-
 5	到	v	v	v	-	0	ROOT	-	-
 6	了	ule	ule	ule	-	5	WZ	-	-
-
 
 1	收到	v	v	v	-	0	ROOT	-	-
 2	再	d	d	d	-	3	XS	-	-
@@ -1647,7 +1474,6 @@
 9	个	q	q	q	-	10	XS	-	-
 10	时间	n	n	n	-	8	DB	-	-
 
-
 1	你好	l	服装尺码	l	-	0	ROOT	-	-
 2	。	w	w	w	-	1	DP	-	-
 3	五星	正面	评价	n	-	4	XS	-	-
@@ -1658,7 +1484,6 @@
 8	吗	y	y	y	-	4	QZ	-	-
 9	？	w	w	w	-	4	DP	-	-
 
-
 1	165	m	服装尺码	m	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	48公斤	m	服装尺码	m	-	1	BL	-	-
@@ -1667,14 +1492,12 @@
 6	大号	大号	服装尺码	n	-	4	DB	-	-
 7	?	w	w	w	-	4	DP	-	-
 
-
 1	一会	t	t	t	-	3	XS	-	-
 2	我	rr	rr	rr	-	3	ZW	-	-
 3	申请	申请	v	v	-	0	ROOT	-	-
 4	退款	金额动作	动作	vi	-	3	DB	-	-
 5	重新	时间副词	副词	d	-	6	XS	-	-
 6	购	交易动作	动作	v	-	3	LD	-	-
-
 
 1	亲	通用称谓	称谓	v	-	0	ROOT	-	-
 2	。	w	w	w	-	1	DP	-	-
@@ -1684,7 +1507,6 @@
 6	穿	商品动作	动作	v	-	0	ROOT	-	-
 7	吗	y	y	y	-	6	QZ	-	-
 
-
 1	不是	c	c	c	-	4	JZ	-	-
 2	已经	时间副词	副词	d	-	4	XS	-	-
 3	在	p	p	p	-	4	JZ	-	-
@@ -1693,13 +1515,11 @@
 6	了	ule	ule	ule	-	4	WZ	-	-
 7	吗	y	y	y	-	4	QZ	-	-
 
-
 1	你	rr	rr	rr	-	2	ZW	-	-
 2	给	p	p	p	-	0	ROOT	-	-
 3	个	q	q	q	-	4	XS	-	-
 4	地址	地址	人物属性	n	-	2	DB	-	-
 5	,	w	w	w	-	2	DP	-	-
-
 
 1	什么	什么	疑问词	ry	-	2	XS	-	-
 2	时候	n	n	n	-	4	XS	-	-
@@ -1707,13 +1527,11 @@
 4	发	物流动作	动作	v	-	0	ROOT	-	-
 5	呀	y	y	y	-	4	QZ	-	-
 
-
 1	你	rr	rr	rr	-	2	ZW	-	-
 2	帮	v	v	v	-	0	ROOT	-	-
 3	我	rr	rr	rr	-	2	DB	-	-
 4	问问	沟通动作	动作	v	-	2	LD	-	-
 5	吧	y	y	y	-	2	QZ	-	-
-
 
 1	好	a	a	a	-	0	ROOT	-	-
 2	了	ule	ule	ule	-	1	WZ	-	-
@@ -1721,7 +1539,6 @@
 4	已经	时间副词	副词	d	-	5	XS	-	-
 5	申请	申请	v	v	-	0	ROOT	-	-
 6	了	ule	ule	ule	-	5	XZ	-	-
-
 
 1	已经	时间副词	副词	d	-	4	XS	-	-
 2	快	速度状态	状态	a	-	4	XS	-	-
@@ -1734,7 +1551,6 @@
 9	等	u	u	u	-	8	LD	-	-
 10	。	w	w	w	-	8	DP	-	-
 
-
 1	优惠券	优惠券	优惠形式	n	-	5	DB	-	-
 2	是	vshi	vshi	vshi	-	3	JZ	-	-
 3	双十一	nz	nz	nz	-	5	XS	-	-
@@ -1744,13 +1560,11 @@
 7	吗	y	y	y	-	6	QZ	-	-
 8	?	w	w	w	-	6	DP	-	-
 
-
 1	?	w	w	w	-	0	ROOT	-	-
 2	?	w	w	w	-	0	ROOT	-	-
 3	?	w	w	w	-	0	ROOT	-	-
 4	在	p	p	p	-	0	ROOT	-	-
 5	吗	y	y	y	-	4	QZ	-	-
-
 
 1	什么	什么	疑问词	r	-	2	XS	-	-
 2	时候	n	n	n	-	4	XS	-	-
@@ -1758,7 +1572,6 @@
 4	发货	vi	vi	vi	-	0	ROOT	-	-
 5	啊	y	y	y	-	4	QZ	-	-
 6	？	w	w	w	-	4	DP	-	-
-
 
 1	160	m	服装尺码	m	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -1770,7 +1583,6 @@
 8	啊	y	y	y	-	5	QZ	-	-
 9	?	w	w	w	-	5	DP	-	-
 
-
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	160	m	服装尺码	m	-	0	ROOT	-	-
 3	,	w	w	w	-	2	DP	-	-
@@ -1780,7 +1592,6 @@
 7	穿	商品动作	动作	v	-	0	ROOT	-	-
 8	?	w	w	w	-	7	DP	-	-
 
-
 1	可是	c	c	c	-	3	LZ	-	-
 2	我	rr	rr	rr	-	3	ZW	-	-
 3	找	v	v	v	-	0	ROOT	-	-
@@ -1789,7 +1600,6 @@
 6	方式	n	n	n	-	3	DB	-	-
 7	在	p	p	p	-	8	JZ	-	-
 8	哪里	rys	rys	rys	-	0	ROOT	-	-
-
 
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -1803,7 +1613,6 @@
 10	两件	mq	mq	mq	-	11	ZW	-	-
 11	28	m	服装尺码	m	-	0	ROOT	-	-
 
-
 1	购	交易动作	动作	v	-	4	XS	-	-
 2	两件	mq	mq	mq	-	1	DB	-	-
 3	可以	v	v	v	-	4	QTZ	-	-
@@ -1812,7 +1621,6 @@
 6	不	否定副词	副词	d	-	4	QZ	-	-
 7	?	w	w	w	-	4	DP	-	-
 
-
 1	凌晨	t	t	t	-	4	XS	-	-
 2	就	时间副词	副词	d	-	4	XS	-	-
 3	可以	v	v	v	-	4	QTZ	-	-
@@ -1820,14 +1628,12 @@
 5	了	ule	ule	ule	-	4	WZ	-	-
 6	吗	y	y	y	-	4	QZ	-	-
 
-
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	购	交易动作	动作	v	-	0	ROOT	-	-
 3	了	ule	ule	ule	-	2	WZ	-	-
 4	两天	mq	mq	mq	-	2	XS	-	-
 5	了	ule	ule	ule	-	2	WZ	-	-
 6	吧	y	y	y	-	2	QZ	-	-
-
 
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	、	w	w	w	-	1	DP	-	-
@@ -1842,7 +1648,6 @@
 11	了	ul	ul	ul	-	10	WZ	-	-
 12	好多	m	服装尺码	m	-	10	XS	-	-
 
-
 1	怎么	ryv	ryv	ryv	-	2	XS	-	-
 2	没有	v	v	v	-	0	ROOT	-	-
 3	s	s	服装尺码	en	-	4	XS	-	-
@@ -1850,20 +1655,17 @@
 5	的	ude1	ude1	ude1	-	4	XZ	-	-
 6	啊	y	y	y	-	2	QZ	-	-
 
-
 1	再不	d	d	d	-	2	XS	-	-
 2	发货	vi	vi	vi	-	5	XS	-	-
 3	我	rr	rr	rr	-	5	ZW	-	-
 4	要	意向动作	动作	v	-	5	QTZ	-	-
 5	退款	金额动作	动作	vi	-	0	ROOT	-	-
 
-
 1	一般	ad	ad	ad	-	3	XS	-	-
 2	都	d	d	d	-	3	XS	-	-
 3	包邮	包邮	商品属性	a	-	0	ROOT	-	-
 4	的	ude1	ude1	ude1	-	3	XZ	-	-
 5	啊	y	y	y	-	3	QZ	-	-
-
 
 1	合身	商品状态	状态	a	-	6	XS	-	-
 2	，	w	w	w	-	1	DP	-	-
@@ -1873,7 +1675,6 @@
 6	你家	店家称谓	称谓	r	-	0	ROOT	-	-
 7	啦	y	y	y	-	6	QZ	-	-
 
-
 1	我	r	r	r	-	4	ZW	-	-
 2	衣服	衣物类	商品	n	-	4	DB	-	-
 3	都	d	d	d	-	4	XS	-	-
@@ -1881,14 +1682,12 @@
 5	好久	m	服装尺码	m	-	4	XS	-	-
 6	了	ul	ul	ul	-	5	WZ	-	-
 
-
 1	有	v	v	v	-	0	ROOT	-	-
 2	没有	v	v	v	-	1	BL	-	-
 3	平底	鞋型	款式	b	-	6	XS	-	-
 4	得	ud	ud	ud	-	3	XZ	-	-
 5	这个	r	r	r	-	6	XS	-	-
 6	鞋	鞋类	商品	n	-	1	DB	-	-
-
 
 1	还有	v	v	v	-	8	LZ	-	-
 2	，	w	w	w	-	1	DP	-	-
@@ -1902,7 +1701,6 @@
 10	的	uj	uj	uj	-	8	XZ	-	-
 11	哦	e	e	e	-	8	QZ	-	-
 
-
 1	你好	l	服装尺码	l	-	0	ROOT	-	-
 2	我	r	r	r	-	4	XS	-	-
 3	的	uj	uj	uj	-	2	XZ	-	-
@@ -1913,14 +1711,12 @@
 8	发货	v	v	v	-	0	ROOT	-	-
 9	呢	y	y	y	-	8	QZ	-	-
 
-
 1	最后	f	f	f	-	2	XS	-	-
 2	一件	m	服装尺码	m	-	4	DB	-	-
 3	也	d	d	d	-	4	XS	-	-
 4	退	交易动作	动作	v	-	0	ROOT	-	-
 5	了	ul	ul	ul	-	4	WZ	-	-
 6	啊	y	y	y	-	4	QZ	-	-
-
 
 1	可是	c	c	c	-	3	LZ	-	-
 2	我	r	r	r	-	3	ZW	-	-
@@ -1937,7 +1733,6 @@
 13	确认	交易动作	动作	v	-	0	ROOT	-	-
 14	收货	vn	vn	vn	-	13	DB	-	-
 
-
 1	你们	店家称谓	称谓	rr	-	3	XS	-	-
 2	这条	mq	mq	mq	-	3	XS	-	-
 3	裙	裙类	商品	ng	-	4	XS	-	-
@@ -1945,7 +1740,6 @@
 5	架	qv	qv	qv	-	4	DB	-	-
 6	了	ule	ule	ule	-	4	WZ	-	-
 7	吗	y	y	y	-	4	QZ	-	-
-
 
 1	我	r	r	r	-	3	ZW	-	-
 2	想	情态动词词缀	副词	v	-	3	QTZ	-	-
@@ -1962,7 +1756,6 @@
 13	吗	y	y	y	-	12	QZ	-	-
 14	？	w	w	w	-	12	DP	-	-
 
-
 1	秒	q	q	q	-	2	XS	-	-
 2	杀	v	v	v	-	3	XS	-	-
 3	活动	vn	vn	vn	-	6	ZW	-	-
@@ -1971,7 +1764,6 @@
 6	开始	v	v	v	-	0	ROOT	-	-
 7	？	w	w	w	-	6	DP	-	-
 
-
 1	可是	c	c	c	-	4	LZ	-	-
 2	物流	n	n	n	-	4	ZW	-	-
 3	不是	c	c	c	-	4	JZ	-	-
@@ -1979,13 +1771,11 @@
 5	了	ule	ule	ule	-	4	WZ	-	-
 6	吗	y	y	y	-	4	QZ	-	-
 
-
 1	下次	t	t	t	-	2	XS	-	-
 2	发货	vi	vi	vi	-	4	XS	-	-
 3	前	f	f	f	-	2	XS	-	-
 4	检查一下	n	n	n	-	0	ROOT	-	-
 5	吧	y	y	y	-	4	QZ	-	-
-
 
 1	你们	店家称谓	称谓	rr	-	2	XS	-	-
 2	速度	n	n	n	-	4	ZW	-	-
@@ -1993,13 +1783,11 @@
 4	太慢	速度状态	状态	d	-	0	ROOT	-	-
 5	了	ule	ule	ule	-	4	WZ	-	-
 
-
 1	大概	d	d	d	-	3	XS	-	-
 2	什么	什么	疑问词	ry	-	3	XS	-	-
 3	时间	n	n	n	-	4	XS	-	-
 4	发	物流动作	动作	v	-	0	ROOT	-	-
 5	?	w	w	w	-	4	DP	-	-
-
 
 1	麻烦	语气助动词	副词	an	-	0	ROOT	-	-
 2	赶紧	赶紧	要求	d	-	3	XS	-	-
@@ -2010,7 +1798,6 @@
 7	退款	金额动作	动作	vi	-	8	XS	-	-
 8	申请	申请	v	v	-	5	DB	-	-
 
-
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	你	rr	rr	rr	-	5	ZW	-	-
@@ -2018,7 +1805,6 @@
 5	给我发	物流动作	动作	n	-	0	ROOT	-	-
 6	什么	什么	疑问词	ry	-	7	XS	-	-
 7	快递	物流方式	物流相关	v	-	5	DB	-	-
-
 
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -2033,14 +1819,12 @@
 11	吗	y	y	y	-	10	QZ	-	-
 12	?	w	w	w	-	10	DP	-	-
 
-
 1	我	r	r	r	-	2	ZW	-	-
 2	发回去	l	服装尺码	l	-	4	DB	-	-
 3	的	uj	uj	uj	-	2	XZ	-	-
 4	查到	v	v	v	-	0	ROOT	-	-
 5	了	ul	ul	ul	-	4	WZ	-	-
 6	吗	y	y	y	-	4	QZ	-	-
-
 
 1	身高	身高	人物属性	n	-	2	ZW	-	-
 2	163	m	服装尺码	m	-	0	ROOT	-	-
@@ -2060,7 +1844,6 @@
 16	大	商品状态	状态	a	-	17	XS	-	-
 17	码	码	服装尺码	v	-	14	DB	-	-
 
-
 1	和	cc	cc	cc	-	3	JZ	-	-
 2	模特	模特	人物	nnt	-	3	XS	-	-
 3	穿	商品动作	动作	v	-	6	XS	-	-
@@ -2069,7 +1852,6 @@
 6	一样	uyy	uyy	uyy	-	0	ROOT	-	-
 7	的	ude1	ude1	ude1	-	6	XZ	-	-
 8	吧	y	y	y	-	6	QZ	-	-
-
 
 1	亲	通用称谓	称谓	v	-	0	ROOT	-	-
 2	批发	交易动作	动作	vn	-	4	ZW	-	-
@@ -2080,7 +1862,6 @@
 7	一样	u	u	u	-	4	DB	-	-
 8	吗	y	y	y	-	4	QZ	-	-
 
-
 1	身高	身高	人物属性	n	-	2	ZW	-	-
 2	167	m	服装尺码	m	-	0	ROOT	-	-
 3	体重	体重	人物属性	n	-	4	ZW	-	-
@@ -2090,14 +1871,12 @@
 7	码	码	服装尺码	v	-	5	DB	-	-
 8	合适	商品状态	状态	a	-	5	LD	-	-
 
-
 1	等	u	u	u	-	0	ROOT	-	-
 2	着	uz	uz	uz	-	1	WZ	-	-
 3	在	p	p	p	-	4	JZ	-	-
 4	你家	店家称谓	称谓	r	-	5	XS	-	-
 5	购	交易动作	动作	v	-	1	LD	-	-
 6	呢	y	y	y	-	1	QZ	-	-
-
 
 1	是	v	v	v	-	6	JZ	-	-
 2	粉色	n	n	n	-	6	XS	-	-
@@ -2106,14 +1885,12 @@
 5	的	uj	uj	uj	-	4	XZ	-	-
 6	那个	r	r	r	-	0	ROOT	-	-
 
-
 1	哦	e	e	e	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	可以	v	v	v	-	4	QTZ	-	-
 4	用	p	p	p	-	0	ROOT	-	-
 5	卷	q	q	q	-	4	DB	-	-
 6	吗	y	y	y	-	4	QZ	-	-
-
 
 1	需	v	v	v	-	4	QTZ	-	-
 2	不	否定副词	副词	d	-	3	XS	-	-
@@ -2123,13 +1900,11 @@
 6	一起	范围副词	副词	s	-	7	XS	-	-
 7	购	交易动作	动作	v	-	4	LD	-	-
 
-
 1	怎么	ryv	ryv	ryv	-	2	XS	-	-
 2	没有	v	v	v	-	0	ROOT	-	-
 3	物流	n	n	n	-	4	XS	-	-
 4	信息	信息	商品信息	n	-	2	DB	-	-
 5	?	w	w	w	-	2	DP	-	-
-
 
 1	亲	通用称谓	称谓	v	-	0	ROOT	-	-
 2	，	w	w	w	-	1	DP	-	-
@@ -2139,13 +1914,11 @@
 6	收到	v	v	v	-	0	ROOT	-	-
 7	噢	y	y	y	-	6	QZ	-	-
 
-
 1	什么	什么	疑问词	ry	-	2	XS	-	-
 2	时候	n	n	n	-	4	XS	-	-
 3	才能	n	n	n	-	4	XS	-	-
 4	发货	vi	vi	vi	-	0	ROOT	-	-
 5	呀	y	y	y	-	4	QZ	-	-
-
 
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -2163,7 +1936,6 @@
 14	吗	y	y	y	-	12	QZ	-	-
 15	?	w	w	w	-	12	DP	-	-
 
-
 1	你们	店家称谓	称谓	rr	-	3	ZW	-	-
 2	再	d	d	d	-	3	XS	-	-
 3	查查	挑选动作	动作	v	-	0	ROOT	-	-
@@ -2171,7 +1943,6 @@
 5	我	r	r	r	-	4	XS	-	-
 6	个	q	q	q	-	7	XS	-	-
 7	回复	沟通动作	动作	v	-	4	DB	-	-
-
 
 1	2尺	m	服装尺码	m	-	4	XS	-	-
 2	3	m	服装尺码	m	-	1	XS	-	-
@@ -2181,7 +1952,6 @@
 6	多	数量状态	状态	a	-	7	XS	-	-
 7	大	商品状态	状态	a	-	5	DB	-	-
 
-
 1	嗯	e	e	e	-	0	ROOT	-	-
 2	，	w	w	w	-	1	DP	-	-
 3	好的	u	u	u	-	0	ROOT	-	-
@@ -2190,20 +1960,17 @@
 6	知道	沟通动作	动作	v	-	0	ROOT	-	-
 7	了	ul	ul	ul	-	6	WZ	-	-
 
-
 1	哦	e	e	e	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	厚	a	a	a	-	4	XS	-	-
 4	款	q	q	q	-	0	ROOT	-	-
 5	吗	y	y	y	-	4	QZ	-	-
 
-
 1	你	rr	rr	rr	-	2	ZW	-	-
 2	帮	v	v	v	-	0	ROOT	-	-
 3	我	rr	rr	rr	-	2	DB	-	-
 4	改下	交易动作	动作	v	-	2	LD	-	-
 5	邮费	费用	商品信息	n	-	4	DB	-	-
-
 
 1	啊	y	y	y	-	0	ROOT	-	-
 2	啊	y	y	y	-	1	BL	-	-
@@ -2214,7 +1981,6 @@
 7	一起	范围副词	副词	s	-	8	XS	-	-
 8	下单	交易动作	动作	n	-	5	LD	-	-
 9	呢	y	y	y	-	5	QZ	-	-
-
 
 1	不是	c	c	c	-	4	JZ	-	-
 2	不	否定副词	副词	d	-	3	XS	-	-
@@ -2229,14 +1995,12 @@
 11	你	rr	rr	rr	-	10	DB	-	-
 12	了	ule	ule	ule	-	10	WZ	-	-
 
-
 1	我	r	r	r	-	5	ZW	-	-
 2	两件	mq	mq	mq	-	3	XS	-	-
 3	衣服	衣物类	商品	n	-	5	DB	-	-
 4	都	d	d	d	-	5	XS	-	-
 5	不要	d	d	d	-	0	ROOT	-	-
 6	了	ul	ul	ul	-	5	WZ	-	-
-
 
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	购	交易动作	动作	v	-	4	XS	-	-
@@ -2246,13 +2010,11 @@
 6	还没	z	z	z	-	7	XS	-	-
 7	发货	vi	vi	vi	-	0	ROOT	-	-
 
-
 1	不是	c	c	c	-	2	JZ	-	-
 2	收藏	网站相关动作	动作	v	-	0	ROOT	-	-
 3	减	v	v	v	-	2	LD	-	-
 4	5元	m	服装尺码	m	-	3	DB	-	-
 5	嘛	y	y	y	-	2	QZ	-	-
-
 
 1	过	ug	ug	ug	-	5	XS	-	-
 2	完	v	v	v	-	1	XS	-	-
@@ -2268,7 +2030,6 @@
 12	你	r	r	r	-	11	DB	-	-
 13	了	ul	ul	ul	-	11	WZ	-	-
 
-
 1	你们	店家称谓	称谓	rr	-	3	ZW	-	-
 2	一般	ad	ad	ad	-	3	XS	-	-
 3	收	物流动作	动作	v	-	0	ROOT	-	-
@@ -2276,20 +2037,17 @@
 5	快递	物流方式	物流相关	v	-	3	DB	-	-
 6	？	w	w	w	-	3	DP	-	-
 
-
 1	双十二	nz	nz	nz	-	3	XS	-	-
 2	会	v	v	v	-	3	QTZ	-	-
 3	有	vyou	vyou	vyou	-	0	ROOT	-	-
 4	优惠	vn	vn	vn	-	3	DB	-	-
 5	吗	y	y	y	-	3	QZ	-	-
 
-
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	可以	v	v	v	-	3	QTZ	-	-
 3	包邮	包邮	商品属性	a	-	0	ROOT	-	-
 4	了	ule	ule	ule	-	3	WZ	-	-
 5	吗	y	y	y	-	3	QZ	-	-
-
 
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	这款	r	r	r	-	3	XS	-	-
@@ -2303,13 +2061,11 @@
 10	穿	商品动作	动作	v	-	0	ROOT	-	-
 11	吗	y	y	y	-	10	QZ	-	-
 
-
 1	具体	a	a	a	-	3	XS	-	-
 2	什么	什么	疑问词	ry	-	3	XS	-	-
 3	时候	n	n	n	-	5	XS	-	-
 4	可以	v	v	v	-	5	QTZ	-	-
 5	发货	vi	vi	vi	-	0	ROOT	-	-
-
 
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	SPACE	null	null	null	-	0	ROOT	-	-
@@ -2318,13 +2074,11 @@
 5	了	ule	ule	ule	-	4	WZ	-	-
 6	吗	y	y	y	-	4	QZ	-	-
 
-
 1	什么	什么	疑问词	ry	-	2	XS	-	-
 2	号码	号码	商品信息	n	-	3	ZW	-	-
 3	合适	商品状态	状态	a	-	0	ROOT	-	-
 4	呢	y	y	y	-	3	QZ	-	-
 5	?	w	w	w	-	3	DP	-	-
-
 
 1	还有	v	v	v	-	0	ROOT	-	-
 2	你	r	r	r	-	3	ZW	-	-
@@ -2333,13 +2087,11 @@
 5	的	uj	uj	uj	-	3	XZ	-	-
 6	10元	m	服装尺码	m	-	1	DB	-	-
 
-
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	购	交易动作	动作	v	-	4	XS	-	-
 3	的	ude1	ude1	ude1	-	2	XZ	-	-
 4	鞋	鞋类	商品	n	-	0	ROOT	-	-
 5	哦	e	e	e	-	4	QZ	-	-
-
 
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -2351,7 +2103,6 @@
 8	了	ule	ule	ule	-	7	WZ	-	-
 9	吗	y	y	y	-	6	QZ	-	-
 10	?	w	w	w	-	6	DP	-	-
-
 
 1	我	r	r	r	-	5	XS	-	-
 2	都	d	d	d	-	5	XS	-	-
@@ -2366,7 +2117,6 @@
 11	吗	y	y	y	-	10	QZ	-	-
 12	呢	y	y	y	-	10	QZ	-	-
 
-
 1	圆通	物流方式	物流相关	ns	-	0	ROOT	-	-
 2	SPACE	null	null	null	-	0	ROOT	-	-
 3	SPACE	null	null	null	-	0	ROOT	-	-
@@ -2379,14 +2129,12 @@
 10	SPACE	null	null	null	-	0	ROOT	-	-
 11	1409	m	服装尺码	m	-	0	ROOT	-	-
 
-
 1	不	否定副词	副词	d	-	2	XS	-	-
 2	发	物流动作	动作	v	-	4	XS	-	-
 3	我	rr	rr	rr	-	4	ZW	-	-
 4	退	交易动作	动作	vn	-	0	ROOT	-	-
 5	了	ule	ule	ule	-	4	WZ	-	-
 6	哦	e	e	e	-	4	QZ	-	-
-
 
 1	不	否定副词	副词	d	-	2	XS	-	-
 2	合适	商品状态	状态	a	-	5	XS	-	-
@@ -2395,7 +2143,6 @@
 5	退换	交易动作	动作	v	-	0	ROOT	-	-
 6	吗	y	y	y	-	5	QZ	-	-
 7	?	w	w	w	-	5	DP	-	-
-
 
 1	你们	店家称谓	称谓	rr	-	2	ZW	-	-
 2	发货	vi	vi	vi	-	0	ROOT	-	-
@@ -2406,13 +2153,11 @@
 7	……	w	w	w	-	2	DP	-	-
 8	……	w	w	w	-	2	DP	-	-
 
-
 1	只要	c	c	c	-	3	LZ	-	-
 2	不是	c	c	c	-	3	JZ	-	-
 3	申通	物流方式	物流相关	nz	-	5	XS	-	-
 4	就	时间副词	副词	d	-	5	XS	-	-
 5	好	a	a	a	-	0	ROOT	-	-
-
 
 1	衣服	衣物类	商品	n	-	2	DB	-	-
 2	退	交易动作	动作	v	-	0	ROOT	-	-
@@ -2431,20 +2176,17 @@
 15	没	d	d	d	-	16	DB	-	-
 16	处理	交易动作	动作	v	-	0	ROOT	-	-
 
-
 1	刚	d	d	d	-	3	XS	-	-
 2	又	d	d	d	-	3	XS	-	-
 3	购	交易动作	动作	v	-	0	ROOT	-	-
 4	了	ule	ule	ule	-	3	WZ	-	-
 5	两件	mq	mq	mq	-	3	DB	-	-
 
-
 1	大约	d	d	d	-	3	XS	-	-
 2	什么	什么	疑问词	ry	-	3	XS	-	-
 3	时候	n	n	n	-	4	XS	-	-
 4	发货	vi	vi	vi	-	0	ROOT	-	-
 5	呢	y	y	y	-	4	QZ	-	-
-
 
 1	衣服	衣物类	商品	n	-	2	DB	-	-
 2	收到	v	v	v	-	0	ROOT	-	-
@@ -2457,13 +2199,11 @@
 9	很	程度副词	副词	d	-	10	XS	-	-
 10	严重	a	a	a	-	0	ROOT	-	-
 
-
 1	可以	v	v	v	-	2	QTZ	-	-
 2	发	物流动作	动作	v	-	0	ROOT	-	-
 3	什么	什么	疑问词	ry	-	4	XS	-	-
 4	快递	物流方式	物流相关	v	-	2	DB	-	-
 5	呢	y	y	y	-	2	DP	-	-
-
 
 1	嗯	e	e	e	-	0	ROOT	-	-
 2	嗯	e	e	e	-	0	ROOT	-	-
@@ -2472,13 +2212,11 @@
 5	SPACE	null	null	null	-	0	ROOT	-	-
 6	谢谢	v	v	v	-	0	ROOT	-	-
 
-
 1	我	rr	rr	rr	-	3	ZW	-	-
 2	想	情态动词词缀	副词	v	-	3	QTZ	-	-
 3	退	交易动作	动作	vn	-	0	ROOT	-	-
 4	再	d	d	d	-	5	XS	-	-
 5	购	交易动作	动作	v	-	3	LD	-	-
-
 
 1	你	rr	rr	rr	-	2	ZW	-	-
 2	发	物流动作	动作	v	-	0	ROOT	-	-
@@ -2488,13 +2226,11 @@
 6	现在	t	t	t	-	7	XS	-	-
 7	退	交易动作	动作	vn	-	0	ROOT	-	-
 
-
 1	我	rr	rr	rr	-	3	ZW	-	-
 2	不	否定副词	副词	d	-	3	XS	-	-
 3	喜欢	人物状态	状态	vi	-	0	ROOT	-	-
 4	太	程度副词	副词	d	-	5	XS	-	-
 5	厚	a	a	a	-	3	DB	-	-
-
 
 1	这	r	r	r	-	2	XS	-	-
 2	件	q	q	q	-	3	XS	-	-
@@ -2503,7 +2239,6 @@
 5	时候	n	n	n	-	7	XS	-	-
 6	可以	v	v	v	-	7	QTZ	-	-
 7	发货	v	v	v	-	0	ROOT	-	-
-
 
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	购	交易动作	动作	v	-	5	XS	-	-
@@ -2516,14 +2251,12 @@
 9	发货	vi	vi	vi	-	0	ROOT	-	-
 10	呢	y	y	y	-	9	QZ	-	-
 
-
 1	不是	c	c	c	-	2	JZ	-	-
 2	满	a	a	a	-	0	ROOT	-	-
 3	299	m	服装尺码	m	-	2	DB	-	-
 4	减	v	v	v	-	2	LD	-	-
 5	20	m	服装尺码	m	-	4	DB	-	-
 6	吗	y	y	y	-	2	QZ	-	-
-
 
 1	哦	e	e	e	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -2534,7 +2267,6 @@
 7	忙	人物状态	状态	v	-	0	ROOT	-	-
 8	吧	y	y	y	-	7	QZ	-	-
 
-
 1	一天	mq	mq	mq	-	2	XS	-	-
 2	购	交易动作	动作	v	-	4	XS	-	-
 3	的	ude1	ude1	ude1	-	2	XZ	-	-
@@ -2543,13 +2275,11 @@
 6	到	v	v	v	-	0	ROOT	-	-
 7	了	ule	ule	ule	-	6	WZ	-	-
 
-
 1	你	rr	rr	rr	-	2	ZW	-	-
 2	帮	v	v	v	-	0	ROOT	-	-
 3	我	rr	rr	rr	-	2	DB	-	-
 4	找	v	v	v	-	2	LD	-	-
 5	找	v	v	v	-	4	BL	-	-
-
 
 1	十一号	nz	nz	nz	-	2	XS	-	-
 2	上	f	f	f	-	0	ROOT	-	-
@@ -2561,7 +2291,6 @@
 8	价格	价格	商品信息	n	-	6	DB	-	-
 9	吗	y	y	y	-	6	QZ	-	-
 
-
 1	我	rr	rr	rr	-	3	ZW	-	-
 2	不	否定副词	副词	d	-	3	XS	-	-
 3	需要	意向动作	动作	v	-	0	ROOT	-	-
@@ -2572,14 +2301,12 @@
 8	大	商品状态	状态	a	-	7	DB	-	-
 9	的	ude1	ude1	ude1	-	8	XZ	-	-
 
-
 1	36	m	服装尺码	m	-	2	XS	-	-
 2	码	码	服装尺码	v	-	0	ROOT	-	-
 3	但	c	c	c	-	5	LZ	-	-
 4	还是	c	c	c	-	3	BL	-	-
 5	太小	商品状态	状态	d	-	0	ROOT	-	-
 6	了	ule	ule	ule	-	5	WZ	-	-
-
 
 1	发	物流动作	动作	v	-	5	XS	-	-
 2	不了	v	v	v	-	1	XS	-	-
@@ -2588,14 +2315,12 @@
 5	退	交易动作	动作	vn	-	0	ROOT	-	-
 6	了	ule	ule	ule	-	5	WZ	-	-
 
-
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	今天	t	t	t	-	4	XS	-	-
 4	有	vyou	vyou	vyou	-	0	ROOT	-	-
 5	优惠	vn	vn	vn	-	4	DB	-	-
 6	吗	y	y	y	-	4	QZ	-	-
-
 
 1	我	r	r	r	-	2	ZW	-	-
 2	有	v	v	v	-	0	ROOT	-	-
@@ -2608,13 +2333,11 @@
 9	太	程度副词	副词	d	-	10	XS	-	-
 10	合身	商品状态	状态	a	-	0	ROOT	-	-
 
-
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	SPACE	null	null	null	-	0	ROOT	-	-
 3	我	rr	rr	rr	-	5	ZW	-	-
 4	要	意向动作	动作	v	-	5	QTZ	-	-
 5	退货	交易动作	动作	vi	-	0	ROOT	-	-
-
 
 1	噢	e	e	e	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -2629,7 +2352,6 @@
 11	发货	vi	vi	vi	-	0	ROOT	-	-
 12	啊	y	y	y	-	11	QZ	-	-
 
-
 1	166	m	服装尺码	m	-	0	ROOT	-	-
 2	cm	长度	度量单位	en	-	1	XS	-	-
 3	52	m	服装尺码	m	-	1	BL	-	-
@@ -2637,7 +2359,6 @@
 5	什么	什么	疑问词	ry	-	6	XS	-	-
 6	码	码	服装尺码	v	-	0	ROOT	-	-
 7	合适	商品状态	状态	a	-	6	ZW	-	-
-
 
 1	嗯	e	e	e	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -2648,7 +2369,6 @@
 7	我	rr	rr	rr	-	6	XS	-	-
 8	吧	y	y	y	-	6	QZ	-	-
 
-
 1	0	w	w	w	-	0	ROOT	-	-
 2	k	en	en	en	-	0	ROOT	-	-
 3	,	w	w	w	-	2	DP	-	-
@@ -2657,7 +2377,6 @@
 6	什么	什么	疑问词	ry	-	7	XS	-	-
 7	时候	n	n	n	-	8	XS	-	-
 8	发货	vi	vi	vi	-	5	LD	-	-
-
 
 1	最	d	d	d	-	2	XS	-	-
 2	讨厌	v	v	v	-	0	ROOT	-	-
@@ -2669,13 +2388,11 @@
 8	龟	n	n	n	-	9	XS	-	-
 9	速递	物流方式	物流相关	vn	-	0	ROOT	-	-
 
-
 1	可以	v	v	v	-	4	QTZ	-	-
 2	给	p	p	p	-	3	JZ	-	-
 3	我	rr	rr	rr	-	4	XS	-	-
 4	包邮	包邮	商品属性	a	-	0	ROOT	-	-
 5	吗	y	y	y	-	4	QZ	-	-
-
 
 1	50块	m	服装尺码	m	-	2	XS	-	-
 2	卷	q	q	q	-	5	DB	-	-
@@ -2683,7 +2400,6 @@
 4	没	d	d	d	-	5	XS	-	-
 5	点	qt	qt	qt	-	0	ROOT	-	-
 6	上	f	f	f	-	5	XS	-	-
-
 
 1	我	rr	rr	rr	-	4	ZW	-	-
 2	155	m	服装尺码	m	-	4	XS	-	-
@@ -2696,7 +2412,6 @@
 9	尺码	尺码	服装尺码	n	-	6	DB	-	-
 10	的	ude1	ude1	ude1	-	9	XZ	-	-
 11	呢	y	y	y	-	6	QZ	-	-
-
 
 1	所以	c	c	c	-	4	LZ	-	-
 2	就	时间副词	副词	d	-	4	XS	-	-
@@ -2711,13 +2426,11 @@
 11	28滴	m	服装尺码	m	-	9	BL	-	-
 12	腰	上半身部位	身体部位	n	-	4	DB	-	-
 
-
 1	会	v	v	v	-	4	QTZ	-	-
 2	不会	v	v	v	-	1	BL	-	-
 3	太	程度副词	副词	d	-	4	XS	-	-
 4	宽松	大小	商品信息	a	-	0	ROOT	-	-
 5	?	w	w	w	-	4	DP	-	-
-
 
 1	双11	t	t	t	-	2	XS	-	-
 2	当天	t	t	t	-	4	XS	-	-
@@ -2725,7 +2438,6 @@
 4	包邮	包邮	商品属性	a	-	0	ROOT	-	-
 5	的	ude1	ude1	ude1	-	4	XZ	-	-
 6	吧	y	y	y	-	4	QZ	-	-
-
 
 1	我	r	r	r	-	3	XS	-	-
 2	的	uj	uj	uj	-	1	XZ	-	-
@@ -2741,13 +2453,11 @@
 12	吗	y	y	y	-	10	QZ	-	-
 13	？	w	w	w	-	10	DP	-	-
 
-
 1	怎么	ryv	ryv	ryv	-	4	XS	-	-
 2	还	d	d	d	-	3	XS	-	-
 3	不	否定副词	副词	d	-	4	XS	-	-
 4	发	物流动作	动作	v	-	0	ROOT	-	-
 5	?	w	w	w	-	4	DP	-	-
-
 
 1	168	m	服装尺码	m	-	0	ROOT	-	-
 2	体重	体重	人物属性	n	-	1	BL	-	-
@@ -2756,7 +2466,6 @@
 5	多	数量状态	状态	a	-	6	XS	-	-
 6	大	商品状态	状态	a	-	4	DB	-	-
 7	呢	y	y	y	-	4	QZ	-	-
-
 
 1	好	a	a	a	-	0	ROOT	-	-
 2	吧	y	y	y	-	1	QZ	-	-
@@ -2768,7 +2477,6 @@
 8	价格	价格	商品信息	n	-	6	DB	-	-
 9	吧	y	y	y	-	6	QZ	-	-
 
-
 1	嗯	e	e	e	-	0	ROOT	-	-
 2	嗯	e	e	e	-	0	ROOT	-	-
 3	好的	u	u	u	-	0	ROOT	-	-
@@ -2778,7 +2486,6 @@
 7	小	商品状态	状态	a	-	0	ROOT	-	-
 8	阿	b	b	b	-	7	QZ	-	-
 
-
 1	外面	f	f	f	-	4	ZW	-	-
 2	是	vshi	vshi	vshi	-	1	JZ	-	-
 3	什么	什么	疑问词	ry	-	4	XS	-	-
@@ -2786,20 +2493,17 @@
 5	的	ude1	ude1	ude1	-	4	XZ	-	-
 6	啊	y	y	y	-	4	QZ	-	-
 
-
 1	你们	店家称谓	称谓	rr	-	5	ZW	-	-
 2	今天	t	t	t	-	5	XS	-	-
 3	给	p	p	p	-	5	JZ	-	-
 4	不	否定副词	副词	d	-	5	XS	-	-
 5	给我发	物流动作	动作	n	-	0	ROOT	-	-
 
-
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	双十一	nz	nz	nz	-	3	XS	-	-
 3	有	vyou	vyou	vyou	-	0	ROOT	-	-
 4	活动	vn	vn	vn	-	3	DB	-	-
 5	吗	y	y	y	-	3	QZ	-	-
-
 
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -2811,14 +2515,12 @@
 8	的	ude1	ude1	ude1	-	7	XZ	-	-
 9	?	w	w	w	-	7	DP	-	-
 
-
 1	700块	m	服装尺码	m	-	3	XS	-	-
 2	的	ude1	ude1	ude1	-	1	XZ	-	-
 3	衣服	衣物类	商品	n	-	0	ROOT	-	-
 4	SPACE	null	null	null	-	0	ROOT	-	-
 5	真够	nz	nz	nz	-	6	XS	-	-
 6	费劲	a	a	a	-	0	ROOT	-	-
-
 
 1	不能	v	v	v	-	3	QTZ	-	-
 2	再	d	d	d	-	3	XS	-	-
@@ -2828,13 +2530,11 @@
 6	吗	y	y	y	-	3	QZ	-	-
 7	?	w	w	w	-	3	DP	-	-
 
-
 1	你	rr	rr	rr	-	3	ZW	-	-
 2	现在	t	t	t	-	3	XS	-	-
 3	发给	物流动作	动作	v	-	0	ROOT	-	-
 4	我	rr	rr	rr	-	3	XS	-	-
 5	下	f	f	f	-	3	XS	-	-
-
 
 1	两个	mq	mq	mq	-	2	XS	-	-
 2	小时	n	n	n	-	0	ROOT	-	-
@@ -2842,7 +2542,6 @@
 4	不	否定副词	副词	d	-	5	XS	-	-
 5	回复	沟通动作	动作	v	-	0	ROOT	-	-
 6	？	w	w	w	-	5	DP	-	-
-
 
 1	不是	c	c	c	-	3	JZ	-	-
 2	双11	t	t	t	-	3	XS	-	-
@@ -2855,7 +2554,6 @@
 9	优惠	vn	vn	vn	-	0	ROOT	-	-
 10	吗	y	y	y	-	9	QZ	-	-
 11	?	w	w	w	-	9	DP	-	-
-
 
 1	那	r	r	r	-	8	LZ	-	-
 2	我	r	r	r	-	8	ZW	-	-
@@ -2874,13 +2572,11 @@
 15	吗	y	y	y	-	14	QZ	-	-
 16	？	w	w	w	-	14	DP	-	-
 
-
 1	你们	店家称谓	称谓	rr	-	2	XS	-	-
 2	码	码	服装尺码	v	-	3	ZW	-	-
 3	正	d	d	d	-	0	ROOT	-	-
 4	么	y	y	y	-	3	QZ	-	-
 5	?	w	w	w	-	3	DP	-	-
-
 
 1	到底	d	d	d	-	2	XS	-	-
 2	多久	ryt	ryt	ryt	-	0	ROOT	-	-
@@ -2889,7 +2585,6 @@
 5	时间	n	n	n	-	6	XS	-	-
 6	信	n	n	n	-	3	DB	-	-
 7	啊	y	y	y	-	3	QZ	-	-
-
 
 1	我	rr	rr	rr	-	5	ZW	-	-
 2	刚	d	d	d	-	4	XS	-	-
@@ -2905,7 +2600,6 @@
 12	购	交易动作	动作	v	-	0	ROOT	-	-
 13	的	ude1	ude1	ude1	-	12	XZ	-	-
 
-
 1	m	m	服装尺码	en	-	6	ZW	-	-
 2	是不是	v	v	v	-	6	JZ	-	-
 3	比	p	p	p	-	5	JZ	-	-
@@ -2913,7 +2607,6 @@
 5	码	码	服装尺码	v	-	6	XS	-	-
 6	短	商品状态	状态	a	-	0	ROOT	-	-
 7	啊	y	y	y	-	6	QZ	-	-
-
 
 1	我	r	r	r	-	3	XS	-	-
 2	的	uj	uj	uj	-	1	XZ	-	-
@@ -2925,7 +2618,6 @@
 8	过	ug	ug	ug	-	7	QTZ	-	-
 9	机	ng	ng	ng	-	7	DB	-	-
 
-
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	!	w	w	w	-	1	DP	-	-
 3	这款	r	r	r	-	4	XS	-	-
@@ -2935,7 +2627,6 @@
 7	的	ude1	ude1	ude1	-	6	XZ	-	-
 8	吗	y	y	y	-	6	QZ	-	-
 
-
 1	身高	身高	人物属性	n	-	2	ZW	-	-
 2	170	m	服装尺码	m	-	0	ROOT	-	-
 3	体重	体重	人物属性	n	-	4	ZW	-	-
@@ -2943,7 +2634,6 @@
 5	能	v	v	v	-	6	QTZ	-	-
 6	穿	商品动作	动作	v	-	0	ROOT	-	-
 7	吗	y	y	y	-	6	QZ	-	-
-
 
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -2954,14 +2644,12 @@
 7	发货	vi	vi	vi	-	5	LD	-	-
 8	哦	e	e	e	-	7	QZ	-	-
 
-
 1	催	沟通动作	动作	v	-	0	ROOT	-	-
 2	了	ule	ule	ule	-	1	WZ	-	-
 3	好	a	a	a	-	1	XS	-	-
 4	几天	mq	mq	mq	-	3	XS	-	-
 5	了	ule	ule	ule	-	3	WZ	-	-
 6	呢	y	y	y	-	3	QZ	-	-
-
 
 1	这条	mq	mq	mq	-	2	XS	-	-
 2	裙	裙类	商品	n	-	5	ZW	-	-
@@ -2970,7 +2658,6 @@
 5	码	码	服装尺码	v	-	0	ROOT	-	-
 6	吗	y	y	y	-	5	QZ	-	-
 
-
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	，	w	w	w	-	1	DP	-	-
 3	你们	店家称谓	称谓	rr	-	4	XS	-	-
@@ -2978,14 +2665,12 @@
 5	返现	优惠动作	动作	n	-	4	LD	-	-
 6	吗	y	y	y	-	4	QZ	-	-
 
-
 1	今天	t	t	t	-	2	XS	-	-
 2	购	交易动作	动作	v	-	6	XS	-	-
 3	什么	什么	疑问词	ry	-	4	XS	-	-
 4	时候	n	n	n	-	6	XS	-	-
 5	可以	v	v	v	-	6	QTZ	-	-
 6	到	v	v	v	-	0	ROOT	-	-
-
 
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -2996,20 +2681,17 @@
 7	吗	y	y	y	-	5	QZ	-	-
 8	?	w	w	w	-	5	DP	-	-
 
-
 1	双十一	nz	nz	nz	-	0	ROOT	-	-
 2	有	vyou	vyou	vyou	-	1	XS	-	-
 3	什么	什么	疑问词	ry	-	4	XS	-	-
 4	优惠	vn	vn	vn	-	2	DB	-	-
 5	吗	y	y	y	-	2	QZ	-	-
 
-
 1	同意	沟通动作	动作	vn	-	0	ROOT	-	-
 2	下	f	f	f	-	1	XS	-	-
 3	退款	金额动作	动作	vi	-	4	XS	-	-
 4	申请	申请	v	v	-	1	DB	-	-
 5	哦	e	e	e	-	1	QZ	-	-
-
 
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -3023,13 +2705,11 @@
 10	发货	vi	vi	vi	-	3	DB	-	-
 11	?	w	w	w	-	3	DP	-	-
 
-
 1	务必	d	d	d	-	2	XS	-	-
 2	今天	t	t	t	-	3	XS	-	-
 3	发出	物流动作	动作	v	-	0	ROOT	-	-
 4	帮忙	vi	vi	vi	-	0	ROOT	-	-
 5	了	ule	ule	ule	-	4	WZ	-	-
-
 
 1	所以	c	c	c	-	3	LZ	-	-
 2	已经	时间副词	副词	d	-	3	XS	-	-
@@ -3046,14 +2726,12 @@
 13	下	f	f	f	-	12	XS	-	-
 14	。	w	w	w	-	8	DP	-	-
 
-
 1	今天	t	t	t	-	3	XS	-	-
 2	还是	c	c	c	-	3	LZ	-	-
 3	发	物流动作	动作	v	-	0	ROOT	-	-
 4	不了	v	v	v	-	3	XS	-	-
 5	么	y	y	y	-	3	QZ	-	-
 6	?	w	w	w	-	3	DP	-	-
-
 
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -3062,20 +2740,17 @@
 5	吗	y	y	y	-	4	QZ	-	-
 6	?	w	w	w	-	4	DP	-	-
 
-
 1	你家	店家称谓	称谓	r	-	4	ZW	-	-
 2	明天	t	t	t	-	4	XS	-	-
 3	什么	什么	疑问词	ry	-	4	XS	-	-
 4	活动	vn	vn	vn	-	0	ROOT	-	-
 5	呢	y	y	y	-	4	QZ	-	-
 
-
 1	发不	l	服装尺码	l	-	4	XS	-	-
 2	出来	vf	vf	vf	-	1	XS	-	-
 3	我	rr	rr	rr	-	4	ZW	-	-
 4	退款	金额动作	动作	vi	-	0	ROOT	-	-
 5	了	ule	ule	ule	-	4	WZ	-	-
-
 
 1	ri	en	en	en	-	0	ROOT	-	-
 2	什么	什么	疑问词	ry	-	3	XS	-	-
@@ -3085,13 +2760,11 @@
 6	啊	y	y	y	-	5	QZ	-	-
 7	?	w	w	w	-	5	DP	-	-
 
-
 1	大概	d	d	d	-	2	XS	-	-
 2	几天	mq	mq	mq	-	4	XS	-	-
 3	可以	v	v	v	-	4	QTZ	-	-
 4	发货	vi	vi	vi	-	0	ROOT	-	-
 5	呀	y	y	y	-	4	QZ	-	-
-
 
 1	还有	v	v	v	-	3	LZ	-	-
 2	我	r	r	r	-	3	ZW	-	-
@@ -3101,13 +2774,11 @@
 6	少点	少点	要求	m	-	0	ROOT	-	-
 7	吗	y	y	y	-	6	QZ	-	-
 
-
 1	购	交易动作	动作	v	-	4	XS	-	-
 2	后	f	f	f	-	1	XS	-	-
 3	多久	ryt	ryt	ryt	-	4	XS	-	-
 4	发货	vi	vi	vi	-	0	ROOT	-	-
 5	?	w	w	w	-	4	DP	-	-
-
 
 1	亲	通用称谓	称谓	v	-	0	ROOT	-	-
 2	，	w	w	w	-	1	DP	-	-
@@ -3123,14 +2794,12 @@
 12	不了	v	v	v	-	11	XS	-	-
 13	了	ul	ul	ul	-	11	WZ	-	-
 
-
 1	七天	mq	mq	mq	-	3	XS	-	-
 2	无	v	v	v	-	3	XS	-	-
 3	理由	n	n	n	-	4	XS	-	-
 4	退货	交易动作	动作	vi	-	0	ROOT	-	-
 5	?	w	w	w	-	4	DP	-	-
 6	?	w	w	w	-	4	DP	-	-
-
 
 1	衣服	衣物类	商品	n	-	2	ZW	-	-
 2	大	商品状态	状态	a	-	0	ROOT	-	-
@@ -3139,7 +2808,6 @@
 5	退货	交易动作	动作	vi	-	0	ROOT	-	-
 6	吗	y	y	y	-	5	QZ	-	-
 7	？	w	w	w	-	5	DP	-	-
-
 
 1	你们	店家称谓	称谓	rr	-	5	ZW	-	-
 2	竟然	d	d	d	-	5	XS	-	-
@@ -3154,7 +2822,6 @@
 11	!	w	w	w	-	8	DP	-	-
 12	!	w	w	w	-	8	DP	-	-
 
-
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	SPACE	null	null	null	-	0	ROOT	-	-
 3	我	rr	rr	rr	-	5	ZW	-	-
@@ -3167,7 +2834,6 @@
 10	同意	沟通动作	动作	vn	-	7	LD	-	-
 11	下	f	f	f	-	10	XS	-	-
 
-
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	这件	mq	mq	mq	-	4	ZW	-	-
@@ -3177,13 +2843,11 @@
 7	吗	y	y	y	-	4	QZ	-	-
 8	?	w	w	w	-	4	DP	-	-
 
-
 1	我	rr	rr	rr	-	3	ZW	-	-
 2	想	情态动词词缀	副词	v	-	3	QTZ	-	-
 3	换	交易动作	动作	v	-	0	ROOT	-	-
 4	个	q	q	q	-	5	XS	-	-
 5	地址	地址	人物属性	n	-	3	DB	-	-
-
 
 1	哦	e	e	e	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -3191,13 +2855,11 @@
 4	好的	u	u	u	-	0	ROOT	-	-
 5	SPACE	null	null	null	-	0	ROOT	-	-
 
-
 1	你们	店家称谓	称谓	rr	-	2	ZW	-	-
 2	打算	意向动作	动作	v	-	0	ROOT	-	-
 3	什么	什么	疑问词	ry	-	4	XS	-	-
 4	时候	n	n	n	-	5	XS	-	-
 5	发货	vi	vi	vi	-	2	LD	-	-
-
 
 1	短裤	裤类	商品	n	-	0	ROOT	-	-
 2	啊	y	y	y	-	1	QZ	-	-
@@ -3206,20 +2868,17 @@
 5	错	对错	状态	v	-	4	XS	-	-
 6	了	ul	ul	ul	-	4	WZ	-	-
 
-
 1	什么	什么	疑问词	ry	-	2	XS	-	-
 2	时候	n	n	n	-	4	XS	-	-
 3	开始	v	v	v	-	4	QTZ	-	-
 4	发货	vi	vi	vi	-	0	ROOT	-	-
 5	呀	y	y	y	-	4	QZ	-	-
 
-
 1	不	否定副词	副词	d	-	2	XS	-	-
 2	般	uyy	uyy	uyy	-	5	XS	-	-
 3	要	意向动作	动作	v	-	5	QTZ	-	-
 4	几天	mq	mq	mq	-	3	DB	-	-
 5	发货	vi	vi	vi	-	0	ROOT	-	-
-
 
 1	但	c	c	c	-	3	LZ	-	-
 2	我	r	r	r	-	3	ZW	-	-
@@ -3229,20 +2888,17 @@
 6	东西	n	n	n	-	3	DB	-	-
 7	的	uj	uj	uj	-	6	XZ	-	-
 
-
 1	双11	t	t	t	-	4	XS	-	-
 2	还	d	d	d	-	4	XS	-	-
 3	会	v	v	v	-	4	QTZ	-	-
 4	优惠	vn	vn	vn	-	0	ROOT	-	-
 5	吗	y	y	y	-	4	QZ	-	-
 
-
 1	仓库	n	n	n	-	2	XS	-	-
 2	有货	商品状态	状态	l	-	0	ROOT	-	-
 3	了	ule	ule	ule	-	2	WZ	-	-
 4	吗	y	y	y	-	2	QZ	-	-
 5	SPACE	null	null	null	-	0	ROOT	-	-
-
 
 1	我	rr	rr	rr	-	4	ZW	-	-
 2	昨天	t	t	t	-	4	XS	-	-
@@ -3251,20 +2907,17 @@
 5	了	ule	ule	ule	-	4	WZ	-	-
 6	的	ude1	ude1	ude1	-	4	XZ	-	-
 
-
 1	上面	f	f	f	-	2	XS	-	-
 2	写	v	v	v	-	0	ROOT	-	-
 3	的	ude1	ude1	ude1	-	2	XZ	-	-
 4	预定	交易动作	动作	vn	-	2	DB	-	-
 5	15天	m	服装尺码	m	-	4	ZW	-	-
 
-
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	我	rr	rr	rr	-	5	ZW	-	-
 4	要	意向动作	动作	v	-	5	QTZ	-	-
 5	退货	交易动作	动作	vi	-	0	ROOT	-	-
-
 
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	…	w	w	w	-	1	DP	-	-
@@ -3276,13 +2929,11 @@
 8	发货	vi	vi	vi	-	0	ROOT	-	-
 9	啊	y	y	y	-	8	QZ	-	-
 
-
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	什么	什么	疑问词	ry	-	4	XS	-	-
 4	快递	物流方式	物流相关	v	-	0	ROOT	-	-
 5	呢	y	y	y	-	4	QZ	-	-
-
 
 1	您	rr	rr	rr	-	4	ZW	-	-
 2	可否	情态动词词缀	副词	v	-	4	XS	-	-
@@ -3299,13 +2950,11 @@
 13	了	ule	ule	ule	-	11	WZ	-	-
 14	SPACE	null	null	null	-	0	ROOT	-	-
 
-
 1	修补	v	v	v	-	2	XS	-	-
 2	费	n	n	n	-	3	DB	-	-
 3	给	p	p	p	-	0	ROOT	-	-
 4	了	ule	ule	ule	-	3	WZ	-	-
 5	吗	y	y	y	-	3	QZ	-	-
-
 
 1	我	r	r	r	-	3	ZW	-	-
 2	都	d	d	d	-	3	XS	-	-
@@ -3314,14 +2963,12 @@
 5	十天	mq	mq	mq	-	3	DB	-	-
 6	了	ul	ul	ul	-	3	WZ	-	-
 
-
 1	平常	a	a	a	-	3	XS	-	-
 2	都	d	d	d	-	3	XS	-	-
 3	没什么	l	服装尺码	l	-	0	ROOT	-	-
 4	优惠	vn	vn	vn	-	5	XS	-	-
 5	活动	vn	vn	vn	-	3	DB	-	-
 6	吗	y	y	y	-	3	QZ	-	-
-
 
 1	什么	什么	疑问词	r	-	2	XS	-	-
 2	时候	n	n	n	-	5	XS	-	-
@@ -3330,7 +2977,6 @@
 5	发货	v	v	v	-	0	ROOT	-	-
 6	呢	y	y	y	-	5	QZ	-	-
 7	亲爱的	通用称谓	称谓	n	-	0	ROOT	-	-
-
 
 1	这个	rz	rz	rz	-	3	ZW	-	-
 2	是	v	v	v	-	3	JZ	-	-
@@ -3348,7 +2994,6 @@
 14	冷	天气状态	状态	a	-	0	ROOT	-	-
 15	吗	y	y	y	-	14	QZ	-	-
 
-
 1	是	v	v	v	-	4	JZ	-	-
 2	现在	t	t	t	-	4	XS	-	-
 3	马上	d	d	d	-	4	XS	-	-
@@ -3356,13 +3001,11 @@
 5	我	r	r	r	-	4	DB	-	-
 6	吗	y	y	y	-	4	QZ	-	-
 
-
 1	可以	v	v	v	-	2	QTZ	-	-
 2	申请	申请	v	v	-	0	ROOT	-	-
 3	退款	金额动作	动作	vi	-	2	DB	-	-
 4	吗	y	y	y	-	2	QZ	-	-
 5	?	w	w	w	-	2	DP	-	-
-
 
 1	哦	e	e	e	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -3371,13 +3014,11 @@
 5	快递	物流方式	物流相关	v	-	3	DB	-	-
 6	?	w	w	w	-	3	DP	-	-
 
-
 1	我	rr	rr	rr	-	4	ZW	-	-
 2	也	d	d	d	-	4	XS	-	-
 3	在	p	p	p	-	4	JZ	-	-
 4	杭州	ns	ns	ns	-	0	ROOT	-	-
 5	的	ude1	ude1	ude1	-	4	XZ	-	-
-
 
 1	发	物流动作	动作	v	-	0	ROOT	-	-
 2	的	ude1	ude1	ude1	-	1	XZ	-	-
@@ -3386,14 +3027,12 @@
 5	快递	物流方式	物流相关	v	-	1	DB	-	-
 6	?	w	w	w	-	1	DP	-	-
 
-
 1	就	时间副词	副词	d	-	2	XS	-	-
 2	没	d	d	d	-	0	ROOT	-	-
 3	其它	rz	rz	rz	-	4	XS	-	-
 4	优惠	vn	vn	vn	-	2	DB	-	-
 5	了	ul	ul	ul	-	4	WZ	-	-
 6	吗	y	y	y	-	2	QZ	-	-
-
 
 1	会	v	v	v	-	3	QTZ	-	-
 2	不会	v	v	v	-	1	BL	-	-
@@ -3402,14 +3041,12 @@
 5	啊	y	y	y	-	3	QZ	-	-
 6	?	w	w	w	-	3	DP	-	-
 
-
 1	到底	d	d	d	-	2	XS	-	-
 2	发	物流动作	动作	v	-	0	ROOT	-	-
 3	没	d	d	d	-	4	XS	-	-
 4	发货	vi	vi	vi	-	2	BL	-	-
 5	的	ude1	ude1	ude1	-	4	XZ	-	-
 6	?	w	w	w	-	2	DP	-	-
-
 
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	SPACE	null	null	null	-	0	ROOT	-	-
@@ -3419,13 +3056,11 @@
 6	发货	vi	vi	vi	-	0	ROOT	-	-
 7	?	w	w	w	-	6	DP	-	-
 
-
 1	m	m	服装尺码	en	-	3	ZW	-	-
 2	不会	v	v	v	-	3	QTZ	-	-
 3	小	商品状态	状态	a	-	0	ROOT	-	-
 4	吗	y	y	y	-	3	QZ	-	-
 5	?	w	w	w	-	3	DP	-	-
-
 
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -3435,7 +3070,6 @@
 6	要	意向动作	动作	v	-	7	QTZ	-	-
 7	退货	交易动作	动作	vi	-	4	LD	-	-
 
-
 1	请问	语气助动词	副词	v	-	0	ROOT	-	-
 2	是	v	v	v	-	4	JZ	-	-
 3	厚	a	a	a	-	4	XS	-	-
@@ -3444,13 +3078,11 @@
 6	薄	a	a	a	-	7	XS	-	-
 7	款	n	n	n	-	4	BL	-	-
 
-
 1	我	rr	rr	rr	-	3	ZW	-	-
 2	咋	ryv	ryv	ryv	-	3	XS	-	-
 3	找	v	v	v	-	0	ROOT	-	-
 4	不到	v	v	v	-	3	XS	-	-
 5	呢	y	y	y	-	3	QZ	-	-
-
 
 1	你	rr	rr	rr	-	3	ZW	-	-
 2	能	v	v	v	-	3	QTZ	-	-
@@ -3464,13 +3096,11 @@
 10	发货	vi	vi	vi	-	0	ROOT	-	-
 11	吗	y	y	y	-	10	QZ	-	-
 
-
 1	今天	t	t	t	-	2	XS	-	-
 2	购	交易动作	动作	v	-	5	XS	-	-
 3	最快	d	d	d	-	4	XS	-	-
 4	何时	ryt	ryt	ryt	-	5	XS	-	-
 5	发货	vi	vi	vi	-	0	ROOT	-	-
-
 
 1	怎么	ryv	ryv	ryv	-	3	XS	-	-
 2	又	d	d	d	-	3	XS	-	-
@@ -3478,7 +3108,6 @@
 4	架	qv	qv	qv	-	3	DB	-	-
 5	了	ule	ule	ule	-	3	WZ	-	-
 6	?	w	w	w	-	3	DP	-	-
-
 
 1	好吧	u	u	u	-	0	ROOT	-	-
 2	SPACE	null	null	null	-	0	ROOT	-	-
@@ -3490,7 +3119,6 @@
 8	包邮	包邮	商品属性	a	-	0	ROOT	-	-
 9	吗	y	y	y	-	8	QZ	-	-
 
-
 1	大小	大小	商品信息	n	-	3	ZW	-	-
 2	是	vshi	vshi	vshi	-	3	JZ	-	-
 3	好的	u	u	u	-	0	ROOT	-	-
@@ -3499,7 +3127,6 @@
 6	拉	v	v	v	-	0	ROOT	-	-
 7	不到	v	v	v	-	6	XS	-	-
 8	底	f	f	f	-	7	XS	-	-
-
 
 1	看	挑选动作	动作	v	-	0	ROOT	-	-
 2	一下	mq	mq	mq	-	1	XS	-	-
@@ -3515,13 +3142,11 @@
 12	我	r	r	r	-	11	DB	-	-
 13	问问	沟通动作	动作	v	-	11	LD	-	-
 
-
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	这款	r	r	r	-	4	XS	-	-
 4	有货	商品状态	状态	l	-	0	ROOT	-	-
 5	吗	y	y	y	-	4	QZ	-	-
-
 
 1	什么	什么	疑问词	ry	-	2	XS	-	-
 2	时候	n	n	n	-	5	XS	-	-
@@ -3530,20 +3155,17 @@
 5	发货	vi	vi	vi	-	0	ROOT	-	-
 6	?	w	w	w	-	5	DP	-	-
 
-
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	拉链	拉链	服装配件	n	-	4	ZW	-	-
 4	不太好	负面	评价	v	-	0	ROOT	-	-
 5	呢	y	y	y	-	4	QZ	-	-
 
-
 1	优惠卷	n	n	n	-	3	DB	-	-
 2	怎么	ryv	ryv	ryv	-	3	XS	-	-
 3	用	p	p	p	-	0	ROOT	-	-
 4	啊	y	y	y	-	3	QZ	-	-
 5	?	w	w	w	-	3	DP	-	-
-
 
 1	亲	通用称谓	称谓	v	-	0	ROOT	-	-
 2	这	r	r	r	-	3	XS	-	-
@@ -3554,7 +3176,6 @@
 7	架	q	q	q	-	6	DB	-	-
 8	了	ul	ul	ul	-	6	WZ	-	-
 
-
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	购	交易动作	动作	v	-	0	ROOT	-	-
 3	多久	ryt	ryt	ryt	-	2	XS	-	-
@@ -3562,14 +3183,12 @@
 5	发货	vi	vi	vi	-	2	LD	-	-
 6	?	w	w	w	-	5	DP	-	-
 
-
 1	两个	mq	mq	mq	-	5	XS	-	-
 2	我	rr	rr	rr	-	5	ZW	-	-
 3	都	d	d	d	-	5	XS	-	-
 4	能	v	v	v	-	5	QTZ	-	-
 5	装下	n	n	n	-	0	ROOT	-	-
 6	啦	y	y	y	-	5	QZ	-	-
-
 
 1	快递	物流方式	物流相关	v	-	2	ZW	-	-
 2	显示	系动词	动作	v	-	0	ROOT	-	-
@@ -3582,7 +3201,6 @@
 9	收到	v	v	v	-	0	ROOT	-	-
 10	货	物流物品	物流相关	n	-	9	DB	-	-
 
-
 1	我	r	r	r	-	2	ZW	-	-
 2	选	v	v	v	-	0	ROOT	-	-
 3	了	ul	ul	ul	-	2	WZ	-	-
@@ -3591,13 +3209,11 @@
 6	邮	物流动作	动作	v	-	5	DB	-	-
 7	吗	y	y	y	-	5	QZ	-	-
 
-
 1	啥	ry	ry	ry	-	2	XS	-	-
 2	时	ng	ng	ng	-	4	XS	-	-
 3	能	v	v	v	-	4	QTZ	-	-
 4	发货	vi	vi	vi	-	0	ROOT	-	-
 5	?	w	w	w	-	4	DP	-	-
-
 
 1	退货	交易动作	动作	v	-	2	XS	-	-
 2	理由	n	n	n	-	4	XS	-	-
@@ -3605,7 +3221,6 @@
 4	听	v	v	v	-	0	ROOT	-	-
 5	你	r	r	r	-	4	DB	-	-
 6	的	uj	uj	uj	-	5	XZ	-	-
-
 
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	167	m	服装尺码	m	-	0	ROOT	-	-
@@ -3615,7 +3230,6 @@
 6	什么	什么	疑问词	ry	-	7	XS	-	-
 7	码	码	服装尺码	v	-	5	DB	-	-
 
-
 1	购家	n	n	n	-	0	ROOT	-	-
 2	了	ul	ul	ul	-	1	WZ	-	-
 3	三件	m	服装尺码	m	-	4	XS	-	-
@@ -3624,14 +3238,12 @@
 6	邮费	费用	商品信息	n	-	4	DB	-	-
 7	呢	y	y	y	-	4	QZ	-	-
 
-
 1	外套	衣物类	商品	n	-	2	XS	-	-
 2	帮	v	v	v	-	0	ROOT	-	-
 3	我	r	r	r	-	2	DB	-	-
 4	催	沟通动作	动作	v	-	2	LD	-	-
 5	一下	mq	mq	mq	-	4	XS	-	-
 6	吧	y	y	y	-	2	QZ	-	-
-
 
 1	亲	通用称谓	称谓	v	-	0	ROOT	-	-
 2	，	w	w	w	-	1	DP	-	-
@@ -3646,13 +3258,11 @@
 11	能	v	v	v	-	12	QTZ	-	-
 12	到	v	v	v	-	0	ROOT	-	-
 
-
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	购	交易动作	动作	v	-	0	ROOT	-	-
 3	了	ule	ule	ule	-	2	WZ	-	-
 4	1000多	m	服装尺码	m	-	2	DB	-	-
 5	呢	y	y	y	-	2	QZ	-	-
-
 
 1	今天	t	t	t	-	2	XS	-	-
 2	双11	t	t	t	-	5	XS	-	-
@@ -3661,7 +3271,6 @@
 5	包邮	包邮	商品属性	a	-	0	ROOT	-	-
 6	吗	y	y	y	-	5	QZ	-	-
 
-
 1	不好意思	a	a	a	-	0	ROOT	-	-
 2	哈	b	b	b	-	1	QZ	-	-
 3	,	w	w	w	-	1	DP	-	-
@@ -3669,7 +3278,6 @@
 5	申请	申请	v	v	-	0	ROOT	-	-
 6	退款	金额动作	动作	vi	-	5	DB	-	-
 7	了	ule	ule	ule	-	5	WZ	-	-
-
 
 1	好	a	a	a	-	0	ROOT	-	-
 2	的	uj	uj	uj	-	1	XZ	-	-
@@ -3680,7 +3288,6 @@
 7	购	交易动作	动作	v	-	4	LD	-	-
 8	的	uj	uj	uj	-	7	XZ	-	-
 
-
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	下单	交易动作	动作	n	-	0	ROOT	-	-
 3	了	ule	ule	ule	-	2	WZ	-	-
@@ -3690,14 +3297,12 @@
 7	发货	vi	vi	vi	-	0	ROOT	-	-
 8	?	w	w	w	-	7	DP	-	-
 
-
 1	双11	m	服装尺码	m	-	5	XS	-	-
 2	会	v	v	v	-	5	QTZ	-	-
 3	不会	v	v	v	-	2	BL	-	-
 4	还	d	d	d	-	5	XS	-	-
 5	便宜	a	a	a	-	0	ROOT	-	-
 6	啊	y	y	y	-	5	QZ	-	-
-
 
 1	我	rr	rr	rr	-	3	ZW	-	-
 2	刚	d	d	d	-	3	XS	-	-
@@ -3709,13 +3314,11 @@
 8	能	v	v	v	-	9	QTZ	-	-
 9	发货	vi	vi	vi	-	0	ROOT	-	-
 
-
 1	购	交易动作	动作	v	-	4	XS	-	-
 2	了	ule	ule	ule	-	1	WZ	-	-
 3	那么	c	c	c	-	4	XS	-	-
 4	多	数量状态	状态	a	-	0	ROOT	-	-
 5	了	ule	ule	ule	-	4	WZ	-	-
-
 
 1	看	挑选动作	动作	v	-	0	ROOT	-	-
 2	你们	店家称谓	称谓	rr	-	1	DB	-	-
@@ -3732,14 +3335,12 @@
 13	购	交易动作	动作	v	-	11	LD	-	-
 14	了	ul	ul	ul	-	13	WZ	-	-
 
-
 1	可以	v	v	v	-	3	QTZ	-	-
 2	再	d	d	d	-	3	XS	-	-
 3	优惠	vn	vn	vn	-	0	ROOT	-	-
 4	点	qt	qt	qt	-	3	XS	-	-
 5	吗	y	y	y	-	3	QZ	-	-
 6	?	w	w	w	-	3	DP	-	-
-
 
 1	你们	店家称谓	称谓	rr	-	2	ZW	-	-
 2	发货	vi	vi	vi	-	0	ROOT	-	-
@@ -3748,13 +3349,11 @@
 5	慢	速度状态	状态	a	-	2	LD	-	-
 6	啊	y	y	y	-	2	QZ	-	-
 
-
 1	不然	联系词缀	副词	c	-	4	LZ	-	-
 2	我	rr	rr	rr	-	4	ZW	-	-
 3	要	意向动作	动作	v	-	4	QTZ	-	-
 4	退款	金额动作	动作	vi	-	0	ROOT	-	-
 5	了	ule	ule	ule	-	4	WZ	-	-
-
 
 1	大衣	衣物类	商品	n	-	3	DB	-	-
 2	刚	d	d	d	-	3	XS	-	-
@@ -3769,14 +3368,12 @@
 11	30	m	服装尺码	m	-	10	DB	-	-
 12	吧	y	y	y	-	10	QZ	-	-
 
-
 1	好	a	a	a	-	0	ROOT	-	-
 2	了	ule	ule	ule	-	1	WZ	-	-
 3	,	w	w	w	-	1	DP	-	-
 4	你	rr	rr	rr	-	6	ZW	-	-
 5	再	d	d	d	-	6	XS	-	-
 6	看下	挑选动作	动作	v	-	0	ROOT	-	-
-
 
 1	如果	c	c	c	-	4	LZ	-	-
 2	今天	t	t	t	-	4	XS	-	-
@@ -3787,13 +3384,11 @@
 7	就	时间副词	副词	d	-	8	XS	-	-
 8	退款	金额动作	动作	vi	-	0	ROOT	-	-
 
-
 1	多少	ry	ry	ry	-	2	XS	-	-
 2	时间	n	n	n	-	4	XS	-	-
 3	内	f	f	f	-	2	XS	-	-
 4	好评	正面	评价	n	-	0	ROOT	-	-
 5	返现	优惠动作	动作	n	-	4	LD	-	-
-
 
 1	他	r	r	r	-	2	XS	-	-
 2	穿	商品动作	动作	v	-	4	XS	-	-
@@ -3801,7 +3396,6 @@
 4	m	m	服装尺码	en	-	0	ROOT	-	-
 5	还是	c	c	c	-	6	LZ	-	-
 6	l	l	服装尺码	en	-	4	BL	-	-
-
 
 1	不是	c	c	c	-	2	JZ	-	-
 2	这个	rz	rz	rz	-	0	ROOT	-	-
@@ -3811,7 +3405,6 @@
 6	是	vshi	vshi	vshi	-	7	JZ	-	-
 7	蕾丝	蕾丝	材料	nz	-	0	ROOT	-	-
 8	的	ude1	ude1	ude1	-	7	XZ	-	-
-
 
 1	我	r	r	r	-	2	ZW	-	-
 2	发	物流动作	动作	v	-	0	ROOT	-	-
@@ -3824,14 +3417,12 @@
 9	给	p	p	p	-	10	JZ	-	-
 10	你	r	r	r	-	7	XS	-	-
 
-
 1	哪个	ry	ry	ry	-	2	XS	-	-
 2	颜色	颜色	商品信息	n	-	3	ZW	-	-
 3	好看	商品状态	状态	a	-	0	ROOT	-	-
 4	些	q	q	q	-	3	XS	-	-
 5	呀	y	y	y	-	3	QZ	-	-
 6	?	w	w	w	-	3	DP	-	-
-
 
 1	嗯	e	e	e	-	0	ROOT	-	-
 2	嗯	e	e	e	-	0	ROOT	-	-
@@ -3840,13 +3431,11 @@
 5	啦	y	y	y	-	4	QZ	-	-
 6	SPACE	null	null	null	-	0	ROOT	-	-
 
-
 1	l	l	服装尺码	en	-	2	XS	-	-
 2	码	码	服装尺码	v	-	3	ZW	-	-
 3	可以	v	v	v	-	0	ROOT	-	-
 4	吧	y	y	y	-	3	QZ	-	-
 5	SPACE	null	null	null	-	0	ROOT	-	-
-
 
 1	发过来	网站相关动作	动作	l	-	7	ZW	-	-
 2	的	uj	uj	uj	-	1	XZ	-	-
@@ -3856,14 +3445,12 @@
 6	的	uj	uj	uj	-	5	XZ	-	-
 7	毛衣	衣物类	商品	n	-	0	ROOT	-	-
 
-
 1	其他	rzv	rzv	rzv	-	5	XS	-	-
 2	的	ude1	ude1	ude1	-	1	XZ	-	-
 3	什么	什么	疑问词	ry	-	4	XS	-	-
 4	时候	n	n	n	-	5	XS	-	-
 5	发货	vi	vi	vi	-	0	ROOT	-	-
 6	呀	y	y	y	-	5	QZ	-	-
-
 
 1	嗯	e	e	e	-	0	ROOT	-	-
 2	嗯	e	e	e	-	0	ROOT	-	-
@@ -3873,20 +3460,17 @@
 6	麻烦	语气助动词	副词	an	-	0	ROOT	-	-
 7	了	ule	ule	ule	-	6	WZ	-	-
 
-
 1	双11	t	t	t	-	4	XS	-	-
 2	都	d	d	d	-	4	XS	-	-
 3	不	否定副词	副词	d	-	4	XS	-	-
 4	包邮	包邮	商品属性	a	-	0	ROOT	-	-
 5	么	y	y	y	-	4	QZ	-	-
 
-
 1	再不	d	d	d	-	2	XS	-	-
 2	发货	vi	vi	vi	-	4	XS	-	-
 3	就	时间副词	副词	d	-	4	XS	-	-
 4	退款	金额动作	动作	vi	-	0	ROOT	-	-
 5	吧	y	y	y	-	4	QZ	-	-
-
 
 1	今天	t	t	t	-	5	XS	-	-
 2	会	v	v	v	-	5	QTZ	-	-
@@ -3896,7 +3480,6 @@
 6	出去	vf	vf	vf	-	5	XS	-	-
 7	的	ude1	ude1	ude1	-	5	XZ	-	-
 
-
 1	怎么	ryv	ryv	ryv	-	5	XS	-	-
 2	物流	n	n	n	-	5	ZW	-	-
 3	都	d	d	d	-	5	XS	-	-
@@ -3905,7 +3488,6 @@
 6	的	ude1	ude1	ude1	-	5	XZ	-	-
 7	啊	y	y	y	-	5	QZ	-	-
 
-
 1	一会	t	t	t	-	4	XS	-	-
 2	我	rr	rr	rr	-	4	ZW	-	-
 3	在	p	p	p	-	4	JZ	-	-
@@ -3913,14 +3495,12 @@
 5	了	ule	ule	ule	-	4	WZ	-	-
 6	裙	裙类	商品	n	-	4	DB	-	-
 
-
 1	哦	e	e	e	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	那	rzv	rzv	rzv	-	5	LZ	-	-
 4	要	意向动作	动作	v	-	5	QTZ	-	-
 5	快快	d	d	d	-	0	ROOT	-	-
 6	哦	e	e	e	-	5	QZ	-	-
-
 
 1	162	m	服装尺码	m	-	2	XS	-	-
 2	高	a	a	a	-	0	ROOT	-	-
@@ -3933,13 +3513,11 @@
 9	吗	y	y	y	-	8	QZ	-	-
 10	?	w	w	w	-	8	DP	-	-
 
-
 1	120斤	m	服装尺码	m	-	2	XS	-	-
 2	穿	商品动作	动作	v	-	0	ROOT	-	-
 3	的	ude1	ude1	ude1	-	2	XZ	-	-
 4	下	f	f	f	-	2	XS	-	-
 5	吗	y	y	y	-	2	QZ	-	-
-
 
 1	地址	地址	人物属性	n	-	4	DB	-	-
 2	还	d	d	d	-	3	XS	-	-
@@ -3947,7 +3525,6 @@
 4	改	交易动作	动作	v	-	0	ROOT	-	-
 5	不	否定副词	副词	d	-	4	QZ	-	-
 6	?	w	w	w	-	4	DP	-	-
-
 
 1	在	p	p	p	-	0	ROOT	-	-
 2	吗	y	y	y	-	1	QZ	-	-
@@ -3957,7 +3534,6 @@
 6	什么	什么	疑问词	ry	-	7	XS	-	-
 7	快递	物流方式	物流相关	v	-	5	DB	-	-
 8	?	w	w	w	-	5	DP	-	-
-
 
 1	发错	发错	商品问题	v	-	0	ROOT	-	-
 2	了	ule	ule	ule	-	1	WZ	-	-
@@ -3974,7 +3550,6 @@
 13	色	色	商品信息	ng	-	14	ZW	-	-
 14	好看	商品状态	状态	a	-	8	DB	-	-
 
-
 1	嗯	e	e	e	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	行	ng	ng	ng	-	0	ROOT	-	-
@@ -3985,7 +3560,6 @@
 8	可以	v	v	v	-	9	QTZ	-	-
 9	到	v	v	v	-	0	ROOT	-	-
 
-
 1	现在	t	t	t	-	2	XS	-	-
 2	购	交易动作	动作	v	-	0	ROOT	-	-
 3	了	ul	ul	ul	-	2	WZ	-	-
@@ -3995,11 +3569,9 @@
 7	发货	vi	vi	vi	-	0	ROOT	-	-
 8	？	w	w	w	-	7	DP	-	-
 
-
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	及时	时间状态	状态	ad	-	3	XS	-	-
 3	发货	vi	vi	vi	-	0	ROOT	-	-
-
 
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	忘	失误动作	动作	v	-	0	ROOT	-	-
@@ -4012,13 +3584,11 @@
 9	退款	金额动作	动作	vi	-	8	DB	-	-
 10	下	f	f	f	-	9	XS	-	-
 
-
 1	你们	店家称谓	称谓	rr	-	3	ZW	-	-
 2	已经	时间副词	副词	d	-	3	XS	-	-
 3	签收	v	v	v	-	0	ROOT	-	-
 4	了	ule	ule	ule	-	3	WZ	-	-
 5	啊	y	y	y	-	3	QZ	-	-
-
 
 1	你	rr	rr	rr	-	2	ZW	-	-
 2	帮	v	v	v	-	0	ROOT	-	-
@@ -4026,7 +3596,6 @@
 4	查	挑选动作	动作	v	-	2	LD	-	-
 5	一下	mq	mq	mq	-	4	XS	-	-
 6	吧	y	y	y	-	2	QZ	-	-
-
 
 1	这条	mq	mq	mq	-	2	XS	-	-
 2	裙	裙类	商品	n	-	7	ZW	-	-
@@ -4038,13 +3607,11 @@
 8	诶	e	e	e	-	7	QZ	-	-
 9	？	w	w	w	-	7	DP	-	-
 
-
 1	快	速度状态	状态	a	-	3	XS	-	-
 2	该	rz	rz	rz	-	3	XS	-	-
 3	发货	vi	vi	vi	-	0	ROOT	-	-
 4	了	ule	ule	ule	-	3	WZ	-	-
 5	不	否定副词	副词	d	-	3	QZ	-	-
-
 
 1	下面	f	f	f	-	3	XS	-	-
 2	的	ude1	ude1	ude1	-	1	XZ	-	-
@@ -4053,14 +3620,12 @@
 5	吗	y	y	y	-	4	QZ	-	-
 6	?	w	w	w	-	4	DP	-	-
 
-
 1	大概	d	d	d	-	2	XS	-	-
 2	要	意向动作	动作	v	-	3	QTZ	-	-
 3	等	udeng	udeng	udeng	-	0	ROOT	-	-
 4	几天	mq	mq	mq	-	3	DB	-	-
 5	呢	y	y	y	-	3	QZ	-	-
 6	?	w	w	w	-	3	DP	-	-
-
 
 1	但	c	c	c	-	8	LZ	-	-
 2	亲	通用称谓	称谓	v	-	4	XS	-	-
@@ -4071,13 +3636,11 @@
 7	很	程度副词	副词	d	-	8	XS	-	-
 8	喜欢	人物状态	状态	vi	-	0	ROOT	-	-
 
-
 1	什么	什么	疑问词	ry	-	2	XS	-	-
 2	时候	n	n	n	-	4	XS	-	-
 3	才能	n	n	n	-	4	XS	-	-
 4	发货	vi	vi	vi	-	0	ROOT	-	-
 5	呢	y	y	y	-	4	QZ	-	-
-
 
 1	亲	通用称谓	称谓	v	-	0	ROOT	-	-
 2	款	n	n	n	-	3	XS	-	-
@@ -4094,14 +3657,12 @@
 13	的	uj	uj	uj	-	12	XZ	-	-
 14	啊	y	y	y	-	8	QZ	-	-
 
-
 1	双11	t	t	t	-	3	XS	-	-
 2	的	ude1	ude1	ude1	-	1	XZ	-	-
 3	衣服	衣物类	商品	n	-	5	DB	-	-
 4	可以	v	v	v	-	5	QTZ	-	-
 5	退换	交易动作	动作	v	-	0	ROOT	-	-
 6	吗	y	y	y	-	5	QZ	-	-
-
 
 1	会	v	v	v	-	3	QTZ	-	-
 2	不会	v	v	v	-	1	BL	-	-
@@ -4110,7 +3671,6 @@
 5	不好	负面	评价	a	-	3	LD	-	-
 6	了	ule	ule	ule	-	5	WZ	-	-
 7	衣服	衣物类	商品	n	-	3	DB	-	-
-
 
 1	我	r	r	r	-	2	XS	-	-
 2	衣服	衣物类	商品	n	-	4	XS	-	-
@@ -4128,7 +3688,6 @@
 14	可以	v	v	v	-	15	QTZ	-	-
 15	退回来	物流动作	动作	l	-	0	ROOT	-	-
 
-
 1	我	r	r	r	-	3	XS	-	-
 2	的	uj	uj	uj	-	1	XZ	-	-
 3	邮件	n	通信方式	n	-	5	DB	-	-
@@ -4136,13 +3695,11 @@
 5	签收	v	v	v	-	0	ROOT	-	-
 6	了	ul	ul	ul	-	5	WZ	-	-
 
-
 1	4天	m	服装尺码	m	-	0	ROOT	-	-
 2	了	ule	ule	ule	-	1	WZ	-	-
 3	还	d	d	d	-	4	XS	-	-
 4	不	否定副词	副词	d	-	5	XS	-	-
 5	发货	vi	vi	vi	-	0	ROOT	-	-
-
 
 1	大概	d	d	d	-	3	XS	-	-
 2	什么	什么	疑问词	ry	-	3	XS	-	-
@@ -4150,7 +3707,6 @@
 4	能	v	v	v	-	5	QTZ	-	-
 5	处理	交易动作	动作	vn	-	0	ROOT	-	-
 6	?	w	w	w	-	5	DP	-	-
-
 
 1	东西	n	n	n	-	3	DB	-	-
 2	我	r	r	r	-	3	ZW	-	-
@@ -4162,13 +3718,11 @@
 8	。	w	w	w	-	7	DP	-	-
 9	1201920840095	m	服装尺码	m	-	0	ROOT	-	-
 
-
 1	我	rr	rr	rr	-	5	ZW	-	-
 2	想	情态动词词缀	副词	v	-	5	QTZ	-	-
 3	在	p	p	p	-	4	JZ	-	-
 4	24号	m	服装尺码	m	-	5	XS	-	-
 5	收到	v	v	v	-	0	ROOT	-	-
-
 
 1	一个	mq	mq	mq	-	2	XS	-	-
 2	星期	n	n	n	-	3	ZW	-	-
@@ -4176,7 +3730,6 @@
 4	了	ul	ul	ul	-	3	WZ	-	-
 5	吧	y	y	y	-	3	QZ	-	-
 6	！	w	w	w	-	3	DP	-	-
-
 
 1	可有	v	v	v	-	5	XS	-	-
 2	一点	mq	mq	mq	-	1	XS	-	-
@@ -4191,7 +3744,6 @@
 11	一个	mq	mq	mq	-	12	ZW	-	-
 12	细	商品状态	状态	a	-	10	BL	-	-
 
-
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	购	交易动作	动作	v	-	4	XS	-	-
 3	的	ude1	ude1	ude1	-	2	XZ	-	-
@@ -4199,14 +3751,12 @@
 5	邮费险	n	n	n	-	4	DB	-	-
 6	吧	y	y	y	-	4	QZ	-	-
 
-
 1	没有	v	v	v	-	0	ROOT	-	-
 2	别的	rzv	rzv	rzv	-	3	XS	-	-
 3	优惠券	优惠券	优惠形式	n	-	1	DB	-	-
 4	了	ul	ul	ul	-	1	WZ	-	-
 5	吗	y	y	y	-	1	QZ	-	-
 6	？	w	w	w	-	1	DP	-	-
-
 
 1	哦	e	e	e	-	0	ROOT	-	-
 2	哦	e	e	e	-	0	ROOT	-	-
@@ -4220,13 +3770,11 @@
 10	发货	vi	vi	vi	-	0	ROOT	-	-
 11	啊	y	y	y	-	10	QZ	-	-
 
-
 1	快件	物流物品	物流相关	n	-	4	DB	-	-
 2	怎么	ryv	ryv	ryv	-	4	XS	-	-
 3	还没	z	z	z	-	4	XS	-	-
 4	发出	物流动作	动作	v	-	0	ROOT	-	-
 5	呀	y	y	y	-	4	QZ	-	-
-
 
 1	你	rr	rr	rr	-	2	XS	-	-
 2	那边	rzs	rzs	rzs	-	4	XS	-	-
@@ -4239,7 +3787,6 @@
 9	吗	y	y	y	-	4	QZ	-	-
 10	?	w	w	w	-	4	DP	-	-
 
-
 1	亲	通用称谓	称谓	v	-	0	ROOT	-	-
 2	～	w	w	w	-	1	DP	-	-
 3	收藏	网站相关动作	动作	v	-	6	XS	-	-
@@ -4250,7 +3797,6 @@
 8	啊	y	y	y	-	6	QZ	-	-
 9	？	w	w	w	-	6	DP	-	-
 
-
 1	我	rr	rr	rr	-	4	ZW	-	-
 2	不是	c	c	c	-	4	JZ	-	-
 3	又	d	d	d	-	4	XS	-	-
@@ -4260,7 +3806,6 @@
 7	吗	y	y	y	-	4	QZ	-	-
 8	?	w	w	w	-	4	DP	-	-
 
-
 1	你们	店家称谓	称谓	rr	-	4	ZW	-	-
 2	还	d	d	d	-	3	XS	-	-
 3	发不	l	服装尺码	l	-	4	XS	-	-
@@ -4269,7 +3814,6 @@
 6	/	w	w	w	-	4	DP	-	-
 7	:	w	w	w	-	4	DP	-	-
 8	807	m	服装尺码	m	-	0	ROOT	-	-
-
 
 1	发	物流动作	动作	v	-	0	ROOT	-	-
 2	最快	d	d	d	-	4	XS	-	-
@@ -4282,20 +3826,17 @@
 9	也	d	d	d	-	10	XS	-	-
 10	行	v	v	v	-	0	ROOT	-	-
 
-
 1	其他	rzv	rzv	rzv	-	4	XS	-	-
 2	的	ude1	ude1	ude1	-	1	XZ	-	-
 3	尽快	尽快	要求	d	-	4	XS	-	-
 4	发货	vi	vi	vi	-	0	ROOT	-	-
 5	哦	e	e	e	-	4	QZ	-	-
 
-
 1	你	rr	rr	rr	-	4	ZW	-	-
 2	怎么	ryv	ryv	ryv	-	3	XS	-	-
 3	还没	z	z	z	-	4	XS	-	-
 4	发货	vi	vi	vi	-	0	ROOT	-	-
 5	啊	y	y	y	-	4	QZ	-	-
-
 
 1	亲	通用称谓	称谓	v	-	0	ROOT	-	-
 2	如果	c	c	c	-	4	LZ	-	-
@@ -4307,7 +3848,6 @@
 8	退换	交易动作	动作	v	-	0	ROOT	-	-
 9	吗	y	y	y	-	8	QZ	-	-
 
-
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	SPACE	null	null	null	-	0	ROOT	-	-
 3	还	d	d	d	-	4	XS	-	-
@@ -4316,20 +3856,17 @@
 6	我	rr	rr	rr	-	5	DB	-	-
 7	发货	vi	vi	vi	-	5	LD	-	-
 
-
 1	双十一	nz	nz	nz	-	4	XS	-	-
 2	还	d	d	d	-	4	XS	-	-
 3	会	v	v	v	-	4	QTZ	-	-
 4	便宜	a	a	a	-	0	ROOT	-	-
 5	吗	y	y	y	-	4	QZ	-	-
 
-
 1	在	p	p	p	-	0	ROOT	-	-
 2	的	ude1	ude1	ude1	-	1	XZ	-	-
 3	,	w	w	w	-	1	DP	-	-
 4	亲爱	a	a	a	-	0	ROOT	-	-
 5	滴	v	v	v	-	4	XS	-	-
-
 
 1	那	r	r	r	-	3	LZ	-	-
 2	你	r	r	r	-	3	ZW	-	-
@@ -4343,14 +3880,12 @@
 10	我	r	r	r	-	9	DB	-	-
 11	呀	y	y	y	-	9	QZ	-	-
 
-
 1	好的	u	u	u	-	0	ROOT	-	-
 2	!	w	w	w	-	1	DP	-	-
 3	不要	d	d	d	-	4	QTZ	-	-
 4	让	v	v	v	-	0	ROOT	-	-
 5	我	rr	rr	rr	-	4	XS	-	-
 6	失望	a	a	a	-	4	DB	-	-
-
 
 1	这	r	r	r	-	3	ZW	-	-
 2	也	d	d	d	-	3	XS	-	-
@@ -4360,7 +3895,6 @@
 6	离谱	人物状态	状态	a	-	3	XS	-	-
 7	了	ul	ul	ul	-	6	WZ	-	-
 8	吧	y	y	y	-	3	QZ	-	-
-
 
 1	你	rr	rr	rr	-	2	ZW	-	-
 2	给	p	p	p	-	0	ROOT	-	-
@@ -4373,7 +3907,6 @@
 9	准备	意向动作	动作	vn	-	0	ROOT	-	-
 10	什么	什么	疑问词	ry	-	9	DB	-	-
 
-
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	双12	t	t	t	-	6	XS	-	-
@@ -4383,7 +3916,6 @@
 7	活动	vn	vn	vn	-	6	DB	-	-
 8	吗	y	y	y	-	6	QZ	-	-
 
-
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	可以	v	v	v	-	5	QTZ	-	-
@@ -4391,13 +3923,11 @@
 5	发货	vi	vi	vi	-	0	ROOT	-	-
 6	吗	y	y	y	-	5	QZ	-	-
 
-
 1	发	物流动作	动作	v	-	0	ROOT	-	-
 2	个	q	q	q	-	4	XS	-	-
 3	退货	交易动作	动作	vi	-	4	XS	-	-
 4	地址	地址	人物属性	n	-	1	DB	-	-
 5	吧	y	y	y	-	1	QZ	-	-
-
 
 1	嗯	e	e	e	-	0	ROOT	-	-
 2	嗯	e	e	e	-	0	ROOT	-	-
@@ -4407,7 +3937,6 @@
 6	申请	申请	v	v	-	0	ROOT	-	-
 7	了	ule	ule	ule	-	6	WZ	-	-
 
-
 1	我	r	r	r	-	2	ZW	-	-
 2	160	m	服装尺码	m	-	0	ROOT	-	-
 3	体重	体重	人物属性	n	-	4	ZW	-	-
@@ -4416,14 +3945,12 @@
 6	什么	什么	疑问词	r	-	7	XS	-	-
 7	号	号	服装尺码	q	-	5	DB	-	-
 
-
 1	s	s	服装尺码	en	-	4	ZW	-	-
 2	的	ude1	ude1	ude1	-	1	XZ	-	-
 3	会	v	v	v	-	4	QTZ	-	-
 4	小	商品状态	状态	a	-	0	ROOT	-	-
 5	是	vshi	vshi	vshi	-	0	ROOT	-	-
 6	吗	y	y	y	-	5	QZ	-	-
-
 
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	这款	r	r	r	-	3	DB	-	-
@@ -4433,13 +3960,11 @@
 6	能	v	v	v	-	7	QTZ	-	-
 7	发货	vi	vi	vi	-	0	ROOT	-	-
 
-
 1	什么	什么	疑问词	ry	-	2	XS	-	-
 2	料子	料子	商品信息	n	-	0	ROOT	-	-
 3	的	ude1	ude1	ude1	-	2	XZ	-	-
 4	呀	y	y	y	-	2	QZ	-	-
 5	!	w	w	w	-	2	DP	-	-
-
 
 1	165	m	服装尺码	m	-	0	ROOT	-	-
 2	cm	长度	度量单位	en	-	1	XS	-	-
@@ -4448,7 +3973,6 @@
 5	穿	商品动作	动作	v	-	0	ROOT	-	-
 6	什么	什么	疑问词	ry	-	7	XS	-	-
 7	号	号	服装尺码	q	-	5	DB	-	-
-
 
 1	嗯	e	e	e	-	0	ROOT	-	-
 2	嗯	e	e	e	-	0	ROOT	-	-
@@ -4460,14 +3984,12 @@
 8	了	ule	ule	ule	-	7	WZ	-	-
 9	,	w	w	w	-	7	DP	-	-
 
-
 1	嗯	e	e	e	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	给	p	p	p	-	4	JZ	-	-
 4	我	rr	rr	rr	-	5	XS	-	-
 5	尽快	尽快	要求	d	-	0	ROOT	-	-
 6	吧	y	y	y	-	5	QZ	-	-
-
 
 1	邮费	费用	商品信息	n	-	6	DB	-	-
 2	是	v	v	v	-	6	JZ	-	-
@@ -4477,7 +3999,6 @@
 6	付	v	v	v	-	0	ROOT	-	-
 7	吗	y	y	y	-	6	QZ	-	-
 8	？	w	w	w	-	6	DP	-	-
-
 
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -4491,7 +4012,6 @@
 10	很大	商品状态	状态	d	-	0	ROOT	-	-
 11	吗	y	y	y	-	10	QZ	-	-
 
-
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	我	rr	rr	rr	-	6	XS	-	-
@@ -4504,7 +4024,6 @@
 10	我	rr	rr	rr	-	11	XS	-	-
 11	发货	vi	vi	vi	-	7	LD	-	-
 
-
 1	152	m	服装尺码	m	-	0	ROOT	-	-
 2	cm	长度	度量单位	en	-	1	XS	-	-
 3	45	m	服装尺码	m	-	1	BL	-	-
@@ -4516,13 +4035,11 @@
 9	这件	mq	mq	mq	-	10	XS	-	-
 10	外套	衣物类	商品	n	-	6	DB	-	-
 
-
 1	可以	v	v	v	-	2	QTZ	-	-
 2	优惠	vn	vn	vn	-	0	ROOT	-	-
 3	点	qt	qt	qt	-	2	XS	-	-
 4	吗	y	y	y	-	2	QZ	-	-
 5	?	w	w	w	-	2	DP	-	-
-
 
 1	不	否定副词	副词	d	-	2	XS	-	-
 2	发货	vi	vi	vi	-	5	XS	-	-
@@ -4530,7 +4047,6 @@
 4	就	时间副词	副词	d	-	5	XS	-	-
 5	退款	金额动作	动作	vi	-	0	ROOT	-	-
 6	了	ule	ule	ule	-	5	WZ	-	-
-
 
 1	不是	c	c	c	-	2	JZ	-	-
 2	满	a	a	a	-	0	ROOT	-	-
@@ -4540,13 +4056,11 @@
 6	吗	y	y	y	-	4	QZ	-	-
 7	?	w	w	w	-	4	DP	-	-
 
-
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	购	交易动作	动作	v	-	0	ROOT	-	-
 3	了	ule	ule	ule	-	2	WZ	-	-
 4	一件	mq	mq	mq	-	5	XS	-	-
 5	衣服	衣物类	商品	n	-	2	DB	-	-
-
 
 1	你们	店家称谓	称谓	rr	-	3	ZW	-	-
 2	太	程度副词	副词	d	-	3	XS	-	-
@@ -4563,7 +4077,6 @@
 13	都	d	d	d	-	14	XS	-	-
 14	没有	v	v	v	-	0	ROOT	-	-
 
-
 1	亲	通用称谓	称谓	v	-	0	ROOT	-	-
 2	这	r	r	r	-	3	XS	-	-
 3	款	n	n	n	-	4	XS	-	-
@@ -4571,13 +4084,11 @@
 5	厚实	商品状态	状态	a	-	0	ROOT	-	-
 6	吗	y	y	y	-	5	QZ	-	-
 
-
 1	双12	t	t	t	-	3	XS	-	-
 2	会	v	v	v	-	3	QTZ	-	-
 3	有	vyou	vyou	vyou	-	0	ROOT	-	-
 4	活动	vn	vn	vn	-	3	DB	-	-
 5	吗	y	y	y	-	3	QZ	-	-
-
 
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	SPACE	null	null	null	-	0	ROOT	-	-
@@ -4589,7 +4100,6 @@
 8	SPACE	null	null	null	-	0	ROOT	-	-
 9	1383839239084238	m	服装尺码	m	-	0	ROOT	-	-
 
-
 1	到底	d	d	d	-	5	XS	-	-
 2	什么	什么	疑问词	ry	-	3	XS	-	-
 3	时候	n	n	n	-	5	XS	-	-
@@ -4597,13 +4107,11 @@
 5	发货	vi	vi	vi	-	0	ROOT	-	-
 6	?	w	w	w	-	5	DP	-	-
 
-
 1	怎么	ryv	ryv	ryv	-	3	XS	-	-
 2	价格	价格	商品信息	n	-	3	ZW	-	-
 3	不对	d	d	d	-	0	ROOT	-	-
 4	啊	y	y	y	-	3	QZ	-	-
 5	?	w	w	w	-	3	DP	-	-
-
 
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	购	交易动作	动作	v	-	5	ZW	-	-
@@ -4611,13 +4119,11 @@
 4	是	vshi	vshi	vshi	-	5	JZ	-	-
 5	m	m	服装尺码	en	-	0	ROOT	-	-
 
-
 1	什么	什么	疑问词	ry	-	2	XS	-	-
 2	时候	n	n	n	-	4	XS	-	-
 3	能	v	v	v	-	4	QTZ	-	-
 4	发	物流动作	动作	v	-	0	ROOT	-	-
 5	呀	y	y	y	-	4	QZ	-	-
-
 
 1	这款	r	r	r	-	2	XS	-	-
 2	棉衣	衣物类	商品	n	-	3	DB	-	-
@@ -4628,14 +4134,12 @@
 7	有些	程度副词	副词	rz	-	0	ROOT	-	-
 8	问题	问题	商品信息	n	-	7	DB	-	-
 
-
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	我	r	r	r	-	4	ZW	-	-
 3	想	情态动词词缀	副词	v	-	4	QTZ	-	-
 4	换	交易动作	动作	v	-	0	ROOT	-	-
 5	个	q	q	q	-	6	XS	-	-
 6	号	号	服装尺码	q	-	4	DB	-	-
-
 
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -4644,7 +4148,6 @@
 5	是	vshi	vshi	vshi	-	7	JZ	-	-
 6	什么	什么	疑问词	ry	-	7	XS	-	-
 7	意思	n	n	n	-	0	ROOT	-	-
-
 
 1	如果	c	c	c	-	2	LZ	-	-
 2	购	交易动作	动作	v	-	7	XS	-	-
@@ -4656,13 +4159,11 @@
 8	呀	y	y	y	-	7	QZ	-	-
 9	亲	通用称谓	称谓	v	-	0	ROOT	-	-
 
-
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	购	交易动作	动作	v	-	0	ROOT	-	-
 3	了	ule	ule	ule	-	2	WZ	-	-
 4	不	否定副词	副词	d	-	5	XS	-	-
 5	包邮	包邮	商品属性	a	-	0	ROOT	-	-
-
 
 1	什么	什么	疑问词	ry	-	2	XS	-	-
 2	时候	n	n	n	-	6	XS	-	-
@@ -4671,7 +4172,6 @@
 5	仓库	n	n	n	-	6	XS	-	-
 6	发出	物流动作	动作	v	-	0	ROOT	-	-
 
-
 1	我	rr	rr	rr	-	3	ZW	-	-
 2	已经	时间副词	副词	d	-	3	XS	-	-
 3	提交	交易动作	动作	v	-	0	ROOT	-	-
@@ -4679,13 +4179,11 @@
 5	退款	金额动作	动作	vi	-	4	BL	-	-
 6	了	ule	ule	ule	-	3	WZ	-	-
 
-
 1	36	m	服装尺码	m	-	4	ZW	-	-
 2	是	vshi	vshi	vshi	-	4	JZ	-	-
 3	m	m	服装尺码	en	-	4	XS	-	-
 4	码	码	服装尺码	v	-	0	ROOT	-	-
 5	吧	y	y	y	-	4	QZ	-	-
-
 
 1	麻烦	语气助动词	副词	an	-	0	ROOT	-	-
 2	问	沟通动作	动作	v	-	1	LD	-	-
@@ -4697,7 +4195,6 @@
 8	好多	m	服装尺码	m	-	2	DB	-	-
 9	呢	y	y	y	-	1	QZ	-	-
 
-
 1	哦	e	e	e	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	还有	v	v	v	-	6	XS	-	-
@@ -4705,7 +4202,6 @@
 5	可以	v	v	v	-	6	QTZ	-	-
 6	发货	vi	vi	vi	-	0	ROOT	-	-
 7	啊	y	y	y	-	6	QZ	-	-
-
 
 1	这	r	r	r	-	2	XS	-	-
 2	款	n	n	n	-	3	XS	-	-
@@ -4715,7 +4211,6 @@
 6	的	uj	uj	uj	-	5	XZ	-	-
 7	吗	y	y	y	-	5	QZ	-	-
 
-
 1	今天	t	t	t	-	3	XS	-	-
 2	不	否定副词	副词	d	-	3	XS	-	-
 3	发	物流动作	动作	v	-	6	XS	-	-
@@ -4723,7 +4218,6 @@
 5	不要	d	d	d	-	6	QTZ	-	-
 6	发	物流动作	动作	v	-	0	ROOT	-	-
 7	了	ule	ule	ule	-	6	WZ	-	-
-
 
 1	你们	店家称谓	称谓	r	-	2	XS	-	-
 2	售	v	v	v	-	5	ZW	-	-
@@ -4734,13 +4228,11 @@
 7	吗	y	y	y	-	5	QZ	-	-
 8	，	w	w	w	-	5	DP	-	-
 
-
 1	怎么	ryv	ryv	ryv	-	4	XS	-	-
 2	还	d	d	d	-	3	XS	-	-
 3	不	否定副词	副词	d	-	4	XS	-	-
 4	发货	vi	vi	vi	-	0	ROOT	-	-
 5	?	w	w	w	-	4	DP	-	-
-
 
 1	你们	店家称谓	称谓	rr	-	4	XS	-	-
 2	的	ude1	ude1	ude1	-	1	XZ	-	-
@@ -4749,13 +4241,11 @@
 5	给	p	p	p	-	6	JZ	-	-
 6	我	rr	rr	rr	-	4	XS	-	-
 
-
 1	啊	y	y	y	-	0	ROOT	-	-
 2	?	w	w	w	-	1	DP	-	-
 3	不能	v	v	v	-	4	QTZ	-	-
 4	便宜	a	a	a	-	0	ROOT	-	-
 5	?	w	w	w	-	4	DP	-	-
-
 
 1	答应	v	v	v	-	7	ZW	-	-
 2	我	r	r	r	-	1	DB	-	-
@@ -4766,7 +4256,6 @@
 7	好	a	a	a	-	0	ROOT	-	-
 8	吗	y	y	y	-	7	QZ	-	-
 
-
 1	你们	店家称谓	称谓	rr	-	3	ZW	-	-
 2	是	vshi	vshi	vshi	-	3	JZ	-	-
 3	发	物流动作	动作	v	-	0	ROOT	-	-
@@ -4775,20 +4264,17 @@
 6	的	ude1	ude1	ude1	-	5	XZ	-	-
 7	?	w	w	w	-	3	DP	-	-
 
-
 1	咋	ryv	ryv	ryv	-	5	XS	-	-
 2	还	d	d	d	-	3	XS	-	-
 3	不	否定副词	副词	d	-	5	XS	-	-
 4	给	p	p	p	-	5	JZ	-	-
 5	发货	vi	vi	vi	-	0	ROOT	-	-
 
-
 1	哪个	ry	ry	ry	-	2	XS	-	-
 2	快递	物流方式	物流相关	v	-	4	ZW	-	-
 3	稍微	d	d	d	-	4	XS	-	-
 4	快	速度状态	状态	a	-	0	ROOT	-	-
 5	些	q	q	q	-	4	XS	-	-
-
 
 1	你	rr	rr	rr	-	3	ZW	-	-
 2	今天	t	t	t	-	3	XS	-	-
@@ -4800,13 +4286,11 @@
 8	以	p	p	p	-	9	JZ	-	-
 9	到	v	v	v	-	0	ROOT	-	-
 
-
 1	不能	v	v	v	-	3	QTZ	-	-
 2	再	d	d	d	-	3	XS	-	-
 3	优惠	vn	vn	vn	-	0	ROOT	-	-
 4	了	ule	ule	ule	-	3	WZ	-	-
 5	吗	y	y	y	-	3	QZ	-	-
-
 
 1	发	物流动作	动作	v	-	0	ROOT	-	-
 2	了	ule	ule	ule	-	1	WZ	-	-
@@ -4814,13 +4298,11 @@
 4	?	w	w	w	-	1	DP	-	-
 5	?	w	w	w	-	1	DP	-	-
 
-
 1	三件	mq	mq	mq	-	3	XS	-	-
 2	可以	v	v	v	-	3	QTZ	-	-
 3	减	v	v	v	-	0	ROOT	-	-
 4	50	m	服装尺码	m	-	3	DB	-	-
 5	?	w	w	w	-	3	DP	-	-
-
 
 1	我	r	r	r	-	3	ZW	-	-
 2	终于	d	d	d	-	3	XS	-	-
@@ -4840,14 +4322,12 @@
 16	的	uj	uj	uj	-	15	XZ	-	-
 17	货	物流物品	物流相关	n	-	0	ROOT	-	-
 
-
 1	快递	物流方式	物流相关	v	-	3	ZW	-	-
 2	怎么	ryv	ryv	ryv	-	3	XS	-	-
 3	说	沟通动作	动作	v	-	0	ROOT	-	-
 4	的	ude1	ude1	ude1	-	3	XZ	-	-
 5	啊	y	y	y	-	3	QZ	-	-
 6	?	w	w	w	-	3	DP	-	-
-
 
 1	双十一	nz	nz	nz	-	2	XS	-	-
 2	购	交易动作	动作	v	-	4	XS	-	-
@@ -4856,7 +4336,6 @@
 5	可以	v	v	v	-	6	QTZ	-	-
 6	退换	交易动作	动作	v	-	0	ROOT	-	-
 7	吗	y	y	y	-	6	QZ	-	-
-
 
 1	快点	快点	要求	d	-	0	ROOT	-	-
 2	吧	y	y	y	-	1	QZ	-	-
@@ -4868,7 +4347,6 @@
 8	购	交易动作	动作	v	-	0	ROOT	-	-
 9	的	ude1	ude1	ude1	-	8	XZ	-	-
 
-
 1	天天	d	d	d	-	2	XS	-	-
 2	用	p	p	p	-	0	ROOT	-	-
 3	同样	d	d	d	-	4	XS	-	-
@@ -4879,7 +4357,6 @@
 8	，	w	w	w	-	2	DP	-	-
 9	有意思	al	al	al	-	0	ROOT	-	-
 10	吗	y	y	y	-	9	QZ	-	-
-
 
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -4894,20 +4371,17 @@
 11	点	qt	qt	qt	-	12	XS	-	-
 12	不动	v	v	v	-	0	ROOT	-	-
 
-
 1	发	物流动作	动作	v	-	0	ROOT	-	-
 2	个	q	q	q	-	3	XS	-	-
 3	链接	链接	商品信息	gi	-	1	XS	-	-
 4	给	p	p	p	-	5	JZ	-	-
 5	我	rr	rr	rr	-	1	XS	-	-
 
-
 1	到	v	v	v	-	4	XS	-	-
 2	北京	ns	ns	ns	-	1	DB	-	-
 3	大概	d	d	d	-	4	XS	-	-
 4	几天	mq	mq	mq	-	0	ROOT	-	-
 5	?	w	w	w	-	4	DP	-	-
-
 
 1	我	r	r	r	-	2	ZW	-	-
 2	记得	v	v	v	-	0	ROOT	-	-
@@ -4916,14 +4390,12 @@
 5	的	uj	uj	uj	-	4	XZ	-	-
 6	啊	y	y	y	-	2	QZ	-	-
 
-
 1	我	r	r	r	-	2	ZW	-	-
 2	168	m	服装尺码	m	-	0	ROOT	-	-
 3	120	m	服装尺码	m	-	2	BL	-	-
 4	穿	商品动作	动作	v	-	0	ROOT	-	-
 5	什么	什么	疑问词	r	-	6	XS	-	-
 6	号	号	服装尺码	q	-	4	DB	-	-
-
 
 1	老板	店家称谓	称谓	n	-	0	ROOT	-	-
 2	，	w	w	w	-	1	DP	-	-
@@ -4934,7 +4406,6 @@
 7	申请	申请	v	v	-	0	ROOT	-	-
 8	退货	交易动作	动作	vi	-	7	DB	-	-
 
-
 1	不要	d	d	d	-	7	XS	-	-
 2	了	ule	ule	ule	-	1	WZ	-	-
 3	,	w	w	w	-	1	DP	-	-
@@ -4944,7 +4415,6 @@
 7	不要	d	d	d	-	0	ROOT	-	-
 8	了	ule	ule	ule	-	7	XZ	-	-
 
-
 1	双十一	nz	nz	nz	-	2	XS	-	-
 2	购	交易动作	动作	v	-	0	ROOT	-	-
 3	的	ude1	ude1	ude1	-	2	XZ	-	-
@@ -4952,13 +4422,11 @@
 5	都	d	d	d	-	2	XS	-	-
 6	!	w	w	w	-	2	DP	-	-
 
-
 1	请问	语气助动词	副词	v	-	0	ROOT	-	-
 2	明天	t	t	t	-	4	XS	-	-
 3	能	v	v	v	-	4	QTZ	-	-
 4	发货	v	v	v	-	1	DB	-	-
 5	吗	y	y	y	-	1	QZ	-	-
-
 
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	SPACE	null	null	null	-	0	ROOT	-	-
@@ -4969,7 +4437,6 @@
 7	没有	v	v	v	-	8	XS	-	-
 8	返	优惠动作	动作	v	-	0	ROOT	-	-
 
-
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	购	交易动作	动作	v	-	0	ROOT	-	-
 3	过	uguo	uguo	uguo	-	2	WZ	-	-
@@ -4977,7 +4444,6 @@
 5	的	ude1	ude1	ude1	-	4	XZ	-	-
 6	呢	y	y	y	-	2	QZ	-	-
 7	?	w	w	w	-	2	DP	-	-
-
 
 1	我	r	r	r	-	3	ZW	-	-
 2	昨天	t	t	t	-	3	XS	-	-
@@ -4995,7 +4461,6 @@
 14	才	d	d	d	-	15	XS	-	-
 15	看见	v	v	v	-	12	LD	-	-
 
-
 1	我	r	r	r	-	3	ZW	-	-
 2	想	情态动词词缀	副词	v	-	3	QTZ	-	-
 3	问下	沟通动作	动作	n	-	0	ROOT	-	-
@@ -5005,7 +4470,6 @@
 7	发货	vi	vi	vi	-	0	ROOT	-	-
 8	啊	y	y	y	-	7	QZ	-	-
 
-
 1	我	rr	rr	rr	-	2	XS	-	-
 2	个子	n	n	n	-	3	ZW	-	-
 3	矮	人物状态	状态	a	-	0	ROOT	-	-
@@ -5014,14 +4478,12 @@
 6	合适	商品状态	状态	v	-	5	DB	-	-
 7	不	否定副词	副词	d	-	6	QZ	-	-
 
-
 1	150斤	m	服装尺码	m	-	3	XS	-	-
 2	的	uj	uj	uj	-	1	XZ	-	-
 3	人	n	n	n	-	5	ZW	-	-
 4	可以	v	v	v	-	5	QTZ	-	-
 5	穿	商品动作	动作	v	-	0	ROOT	-	-
 6	么	nr	nr	nr	-	5	QZ	-	-
-
 
 1	今天	t	t	t	-	2	XS	-	-
 2	购	交易动作	动作	v	-	4	XS	-	-
@@ -5030,14 +4492,12 @@
 5	吗	y	y	y	-	4	QZ	-	-
 6	?	w	w	w	-	4	DP	-	-
 
-
 1	你们	店家称谓	称谓	rr	-	4	ZW	-	-
 2	什么	什么	疑问词	ry	-	3	XS	-	-
 3	时候	n	n	n	-	4	XS	-	-
 4	开始	v	v	v	-	0	ROOT	-	-
 5	发货	vi	vi	vi	-	4	DB	-	-
 6	啊	y	y	y	-	4	QZ	-	-
-
 
 1	在	p	p	p	-	0	ROOT	-	-
 2	吗	y	y	y	-	1	QZ	-	-
@@ -5046,7 +4506,6 @@
 5	收到	v	v	v	-	0	ROOT	-	-
 6	了	ul	ul	ul	-	5	WZ	-	-
 
-
 1	你们	店家称谓	称谓	rr	-	2	XS	-	-
 2	这	r	r	r	-	3	XS	-	-
 3	客服	客服类	人物	nz	-	6	ZW	-	-
@@ -5054,7 +4513,6 @@
 5	不	否定副词	副词	d	-	6	XS	-	-
 6	说话	沟通动作	动作	vn	-	0	ROOT	-	-
 7	啊	y	y	y	-	6	QZ	-	-
-
 
 1	太短	商品状态	状态	d	-	0	ROOT	-	-
 2	了	ule	ule	ule	-	1	WZ	-	-
@@ -5069,14 +4527,12 @@
 11	吧	y	y	y	-	7	QZ	-	-
 12	,	w	w	w	-	7	DP	-	-
 
-
 1	不是	c	c	c	-	3	JZ	-	-
 2	能	v	v	v	-	3	QTZ	-	-
 3	便宜	a	a	a	-	0	ROOT	-	-
 4	点	qt	qt	qt	-	3	XS	-	-
 5	吗	y	y	y	-	3	QZ	-	-
 6	?	w	w	w	-	3	DP	-	-
-
 
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	购	交易动作	动作	v	-	6	XS	-	-
@@ -5088,7 +4544,6 @@
 8	了	ule	ule	ule	-	7	WZ	-	-
 9	吗	y	y	y	-	7	QZ	-	-
 10	?	w	w	w	-	7	DP	-	-
-
 
 1	我	r	r	r	-	3	ZW	-	-
 2	25号	m	服装尺码	m	-	3	XS	-	-
@@ -5102,13 +4557,11 @@
 10	发	物流动作	动作	v	-	0	ROOT	-	-
 11	呢	y	y	y	-	10	QZ	-	-
 
-
 1	你	rr	rr	rr	-	2	ZW	-	-
 2	同意	沟通动作	动作	vn	-	0	ROOT	-	-
 3	下	f	f	f	-	2	XS	-	-
 4	吧	y	y	y	-	2	QZ	-	-
 5	!	w	w	w	-	2	DP	-	-
-
 
 1	哦	e	e	e	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -5118,14 +4571,12 @@
 6	谢谢	v	v	v	-	0	ROOT	-	-
 7	!	w	w	w	-	6	DP	-	-
 
-
 1	双十一	nz	nz	nz	-	2	XS	-	-
 2	还有	v	v	v	-	0	ROOT	-	-
 3	更	d	d	d	-	4	XS	-	-
 4	低	a	a	a	-	5	XS	-	-
 5	价格	价格	商品信息	n	-	2	DB	-	-
 6	么	y	y	y	-	2	QZ	-	-
-
 
 1	我	r	r	r	-	3	XS	-	-
 2	的	uj	uj	uj	-	1	XZ	-	-
@@ -5145,14 +4596,12 @@
 16	吗	y	y	y	-	10	QZ	-	-
 17	？	w	w	w	-	10	DP	-	-
 
-
 1	什么	什么	疑问词	ry	-	2	XS	-	-
 2	时候	n	n	n	-	3	XS	-	-
 3	安排	v	v	v	-	0	ROOT	-	-
 4	发货	vi	vi	vi	-	3	DB	-	-
 5	呢	y	y	y	-	3	QZ	-	-
 6	?	w	w	w	-	3	DP	-	-
-
 
 1	购	交易动作	动作	v	-	0	ROOT	-	-
 2	了	ul	ul	ul	-	1	WZ	-	-
@@ -5164,7 +4613,6 @@
 8	退货	交易动作	动作	v	-	7	DB	-	-
 9	了	ul	ul	ul	-	7	WZ	-	-
 
-
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	购	交易动作	动作	v	-	0	ROOT	-	-
 3	了	ule	ule	ule	-	2	DB	-	-
@@ -5172,7 +4620,6 @@
 5	尽快	尽快	要求	d	-	6	XS	-	-
 6	发货	vi	vi	vi	-	0	ROOT	-	-
 7	啊	y	y	y	-	6	QZ	-	-
-
 
 1	噢	e	e	e	-	0	ROOT	-	-
 2	噢	e	e	e	-	0	ROOT	-	-
@@ -5183,7 +4630,6 @@
 7	噢	e	e	e	-	6	QZ	-	-
 8	…	w	w	w	-	6	DP	-	-
 9	?	w	w	w	-	6	DP	-	-
-
 
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	SPACE	null	null	null	-	0	ROOT	-	-
@@ -5196,13 +4642,11 @@
 9	退货	交易动作	动作	vi	-	0	ROOT	-	-
 10	了	ule	ule	ule	-	9	WZ	-	-
 
-
 1	今天下午	nz	nz	nz	-	3	XS	-	-
 2	能	v	v	v	-	3	QTZ	-	-
 3	发货	vi	vi	vi	-	0	ROOT	-	-
 4	吗	y	y	y	-	3	QZ	-	-
 5	?	w	w	w	-	3	DP	-	-
-
 
 1	这个	r	r	r	-	2	XS	-	-
 2	衣服	衣物类	商品	n	-	4	ZW	-	-
@@ -5220,7 +4664,6 @@
 14	照片	图片类	信息体	n	-	9	XS	-	-
 15	上	f	f	f	-	14	XS	-	-
 
-
 1	你们	店家称谓	称谓	rr	-	2	XS	-	-
 2	衣服	衣物类	商品	n	-	4	DB	-	-
 3	还没	z	z	z	-	4	XS	-	-
@@ -5228,13 +4671,11 @@
 5	吗	y	y	y	-	4	QZ	-	-
 6	?	w	w	w	-	4	DP	-	-
 
-
 1	/:018	l	服装尺码	l	-	0	ROOT	-	-
 2	等	udeng	udeng	udeng	-	0	ROOT	-	-
 3	的	ude1	ude1	ude1	-	2	XS	-	-
 4	这个	rz	rz	rz	-	2	DB	-	-
 5	着急	人物状态	状态	a	-	2	LD	-	-
-
 
 1	双十一	nz	nz	nz	-	3	ZW	-	-
 2	都	d	d	d	-	3	XS	-	-
@@ -5250,13 +4691,11 @@
 12	等	u	u	u	-	0	ROOT	-	-
 13	货	物流物品	物流相关	n	-	12	DB	-	-
 
-
 1	具体	a	a	a	-	3	XS	-	-
 2	什么	什么	疑问词	ry	-	3	XS	-	-
 3	时间	n	n	n	-	5	XS	-	-
 4	能	v	v	v	-	5	QTZ	-	-
 5	发货	vi	vi	vi	-	0	ROOT	-	-
-
 
 1	我	rr	rr	rr	-	3	ZW	-	-
 2	昨天	t	t	t	-	3	XS	-	-
@@ -5267,13 +4706,11 @@
 7	能	v	v	v	-	8	QTZ	-	-
 8	发货	vi	vi	vi	-	0	ROOT	-	-
 
-
 1	别	否定副词	副词	d	-	2	XS	-	-
 2	让	v	v	v	-	5	XS	-	-
 3	我	rr	rr	rr	-	2	DB	-	-
 4	一直	d	d	d	-	5	XS	-	-
 5	等	udeng	udeng	udeng	-	0	ROOT	-	-
-
 
 1	双十一	nz	nz	nz	-	2	XS	-	-
 2	活动	vn	vn	vn	-	3	ZW	-	-
@@ -5282,13 +4719,11 @@
 5	吗	y	y	y	-	3	QZ	-	-
 6	?	w	w	w	-	3	DP	-	-
 
-
 1	到底	d	d	d	-	4	XS	-	-
 2	多久	ryt	ryt	ryt	-	4	XS	-	-
 3	才	d	d	d	-	4	XS	-	-
 4	发货	vi	vi	vi	-	0	ROOT	-	-
 5	!	w	w	w	-	4	DP	-	-
-
 
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	帮	v	v	v	-	0	ROOT	-	-
@@ -5296,7 +4731,6 @@
 4	退	交易动作	动作	vn	-	2	LD	-	-
 5	下款	v	v	v	-	4	DB	-	-
 6	呀	y	y	y	-	4	QZ	-	-
-
 
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -5308,7 +4742,6 @@
 8	什么	什么	疑问词	ry	-	9	XS	-	-
 9	码子	码子	服装尺码	n	-	7	DB	-	-
 
-
 1	怎么	ryv	ryv	ryv	-	2	XS	-	-
 2	发货	vi	vi	vi	-	5	XS	-	-
 3	不是	c	c	c	-	5	JZ	-	-
@@ -5317,14 +4750,12 @@
 6	的	ude1	ude1	ude1	-	5	XZ	-	-
 7	啊	y	y	y	-	5	QZ	-	-
 
-
 1	一定	b	b	b	-	3	XS	-	-
 2	要	意向动作	动作	v	-	3	QTZ	-	-
 3	关注	网站相关动作	动作	v	-	0	ROOT	-	-
 4	才	d	d	d	-	5	XS	-	-
 5	包邮	包邮	商品属性	a	-	3	LD	-	-
 6	/:'\"\"	l	服装尺码	l	-	0	ROOT	-	-
-
 
 1	亲	通用称谓	称谓	v	-	0	ROOT	-	-
 2	。	w	w	w	-	1	DP	-	-
@@ -5340,7 +4771,6 @@
 12	换成	交易动作	动作	v	-	0	ROOT	-	-
 13	m	m	服装尺码	en	-	12	DB	-	-
 
-
 1	我	r	r	r	-	3	ZW	-	-
 2	要	意向动作	动作	v	-	3	QTZ	-	-
 3	退	交易动作	动作	v	-	5	XS	-	-
@@ -5350,7 +4780,6 @@
 7	时间	n	n	n	-	9	XS	-	-
 8	可以	v	v	v	-	9	QTZ	-	-
 9	退下来	金额动作	动作	l	-	0	ROOT	-	-
-
 
 1	之前	f	f	f	-	3	XS	-	-
 2	不是	c	c	c	-	3	JZ	-	-
@@ -5364,13 +4793,11 @@
 10	一样	uyy	uyy	uyy	-	0	ROOT	-	-
 11	吗	y	y	y	-	10	QZ	-	-
 
-
 1	大概	d	d	d	-	3	XS	-	-
 2	还	d	d	d	-	3	XS	-	-
 3	需要	意向动作	动作	v	-	0	ROOT	-	-
 4	几天	mq	mq	mq	-	3	DB	-	-
 5	?	w	w	w	-	3	DP	-	-
-
 
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -5381,13 +4808,11 @@
 7	发货	vi	vi	vi	-	0	ROOT	-	-
 8	呀	y	y	y	-	7	QZ	-	-
 
-
 1	双11	t	t	t	-	3	XS	-	-
 2	这款	r	r	r	-	3	XS	-	-
 3	还有	v	v	v	-	0	ROOT	-	-
 4	活动	vn	vn	vn	-	3	DB	-	-
 5	吗	y	y	y	-	3	QZ	-	-
-
 
 1	怎么	ryv	ryv	ryv	-	3	XS	-	-
 2	不	否定副词	副词	d	-	3	XS	-	-
@@ -5397,14 +4822,12 @@
 6	的	ude1	ude1	ude1	-	5	XZ	-	-
 7	呢	y	y	y	-	3	QZ	-	-
 
-
 1	有没有	v	v	v	-	0	ROOT	-	-
 2	鞋	鞋类	商品	n	-	3	XS	-	-
 3	里子	衣里	商品部位	n	-	4	ZW	-	-
 4	加绒	厚薄	款式	a	-	6	XS	-	-
 5	的	uj	uj	uj	-	4	XZ	-	-
 6	照片	图片类	信息体	n	-	1	DB	-	-
-
 
 1	在	p	p	p	-	0	ROOT	-	-
 2	吗	y	y	y	-	1	QZ	-	-
@@ -5424,7 +4847,6 @@
 16	发货	v	v	v	-	13	DB	-	-
 17	呢	y	y	y	-	13	QZ	-	-
 
-
 1	l	l	服装尺码	en	-	2	XS	-	-
 2	号	号	服装尺码	q	-	0	ROOT	-	-
 3	后面	f	f	f	-	5	XS	-	-
@@ -5434,7 +4856,6 @@
 7	吗	y	y	y	-	5	QZ	-	-
 8	?	w	w	w	-	5	DP	-	-
 
-
 1	你们	店家称谓	称谓	rr	-	2	XS	-	-
 2	微信	微信	通信方式	n	-	5	DB	-	-
 3	我	rr	rr	rr	-	5	ZW	-	-
@@ -5442,7 +4863,6 @@
 5	关注	网站相关动作	动作	v	-	0	ROOT	-	-
 6	过	uguo	uguo	uguo	-	5	WZ	-	-
 7	了	ule	ule	ule	-	5	WZ	-	-
-
 
 1	哦	e	e	e	-	0	ROOT	-	-
 2	，	w	w	w	-	1	DP	-	-
@@ -5455,7 +4875,6 @@
 9	不	否定副词	副词	d	-	10	XS	-	-
 10	发货	v	v	v	-	7	DB	-	-
 
-
 1	我	r	r	r	-	3	XS	-	-
 2	的	uj	uj	uj	-	1	XZ	-	-
 3	货	物流物品	物流相关	n	-	7	ZW	-	-
@@ -5463,7 +4882,6 @@
 5	时候	n	n	n	-	7	XS	-	-
 6	能	v	v	v	-	7	QTZ	-	-
 7	到	v	v	v	-	0	ROOT	-	-
-
 
 1	我	r	r	r	-	3	ZW	-	-
 2	想	情态动词词缀	副词	v	-	3	QTZ	-	-
@@ -5479,7 +4897,6 @@
 12	退	交易动作	动作	v	-	11	LD	-	-
 13	哦	e	e	e	-	6	QZ	-	-
 
-
 1	不够	a	a	a	-	0	ROOT	-	-
 2	599.	m	服装尺码	m	-	1	DB	-	-
 3	差	负面	评价	a	-	1	ZW	-	-
@@ -5490,7 +4907,6 @@
 8	不能	v	v	v	-	9	QTZ	-	-
 9	用	p	p	p	-	0	ROOT	-	-
 
-
 1	双11	t	t	t	-	4	XS	-	-
 2	也	d	d	d	-	4	XS	-	-
 3	是	vshi	vshi	vshi	-	4	JZ	-	-
@@ -5498,13 +4914,11 @@
 5	吗	y	y	y	-	4	QZ	-	-
 6	?	w	w	w	-	4	DP	-	-
 
-
 1	什么	什么	疑问词	ry	-	2	XS	-	-
 2	时候	n	n	n	-	3	XS	-	-
 3	有	vyou	vyou	vyou	-	0	ROOT	-	-
 4	活动	vn	vn	vn	-	3	DB	-	-
 5	?	w	w	w	-	3	DP	-	-
-
 
 1	那	r	r	r	-	6	LZ	-	-
 2	双十一	nz	nz	nz	-	6	XS	-	-
@@ -5514,7 +4928,6 @@
 6	优惠	vn	vn	vn	-	0	ROOT	-	-
 7	吗	y	y	y	-	6	QZ	-	-
 
-
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	这	rzv	rzv	rzv	-	4	XS	-	-
@@ -5522,7 +4935,6 @@
 5	怎么	ryv	ryv	ryv	-	6	XS	-	-
 6	还没	z	z	z	-	7	XS	-	-
 7	发货	vi	vi	vi	-	0	ROOT	-	-
-
 
 1	这	r	r	r	-	2	XS	-	-
 2	两款	mq	mq	mq	-	4	XS	-	-
@@ -5534,7 +4946,6 @@
 8	点	q	q	q	-	7	XS	-	-
 9	呢	y	y	y	-	7	QZ	-	-
 
-
 1	你	rr	rr	rr	-	3	ZW	-	-
 2	能	v	v	v	-	3	QTZ	-	-
 3	帮	v	v	v	-	0	ROOT	-	-
@@ -5542,7 +4953,6 @@
 5	改	交易动作	动作	v	-	3	LD	-	-
 6	一下	mq	mq	mq	-	5	XS	-	-
 7	吗	y	y	y	-	3	QZ	-	-
-
 
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	衣服	衣物类	商品	n	-	3	DB	-	-
@@ -5555,7 +4965,6 @@
 9	不	否定副词	副词	d	-	10	XS	-	-
 10	合适	商品状态	状态	a	-	8	LD	-	-
 
-
 1	请	语气助动词	副词	v	-	0	ROOT	-	-
 2	你	r	r	r	-	1	DB	-	-
 3	改下	交易动作	动作	v	-	1	LD	-	-
@@ -5567,7 +4976,6 @@
 9	单	d	d	d	-	11	XS	-	-
 10	的	uj	uj	uj	-	9	XZ	-	-
 11	价格	价格	商品信息	n	-	3	DB	-	-
-
 
 1	好的	u	u	u	-	0	ROOT	-	-
 2	，	w	w	w	-	1	DP	-	-
@@ -5582,7 +4990,6 @@
 11	一起	范围副词	副词	s	-	12	XS	-	-
 12	发过来	网站相关动作	动作	l	-	9	LD	-	-
 
-
 1	东西	n	n	n	-	4	DB	-	-
 2	这么久	r	r	r	-	4	XS	-	-
 3	才	d	d	d	-	4	XS	-	-
@@ -5593,13 +5000,11 @@
 8	发错	发错	商品问题	v	-	0	ROOT	-	-
 9	了	ul	ul	ul	-	8	WZ	-	-
 
-
 1	发货	vi	vi	vi	-	0	ROOT	-	-
 2	么	y	y	y	-	1	QZ	-	-
 3	SPACE	null	null	null	-	0	ROOT	-	-
 4	SPACE	null	null	null	-	0	ROOT	-	-
 5	SPACE	null	null	null	-	0	ROOT	-	-
-
 
 1	还	d	d	d	-	2	XS	-	-
 2	会	v	v	v	-	4	QTZ	-	-
@@ -5611,7 +5016,6 @@
 8	家	q	q	q	-	9	XS	-	-
 9	衣服	衣物类	商品	n	-	6	ZW	-	-
 
-
 1	嗯	e	e	e	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	还有	v	v	v	-	4	LZ	-	-
@@ -5622,13 +5026,11 @@
 8	检查	vn	vn	vn	-	6	LD	-	-
 9	看看	挑选动作	动作	v	-	8	LD	-	-
 
-
 1	我	rr	rr	rr	-	5	ZW	-	-
 2	不会	v	v	v	-	5	QTZ	-	-
 3	用	p	p	p	-	4	JZ	-	-
 4	手机	n	n	n	-	5	XS	-	-
 5	截图	沟通动作	动作	vn	-	0	ROOT	-	-
-
 
 1	天津	ns	ns	ns	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -5637,14 +5039,12 @@
 5	17号	m	服装尺码	m	-	6	ZW	-	-
 6	到	v	v	v	-	0	ROOT	-	-
 
-
 1	我	rr	rr	rr	-	3	ZW	-	-
 2	应该	v	v	v	-	3	QTZ	-	-
 3	穿	商品动作	动作	v	-	0	ROOT	-	-
 4	多	数量状态	状态	a	-	5	XS	-	-
 5	大	商品状态	状态	a	-	3	DB	-	-
 6	的	ude1	ude1	ude1	-	5	XZ	-	-
-
 
 1	一个	mq	mq	mq	-	2	ZW	-	-
 2	无	v	v	v	-	0	ROOT	-	-
@@ -5657,7 +5057,6 @@
 9	活动	vn	vn	vn	-	10	XS	-	-
 10	券	ng	ng	ng	-	8	DB	-	-
 
-
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	购	交易动作	动作	v	-	0	ROOT	-	-
 3	多	数量状态	状态	a	-	4	XS	-	-
@@ -5665,13 +5064,11 @@
 5	的	ude1	ude1	ude1	-	4	XZ	-	-
 6	?	w	w	w	-	2	DP	-	-
 
-
 1	不是	c	c	c	-	2	JZ	-	-
 2	包邮	包邮	商品属性	a	-	0	ROOT	-	-
 3	到	v	v	v	-	4	JZ	-	-
 4	月底	t	t	t	-	2	XS	-	-
 5	吗	y	y	y	-	2	QZ	-	-
-
 
 1	你家	店家称谓	称谓	r	-	3	ZW	-	-
 2	双十二	nz	nz	nz	-	3	XS	-	-
@@ -5679,13 +5076,11 @@
 4	活动	vn	vn	vn	-	3	DB	-	-
 5	吗	y	y	y	-	3	QZ	-	-
 
-
 1	双十一	nz	nz	nz	-	4	XS	-	-
 2	就是	v	v	v	-	3	JZ	-	-
 3	这个	rz	rz	rz	-	4	XS	-	-
 4	价格	价格	商品信息	n	-	0	ROOT	-	-
 5	吗	y	y	y	-	4	QZ	-	-
-
 
 1	邮费	费用	商品信息	n	-	2	DB	-	-
 2	退	交易动作	动作	vn	-	0	ROOT	-	-
@@ -5693,14 +5088,12 @@
 4	了	ule	ule	ule	-	2	WZ	-	-
 5	吗	y	y	y	-	2	QZ	-	-
 
-
 1	五天	mq	mq	mq	-	5	XS	-	-
 2	了	ule	ule	ule	-	1	WZ	-	-
 3	还	d	d	d	-	4	XS	-	-
 4	不	否定副词	副词	d	-	5	XS	-	-
 5	发货	vi	vi	vi	-	0	ROOT	-	-
 6	!	w	w	w	-	5	DP	-	-
-
 
 1	在	p	p	p	-	3	XS	-	-
 2	不	否定副词	副词	d	-	3	XS	-	-
@@ -5711,7 +5104,6 @@
 7	退款	金额动作	动作	vi	-	6	DB	-	-
 8	了	ule	ule	ule	-	6	WZ	-	-
 
-
 1	160	m	服装尺码	m	-	2	XS	-	-
 2	高	a	a	a	-	0	ROOT	-	-
 3	110重	m	服装尺码	m	-	2	BL	-	-
@@ -5720,13 +5112,11 @@
 6	码	码	服装尺码	v	-	4	DB	-	-
 7	?	w	w	w	-	4	DP	-	-
 
-
 1	l	l	服装尺码	en	-	0	ROOT	-	-
 2	的	ude1	ude1	ude1	-	1	XZ	-	-
 3	会	v	v	v	-	4	QTZ	-	-
 4	太长	商品状态	状态	n	-	0	ROOT	-	-
 5	吗	y	y	y	-	4	QZ	-	-
-
 
 1	哦	e	e	e	-	0	ROOT	-	-
 2	是	vshi	vshi	vshi	-	3	JZ	-	-
@@ -5741,14 +5131,12 @@
 11	那件	mq	mq	mq	-	12	XS	-	-
 12	效果	效果	商品信息	n	-	8	DB	-	-
 
-
 1	这	r	r	r	-	2	XS	-	-
 2	两款	m	服装尺码	m	-	4	XS	-	-
 3	，	w	w	w	-	2	DP	-	-
 4	麻烦	语气助动词	副词	an	-	0	ROOT	-	-
 5	推荐	沟通动作	动作	v	-	4	LD	-	-
 6	尺码	尺码	服装尺码	n	-	5	DB	-	-
-
 
 1	我	rr	rr	rr	-	5	ZW	-	-
 2	今天	t	t	t	-	5	XS	-	-
@@ -5757,13 +5145,11 @@
 5	发	物流动作	动作	v	-	0	ROOT	-	-
 6	,	w	w	w	-	5	DP	-	-
 
-
 1	什么	什么	疑问词	ry	-	2	XS	-	-
 2	情况	n	n	n	-	0	ROOT	-	-
 3	还	d	d	d	-	4	XS	-	-
 4	不	否定副词	副词	d	-	5	XS	-	-
 5	发货	vi	vi	vi	-	0	ROOT	-	-
-
 
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	购	交易动作	动作	v	-	4	XS	-	-
@@ -5772,7 +5158,6 @@
 5	太大	商品状态	状态	d	-	0	ROOT	-	-
 6	了	ule	ule	ule	-	5	WZ	-	-
 
-
 1	我	rr	rr	rr	-	3	ZW	-	-
 2	昨	tg	tg	tg	-	3	XS	-	-
 3	天下	n	n	n	-	0	ROOT	-	-
@@ -5780,14 +5165,12 @@
 5	还没	z	z	z	-	6	XS	-	-
 6	发货	vi	vi	vi	-	0	ROOT	-	-
 
-
 1	不	否定副词	副词	d	-	2	XS	-	-
 2	可以	v	v	v	-	3	QTZ	-	-
 3	发	物流动作	动作	v	-	0	ROOT	-	-
 4	顺丰	物流方式	物流相关	nz	-	3	XS	-	-
 5	呀	y	y	y	-	3	QZ	-	-
 6	?	w	w	w	-	3	DP	-	-
-
 
 1	关注	网站相关动作	动作	v	-	5	XS	-	-
 2	微信	微信	通信方式	n	-	1	DB	-	-
@@ -5798,7 +5181,6 @@
 7	嘛	y	y	y	-	5	QZ	-	-
 8	?	w	w	w	-	5	DP	-	-
 
-
 1	你们	店家称谓	称谓	rr	-	5	ZW	-	-
 2	怎么	ryv	ryv	ryv	-	5	XS	-	-
 3	还	d	d	d	-	4	XS	-	-
@@ -5806,20 +5188,17 @@
 5	发货	vi	vi	vi	-	0	ROOT	-	-
 6	啊	y	y	y	-	5	QZ	-	-
 
-
 1	不过	c	c	c	-	0	ROOT	-	-
 2	主	ag	ag	ag	-	3	XS	-	-
 3	有	vyou	vyou	vyou	-	0	ROOT	-	-
 4	550	m	服装尺码	m	-	3	DB	-	-
 5	呀	y	y	y	-	3	QZ	-	-
 
-
 1	双十二	nz	nz	nz	-	4	XS	-	-
 2	还	d	d	d	-	4	XS	-	-
 3	会	v	v	v	-	4	QTZ	-	-
 4	便宜	a	a	a	-	0	ROOT	-	-
 5	吗	y	y	y	-	4	QZ	-	-
-
 
 1	我	r	r	r	-	4	ZW	-	-
 2	现在	t	t	t	-	4	XS	-	-
@@ -5832,7 +5211,6 @@
 9	了	ul	ul	ul	-	4	WZ	-	-
 10	怎么办	v	v	v	-	0	ROOT	-	-
 
-
 1	哦	e	e	e	-	0	ROOT	-	-
 2	SPACE	null	null	null	-	1	DP	-	-
 3	是不是	v	v	v	-	5	JZ	-	-
@@ -5840,13 +5218,11 @@
 5	版	n	n	n	-	0	ROOT	-	-
 6	的	ude1	ude1	ude1	-	5	XZ	-	-
 
-
 1	不是	c	c	c	-	2	JZ	-	-
 2	冬	tg	tg	tg	-	3	XS	-	-
 3	款	q	q	q	-	0	ROOT	-	-
 4	吗	y	y	y	-	3	QZ	-	-
 5	?	w	w	w	-	3	DP	-	-
-
 
 1	你	rr	rr	rr	-	2	ZW	-	-
 2	看看	挑选动作	动作	v	-	0	ROOT	-	-
@@ -5855,13 +5231,11 @@
 5	了	ule	ule	ule	-	4	WZ	-	-
 6	吗	y	y	y	-	4	QZ	-	-
 
-
 1	双十一	nz	nz	nz	-	4	XS	-	-
 2	就是	v	v	v	-	3	JZ	-	-
 3	这个	rz	rz	rz	-	4	XS	-	-
 4	活动	vn	vn	vn	-	0	ROOT	-	-
 5	吗	y	y	y	-	4	QZ	-	-
-
 
 1	你	rr	rr	rr	-	2	ZW	-	-
 2	看看	挑选动作	动作	v	-	0	ROOT	-	-
@@ -5874,14 +5248,12 @@
 9	购	交易动作	动作	v	-	0	ROOT	-	-
 10	东西	n	n	n	-	9	DB	-	-
 
-
 1	这	r	r	r	-	2	XS	-	-
 2	件	q	q	q	-	3	XS	-	-
 3	衣服	衣物类	商品	n	-	4	DB	-	-
 4	没有	v	v	v	-	0	ROOT	-	-
 5	了	ul	ul	ul	-	4	WZ	-	-
 6	吗	y	y	y	-	4	QZ	-	-
-
 
 1	什么	什么	疑问词	ry	-	2	XS	-	-
 2	时候	n	n	n	-	3	XS	-	-
@@ -5899,7 +5271,6 @@
 14	把	pba	pba	pba	-	12	QZ	-	-
 15	?	w	w	w	-	12	DP	-	-
 
-
 1	还有	v	v	v	-	7	LZ	-	-
 2	鞋	鞋类	商品	n	-	5	XS	-	-
 3	的	uj	uj	uj	-	2	XZ	-	-
@@ -5909,14 +5280,12 @@
 7	开	v	v	v	-	0	ROOT	-	-
 8	了	ul	ul	ul	-	7	WZ	-	-
 
-
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	购	交易动作	动作	v	-	4	XS	-	-
 3	的	ude1	ude1	ude1	-	2	XZ	-	-
 4	有货	商品状态	状态	l	-	0	ROOT	-	-
 5	吗	y	y	y	-	4	QZ	-	-
 6	?	w	w	w	-	4	DP	-	-
-
 
 1	但	c	c	c	-	6	LZ	-	-
 2	我	rr	rr	rr	-	6	ZW	-	-
@@ -5926,20 +5295,17 @@
 6	退	交易动作	动作	vn	-	0	ROOT	-	-
 7	了	ule	ule	ule	-	6	WZ	-	-
 
-
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	购	交易动作	动作	v	-	0	ROOT	-	-
 3	了	ule	ule	ule	-	2	WZ	-	-
 4	两条	mq	mq	mq	-	5	XS	-	-
 5	裤	裤类	商品	n	-	2	DB	-	-
 
-
 1	我	rr	rr	rr	-	2	XS	-	-
 2	手机	n	n	n	-	4	ZW	-	-
 3	不能	v	v	v	-	4	QTZ	-	-
 4	截图	沟通动作	动作	vn	-	0	ROOT	-	-
 5	啊	y	y	y	-	4	QZ	-	-
-
 
 1	或者	联系词缀	副词	c	-	4	LZ	-	-
 2	是	v	v	v	-	4	JZ	-	-
@@ -5948,7 +5314,6 @@
 5	加大	大小	商品信息	v	-	6	XS	-	-
 6	码	码	服装尺码	v	-	4	DB	-	-
 7	吗	y	y	y	-	4	QZ	-	-
-
 
 1	哦	e	e	e	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -5959,7 +5324,6 @@
 7	回去	v	v	v	-	6	XS	-	-
 8	吧	y	y	y	-	6	QZ	-	-
 
-
 1	可以	v	v	v	-	4	QTZ	-	-
 2	给	p	p	p	-	3	JZ	-	-
 3	我	rr	rr	rr	-	4	XS	-	-
@@ -5969,7 +5333,6 @@
 7	吗	y	y	y	-	4	QZ	-	-
 8	亲	通用称谓	称谓	r	-	4	DB	-	-
 
-
 1	关注	网站相关动作	动作	v	-	6	XS	-	-
 2	微信	微信	通信方式	n	-	3	XS	-	-
 3	号	号	服装尺码	q	-	1	DB	-	-
@@ -5977,13 +5340,11 @@
 5	怎么	ryv	ryv	ryv	-	6	XS	-	-
 6	包邮	包邮	商品属性	a	-	0	ROOT	-	-
 
-
 1	恩	ng	ng	ng	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	好的	u	u	u	-	0	ROOT	-	-
 4	,	w	w	w	-	3	DP	-	-
 5	谢谢	v	v	v	-	0	ROOT	-	-
-
 
 1	嗯	e	e	e	-	0	ROOT	-	-
 2	嗯	e	e	e	-	0	ROOT	-	-
@@ -5993,13 +5354,11 @@
 6	谢谢	v	v	v	-	0	ROOT	-	-
 7	呢	y	y	y	-	6	QZ	-	-
 
-
 1	会	v	v	v	-	3	QTZ	-	-
 2	很	程度副词	副词	d	-	3	XS	-	-
 3	宽松	大小	商品信息	a	-	0	ROOT	-	-
 4	吗	y	y	y	-	3	QZ	-	-
 5	?	w	w	w	-	3	DP	-	-
-
 
 1	怎么	ryv	ryv	ryv	-	4	XS	-	-
 2	还	d	d	d	-	3	XS	-	-
@@ -6008,13 +5367,11 @@
 5	呢	y	y	y	-	4	QZ	-	-
 6	?	w	w	w	-	4	DP	-	-
 
-
 1	分	qt	qt	qt	-	0	ROOT	-	-
 2	开发	vn	vn	vn	-	1	LD	-	-
 3	的	ude1	ude1	ude1	-	1	XZ	-	-
 4	吗	y	y	y	-	1	QZ	-	-
 5	?	w	w	w	-	1	DP	-	-
-
 
 1	你	rr	rr	rr	-	2	ZW	-	-
 2	去	vf	vf	vf	-	0	ROOT	-	-
@@ -6023,7 +5380,6 @@
 5	几天	mq	mq	mq	-	2	DB	-	-
 6	了	ule	ule	ule	-	2	WZ	-	-
 
-
 1	我	r	r	r	-	2	ZW	-	-
 2	购	交易动作	动作	v	-	0	ROOT	-	-
 3	了	ul	ul	ul	-	2	WZ	-	-
@@ -6031,7 +5387,6 @@
 5	好久	m	服装尺码	m	-	7	XS	-	-
 6	才能	v	v	v	-	7	QTZ	-	-
 7	发货	v	v	v	-	0	ROOT	-	-
-
 
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	你	rr	rr	rr	-	5	ZW	-	-
@@ -6042,7 +5397,6 @@
 7	两件	mq	mq	mq	-	5	DB	-	-
 8	吗	y	y	y	-	5	QZ	-	-
 9	?	w	w	w	-	5	DP	-	-
-
 
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -6055,14 +5409,12 @@
 9	没有	v	v	v	-	10	XS	-	-
 10	收到	v	v	v	-	4	LD	-	-
 
-
 1	那	r	r	r	-	5	LZ	-	-
 2	你	r	r	r	-	5	ZW	-	-
 3	给	p	p	p	-	4	JZ	-	-
 4	我	r	r	r	-	5	XS	-	-
 5	备注	n	n	n	-	0	ROOT	-	-
 6	加急	物流状态	状态	b	-	5	DB	-	-
-
 
 1	那	r	r	r	-	7	LZ	-	-
 2	这个	rz	rz	rz	-	7	ZW	-	-
@@ -6072,7 +5424,6 @@
 6	周五	t	t	t	-	7	XS	-	-
 7	能到	v	v	v	-	0	ROOT	-	-
 8	吗	y	y	y	-	7	QZ	-	-
-
 
 1	你们	店家称谓	称谓	rr	-	3	ZW	-	-
 2	现在	t	t	t	-	3	XS	-	-
@@ -6084,14 +5435,12 @@
 8	了	ule	ule	ule	-	7	WZ	-	-
 9	吗	y	y	y	-	3	QZ	-	-
 
-
 1	均	d	d	d	-	2	XS	-	-
 2	码	码	服装尺码	v	-	5	ZW	-	-
 3	是	vshi	vshi	vshi	-	2	JZ	-	-
 4	多	数量状态	状态	a	-	5	XS	-	-
 5	大	商品状态	状态	a	-	0	ROOT	-	-
 6	呢	y	y	y	-	5	QZ	-	-
-
 
 1	这条	mq	mq	mq	-	6	DB	-	-
 2	我	r	r	r	-	4	ZW	-	-
@@ -6101,14 +5450,12 @@
 6	发来	网站相关动作	动作	v	-	0	ROOT	-	-
 7	了	ul	ul	ul	-	6	WZ	-	-
 
-
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	什么	什么	疑问词	ry	-	4	XS	-	-
 4	时候	n	n	n	-	5	XS	-	-
 5	发货	vi	vi	vi	-	0	ROOT	-	-
 6	呢	y	y	y	-	5	QZ	-	-
-
 
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	SPACE	null	null	null	-	0	ROOT	-	-
@@ -6118,7 +5465,6 @@
 6	发货	vi	vi	vi	-	3	DB	-	-
 7	啊	y	y	y	-	3	QZ	-	-
 
-
 1	我	r	r	r	-	5	DB	-	-
 2	的	uj	uj	uj	-	1	XZ	-	-
 3	什么	什么	疑问词	r	-	4	XS	-	-
@@ -6126,13 +5472,11 @@
 5	发货	vi	vi	vi	-	0	ROOT	-	-
 6	呀	y	y	y	-	5	QZ	-	-
 
-
 1	我	rr	rr	rr	-	4	ZW	-	-
 2	一会	t	t	t	-	4	XS	-	-
 3	要	意向动作	动作	v	-	4	QTZ	-	-
 4	寄	物流动作	动作	v	-	0	ROOT	-	-
 5	了	ule	ule	ule	-	4	WZ	-	-
-
 
 1	可以	v	v	v	-	2	QTZ	-	-
 2	免	优惠动作	动作	v	-	0	ROOT	-	-
@@ -6140,7 +5484,6 @@
 4	了	ule	ule	ule	-	2	WZ	-	-
 5	么	y	y	y	-	2	QZ	-	-
 6	?	w	w	w	-	2	DP	-	-
-
 
 1	那	r	r	r	-	4	LZ	-	-
 2	还	d	d	d	-	4	XS	-	-
@@ -6152,20 +5495,17 @@
 8	卷	q	q	q	-	4	DB	-	-
 9	吗	y	y	y	-	4	QZ	-	-
 
-
 1	m	m	服装尺码	en	-	2	XS	-	-
 2	码	码	服装尺码	v	-	4	ZW	-	-
 3	会	v	v	v	-	4	QTZ	-	-
 4	太大	商品状态	状态	d	-	0	ROOT	-	-
 5	吗	y	y	y	-	4	QZ	-	-
 
-
 1	哦	e	e	e	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	好像	v	v	v	-	5	LZ	-	-
 4	不	否定副词	副词	d	-	5	XS	-	-
 5	可以	v	v	v	-	0	ROOT	-	-
-
 
 1	好吧	u	u	u	-	0	ROOT	-	-
 2	!	w	w	w	-	1	DP	-	-
@@ -6176,20 +5516,17 @@
 7	了	ule	ule	ule	-	6	WZ	-	-
 8	呢	y	y	y	-	4	QZ	-	-
 
-
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	SPACE	null	null	null	-	0	ROOT	-	-
 3	请问	语气助动词	副词	v	-	0	ROOT	-	-
 4	在	p	p	p	-	3	LD	-	-
 5	吗	y	y	y	-	3	QZ	-	-
 
-
 1	可以	v	v	v	-	2	QTZ	-	-
 2	穿	商品动作	动作	v	-	0	ROOT	-	-
 3	的	ude1	ude1	ude1	-	2	XZ	-	-
 4	下	f	f	f	-	2	XS	-	-
 5	吗	y	y	y	-	2	QZ	-	-
-
 
 1	可是	c	c	c	-	4	LZ	-	-
 2	你家	店家称谓	称谓	r	-	3	XS	-	-
@@ -6198,14 +5535,12 @@
 5	m	m	服装尺码	en	-	4	DB	-	-
 6	的	ude1	ude1	ude1	-	5	XZ	-	-
 
-
 1	今天	t	t	t	-	3	XS	-	-
 2	可以	v	v	v	-	3	QTZ	-	-
 3	发货	vi	vi	vi	-	0	ROOT	-	-
 4	了	ule	ule	ule	-	3	WZ	-	-
 5	吧	y	y	y	-	3	QZ	-	-
 6	?	w	w	w	-	3	DP	-	-
-
 
 1	现在	t	t	t	-	3	XS	-	-
 2	能	v	v	v	-	3	QTZ	-	-
@@ -6218,13 +5553,11 @@
 9	嘛	y	y	y	-	7	QZ	-	-
 10	？	w	w	w	-	7	DP	-	-
 
-
 1	今天	t	t	t	-	4	XS	-	-
 2	也	d	d	d	-	4	XS	-	-
 3	不	否定副词	副词	d	-	4	XS	-	-
 4	包邮	包邮	商品属性	a	-	0	ROOT	-	-
 5	?	w	w	w	-	4	DP	-	-
-
 
 1	怎么	ryv	ryv	ryv	-	2	XS	-	-
 2	还有	v	v	v	-	0	ROOT	-	-
@@ -6234,7 +5567,6 @@
 6	退货	交易动作	动作	vi	-	5	DB	-	-
 7	呀	y	y	y	-	2	QZ	-	-
 
-
 1	再	d	d	d	-	3	XS	-	-
 2	给	p	p	p	-	3	JZ	-	-
 3	打	v	v	v	-	0	ROOT	-	-
@@ -6242,13 +5574,11 @@
 5	折	vi	vi	vi	-	3	DB	-	-
 6	呗	y	y	y	-	3	QZ	-	-
 
-
 1	我	rr	rr	rr	-	3	ZW	-	-
 2	好	a	a	a	-	3	XS	-	-
 3	填写	v	v	v	-	0	ROOT	-	-
 4	快递	物流方式	物流相关	v	-	5	XS	-	-
 5	单号	n	n	n	-	3	DB	-	-
-
 
 1	你们	店家称谓	称谓	rr	-	5	ZW	-	-
 2	双十一	nz	nz	nz	-	5	XS	-	-
@@ -6256,7 +5586,6 @@
 4	什么	什么	疑问词	ry	-	5	XS	-	-
 5	活动	vn	vn	vn	-	0	ROOT	-	-
 6	啊	y	y	y	-	5	QZ	-	-
-
 
 1	怎么	ryv	ryv	ryv	-	5	XS	-	-
 2	你家	店家称谓	称谓	r	-	3	ZW	-	-
@@ -6270,7 +5599,6 @@
 10	了	ul	ul	ul	-	9	WZ	-	-
 11	退款	金额动作	动作	vi	-	9	DB	-	-
 
-
 1	怎么	ryv	ryv	ryv	-	4	XS	-	-
 2	还	d	d	d	-	3	XS	-	-
 3	不	否定副词	副词	d	-	4	XS	-	-
@@ -6283,13 +5611,11 @@
 10	催	沟通动作	动作	v	-	9	LD	-	-
 11	吧	y	y	y	-	7	QZ	-	-
 
-
 1	双11	t	t	t	-	2	XS	-	-
 2	有	vyou	vyou	vyou	-	0	ROOT	-	-
 3	啥	ry	ry	ry	-	4	XS	-	-
 4	活动	vn	vn	vn	-	2	DB	-	-
 5	啊	y	y	y	-	2	QZ	-	-
-
 
 1	到	v	v	v	-	0	ROOT	-	-
 2	上海	ns	ns	ns	-	1	DB	-	-
@@ -6297,20 +5623,17 @@
 4	多少	ry	ry	ry	-	3	ZW	-	-
 5	啊	y	y	y	-	4	QZ	-	-
 
-
 1	你们	店家称谓	称谓	rr	-	3	ZW	-	-
 2	还没	z	z	z	-	3	XS	-	-
 3	发	物流动作	动作	v	-	0	ROOT	-	-
 4	吗	y	y	y	-	3	QZ	-	-
 5	?	w	w	w	-	3	DP	-	-
 
-
 1	大概	d	d	d	-	2	XS	-	-
 2	几天	mq	mq	mq	-	3	XS	-	-
 3	到	v	v	v	-	0	ROOT	-	-
 4	啊	y	y	y	-	3	QZ	-	-
 5	?	w	w	w	-	3	DP	-	-
-
 
 1	今天	t	t	t	-	4	XS	-	-
 2	还	d	d	d	-	4	XS	-	-
@@ -6319,13 +5642,11 @@
 5	吗	y	y	y	-	4	QZ	-	-
 6	?	w	w	w	-	4	DP	-	-
 
-
 1	怎么	ryv	ryv	ryv	-	3	XS	-	-
 2	还没	z	z	z	-	3	XS	-	-
 3	退款	金额动作	动作	vi	-	0	ROOT	-	-
 4	啊	y	y	y	-	3	QZ	-	-
 5	?	w	w	w	-	3	DP	-	-
-
 
 1	你	rr	rr	rr	-	2	ZW	-	-
 2	帮	v	v	v	-	0	ROOT	-	-
@@ -6334,13 +5655,11 @@
 5	一下	mq	mq	mq	-	4	XS	-	-
 6	吧	y	y	y	-	4	QZ	-	-
 
-
 1	别的	rzv	rzv	rzv	-	2	XS	-	-
 2	大店	n	n	n	-	4	ZW	-	-
 3	早	时间状态	状态	a	-	4	XS	-	-
 4	发	物流动作	动作	v	-	0	ROOT	-	-
 5	了	ule	ule	ule	-	4	WZ	-	-
-
 
 1	可是	c	c	c	-	6	LZ	-	-
 2	我	r	r	r	-	3	ZW	-	-
@@ -6354,7 +5673,6 @@
 10	的	uj	uj	uj	-	9	XZ	-	-
 11	啊	y	y	y	-	6	QZ	-	-
 
-
 1	双11	t	t	t	-	2	XS	-	-
 2	购	交易动作	动作	v	-	4	XS	-	-
 3	的	ude1	ude1	ude1	-	2	XZ	-	-
@@ -6363,14 +5681,12 @@
 6	到货	vn	vn	vn	-	0	ROOT	-	-
 7	了	ule	ule	ule	-	6	WZ	-	-
 
-
 1	165	m	服装尺码	m	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	55	m	服装尺码	m	-	1	BL	-	-
 4	购	交易动作	动作	v	-	0	ROOT	-	-
 5	什么	什么	疑问词	ry	-	6	XS	-	-
 6	玛	nz	nz	nz	-	4	DB	-	-
-
 
 1	优惠券	优惠券	优惠形式	n	-	3	DB	-	-
 2	不能	v	v	v	-	3	QTZ	-	-
@@ -6379,7 +5695,6 @@
 5	吗	y	y	y	-	3	QZ	-	-
 6	?	w	w	w	-	3	DP	-	-
 
-
 1	价格	价格	商品信息	n	-	3	ZW	-	-
 2	不能	v	v	v	-	3	QTZ	-	-
 3	优惠	vn	vn	vn	-	0	ROOT	-	-
@@ -6387,7 +5702,6 @@
 5	了	ule	ule	ule	-	3	WZ	-	-
 6	吗	y	y	y	-	3	QZ	-	-
 7	?	w	w	w	-	3	DP	-	-
-
 
 1	你家	店家称谓	称谓	r	-	6	XS	-	-
 2	那个	rz	rz	rz	-	6	XS	-	-
@@ -6398,7 +5712,6 @@
 7	呢	y	y	y	-	6	QZ	-	-
 8	?	w	w	w	-	6	DP	-	-
 
-
 1	我	rr	rr	rr	-	3	XS	-	-
 2	得	ude3	ude3	ude3	-	1	XZ	-	-
 3	裙	裙类	商品	n	-	5	XS	-	-
@@ -6406,13 +5719,11 @@
 5	发货	vi	vi	vi	-	0	ROOT	-	-
 6	啊	y	y	y	-	5	QZ	-	-
 
-
 1	发	物流动作	动作	v	-	0	ROOT	-	-
 2	的	ude1	ude1	ude1	-	1	XZ	-	-
 3	哪	ry	ry	ry	-	4	XS	-	-
 4	件	q	q	q	-	1	DB	-	-
 5	?	w	w	w	-	1	DP	-	-
-
 
 1	大概	d	d	d	-	5	XS	-	-
 2	能	v	v	v	-	5	QTZ	-	-
@@ -6421,13 +5732,11 @@
 5	发货	vi	vi	vi	-	0	ROOT	-	-
 6	啊	y	y	y	-	5	QZ	-	-
 
-
 1	我	rr	rr	rr	-	3	ZW	-	-
 2	已经	时间副词	副词	d	-	3	XS	-	-
 3	申请	申请	v	v	-	0	ROOT	-	-
 4	好	a	a	a	-	3	XS	-	-
 5	了	ule	ule	ule	-	3	WZ	-	-
-
 
 1	我	r	r	r	-	2	XS	-	-
 2	身高	身高	人物属性	n	-	3	ZW	-	-
@@ -6441,13 +5750,11 @@
 10	可以	v	v	v	-	0	ROOT	-	-
 11	了	ul	ul	ul	-	10	WZ	-	-
 
-
 1	不	否定副词	副词	d	-	2	XS	-	-
 2	发货	vi	vi	vi	-	5	XS	-	-
 3	就	时间副词	副词	d	-	5	XS	-	-
 4	赶快	时间副词	副词	d	-	5	XS	-	-
 5	退款	金额动作	动作	vi	-	0	ROOT	-	-
-
 
 1	页面	n	n	n	-	6	XS	-	-
 2	这	r	r	r	-	3	XS	-	-
@@ -6456,7 +5763,6 @@
 5	都	d	d	d	-	6	XS	-	-
 6	有	v	v	v	-	0	ROOT	-	-
 7	啊	y	y	y	-	6	QZ	-	-
-
 
 1	羽绒服	衣物类	商品	n	-	2	XS	-	-
 2	照片	图片类	信息体	n	-	5	XS	-	-
@@ -6469,13 +5775,11 @@
 9	码	码	服装尺码	v	-	6	DB	-	-
 10	？	w	w	w	-	6	DP	-	-
 
-
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	退货	交易动作	动作	vi	-	3	XS	-	-
 3	地址	地址	人物属性	n	-	4	DB	-	-
 4	发给	物流动作	动作	v	-	0	ROOT	-	-
 5	我	rr	rr	rr	-	4	XS	-	-
-
 
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	想要	意向动作	动作	v	-	0	ROOT	-	-
@@ -6484,7 +5788,6 @@
 5	一码	mq	mq	mq	-	2	DB	-	-
 6	的	ude1	ude1	ude1	-	5	XZ	-	-
 
-
 1	这	r	r	r	-	2	XS	-	-
 2	件	q	q	q	-	4	DB	-	-
 3	刚刚	d	d	d	-	4	XS	-	-
@@ -6492,14 +5795,12 @@
 5	错	对错	状态	v	-	4	XS	-	-
 6	了	ul	ul	ul	-	4	WZ	-	-
 
-
 1	l	l	服装尺码	en	-	2	XS	-	-
 2	码	码	服装尺码	v	-	5	ZW	-	-
 3	会	v	v	v	-	5	QTZ	-	-
 4	很	程度副词	副词	d	-	5	XS	-	-
 5	肥	商品状态	状态	v	-	0	ROOT	-	-
 6	吗	y	y	y	-	5	QZ	-	-
-
 
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -6514,7 +5815,6 @@
 11	可以	v	v	v	-	12	QTZ	-	-
 12	退换	交易动作	动作	v	-	9	DB	-	-
 
-
 1	今天	t	t	t	-	4	XS	-	-
 2	还	d	d	d	-	4	XS	-	-
 3	不能	v	v	v	-	4	QTZ	-	-
@@ -6522,14 +5822,12 @@
 5	吗	y	y	y	-	4	QZ	-	-
 6	?	w	w	w	-	4	DP	-	-
 
-
 1	不	否定副词	副词	d	-	4	XS	-	-
 2	都	d	d	d	-	4	XS	-	-
 3	是	vshi	vshi	vshi	-	4	JZ	-	-
 4	预定	交易动作	动作	vn	-	0	ROOT	-	-
 5	款	q	q	q	-	4	DB	-	-
 6	吗	y	y	y	-	4	QZ	-	-
-
 
 1	昨天	t	t	t	-	3	XS	-	-
 2	就	时间副词	副词	d	-	3	XS	-	-
@@ -6539,7 +5837,6 @@
 6	没	d	d	d	-	7	XS	-	-
 7	打	v	v	v	-	0	ROOT	-	-
 8	！	w	w	w	-	7	DP	-	-
-
 
 1	我	r	r	r	-	6	ZW	-	-
 2	又	d	d	d	-	6	XS	-	-
@@ -6552,14 +5849,12 @@
 9	这样	rzv	rzv	rzv	-	0	ROOT	-	-
 10	吗	y	y	y	-	9	QZ	-	-
 
-
 1	我	rr	rr	rr	-	4	ZW	-	-
 2	平时	t	t	t	-	4	XS	-	-
 3	都	d	d	d	-	4	XS	-	-
 4	穿	商品动作	动作	v	-	0	ROOT	-	-
 5	s	s	服装尺码	en	-	4	DB	-	-
 6	哦	e	e	e	-	4	QZ	-	-
-
 
 1	意思	n	n	n	-	6	ZW	-	-
 2	双十一	m	服装尺码	m	-	6	XS	-	-
@@ -6569,14 +5864,12 @@
 6	价格	价格	商品信息	n	-	0	ROOT	-	-
 7	了	ul	ul	ul	-	6	WZ	-	-
 
-
 1	那	r	r	r	-	5	LZ	-	-
 2	我	r	r	r	-	5	ZW	-	-
 3	等	u	u	u	-	4	JZ	-	-
 4	后天	n	n	n	-	5	XS	-	-
 5	购	交易动作	动作	v	-	0	ROOT	-	-
 6	吗	y	y	y	-	5	QZ	-	-
-
 
 1	头	n	n	n	-	5	XS	-	-
 2	一次	mq	mq	mq	-	1	XS	-	-
@@ -6587,7 +5880,6 @@
 7	就	时间副词	副词	d	-	8	XS	-	-
 8	这样	rzv	rzv	rzv	-	0	ROOT	-	-
 
-
 1	在	p	p	p	-	0	ROOT	-	-
 2	吗	y	y	y	-	1	QZ	-	-
 3	?	w	w	w	-	1	DP	-	-
@@ -6595,7 +5887,6 @@
 5	没有	v	v	v	-	0	ROOT	-	-
 6	物流	n	n	n	-	7	XS	-	-
 7	信息	信息	商品信息	n	-	5	DB	-	-
-
 
 1	你们	店家称谓	称谓	r	-	2	XS	-	-
 2	家	q	q	q	-	3	ZW	-	-
@@ -6605,14 +5896,12 @@
 6	吗	y	y	y	-	3	QZ	-	-
 7	？	w	w	w	-	3	DP	-	-
 
-
 1	这	r	r	r	-	2	XS	-	-
 2	款	n	n	n	-	3	XS	-	-
 3	白色	n	n	n	-	5	ZW	-	-
 4	的	uj	uj	uj	-	3	XZ	-	-
 5	肥	商品状态	状态	n	-	0	ROOT	-	-
 6	么	nr	nr	nr	-	5	QZ	-	-
-
 
 1	嗯	e	e	e	-	0	ROOT	-	-
 2	嗯	e	e	e	-	0	ROOT	-	-
@@ -6621,20 +5910,17 @@
 5	偏暗	商品状态	状态	d	-	0	ROOT	-	-
 6	一点	mq	mq	mq	-	5	XS	-	-
 
-
 1	你们	店家称谓	称谓	rr	-	2	XS	-	-
 2	家	q	q	q	-	4	ZW	-	-
 3	也	d	d	d	-	4	XS	-	-
 4	太慢	速度状态	状态	d	-	0	ROOT	-	-
 5	了	ule	ule	ule	-	4	WZ	-	-
 
-
 1	双11	t	t	t	-	4	XS	-	-
 2	也	d	d	d	-	4	XS	-	-
 3	是	vshi	vshi	vshi	-	4	JZ	-	-
 4	550	m	服装尺码	m	-	0	ROOT	-	-
 5	?	w	w	w	-	4	DP	-	-
-
 
 1	你	rr	rr	rr	-	4	ZW	-	-
 2	能	v	v	v	-	4	QTZ	-	-
@@ -6643,14 +5929,12 @@
 5	了	ule	ule	ule	-	4	WZ	-	-
 6	?	w	w	w	-	4	DP	-	-
 
-
 1	我	rr	rr	rr	-	4	ZW	-	-
 2	也	d	d	d	-	4	XS	-	-
 3	是	vshi	vshi	vshi	-	4	JZ	-	-
 4	醉	人物状态	状态	v	-	0	ROOT	-	-
 5	了	ule	ule	ule	-	4	WZ	-	-
 6	啊	y	y	y	-	4	QZ	-	-
-
 
 1	你	r	r	r	-	2	ZW	-	-
 2	催	沟通动作	动作	v	-	0	ROOT	-	-
@@ -6662,20 +5946,17 @@
 8	知道	沟通动作	动作	v	-	0	ROOT	-	-
 9	吗	y	y	y	-	8	QZ	-	-
 
-
 1	也	d	d	d	-	3	XS	-	-
 2	不能	v	v	v	-	3	QTZ	-	-
 3	甩干	nz	nz	nz	-	0	ROOT	-	-
 4	是	vshi	vshi	vshi	-	0	ROOT	-	-
 5	吗	y	y	y	-	4	QZ	-	-
 
-
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	换	交易动作	动作	v	-	0	ROOT	-	-
 3	了	ule	ule	ule	-	2	WZ	-	-
 4	另外	c	c	c	-	5	XS	-	-
 5	一款	mq	mq	mq	-	2	DB	-	-
-
 
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	付款	交易动作	动作	vi	-	0	ROOT	-	-
@@ -6686,7 +5967,6 @@
 7	发货	vi	vi	vi	-	0	ROOT	-	-
 8	呢	y	y	y	-	7	QZ	-	-
 9	?	w	w	w	-	7	DP	-	-
-
 
 1	亲	通用称谓	称谓	v	-	0	ROOT	-	-
 2	换	交易动作	动作	v	-	6	XS	-	-
@@ -6700,7 +5980,6 @@
 10	是	v	v	v	-	6	JZ	-	-
 11	么	nr	nr	nr	-	6	QZ	-	-
 
-
 1	不是	c	c	c	-	0	ROOT	-	-
 2	吧	y	y	y	-	1	QZ	-	-
 3	双十一	nz	nz	nz	-	6	XS	-	-
@@ -6709,7 +5988,6 @@
 6	包邮	包邮	商品属性	a	-	0	ROOT	-	-
 7	啊	y	y	y	-	6	QZ	-	-
 
-
 1	不然	联系词缀	副词	c	-	2	LZ	-	-
 2	寄	物流动作	动作	v	-	0	ROOT	-	-
 3	一个	mq	mq	mq	-	4	XS	-	-
@@ -6717,14 +5995,12 @@
 5	回来	v	v	v	-	2	LD	-	-
 6	寄过来	v	v	v	-	0	ROOT	-	-
 
-
 1	一直	d	d	d	-	3	XS	-	-
 2	就	时间副词	副词	d	-	3	XS	-	-
 3	没有	v	v	v	-	0	ROOT	-	-
 4	大号	大号	服装尺码	n	-	3	DB	-	-
 5	吗	y	y	y	-	3	QZ	-	-
 6	?	w	w	w	-	3	DP	-	-
-
 
 1	你	rr	rr	rr	-	2	XS	-	-
 2	那	rzv	rzv	rzv	-	4	ZW	-	-
@@ -6736,7 +6012,6 @@
 8	使用	优惠动作	动作	v	-	0	ROOT	-	-
 9	的	ude1	ude1	ude1	-	8	XZ	-	-
 
-
 1	不能	v	v	v	-	3	QTZ	-	-
 2	在	p	p	p	-	3	JZ	-	-
 3	便宜	a	a	a	-	0	ROOT	-	-
@@ -6745,7 +6020,6 @@
 6	吗	y	y	y	-	3	QZ	-	-
 7	?	w	w	w	-	3	DP	-	-
 
-
 1	你们	店家称谓	称谓	rr	-	2	XS	-	-
 2	家	q	q	q	-	4	ZW	-	-
 3	到底	d	d	d	-	4	XS	-	-
@@ -6753,13 +6027,11 @@
 5	货	物流物品	物流相关	n	-	4	DB	-	-
 6	,	w	w	w	-	4	DP	-	-
 
-
 1	双十一	nz	nz	nz	-	2	XS	-	-
 2	有	vyou	vyou	vyou	-	0	ROOT	-	-
 3	活动	vn	vn	vn	-	2	DB	-	-
 4	吗	y	y	y	-	2	QZ	-	-
 5	?	w	w	w	-	2	DP	-	-
-
 
 1	我	rr	rr	rr	-	3	ZW	-	-
 2	不会	v	v	v	-	3	QTZ	-	-
@@ -6769,7 +6041,6 @@
 6	不要	d	d	d	-	0	ROOT	-	-
 7	了	ule	ule	ule	-	6	WZ	-	-
 
-
 1	你们	店家称谓	称谓	rr	-	6	ZW	-	-
 2	为什么	为什么	疑问词	ryv	-	6	XS	-	-
 3	不	否定副词	副词	d	-	6	XS	-	-
@@ -6777,13 +6048,11 @@
 5	我	r	r	r	-	6	XS	-	-
 6	发货	vi	vi	vi	-	0	ROOT	-	-
 
-
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	忘	失误动作	动作	v	-	0	ROOT	-	-
 3	购	交易动作	动作	v	-	2	LD	-	-
 4	邮费险	n	n	n	-	3	DB	-	-
 5	了	ule	ule	ule	-	3	WZ	-	-
-
 
 1	跟	p	p	p	-	3	JZ	-	-
 2	你们	店家称谓	称谓	rr	-	3	XS	-	-
@@ -6797,7 +6066,6 @@
 10	才	d	d	d	-	11	XS	-	-
 11	回复	沟通动作	动作	v	-	0	ROOT	-	-
 
-
 1	今天	t	t	t	-	2	XS	-	-
 2	购	交易动作	动作	v	-	7	XS	-	-
 3	,	w	w	w	-	2	DP	-	-
@@ -6806,13 +6074,11 @@
 6	能	v	v	v	-	7	QTZ	-	-
 7	发货	vi	vi	vi	-	0	ROOT	-	-
 
-
 1	不是	c	c	c	-	2	JZ	-	-
 2	发	物流动作	动作	v	-	0	ROOT	-	-
 3	一个	mq	mq	mq	-	4	XS	-	-
 4	快递	物流方式	物流相关	v	-	2	DB	-	-
 5	?	w	w	w	-	2	DP	-	-
-
 
 1	身上	s	服装尺码	s	-	3	ZW	-	-
 2	是	v	v	v	-	3	JZ	-	-
@@ -6830,7 +6096,6 @@
 14	薄	a	a	a	-	12	BL	-	-
 15	啊	y	y	y	-	7	QZ	-	-
 
-
 1	亲	通用称谓	称谓	v	-	0	ROOT	-	-
 2	那	r	r	r	-	4	XS	-	-
 3	5元	m	服装尺码	m	-	4	XS	-	-
@@ -6839,7 +6104,6 @@
 6	自动	d	d	d	-	7	XS	-	-
 7	减	v	v	v	-	0	ROOT	-	-
 8	吗	y	y	y	-	7	QZ	-	-
-
 
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -6856,20 +6120,17 @@
 13	想	情态动词词缀	副词	v	-	14	QTZ	-	-
 14	退货	交易动作	动作	vi	-	0	ROOT	-	-
 
-
 1	什么	什么	疑问词	ry	-	2	XS	-	-
 2	料子	料子	商品信息	n	-	0	ROOT	-	-
 3	的	ude1	ude1	ude1	-	2	XZ	-	-
 4	呀	y	y	y	-	2	QZ	-	-
 5	‘	w	w	w	-	2	DP	-	-
 
-
 1	不	否定副词	副词	d	-	2	XS	-	-
 2	合适	商品状态	状态	a	-	4	XS	-	-
 3	能	v	v	v	-	4	QTZ	-	-
 4	退换	交易动作	动作	v	-	0	ROOT	-	-
 5	吗	y	y	y	-	4	QZ	-	-
-
 
 1	为什么	为什么	疑问词	r	-	10	XS	-	-
 2	这	r	r	r	-	3	XS	-	-
@@ -6883,14 +6144,12 @@
 10	颜色	颜色	商品信息	n	-	0	ROOT	-	-
 11	？	w	w	w	-	10	DP	-	-
 
-
 1	再	d	d	d	-	2	XS	-	-
 2	晚	时间状态	状态	tg	-	5	XS	-	-
 3	就	时间副词	副词	d	-	5	XS	-	-
 4	真的	d	d	d	-	5	XS	-	-
 5	收不到	v	v	v	-	0	ROOT	-	-
 6	了	ule	ule	ule	-	5	WZ	-	-
-
 
 1	因为	c	c	c	-	3	JZ	-	-
 2	货	物流物品	物流相关	n	-	3	ZW	-	-
@@ -6902,7 +6161,6 @@
 8	没货	商品状态	状态	a	-	0	ROOT	-	-
 9	呢	y	y	y	-	8	DP	-	-
 
-
 1	不是	c	c	c	-	2	JZ	-	-
 2	承诺	沟通动作	动作	v	-	0	ROOT	-	-
 3	的	ude1	ude1	ude1	-	2	XZ	-	-
@@ -6910,14 +6168,12 @@
 5	小时	n	n	n	-	2	DB	-	-
 6	吗	y	y	y	-	2	QZ	-	-
 
-
 1	再	d	d	d	-	3	XS	-	-
 2	不能	v	v	v	-	3	QTZ	-	-
 3	优惠	vn	vn	vn	-	0	ROOT	-	-
 4	了	ule	ule	ule	-	3	WZ	-	-
 5	吗	y	y	y	-	3	ZW	-	-
 6	?	w	w	w	-	3	DP	-	-
-
 
 1	我	rr	rr	rr	-	3	ZW	-	-
 2	想	情态动词词缀	副词	v	-	3	QTZ	-	-
@@ -6932,7 +6188,6 @@
 11	号	号	服装尺码	q	-	0	ROOT	-	-
 12	dy	en	en	en	-	0	ROOT	-	-
 
-
 1	在	p	p	p	-	0	ROOT	-	-
 2	吗	y	y	y	-	1	QZ	-	-
 3	?	w	w	w	-	1	DP	-	-
@@ -6943,7 +6198,6 @@
 8	已经	时间副词	副词	d	-	9	XS	-	-
 9	购	交易动作	动作	v	-	0	ROOT	-	-
 10	了	ule	ule	ule	-	9	WZ	-	-
-
 
 1	说	沟通动作	动作	v	-	2	JZ	-	-
 2	什么	什么	疑问词	r	-	6	XS	-	-
@@ -6956,7 +6210,6 @@
 9	是	v	v	v	-	6	JZ	-	-
 10	吧	y	y	y	-	6	QZ	-	-
 
-
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	购	交易动作	动作	v	-	0	ROOT	-	-
 3	38	m	服装尺码	m	-	2	DB	-	-
@@ -6964,13 +6217,11 @@
 5	宽松	大小	商品信息	a	-	2	LD	-	-
 6	?	w	w	w	-	2	DP	-	-
 
-
 1	因为	c	c	c	-	3	LZ	-	-
 2	我	rr	rr	rr	-	3	ZW	-	-
 3	购	交易动作	动作	v	-	0	ROOT	-	-
 4	的	ude1	ude1	ude1	-	3	DB	-	-
 5	多	数量状态	状态	a	-	3	DB	-	-
-
 
 1	你好	l	服装尺码	l	-	0	ROOT	-	-
 2	这	r	r	r	-	3	XS	-	-
@@ -6983,7 +6234,6 @@
 9	购	交易动作	动作	v	-	0	ROOT	-	-
 10	一套	m	服装尺码	m	-	9	DB	-	-
 
-
 1	哦	e	e	e	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	SPACE	null	null	null	-	0	ROOT	-	-
@@ -6993,7 +6243,6 @@
 7	的	ude1	ude1	ude1	-	6	XZ	-	-
 8	吗	y	y	y	-	6	QZ	-	-
 
-
 1	169个	m	服装尺码	m	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	140斤	m	服装尺码	m	-	1	BL	-	-
@@ -7001,13 +6250,11 @@
 5	穿	商品动作	动作	v	-	0	ROOT	-	-
 6	吗	y	y	y	-	5	QZ	-	-
 
-
 1	上面	f	f	f	-	4	XS	-	-
 2	我	rr	rr	rr	-	4	ZW	-	-
 3	都	d	d	d	-	4	XS	-	-
 4	说	沟通动作	动作	v	-	0	ROOT	-	-
 5	了	ule	ule	ule	-	4	WZ	-	-
-
 
 1	总是	d	d	d	-	2	XS	-	-
 2	这样	rzv	rzv	rzv	-	3	XS	-	-
@@ -7017,20 +6264,17 @@
 6	冻死	v	v	v	-	0	ROOT	-	-
 7	啦	y	y	y	-	6	QZ	-	-
 
-
 1	我	rr	rr	rr	-	4	ZW	-	-
 2	己	rr	rr	rr	-	4	XS	-	-
 3	经	p	p	p	-	4	XS	-	-
 4	评价	网站相关动作	动作	vn	-	0	ROOT	-	-
 5	了	ule	ule	ule	-	4	WZ	-	-
 
-
 1	只	d	d	d	-	2	XS	-	-
 2	收到	v	v	v	-	0	ROOT	-	-
 3	毛衣	衣物类	商品	n	-	2	DB	-	-
 4	啊	y	y	y	-	2	QZ	-	-
 5	!	w	w	w	-	2	DP	-	-
-
 
 1	这	r	r	r	-	2	XS	-	-
 2	条	q	q	q	-	3	XS	-	-
@@ -7047,13 +6291,11 @@
 13	换	交易动作	动作	v	-	0	ROOT	-	-
 14	回来	v	v	v	-	13	XS	-	-
 
-
 1	双十一	nz	nz	nz	-	2	XS	-	-
 2	活动	vn	vn	vn	-	4	ZW	-	-
 3	是	vshi	vshi	vshi	-	4	JZ	-	-
 4	什么	什么	疑问词	ry	-	0	ROOT	-	-
 5	?	w	w	w	-	4	DP	-	-
-
 
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	购	交易动作	动作	v	-	0	ROOT	-	-
@@ -7061,13 +6303,11 @@
 4	m	m	服装尺码	en	-	5	ZW	-	-
 5	码	码	服装尺码	v	-	2	DB	-	-
 
-
 1	双12	t	t	t	-	2	XS	-	-
 2	有	vyou	vyou	vyou	-	0	ROOT	-	-
 3	活动	vn	vn	vn	-	2	DB	-	-
 4	吗	y	y	y	-	2	QZ	-	-
 5	?	w	w	w	-	2	DP	-	-
-
 
 1	我	r	r	r	-	2	XS	-	-
 2	155	m	服装尺码	m	-	0	ROOT	-	-
@@ -7078,20 +6318,17 @@
 7	紧	商品状态	状态	a	-	5	LD	-	-
 8	哇	y	y	y	-	5	QZ	-	-
 
-
 1	可以	v	v	v	-	2	QTZ	-	-
 2	换	交易动作	动作	v	-	0	ROOT	-	-
 3	其他	rzv	rzv	rzv	-	4	XS	-	-
 4	款	q	q	q	-	2	DB	-	-
 5	吗	y	y	y	-	2	QZ	-	-
 
-
 1	怎么	ryv	ryv	ryv	-	4	XS	-	-
 2	还	d	d	d	-	3	XS	-	-
 3	不	否定副词	副词	d	-	4	XS	-	-
 4	寄	物流动作	动作	v	-	0	ROOT	-	-
 5	呢	y	y	y	-	4	QZ	-	-
-
 
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	购	交易动作	动作	v	-	4	XS	-	-
@@ -7107,7 +6344,6 @@
 12	就是	v	v	v	-	0	ROOT	-	-
 13	550	m	服装尺码	m	-	12	DB	-	-
 14	吗	y	y	y	-	12	QZ	-	-
-
 
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -7125,13 +6361,11 @@
 14	号	号	服装尺码	q	-	12	DB	-	-
 15	!	w	w	w	-	12	DP	-	-
 
-
 1	会	v	v	v	-	3	QTZ	-	-
 2	不会	v	v	v	-	1	BL	-	-
 3	起球	起球	商品问题	n	-	0	ROOT	-	-
 4	啊	y	y	y	-	3	QZ	-	-
 5	!	w	w	w	-	3	DP	-	-
-
 
 1	亲	通用称谓	称谓	v	-	0	ROOT	-	-
 2	我	r	r	r	-	4	ZW	-	-
@@ -7150,7 +6384,6 @@
 15	，	w	w	w	-	10	DP	-	-
 16	辛苦	a	a	a	-	0	ROOT	-	-
 
-
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	购	交易动作	动作	v	-	4	XS	-	-
 3	500多块	m	服装尺码	m	-	2	DB	-	-
@@ -7159,13 +6392,11 @@
 6	呀	y	y	y	-	4	QZ	-	-
 7	嘻嘻	nz	nz	nz	-	0	ROOT	-	-
 
-
 1	加棉	厚薄	款式	nr	-	4	BL	-	-
 2	的	ude1	ude1	ude1	-	1	XZ	-	-
 3	还是	c	c	c	-	1	LZ	-	-
 4	单	b	b	b	-	0	ROOT	-	-
 5	的	ude1	ude1	ude1	-	4	XZ	-	-
-
 
 1	599	m	服装尺码	m	-	3	XS	-	-
 2	不是	c	c	c	-	3	JZ	-	-
@@ -7173,7 +6404,6 @@
 4	50	m	服装尺码	m	-	3	DB	-	-
 5	吗	y	y	y	-	3	QZ	-	-
 6	?	w	w	w	-	3	DP	-	-
-
 
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -7185,20 +6415,17 @@
 8	退款	金额动作	动作	vi	-	0	ROOT	-	-
 9	了	ule	ule	ule	-	8	WZ	-	-
 
-
 1	不是	c	c	c	-	2	JZ	-	-
 2	满	a	a	a	-	0	ROOT	-	-
 3	299	m	服装尺码	m	-	2	DB	-	-
 4	优惠	vn	vn	vn	-	5	ZW	-	-
 5	20	m	服装尺码	m	-	0	ROOT	-	-
 
-
 1	哪	ry	ry	ry	-	2	XS	-	-
 2	还有	v	v	v	-	0	ROOT	-	-
 3	黑色	n	n	n	-	2	DB	-	-
 4	的	ude1	ude1	ude1	-	2	XZ	-	-
 5	吗	y	y	y	-	2	QZ	-	-
-
 
 1	呵呵	e	e	e	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -7213,20 +6440,17 @@
 11	发货	vi	vi	vi	-	0	ROOT	-	-
 12	了	ule	ule	ule	-	11	WZ	-	-
 
-
 1	24	m	服装尺码	m	-	0	ROOT	-	-
 2	前	f	f	f	-	1	XS	-	-
 3	能	v	v	v	-	4	QTZ	-	-
 4	发货	vi	vi	vi	-	0	ROOT	-	-
 5	吗	y	y	y	-	4	QZ	-	-
 
-
 1	从	p	p	p	-	2	JZ	-	-
 2	现在	t	t	t	-	3	XS	-	-
 3	还要	意向动作	动作	d	-	0	ROOT	-	-
 4	15天	m	服装尺码	m	-	3	DB	-	-
 5	?	w	w	w	-	3	DP	-	-
-
 
 1	我	rr	rr	rr	-	3	ZW	-	-
 2	只有	c	c	c	-	3	XS	-	-
@@ -7235,13 +6459,11 @@
 5	穿	商品动作	动作	v	-	0	ROOT	-	-
 6	吗	y	y	y	-	5	QZ	-	-
 
-
 1	胆	衣里	商品部位	n	-	3	ZW	-	-
 2	可以	v	v	v	-	3	QTZ	-	-
 3	拆卸	v	v	v	-	0	ROOT	-	-
 4	的	ude1	ude1	ude1	-	3	XZ	-	-
 5	吗	y	y	y	-	3	QZ	-	-
-
 
 1	同一天	d	d	d	-	2	XS	-	-
 2	购	交易动作	动作	v	-	4	XS	-	-
@@ -7258,13 +6480,11 @@
 13	几天	mq	mq	mq	-	10	XS	-	-
 14	了	ul	ul	ul	-	13	WZ	-	-
 
-
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	怕	人物状态	状态	v	-	0	ROOT	-	-
 3	我	rr	rr	rr	-	4	ZW	-	-
 4	穿	商品动作	动作	v	-	2	DB	-	-
 5	不了	v	v	v	-	4	XS	-	-
-
 
 1	大概	d	d	d	-	3	XS	-	-
 2	什么	什么	疑问词	ry	-	3	XS	-	-
@@ -7273,7 +6493,6 @@
 5	发货	vi	vi	vi	-	0	ROOT	-	-
 6	吖	nz	nz	nz	-	5	QZ	-	-
 
-
 1	我	rr	rr	rr	-	4	ZW	-	-
 2	早	时间状态	状态	a	-	4	XS	-	-
 3	都	d	d	d	-	4	XS	-	-
@@ -7281,13 +6500,11 @@
 5	了	ule	ule	ule	-	4	WZ	-	-
 6	啊	y	y	y	-	4	QZ	-	-
 
-
 1	不	否定副词	副词	d	-	2	XS	-	-
 2	打算	意向动作	动作	v	-	3	XS	-	-
 3	发货	vi	vi	vi	-	0	ROOT	-	-
 4	啦	y	y	y	-	3	QZ	-	-
 5	?	w	w	w	-	3	DP	-	-
-
 
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -7299,14 +6516,12 @@
 8	弹性	弹性	商品信息	n	-	7	DB	-	-
 9	?	w	w	w	-	4	DP	-	-
 
-
 1	你们	店家称谓	称谓	rr	-	2	XS	-	-
 2	服务	vn	vn	vn	-	4	ZW	-	-
 3	也	d	d	d	-	4	XS	-	-
 4	太差	d	d	d	-	0	ROOT	-	-
 5	了	ule	ule	ule	-	4	WZ	-	-
 6	吧	y	y	y	-	4	QZ	-	-
-
 
 1	好吧	u	u	u	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -7317,20 +6532,17 @@
 7	m	m	服装尺码	en	-	6	DB	-	-
 8	的	ude1	ude1	ude1	-	7	XZ	-	-
 
-
 1	呃	y	y	y	-	0	ROOT	-	-
 2	等	udeng	udeng	udeng	-	0	ROOT	-	-
 3	11	m	服装尺码	m	-	2	DB	-	-
 4	那天	r	r	r	-	3	XS	-	-
 5	呗	y	y	y	-	2	QZ	-	-
 
-
 1	另	rz	rz	rz	-	2	XS	-	-
 2	一件	mq	mq	mq	-	5	DB	-	-
 3	什么	什么	疑问词	ry	-	4	XS	-	-
 4	时候	n	n	n	-	5	XS	-	-
 5	发货	vi	vi	vi	-	0	ROOT	-	-
-
 
 1	嗯	e	e	e	-	0	ROOT	-	-
 2	嗯	e	e	e	-	0	ROOT	-	-
@@ -7339,7 +6551,6 @@
 5	签收	v	v	v	-	0	ROOT	-	-
 6	啦	y	y	y	-	5	QZ	-	-
 
-
 1	你们	店家称谓	称谓	rr	-	4	ZW	-	-
 2	什么	什么	疑问词	ry	-	3	XS	-	-
 3	时间	n	n	n	-	4	XS	-	-
@@ -7347,13 +6558,11 @@
 5	呀	y	y	y	-	4	QZ	-	-
 6	,	w	w	w	-	4	DP	-	-
 
-
 1	不行	a	a	a	-	4	XS	-	-
 2	我	rr	rr	rr	-	4	ZW	-	-
 3	就	时间副词	副词	d	-	4	XS	-	-
 4	不要	d	d	d	-	0	ROOT	-	-
 5	了	ule	ule	ule	-	4	WZ	-	-
-
 
 1	这个	rz	rz	rz	-	2	XS	-	-
 2	款式	款式	商品信息	n	-	3	XS	-	-
@@ -7364,7 +6573,6 @@
 7	还是	c	c	c	-	9	LZ	-	-
 8	厚	a	a	a	-	9	XS	-	-
 9	款	n	n	n	-	6	BL	-	-
-
 
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -7381,7 +6589,6 @@
 13	~	w	w	w	-	10	DP	-	-
 14	谢谢	v	v	v	-	0	ROOT	-	-
 
-
 1	在	p	p	p	-	3	JZ	-	-
 2	你们	店家称谓	称谓	rr	-	3	XS	-	-
 3	家	q	q	q	-	4	XS	-	-
@@ -7391,7 +6598,6 @@
 7	几次	mq	mq	mq	-	8	XS	-	-
 8	衣服	衣物类	商品	n	-	4	DB	-	-
 9	了	ule	ule	ule	-	4	WZ	-	-
-
 
 1	为什么	为什么	疑问词	ryv	-	10	XS	-	-
 2	我	r	r	r	-	3	ZW	-	-
@@ -7404,7 +6610,6 @@
 9	不	否定副词	副词	d	-	10	XS	-	-
 10	回复	沟通动作	动作	v	-	0	ROOT	-	-
 11	我	r	r	r	-	10	DB	-	-
-
 
 1	快点	快点	要求	d	-	2	XS	-	-
 2	发货	vi	vi	vi	-	4	ZW	-	-
@@ -7420,13 +6625,11 @@
 12	的	uj	uj	uj	-	9	XZ	-	-
 13	礼物	礼物	优惠形式	n	-	0	ROOT	-	-
 
-
 1	今天	t	t	t	-	3	XS	-	-
 2	都	d	d	d	-	3	XS	-	-
 3	26号	m	服装尺码	m	-	0	ROOT	-	-
 4	了	ule	ule	ule	-	3	WZ	-	-
 5	啊	y	y	y	-	3	QZ	-	-
-
 
 1	你们	店家称谓	称谓	rr	-	3	ZW	-	-
 2	这里	rzs	rzs	rzs	-	1	XS	-	-
@@ -7434,7 +6637,6 @@
 4	也	d	d	d	-	5	XS	-	-
 5	慢	速度状态	状态	a	-	3	XS	-	-
 6	啊	y	y	y	-	3	QZ	-	-
-
 
 1	我	r	r	r	-	2	XS	-	-
 2	这个	r	r	r	-	5	XS	-	-
@@ -7445,13 +6647,11 @@
 7	货	物流物品	物流相关	n	-	5	DB	-	-
 8	了	ul	ul	ul	-	5	WZ	-	-
 
-
 1	大约	d	d	d	-	3	XS	-	-
 2	什么	什么	疑问词	ry	-	3	XS	-	-
 3	时候	n	n	n	-	5	XS	-	-
 4	能	v	v	v	-	5	QTZ	-	-
 5	发货	vi	vi	vi	-	0	ROOT	-	-
-
 
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	购	交易动作	动作	v	-	5	ZW	-	-
@@ -7459,14 +6659,12 @@
 4	是	vshi	vshi	vshi	-	5	JZ	-	-
 5	530	m	服装尺码	m	-	0	ROOT	-	-
 
-
 1	我	rr	rr	rr	-	4	ZW	-	-
 2	可以	v	v	v	-	4	QTZ	-	-
 3	不	否定副词	副词	d	-	4	XS	-	-
 4	重拍	交易动作	动作	nz	-	0	ROOT	-	-
 5	么	y	y	y	-	4	QZ	-	-
 6	?	w	w	w	-	4	DP	-	-
-
 
 1	这款	r	r	r	-	2	XS	-	-
 2	衣服	衣物类	商品	n	-	3	XS	-	-
@@ -7478,13 +6676,11 @@
 8	穿	商品动作	动作	v	-	3	LD	-	-
 9	啊	y	y	y	-	3	QZ	-	-
 
-
 1	快递	物流方式	物流相关	v	-	4	ZW	-	-
 2	现在	t	t	t	-	4	XS	-	-
 3	这么	rz	rz	rz	-	4	XS	-	-
 4	贵	a	a	a	-	0	ROOT	-	-
 5	呢	y	y	y	-	4	QZ	-	-
-
 
 1	我	rr	rr	rr	-	3	ZW	-	-
 2	是	vshi	vshi	vshi	-	3	JZ	-	-
@@ -7493,13 +6689,11 @@
 5	包邮	包邮	商品属性	a	-	0	ROOT	-	-
 6	吗	y	y	y	-	5	QZ	-	-
 
-
 1	我	rr	rr	rr	-	4	XS	-	-
 2	是	vshi	vshi	vshi	-	4	JZ	-	-
 3	m	m	服装尺码	en	-	4	XS	-	-
 4	号	号	服装尺码	q	-	0	ROOT	-	-
 5	哟	e	e	e	-	4	QZ	-	-
-
 
 1	和	cc	cc	cc	-	5	JZ	-	-
 2	模特	模特	人物	nnt	-	5	XS	-	-
@@ -7508,7 +6702,6 @@
 5	长度	n	n	n	-	6	XS	-	-
 6	一样	uyy	uyy	uyy	-	0	ROOT	-	-
 7	么	y	y	y	-	6	QZ	-	-
-
 
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	购	交易动作	动作	v	-	0	ROOT	-	-
@@ -7520,7 +6713,6 @@
 8	去	vf	vf	vf	-	0	ROOT	-	-
 9	付款	交易动作	动作	vi	-	8	LD	-	-
 
-
 1	我	rr	rr	rr	-	4	ZW	-	-
 2	平时	t	t	t	-	4	XS	-	-
 3	都	d	d	d	-	4	XS	-	-
@@ -7530,7 +6722,6 @@
 7	的	ude1	ude1	ude1	-	6	XZ	-	-
 8	呢	y	y	y	-	4	QZ	-	-
 
-
 1	好评	正面	评价	n	-	0	ROOT	-	-
 2	返	优惠动作	动作	v	-	1	LD	-	-
 3	现	tg	tg	tg	-	2	DB	-	-
@@ -7539,13 +6730,11 @@
 6	返	优惠动作	动作	v	-	0	ROOT	-	-
 7	呢	y	y	y	-	6	QZ	-	-
 
-
 1	我	rr	rr	rr	-	5	ZW	-	-
 2	也	d	d	d	-	5	XS	-	-
 3	是	vshi	vshi	vshi	-	5	JZ	-	-
 4	真	a	a	a	-	5	XS	-	-
 5	着急	人物状态	状态	a	-	0	ROOT	-	-
-
 
 1	哪个	ry	ry	ry	-	2	XS	-	-
 2	颜色	颜色	商品信息	n	-	6	XS	-	-
@@ -7554,13 +6743,11 @@
 5	人	n	n	n	-	6	ZW	-	-
 6	购	交易动作	动作	v	-	0	ROOT	-	-
 
-
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	能	v	v	v	-	4	QTZ	-	-
 4	包邮	包邮	商品属性	a	-	0	ROOT	-	-
 5	吗	y	y	y	-	4	QZ	-	-
-
 
 1	今天	t	t	t	-	4	XS	-	-
 2	能	v	v	v	-	4	QTZ	-	-
@@ -7569,7 +6756,6 @@
 5	了	ule	ule	ule	-	4	WZ	-	-
 6	啊	y	y	y	-	4	QZ	-	-
 7	?	w	w	w	-	4	DP	-	-
-
 
 1	买到	交易动作	动作	v	-	4	XS	-	-
 2	299	m	服装尺码	m	-	1	DB	-	-
@@ -7580,14 +6766,12 @@
 7	SPACE	null	null	null	-	0	ROOT	-	-
 8	SPACE	null	null	null	-	0	ROOT	-	-
 
-
 1	今天	t	t	t	-	2	XS	-	-
 2	购	交易动作	动作	v	-	5	XS	-	-
 3	明天	t	t	t	-	5	XS	-	-
 4	可以	v	v	v	-	5	QTZ	-	-
 5	发货	vi	vi	vi	-	0	ROOT	-	-
 6	吗	y	y	y	-	5	QZ	-	-
-
 
 1	购	交易动作	动作	v	-	7	ZW	-	-
 2	联系	v	v	v	-	1	LD	-	-
@@ -7597,14 +6781,12 @@
 6	什么	什么	疑问词	r	-	7	XS	-	-
 7	意思	n	n	n	-	0	ROOT	-	-
 
-
 1	太大	商品状态	状态	d	-	0	ROOT	-	-
 2	了	ule	ule	ule	-	1	WZ	-	-
 3	,	w	w	w	-	1	DP	-	-
 4	实在	程度副词	副词	d	-	5	XS	-	-
 5	穿	商品动作	动作	v	-	0	ROOT	-	-
 6	不了	v	v	v	-	5	XS	-	-
-
 
 1	什么	什么	疑问词	ry	-	2	XS	-	-
 2	时候	n	n	n	-	3	XS	-	-
@@ -7614,13 +6796,11 @@
 6	啊	y	y	y	-	5	QZ	-	-
 7	?	w	w	w	-	3	DP	-	-
 
-
 1	大概	d	d	d	-	3	XS	-	-
 2	什么	什么	疑问词	ry	-	3	XS	-	-
 3	时候	n	n	n	-	4	XS	-	-
 4	发货	vi	vi	vi	-	0	ROOT	-	-
 5	呀	y	y	y	-	4	QZ	-	-
-
 
 1	我	r	r	r	-	2	ZW	-	-
 2	160	m	服装尺码	m	-	0	ROOT	-	-
@@ -7630,13 +6810,11 @@
 6	大	商品状态	状态	a	-	4	DB	-	-
 7	呢	y	y	y	-	4	QZ	-	-
 
-
 1	快递	物流方式	物流相关	v	-	4	ZW	-	-
 2	都	d	d	d	-	4	XS	-	-
 3	要	意向动作	动作	v	-	4	QTZ	-	-
 4	停	vi	vi	vi	-	0	ROOT	-	-
 5	了	ule	ule	ule	-	4	WZ	-	-
-
 
 1	中号	中号	服装尺码	b	-	3	XS	-	-
 2	能	v	v	v	-	3	QTZ	-	-
@@ -7644,7 +6822,6 @@
 4	吗	y	y	y	-	3	QZ	-	-
 5	？	w	w	w	-	3	DP	-	-
 6	裤	裤类	商品	n	-	0	ROOT	-	-
-
 
 1	我	rr	rr	rr	-	5	ZW	-	-
 2	两尺	mq	mq	mq	-	5	XS	-	-
@@ -7658,14 +6835,12 @@
 10	瘦	人物状态	状态	a	-	0	ROOT	-	-
 11	了	ule	ule	ule	-	10	WZ	-	-
 
-
 1	好	a	a	a	-	0	ROOT	-	-
 2	的	uj	uj	uj	-	1	XZ	-	-
 3	我	r	r	r	-	6	ZW	-	-
 4	现在	t	t	t	-	6	XS	-	-
 5	就	时间副词	副词	d	-	6	XS	-	-
 6	加	v	v	v	-	0	ROOT	-	-
-
 
 1	身高	身高	人物属性	n	-	2	ZW	-	-
 2	168	m	服装尺码	m	-	0	ROOT	-	-
@@ -7676,13 +6851,11 @@
 7	号	号	服装尺码	q	-	5	DB	-	-
 8	？	w	w	w	-	5	DP	-	-
 
-
 1	我	rr	rr	rr	-	3	ZW	-	-
 2	不	否定副词	副词	d	-	3	XS	-	-
 3	喜欢	人物状态	状态	vi	-	0	ROOT	-	-
 4	很厚	商品状态	状态	a	-	3	DB	-	-
 5	的	ude1	ude1	ude1	-	4	XZ	-	-
-
 
 1	什么	什么	疑问词	ry	-	2	XS	-	-
 2	时候	n	n	n	-	4	XS	-	-
@@ -7691,20 +6864,17 @@
 5	哦	e	e	e	-	4	QZ	-	-
 6	!	w	w	w	-	4	DP	-	-
 
-
 1	我	rr	rr	rr	-	3	ZW	-	-
 2	可以	v	v	v	-	3	QTZ	-	-
 3	申请	申请	v	v	-	0	ROOT	-	-
 4	退货	交易动作	动作	vi	-	3	DB	-	-
 5	吗	y	y	y	-	3	QZ	-	-
 
-
 1	因为	c	c	c	-	4	JZ	-	-
 2	周五	t	t	t	-	4	XS	-	-
 3	是	vshi	vshi	vshi	-	4	JZ	-	-
 4	元旦	t	t	t	-	0	ROOT	-	-
 5	了	ule	ule	ule	-	4	WZ	-	-
-
 
 1	我	r	r	r	-	3	XS	-	-
 2	的	uj	uj	uj	-	1	XZ	-	-
@@ -7713,7 +6883,6 @@
 5	发	物流动作	动作	v	-	0	ROOT	-	-
 6	了	ul	ul	ul	-	5	WZ	-	-
 7	？	w	w	w	-	5	DP	-	-
-
 
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	付	v	v	v	-	0	ROOT	-	-
@@ -7727,7 +6896,6 @@
 10	了	ule	ule	ule	-	8	WZ	-	-
 11	啊	y	y	y	-	8	QZ	-	-
 
-
 1	那	r	r	r	-	5	LZ	-	-
 2	我	r	r	r	-	5	ZW	-	-
 3	就	时间副词	副词	d	-	5	XS	-	-
@@ -7739,7 +6907,6 @@
 9	谢谢	v	v	v	-	0	ROOT	-	-
 10	哈	j	j	j	-	9	QZ	-	-
 
-
 1	另外	c	c	c	-	2	XS	-	-
 2	2件	m	服装尺码	m	-	3	XS	-	-
 3	衣服	衣物类	商品	n	-	6	DB	-	-
@@ -7748,14 +6915,12 @@
 6	发货	vi	vi	vi	-	0	ROOT	-	-
 7	?	w	w	w	-	6	DP	-	-
 
-
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	购	交易动作	动作	v	-	0	ROOT	-	-
 3	了	ule	ule	ule	-	2	WZ	-	-
 4	好	a	a	a	-	5	XS	-	-
 5	几天	mq	mq	mq	-	2	XS	-	-
 6	了	ule	ule	ule	-	2	WZ	-	-
-
 
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	能	v	v	v	-	3	QTZ	-	-
@@ -7764,13 +6929,11 @@
 5	吗	y	y	y	-	3	QZ	-	-
 6	?	w	w	w	-	3	DP	-	-
 
-
 1	大小	大小	商品信息	n	-	3	ZW	-	-
 2	能	v	v	v	-	3	QTZ	-	-
 3	换	交易动作	动作	v	-	0	ROOT	-	-
 4	吗	y	y	y	-	3	QZ	-	-
 5	!	w	w	w	-	3	DP	-	-
-
 
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	SPACE	null	null	null	-	0	ROOT	-	-
@@ -7788,13 +6951,11 @@
 14	麻烦	语气助动词	副词	an	-	0	ROOT	-	-
 15	的	ude1	ude1	ude1	-	14	XZ	-	-
 
-
 1	不用	d	d	d	-	0	ROOT	-	-
 2	了	ule	ule	ule	-	1	WZ	-	-
 3	,	w	w	w	-	1	DP	-	-
 4	找到	v	v	v	-	0	ROOT	-	-
 5	了	ule	ule	ule	-	4	WZ	-	-
-
 
 1	你们	店家称谓	称谓	rr	-	2	ZW	-	-
 2	发货	vi	vi	vi	-	0	ROOT	-	-
@@ -7803,7 +6964,6 @@
 5	了	ule	ule	ule	-	4	WZ	-	-
 6	吧	y	y	y	-	4	QZ	-	-
 
-
 1	购	交易动作	动作	v	-	4	XS	-	-
 2	两件	mq	mq	mq	-	1	DB	-	-
 3	能	v	v	v	-	4	QTZ	-	-
@@ -7811,14 +6971,12 @@
 5	吗	y	y	y	-	4	QZ	-	-
 6	?	w	w	w	-	4	DP	-	-
 
-
 1	另外	c	c	c	-	2	XS	-	-
 2	一件	mq	mq	mq	-	4	XS	-	-
 3	到时候	l	服装尺码	l	-	4	XS	-	-
 4	打	v	v	v	-	0	ROOT	-	-
 5	款	n	n	n	-	4	DB	-	-
 6	吧	y	y	y	-	4	QZ	-	-
-
 
 1	看	挑选动作	动作	v	-	0	ROOT	-	-
 2	购家	n	n	n	-	3	XS	-	-
@@ -7828,7 +6986,6 @@
 6	照片	图片类	信息体	n	-	4	DB	-	-
 7	没有	v	v	v	-	4	BL	-	-
 
-
 1	为什么	为什么	疑问词	ryv	-	3	XS	-	-
 2	都	d	d	d	-	3	XS	-	-
 3	没有	v	v	v	-	0	ROOT	-	-
@@ -7836,13 +6993,11 @@
 5	码	码	服装尺码	v	-	3	DB	-	-
 6	?	w	w	w	-	3	DP	-	-
 
-
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	关注	网站相关动作	动作	v	-	0	ROOT	-	-
 3	你家	店家称谓	称谓	r	-	4	XS	-	-
 4	微信	微信	通信方式	n	-	2	DB	-	-
 5	了	ule	ule	ule	-	2	WZ	-	-
-
 
 1	s	s	服装尺码	en	-	2	XS	-	-
 2	号	号	服装尺码	q	-	0	ROOT	-	-
@@ -7851,7 +7006,6 @@
 5	斤	重量	状态	q	-	6	XS	-	-
 6	穿	商品动作	动作	v	-	0	ROOT	-	-
 7	的	ude1	ude1	ude1	-	6	XZ	-	-
-
 
 1	你们	店家称谓	称谓	rr	-	2	XS	-	-
 2	家	q	q	q	-	3	XS	-	-
@@ -7869,7 +7023,6 @@
 14	东西	n	n	n	-	11	DB	-	-
 15	了	ul	ul	ul	-	11	WZ	-	-
 
-
 1	一会	t	t	t	-	3	XS	-	-
 2	不	否定副词	副词	d	-	3	XS	-	-
 3	发货	vi	vi	vi	-	0	ROOT	-	-
@@ -7880,14 +7033,12 @@
 8	购	交易动作	动作	v	-	0	ROOT	-	-
 9	了	ul	ul	ul	-	8	WZ	-	-
 
-
 1	只能	v	v	v	-	2	XS	-	-
 2	双十一	nz	nz	nz	-	4	XS	-	-
 3	的	ude1	ude1	ude1	-	2	XZ	-	-
 4	时候	n	n	n	-	5	XS	-	-
 5	购	交易动作	动作	v	-	0	ROOT	-	-
 6	吗	y	y	y	-	5	QZ	-	-
-
 
 1	160	m	服装尺码	m	-	0	ROOT	-	-
 2	cm	长度	度量单位	en	-	1	XS	-	-
@@ -7898,7 +7049,6 @@
 7	吗	y	y	y	-	6	QZ	-	-
 8	?	w	w	w	-	6	DP	-	-
 
-
 1	今天	t	t	t	-	2	XS	-	-
 2	发	物流动作	动作	v	-	6	XS	-	-
 3	不了	v	v	v	-	2	XS	-	-
@@ -7906,7 +7056,6 @@
 5	就	时间副词	副词	d	-	6	XS	-	-
 6	不等	vi	vi	vi	-	0	ROOT	-	-
 7	了	ul	ul	ul	-	6	WZ	-	-
-
 
 1	之	u	u	u	-	0	ROOT	-	-
 2	之前	f	f	f	-	5	XS	-	-
@@ -7922,7 +7071,6 @@
 12	你	rr	rr	rr	-	11	DB	-	-
 13	的	ude1	ude1	ude1	-	12	XZ	-	-
 
-
 1	主要	b	b	b	-	6	XS	-	-
 2	是	v	v	v	-	6	JZ	-	-
 3	我	r	r	r	-	6	ZW	-	-
@@ -7930,13 +7078,11 @@
 5	也	d	d	d	-	6	XS	-	-
 6	没穿	v	v	v	-	0	ROOT	-	-
 
-
 1	为啥	r	r	r	-	4	XS	-	-
 2	都	d	d	d	-	3	XS	-	-
 3	不能	v	v	v	-	4	QTZ	-	-
 4	领	优惠动作	动作	v	-	0	ROOT	-	-
 5	啊	y	y	y	-	4	QZ	-	-
-
 
 1	晕	人物状态	状态	v	-	0	ROOT	-	-
 2	，	w	w	w	-	1	DP	-	-
@@ -7947,7 +7093,6 @@
 7	参加	v	v	v	-	0	ROOT	-	-
 8	婚礼	n	n	n	-	7	DB	-	-
 9	怎么办	v	v	v	-	8	ROOT	-	-
-
 
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	把	pba	pba	pba	-	6	WZ	-	-
@@ -7963,7 +7108,6 @@
 12	不	否定副词	副词	d	-	13	XS	-	-
 13	堵	v	v	v	-	0	ROOT	-	-
 
-
 1	给	p	p	p	-	2	JZ	-	-
 2	改成	交易动作	动作	v	-	0	ROOT	-	-
 3	六百	m	服装尺码	m	-	2	DB	-	-
@@ -7972,13 +7116,11 @@
 6	付款	交易动作	动作	vi	-	0	ROOT	-	-
 7	了	ul	ul	ul	-	6	WZ	-	-
 
-
 1	在	p	p	p	-	0	ROOT	-	-
 2	吗	y	y	y	-	1	QZ	-	-
 3	今天	t	t	t	-	5	XS	-	-
 4	才	d	d	d	-	5	XS	-	-
 5	收到	v	v	v	-	0	ROOT	-	-
-
 
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	麻烦	语气助动词	副词	an	-	0	ROOT	-	-
@@ -7986,13 +7128,11 @@
 4	一下	mq	mq	mq	-	3	XS	-	-
 5	退货	交易动作	动作	vi	-	3	DB	-	-
 
-
 1	不退	v	v	v	-	0	ROOT	-	-
 2	我	rr	rr	rr	-	4	ZW	-	-
 3	就要	d	d	d	-	4	QTZ	-	-
 4	退	交易动作	动作	vn	-	1	LD	-	-
 5	了	ule	ule	ule	-	1	WZ	-	-
-
 
 1	到底	d	d	d	-	2	XS	-	-
 2	有没有	v	v	v	-	0	ROOT	-	-
@@ -8003,7 +7143,6 @@
 7	仓库	n	n	n	-	5	DB	-	-
 8	呢	y	y	y	-	3	QZ	-	-
 
-
 1	不好意思	a	a	a	-	0	ROOT	-	-
 2	啊	y	y	y	-	1	QZ	-	-
 3	!	w	w	w	-	1	DP	-	-
@@ -8011,7 +7150,6 @@
 5	你	rr	rr	rr	-	4	LD	-	-
 6	了	ule	ule	ule	-	4	WZ	-	-
 7	!	w	w	w	-	4	DP	-	-
-
 
 1	东西	n	n	n	-	2	DB	-	-
 2	收到	v	v	v	-	0	ROOT	-	-
@@ -8021,7 +7159,6 @@
 6	退款	金额动作	动作	v	-	0	ROOT	-	-
 7	呢	y	y	y	-	6	QZ	-	-
 
-
 1	这个	rz	rz	rz	-	3	XS	-	-
 2	皮	皮类	材料	n	-	3	XS	-	-
 3	裤	裤类	商品	ng	-	5	ZW	-	-
@@ -8030,14 +7167,12 @@
 6	的	uj	uj	uj	-	5	XZ	-	-
 7	嘛	y	y	y	-	5	QZ	-	-
 
-
 1	购	交易动作	动作	v	-	4	XS	-	-
 2	一套	mq	mq	mq	-	1	DB	-	-
 3	可以	v	v	v	-	4	QTZ	-	-
 4	包邮	包邮	商品属性	a	-	0	ROOT	-	-
 5	吗	y	y	y	-	4	QZ	-	-
 6	?	w	w	w	-	4	DP	-	-
-
 
 1	我	r	r	r	-	3	ZW	-	-
 2	要	意向动作	动作	v	-	3	QTZ	-	-
@@ -8047,7 +7182,6 @@
 6	给	p	p	p	-	7	JZ	-	-
 7	我	r	r	r	-	4	XS	-	-
 
-
 1	把	p	p	p	-	6	WZ	-	-
 2	你们	店家称谓	称谓	rr	-	5	XS	-	-
 3	的	uj	uj	uj	-	2	XZ	-	-
@@ -8055,7 +7189,6 @@
 5	地址	地址	人物属性	n	-	6	DB	-	-
 6	告诉	v	v	v	-	0	ROOT	-	-
 7	我	r	r	r	-	6	XS	-	-
-
 
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	，	w	w	w	-	1	DP	-	-
@@ -8069,13 +7202,11 @@
 10	穿	商品动作	动作	v	-	8	LD	-	-
 11	吗	y	y	y	-	8	QZ	-	-
 
-
 1	会	v	v	v	-	4	QTZ	-	-
 2	不会	v	v	v	-	1	BL	-	-
 3	太	程度副词	副词	d	-	4	XS	-	-
 4	瘦	人物状态	状态	a	-	0	ROOT	-	-
 5	啊	y	y	y	-	4	QZ	-	-
-
 
 1	可是	c	c	c	-	4	LZ	-	-
 2	我	rr	rr	rr	-	4	ZW	-	-
@@ -8084,7 +7215,6 @@
 5	裤	裤类	商品	n	-	4	DB	-	-
 6	啊	y	y	y	-	4	QZ	-	-
 
-
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	…	w	w	w	-	1	DP	-	-
 3	衣服	衣物类	商品	n	-	4	DB	-	-
@@ -8092,13 +7222,11 @@
 5	太大	商品状态	状态	d	-	4	XS	-	-
 6	啦	y	y	y	-	4	QZ	-	-
 
-
 1	但是	c	c	c	-	4	LZ	-	-
 2	钮扣	n	n	n	-	4	ZW	-	-
 3	是	vshi	vshi	vshi	-	4	JZ	-	-
 4	坏	坏	商品问题	a	-	0	ROOT	-	-
 5	的	ude1	ude1	ude1	-	4	XZ	-	-
-
 
 1	那个	r	r	r	-	3	XS	-	-
 2	黑色	n	n	n	-	3	XS	-	-
@@ -8107,7 +7235,6 @@
 5	褪色	褪色	商品问题	v	-	0	ROOT	-	-
 6	严重	a	a	a	-	5	XS	-	-
 7	哦	e	e	e	-	5	QZ	-	-
-
 
 1	这	r	r	r	-	2	XS	-	-
 2	件	q	q	q	-	3	XS	-	-
@@ -8128,14 +7255,12 @@
 17	哪个	r	r	r	-	16	DB	-	-
 18	？	w	w	w	-	16	DP	-	-
 
-
 1	哦	e	e	e	-	0	ROOT	-	-
 2	!	w	w	w	-	1	DP	-	-
 3	地址	地址	人物属性	n	-	5	DB	-	-
 4	别	否定副词	副词	d	-	5	XS	-	-
 5	发错	发错	商品问题	v	-	0	ROOT	-	-
 6	了	ule	ule	ule	-	5	WZ	-	-
-
 
 1	不	否定副词	副词	d	-	2	XS	-	-
 2	发	物流动作	动作	v	-	5	XS	-	-
@@ -8145,14 +7270,12 @@
 6	退款	金额动作	动作	vi	-	5	DB	-	-
 7	吧	y	y	y	-	5	QZ	-	-
 
-
 1	冬天	t	t	t	-	2	XS	-	-
 2	穿	商品动作	动作	v	-	0	ROOT	-	-
 3	不	否定副词	副词	d	-	4	XS	-	-
 4	暖和	商品状态	状态	a	-	0	ROOT	-	-
 5	吗	y	y	y	-	4	QZ	-	-
 6	?	w	w	w	-	4	DP	-	-
-
 
 1	我	r	r	r	-	3	ZW	-	-
 2	要	意向动作	动作	v	-	3	QTZ	-	-
@@ -8161,13 +7284,11 @@
 5	重新	时间副词	副词	d	-	6	XS	-	-
 6	购	交易动作	动作	v	-	3	LD	-	-
 
-
 1	大概	d	d	d	-	3	XS	-	-
 2	要	意向动作	动作	v	-	3	QTZ	-	-
 3	等	udeng	udeng	udeng	-	0	ROOT	-	-
 4	多久	ryt	ryt	ryt	-	3	DB	-	-
 5	?	w	w	w	-	3	DP	-	-
-
 
 1	不是	c	c	c	-	2	JZ	-	-
 2	有	vyou	vyou	vyou	-	0	ROOT	-	-
@@ -8175,14 +7296,12 @@
 4	的	ude1	ude1	ude1	-	3	XZ	-	-
 5	吗	y	y	y	-	2	QZ	-	-
 
-
 1	具体	a	a	a	-	3	XS	-	-
 2	什么	什么	疑问词	ry	-	3	XS	-	-
 3	时候	n	n	n	-	5	XS	-	-
 4	能	v	v	v	-	5	QTZ	-	-
 5	发货	vi	vi	vi	-	0	ROOT	-	-
 6	?	w	w	w	-	5	DP	-	-
-
 
 1	你们	店家称谓	称谓	rr	-	2	XS	-	-
 2	家	q	q	q	-	3	ZW	-	-
@@ -8193,7 +7312,6 @@
 7	吗	y	y	y	-	6	QZ	-	-
 8	?	w	w	w	-	6	DP	-	-
 
-
 1	亲	通用称谓	称谓	v	-	0	ROOT	-	-
 2	看	挑选动作	动作	v	-	0	ROOT	-	-
 3	一下	mq	mq	mq	-	2	XS	-	-
@@ -8202,7 +7320,6 @@
 6	是	v	v	v	-	7	JZ	-	-
 7	现货	商品状态	状态	n	-	0	ROOT	-	-
 8	么	nr	nr	nr	-	7	QZ	-	-
-
 
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	购	交易动作	动作	v	-	0	ROOT	-	-
@@ -8213,14 +7330,12 @@
 7	退款	金额动作	动作	vi	-	6	DB	-	-
 8	了	ule	ule	ule	-	6	WZ	-	-
 
-
 1	能	v	v	v	-	3	QTZ	-	-
 2	给	p	p	p	-	3	JZ	-	-
 3	包	包类	商品	v	-	0	ROOT	-	-
 4	邮	物流动作	动作	v	-	3	DB	-	-
 5	么	nr	nr	nr	-	3	QZ	-	-
 6	亲	通用称谓	称谓	v	-	0	ROOT	-	-
-
 
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -8231,7 +7346,6 @@
 7	会	v	v	v	-	8	QTZ	-	-
 8	冷	天气状态	状态	a	-	6	LD	-	-
 9	么	y	y	y	-	6	QZ	-	-
-
 
 1	衣	ng	ng	ng	-	3	ZW	-	-
 2	衣	ng	ng	ng	-	1	BL	-	-
@@ -8246,14 +7360,12 @@
 11	不能	v	v	v	-	10	BL	-	-
 12	退货	交易动作	动作	v	-	0	ROOT	-	-
 
-
 1	好吧	u	u	u	-	0	ROOT	-	-
 2	我	rr	rr	rr	-	4	ZW	-	-
 3	是	vshi	vshi	vshi	-	4	JZ	-	-
 4	怕冷	人物状态	状态	nz	-	5	XS	-	-
 5	星	n	n	n	-	6	XS	-	-
 6	人	n	n	n	-	0	ROOT	-	-
-
 
 1	怎么样	ryv	ryv	ryv	-	4	XS	-	-
 2	也	d	d	d	-	4	XS	-	-
@@ -8264,13 +7376,11 @@
 7	吧	y	y	y	-	4	QZ	-	-
 8	!	w	w	w	-	4	DP	-	-
 
-
 1	可以	v	v	v	-	2	QTZ	-	-
 2	发	物流动作	动作	v	-	0	ROOT	-	-
 3	中通	物流方式	物流相关	nz	-	2	DB	-	-
 4	吗	y	y	y	-	2	QZ	-	-
 5	?	w	w	w	-	2	DP	-	-
-
 
 1	我	r	r	r	-	4	ZW	-	-
 2	十一号	m	服装尺码	m	-	4	XS	-	-
@@ -8280,14 +7390,12 @@
 6	想	情态动词词缀	副词	v	-	7	QTZ	-	-
 7	穿	商品动作	动作	v	-	0	ROOT	-	-
 
-
 1	你家	店家称谓	称谓	r	-	3	ZW	-	-
 2	双12	t	t	t	-	3	XS	-	-
 3	有	vyou	vyou	vyou	-	0	ROOT	-	-
 4	啥	ry	ry	ry	-	5	XS	-	-
 5	活动	vn	vn	vn	-	3	DB	-	-
 6	吗	y	y	y	-	3	QZ	-	-
-
 
 1	那	r	r	r	-	4	LZ	-	-
 2	到	v	v	v	-	3	JZ	-	-
@@ -8296,13 +7404,11 @@
 5	什么	什么	疑问词	r	-	6	XS	-	-
 6	快递	物流方式	物流相关	v	-	4	DB	-	-
 
-
 1	好久	m	服装尺码	m	-	3	XS	-	-
 2	可以	v	v	v	-	3	QTZ	-	-
 3	发	物流动作	动作	v	-	0	ROOT	-	-
 4	啊	y	y	y	-	3	QZ	-	-
 5	?	w	w	w	-	3	DP	-	-
-
 
 1	邮费	费用	商品信息	n	-	5	DB	-	-
 2	15	m	服装尺码	m	-	1	XS	-	-
@@ -8313,7 +7419,6 @@
 7	我	r	r	r	-	6	DB	-	-
 8	呢	y	y	y	-	5	QZ	-	-
 
-
 1	我	rr	rr	rr	-	3	ZW	-	-
 2	想	情态动词词缀	副词	v	-	3	QTZ	-	-
 3	换	交易动作	动作	v	-	0	ROOT	-	-
@@ -8321,13 +7426,11 @@
 5	l	l	服装尺码	en	-	3	DB	-	-
 6	的	ude1	ude1	ude1	-	5	XZ	-	-
 
-
 1	恩	ng	ng	ng	-	0	ROOT	-	-
 2	SPACE	null	null	null	-	0	ROOT	-	-
 3	SPACE	null	null	null	-	0	ROOT	-	-
 4	好的	u	u	u	-	0	ROOT	-	-
 5	SPACE	null	null	null	-	0	ROOT	-	-
-
 
 1	交易	交易动作	动作	vn	-	0	ROOT	-	-
 2	怎么	ryv	ryv	ryv	-	3	XS	-	-
@@ -8335,13 +7438,11 @@
 4	逼	v	v	v	-	3	BL	-	-
 5	了	ule	ule	ule	-	3	WZ	-	-
 
-
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	客服	客服类	人物	nz	-	4	XS	-	-
 4	有人	r	r	r	-	0	ROOT	-	-
 5	没	d	d	d	-	4	QZ	-	-
-
 
 1	再不	d	d	d	-	2	XS	-	-
 2	发	物流动作	动作	v	-	5	XS	-	-
@@ -8349,7 +7450,6 @@
 4	就	时间副词	副词	d	-	5	XS	-	-
 5	退	交易动作	动作	vn	-	0	ROOT	-	-
 6	了	ule	ule	ule	-	5	WZ	-	-
-
 
 1	双11	t	t	t	-	5	XS	-	-
 2	跟	p	p	p	-	3	JZ	-	-
@@ -8360,7 +7460,6 @@
 7	呢	y	y	y	-	5	QZ	-	-
 8	?	w	w	w	-	5	DP	-	-
 
-
 1	毛衣	衣物类	商品	n	-	7	ZW	-	-
 2	跟	p	p	p	-	4	LZ	-	-
 3	蕾丝	蕾丝	材料	nz	-	4	XS	-	-
@@ -8368,7 +7467,6 @@
 5	一共	d	d	d	-	7	XS	-	-
 6	多少	ry	ry	ry	-	7	XS	-	-
 7	钱	n	n	n	-	0	ROOT	-	-
-
 
 1	我	r	r	r	-	3	ZW	-	-
 2	已经	时间副词	副词	d	-	3	XS	-	-
@@ -8381,14 +7479,12 @@
 9	的	uj	uj	uj	-	8	XZ	-	-
 10	同意	沟通动作	动作	vn	-	7	DB	-	-
 
-
 1	你们	店家称谓	称谓	rr	-	4	ZW	-	-
 2	这	rzv	rzv	rzv	-	4	XS	-	-
 3	也	d	d	d	-	4	XS	-	-
 4	太慢	速度状态	状态	d	-	0	ROOT	-	-
 5	了	ule	ule	ule	-	4	WZ	-	-
 6	吧	y	y	y	-	4	QZ	-	-
-
 
 1	你家	店家称谓	称谓	r	-	5	XS	-	-
 2	不是	c	c	c	-	3	JZ	-	-
@@ -8397,7 +7493,6 @@
 5	减	v	v	v	-	0	ROOT	-	-
 6	50	m	服装尺码	m	-	5	DB	-	-
 7	吗	y	y	y	-	5	QZ	-	-
-
 
 1	8天	m	服装尺码	m	-	0	ROOT	-	-
 2	了	ule	ule	ule	-	1	WZ	-	-
@@ -8408,7 +7503,6 @@
 7	吗	y	y	y	-	6	QZ	-	-
 8	?	w	w	w	-	6	DP	-	-
 
-
 1	你们	店家称谓	称谓	rr	-	2	ZW	-	-
 2	打算	意向动作	动作	v	-	0	ROOT	-	-
 3	什么	什么	疑问词	r	-	4	XS	-	-
@@ -8417,7 +7511,6 @@
 6	呢	y	y	y	-	5	QZ	-	-
 7	？	w	w	w	-	5	DP	-	-
 
-
 1	哦	e	e	e	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	这个	rz	rz	rz	-	6	ZW	-	-
@@ -8425,7 +7518,6 @@
 5	预定	交易动作	动作	vn	-	6	XS	-	-
 6	款	q	q	q	-	0	ROOT	-	-
 7	吧	y	y	y	-	6	QZ	-	-
-
 
 1	北京	ns	ns	ns	-	2	XS	-	-
 2	太冷	天气状态	状态	nz	-	0	ROOT	-	-
@@ -8441,7 +7533,6 @@
 12	谢谢	v	v	v	-	0	ROOT	-	-
 13	亲	通用称谓	称谓	v	-	12	DB	-	-
 
-
 1	好吧	u	u	u	-	0	ROOT	-	-
 2	SPACE	null	null	null	-	0	ROOT	-	-
 3	本来	d	d	d	-	6	XS	-	-
@@ -8456,7 +7547,6 @@
 12	爆	v	v	v	-	0	ROOT	-	-
 13	仓	ng	ng	ng	-	12	DB	-	-
 
-
 1	就	时间副词	副词	d	-	2	XS	-	-
 2	算是	v	v	v	-	0	ROOT	-	-
 3	，	w	w	w	-	2	DP	-	-
@@ -8465,14 +7555,12 @@
 6	了	ul	ul	ul	-	5	WZ	-	-
 7	吧	y	y	y	-	5	QZ	-	-
 
-
 1	是	v	v	v	-	2	JZ	-	-
 2	米色	n	n	n	-	0	ROOT	-	-
 3	的	uj	uj	uj	-	2	XZ	-	-
 4	还是	c	c	c	-	5	LZ	-	-
 5	白色	n	n	n	-	2	BL	-	-
 6	的	uj	uj	uj	-	5	XZ	-	-
-
 
 1	亲	通用称谓	称谓	v	-	0	ROOT	-	-
 2	什么	什么	疑问词	r	-	3	XS	-	-
@@ -8481,13 +7569,11 @@
 5	啊	y	y	y	-	4	QZ	-	-
 6	！	w	w	w	-	4	DP	-	-
 
-
 1	我	rr	rr	rr	-	3	ZW	-	-
 2	已经	时间副词	副词	d	-	3	XS	-	-
 3	付款	交易动作	动作	vi	-	0	ROOT	-	-
 4	了	ule	ule	ule	-	3	WZ	-	-
 5	怎么办	ryv	ryv	ryv	-	0	ROOT	-	-
-
 
 1	你	rr	rr	rr	-	3	ZW	-	-
 2	快点	快点	要求	d	-	3	XS	-	-
@@ -8495,13 +7581,11 @@
 4	我	rr	rr	rr	-	3	DB	-	-
 5	看看	挑选动作	动作	v	-	3	LD	-	-
 
-
 1	哦	e	e	e	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	三件	mq	mq	mq	-	4	ZW	-	-
 4	200	m	服装尺码	m	-	0	ROOT	-	-
 5	?	w	w	w	-	4	DP	-	-
-
 
 1	最好	d	d	d	-	5	XS	-	-
 2	是	v	v	v	-	5	JZ	-	-
@@ -8510,13 +7594,11 @@
 5	类型	n	商品信息	n	-	0	ROOT	-	-
 6	的	uj	uj	uj	-	5	XZ	-	-
 
-
 1	哦	e	e	e	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	谢谢	v	v	v	-	0	ROOT	-	-
 4	了	ule	ule	ule	-	3	WZ	-	-
 5	/:806	l	服装尺码	l	-	0	ROOT	-	-
-
 
 1	双11	t	t	t	-	2	XS	-	-
 2	购	交易动作	动作	v	-	4	XS	-	-
@@ -8526,7 +7608,6 @@
 6	是	vshi	vshi	vshi	-	0	ROOT	-	-
 7	吗	y	y	y	-	6	QZ	-	-
 
-
 1	EMS	物流方式	物流相关	en	-	5	XS	-	-
 2	大概	d	d	d	-	3	XS	-	-
 3	几天	mq	mq	mq	-	5	XS	-	-
@@ -8534,7 +7615,6 @@
 5	到货	vn	vn	vn	-	0	ROOT	-	-
 6	啊	y	y	y	-	5	QZ	-	-
 7	?	w	w	w	-	5	DP	-	-
-
 
 1	都	d	d	d	-	2	XS	-	-
 2	第三天	mq	mq	mq	-	0	ROOT	-	-
@@ -8546,14 +7626,12 @@
 8	发货	vi	vi	vi	-	0	ROOT	-	-
 9	？	w	w	w	-	8	DP	-	-
 
-
 1	不是	v	v	v	-	2	LZ	-	-
 2	好评	正面	评价	n	-	0	ROOT	-	-
 3	有	v	v	v	-	2	LD	-	-
 4	现金	n	n	n	-	5	XS	-	-
 5	券	ng	ng	ng	-	3	DB	-	-
 6	吗	y	y	y	-	2	QZ	-	-
-
 
 1	6天	m	服装尺码	m	-	0	ROOT	-	-
 2	了	ul	ul	ul	-	1	WZ	-	-
@@ -8566,7 +7644,6 @@
 9	吗	y	y	y	-	6	QZ	-	-
 10	？	w	w	w	-	6	DP	-	-
 
-
 1	60元	m	服装尺码	m	-	2	XS	-	-
 2	红包	n	n	n	-	5	DB	-	-
 3	下次	t	t	t	-	5	XS	-	-
@@ -8575,7 +7652,6 @@
 6	吗	y	y	y	-	5	QZ	-	-
 7	?	w	w	w	-	5	DP	-	-
 
-
 1	今天	t	t	t	-	5	XS	-	-
 2	可以	v	v	v	-	5	QTZ	-	-
 3	给	p	p	p	-	4	JZ	-	-
@@ -8583,20 +7659,17 @@
 5	发货	vi	vi	vi	-	0	ROOT	-	-
 6	吗	y	y	y	-	5	QZ	-	-
 
-
 1	什么	什么	疑问词	ry	-	2	XS	-	-
 2	时候	n	n	n	-	4	XS	-	-
 3	能	v	v	v	-	4	QTZ	-	-
 4	到货	vn	vn	vn	-	0	ROOT	-	-
 5	?	w	w	w	-	4	DP	-	-
 
-
 1	怎么	ryv	ryv	ryv	-	3	XS	-	-
 2	还	d	d	d	-	3	XS	-	-
 3	不同	a	a	a	-	0	ROOT	-	-
 4	意	ng	ng	ng	-	3	DB	-	-
 5	SPACE	null	null	null	-	0	ROOT	-	-
-
 
 1	你们	店家称谓	称谓	rr	-	4	ZW	-	-
 2	是不是	v	v	v	-	4	JZ	-	-
@@ -8605,13 +7678,11 @@
 5	发货	vi	vi	vi	-	4	LD	-	-
 6	了	ul	ul	ul	-	4	WZ	-	-
 
-
 1	分	qt	qt	qt	-	0	ROOT	-	-
 2	码	码	服装尺码	v	-	1	DB	-	-
 3	码	码	服装尺码	v	-	2	BL	-	-
 4	吗	y	y	y	-	1	QZ	-	-
 5	?	w	w	w	-	1	DP	-	-
-
 
 1	明明	d	d	d	-	5	XS	-	-
 2	是	v	v	v	-	5	JZ	-	-
@@ -8621,13 +7692,11 @@
 6	的	uj	uj	uj	-	5	XZ	-	-
 7	嘛	y	y	y	-	5	QZ	-	-
 
-
 1	到	v	v	v	-	2	JZ	-	-
 2	现在	t	t	t	-	5	XS	-	-
 3	还	d	d	d	-	4	XS	-	-
 4	没有	v	v	v	-	5	XS	-	-
 5	发货	vi	vi	vi	-	0	ROOT	-	-
-
 
 1	你家	店家称谓	称谓	r	-	3	ZW	-	-
 2	双11	t	t	t	-	3	XS	-	-
@@ -8635,13 +7704,11 @@
 4	活动	vn	vn	vn	-	3	DB	-	-
 5	吗	y	y	y	-	3	QZ	-	-
 
-
 1	双十一	nz	nz	nz	-	2	XS	-	-
 2	还有	v	v	v	-	0	ROOT	-	-
 3	活动	vn	vn	vn	-	2	DB	-	-
 4	吗	y	y	y	-	2	QZ	-	-
 5	?	w	w	w	-	2	DP	-	-
-
 
 1	就是	v	v	v	-	4	LZ	-	-
 2	鞋底	n	商品部位	n	-	4	ZW	-	-
@@ -8658,13 +7725,11 @@
 13	清楚	a	a	a	-	0	ROOT	-	-
 14	了	ul	ul	ul	-	13	WZ	-	-
 
-
 1	你	rr	rr	rr	-	3	ZW	-	-
 2	先	d	d	d	-	3	XS	-	-
 3	帮	v	v	v	-	0	ROOT	-	-
 4	我	rr	rr	rr	-	3	DB	-	-
 5	问下	沟通动作	动作	n	-	3	LD	-	-
-
 
 1	付款	交易动作	动作	vi	-	0	ROOT	-	-
 2	了	ule	ule	ule	-	1	WZ	-	-
@@ -8672,7 +7737,6 @@
 4	尽快	尽快	要求	d	-	5	XS	-	-
 5	发货	vi	vi	vi	-	0	ROOT	-	-
 6	吧	y	y	y	-	5	QZ	-	-
-
 
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -8687,7 +7751,6 @@
 11	够	v	v	v	-	8	LD	-	-
 12	吗	y	y	y	-	11	QZ	-	-
 13	?	w	w	w	-	8	DP	-	-
-
 
 1	投票	网站相关动作	动作	vn	-	4	XS	-	-
 2	的	uj	uj	uj	-	1	XZ	-	-
@@ -8706,14 +7769,12 @@
 15	用	p	p	p	-	0	ROOT	-	-
 16	？	w	w	w	-	15	DP	-	-
 
-
 1	之前	f	f	f	-	5	XS	-	-
 2	也	d	d	d	-	5	XS	-	-
 3	是	vshi	vshi	vshi	-	5	JZ	-	-
 4	这个	rz	rz	rz	-	5	XS	-	-
 5	价格	价格	商品信息	n	-	0	ROOT	-	-
 6	呢	y	y	y	-	5	QZ	-	-
-
 
 1	换	交易动作	动作	v	-	0	ROOT	-	-
 2	尺码	尺码	服装尺码	n	-	1	DB	-	-
@@ -8723,7 +7784,6 @@
 6	十天	mq	mq	mq	-	5	DB	-	-
 7	吗	y	y	y	-	5	QZ	-	-
 
-
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	这款	r	r	r	-	3	XS	-	-
 3	衣服	衣物类	商品	n	-	6	ZW	-	-
@@ -8732,7 +7792,6 @@
 6	预定	交易动作	动作	vn	-	0	ROOT	-	-
 7	吗	y	y	y	-	6	QZ	-	-
 
-
 1	今天	t	t	t	-	3	XS	-	-
 2	再不	d	d	d	-	3	XS	-	-
 3	发货	vi	vi	vi	-	5	XS	-	-
@@ -8740,14 +7799,12 @@
 5	退款	金额动作	动作	vi	-	0	ROOT	-	-
 6	了	ule	ule	ule	-	5	WZ	-	-
 
-
 1	158	m	服装尺码	m	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
 3	,	w	w	w	-	1	DP	-	-
 4	,	w	w	w	-	1	DP	-	-
 5	96	m	服装尺码	m	-	1	BL	-	-
 6	呢	y	y	y	-	5	QZ	-	-
-
 
 1	亲	通用称谓	称谓	r	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -8758,7 +7815,6 @@
 7	快递	物流方式	物流相关	v	-	5	DB	-	-
 8	呗	y	y	y	-	5	QZ	-	-
 
-
 1	我	r	r	r	-	3	ZW	-	-
 2	有	v	v	v	-	3	WZ	-	-
 3	103	m	服装尺码	m	-	0	ROOT	-	-
@@ -8766,7 +7822,6 @@
 5	穿	商品动作	动作	v	-	0	ROOT	-	-
 6	多	数量状态	状态	m	-	7	XS	-	-
 7	大	商品状态	状态	a	-	5	DB	-	-
-
 
 1	我	rr	rr	rr	-	3	ZW	-	-
 2	不	否定副词	副词	d	-	3	XS	-	-
@@ -8776,13 +7831,11 @@
 6	哪个	ry	ry	ry	-	7	XS	-	-
 7	码	码	服装尺码	v	-	5	DB	-	-
 
-
 1	我	rr	rr	rr	-	2	ZW	-	-
 2	购	交易动作	动作	v	-	0	ROOT	-	-
 3	了	ule	ule	ule	-	2	WZ	-	-
 4	3件	m	服装尺码	m	-	2	DB	-	-
 5	啊	y	y	y	-	2	QZ	-	-
-
 
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	这款	r	r	r	-	3	XS	-	-
@@ -8798,7 +7851,6 @@
 12	有	vyou	vyou	vyou	-	0	ROOT	-	-
 13	肚子	上半身部位	身体部位	n	-	12	DB	-	-
 
-
 1	今天	t	t	t	-	2	XS	-	-
 2	购	交易动作	动作	v	-	6	XS	-	-
 3	什么	什么	疑问词	ry	-	4	XS	-	-
@@ -8807,7 +7859,6 @@
 6	发货	vi	vi	vi	-	0	ROOT	-	-
 7	呢	y	y	y	-	6	QZ	-	-
 8	?	w	w	w	-	6	DP	-	-
-
 
 1	你	r	r	r	-	5	ZW	-	-
 2	能	v	v	v	-	5	QTZ	-	-
@@ -8823,13 +7874,11 @@
 12	就	时间副词	副词	d	-	13	XS	-	-
 13	付	v	v	v	-	0	ROOT	-	-
 
-
 1	大概	d	d	d	-	2	XS	-	-
 2	过	uguo	uguo	uguo	-	0	ROOT	-	-
 3	多久	ryt	ryt	ryt	-	5	XS	-	-
 4	能	v	v	v	-	5	QTZ	-	-
 5	发货	vi	vi	vi	-	0	ROOT	-	-
-
 
 1	不	否定副词	副词	d	-	2	XS	-	-
 2	参加	v	v	v	-	0	ROOT	-	-
@@ -8837,14 +7886,12 @@
 4	吗	y	y	y	-	2	QZ	-	-
 5	?	w	w	w	-	2	DP	-	-
 
-
 1	为什么	为什么	疑问词	ryv	-	5	XS	-	-
 2	我	rr	rr	rr	-	5	XS	-	-
 3	这件	mq	mq	mq	-	4	XS	-	-
 4	衣服	衣物类	商品	n	-	5	ZW	-	-
 5	没有	v	v	v	-	0	ROOT	-	-
 6	腰带	腰带	服装配件	n	-	5	DB	-	-
-
 
 1	亲	通用称谓	称谓	v	-	0	ROOT	-	-
 2	，	w	w	w	-	1	DP	-	-
@@ -8860,7 +7907,6 @@
 12	155	m	服装尺码	m	-	0	ROOT	-	-
 13	高	a	a	a	-	12	ZW	-	-
 
-
 1	你家	店家称谓	称谓	r	-	8	ZW	-	-
 2	到底	d	d	d	-	4	XS	-	-
 3	什么	什么	疑问词	ry	-	4	XS	-	-
@@ -8871,14 +7917,12 @@
 8	发货	vi	vi	vi	-	0	ROOT	-	-
 9	啊	y	y	y	-	8	QZ	-	-
 
-
 1	双十一	nz	nz	nz	-	0	ROOT	-	-
 2	有	vyou	vyou	vyou	-	1	XS	-	-
 3	什么	什么	疑问词	ry	-	4	XS	-	-
 4	优惠	vn	vn	vn	-	2	DB	-	-
 5	吗	y	y	y	-	2	QZ	-	-
 6	?	w	w	w	-	2	DP	-	-
-
 
 1	这	r	r	r	-	2	XS	-	-
 2	款	n	n	n	-	3	XS	-	-
@@ -8888,7 +7932,6 @@
 6	红包	n	n	n	-	5	DB	-	-
 7	吗	y	y	y	-	5	QZ	-	-
 
-
 1	什么	什么	疑问词	ry	-	2	XS	-	-
 2	时候	n	n	n	-	4	XS	-	-
 3	能	v	v	v	-	4	QTZ	-	-
@@ -8896,7 +7939,6 @@
 5	?	w	w	w	-	4	DP	-	-
 6	?	w	w	w	-	4	DP	-	-
 7	?	w	w	w	-	4	DP	-	-
-
 
 1	你家	店家称谓	称谓	r	-	2	XS	-	-
 2	这款	r	r	r	-	3	ZW	-	-
@@ -8909,14 +7951,12 @@
 9	一样	uyy	uyy	uyy	-	3	DB	-	-
 10	?	w	w	w	-	9	DP	-	-
 
-
 1	帮	v	v	v	-	0	ROOT	-	-
 2	我	r	r	r	-	1	DB	-	-
 3	换	交易动作	动作	v	-	1	LD	-	-
 4	一个	mq	mq	mq	-	6	XS	-	-
 5	收货	vn	vn	vn	-	6	XS	-	-
 6	地址	地址	人物属性	n	-	3	DB	-	-
-
 
 1	你好	vl	vl	vl	-	0	ROOT	-	-
 2	,	w	w	w	-	1	DP	-	-
@@ -8927,12 +7967,10 @@
 7	发货	vi	vi	vi	-	3	DB	-	-
 8	呢	y	y	y	-	3	QZ	-	-
 
-
 1	怎么	ryv	ryv	ryv	-	2	XS	-	-
 2	这样	rzv	rzv	rzv	-	0	ROOT	-	-
 3	的	ude1	ude1	ude1	-	2	XZ	-	-
 4	?	w	w	w	-	2	DP	-	-
 5	?	w	w	w	-	2	DP	-	-
 6	?	w	w	w	-	2	DP	-	-
-
 

@@ -81,6 +81,8 @@ class Hybrid(DependencyParser):
         eerrors = 0
         etotal = 0
         start = time.time()
+
+        gfor, gback, tfor, tback = 0, 0, 0, 0
         with open(conll_path, 'r', encoding='UTF-8') as conllFP:
             shuffledData = list(read_conll(conllFP, True))
             random.shuffle(shuffledData)
@@ -96,27 +98,34 @@ class Hybrid(DependencyParser):
                     print('Processing sentence number:', iSentence,
                           'Loss:', eloss / etotal,
                           'Errors:', (float(eerrors)) / etotal,
-                          'Time', time.time() - start)
+                          'Time', time.time() - start,
+                          '\nGFor', gfor, 'GBack', gback,
+                          '\nTFor', tfor, 'TBack', tback)
                     start = time.time()
                     eerrors = 0
                     eloss = 0.0
                     etotal = 0
+                    gfor, gback, tfor, tback = 0, 0, 0, 0
 
                 conll_sentence0 = [entry for entry in sentence if isinstance(entry, utils.ConllEntry)]
                 conll_sentence1 = [entry for entry in sentence if isinstance(entry, utils.ConllEntry)]
                 conll_sentence1 = conll_sentence1[1:] + [conll_sentence1[0]]
 
+                tmp = time.time()
                 graphLoss = self.graphModel.forward(conll_sentence0, errs_g, lerrs)
                 eerrors += graphLoss
                 eloss += graphLoss
                 mloss += graphLoss
                 etotal += len(sentence)
+                gfor += time.time() - tmp
 
+                tmp = time.time()
                 transitionLoss, deerrors, detotal = self.transitionModel.forward(conll_sentence1, errs_t)
                 eerrors += deerrors
                 eloss += transitionLoss
                 mloss += transitionLoss
                 etotal += detotal
+                tfor += time.time() - tmp
 
                 parse_vec.append(torch.cat((self.graphModel.vec, self.transitionModel.vec), 1))
                 parse_lbl.append(0 if graphLoss * 3 < transitionLoss else 1)
@@ -124,18 +133,26 @@ class Hybrid(DependencyParser):
 
                 if len(errs_g) > 0 or len(lerrs) > 0:
                     eerrs_g = torch.sum(cat(errs_g + lerrs))
+                    tmp = time.time()
                     eerrs_g.backward()
+                    gback += time.time() - tmp
                 if len(errs_t) > 50:
                     eerrs_t = torch.sum(cat(errs_t))
+                    tmp = time.time()
                     eerrs_t.backward()
+                    tback += time.time() - tmp
 
                 if len(errs_g) > 0 or len(lerrs) > 0:
+                    tmp = time.time()
                     self.graphTrainer.step()
                     errs_g = []
                     lerrs = []
+                    gback += time.time() - tmp
                 if len(errs_t) > 50:
+                    tmp = time.time()
                     self.transitionTrainer.step()
                     errs_t = []
+                    tback += time.time() - tmp
 
                 self.graphTrainer.zero_grad()
                 self.transitionTrainer.zero_grad()

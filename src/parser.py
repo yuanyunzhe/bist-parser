@@ -87,12 +87,12 @@ if __name__ == '__main__':
 
             if not conllu:
                 os.system('perl src/utils/eval.pl -g ' + options.conll_dev  + ' -s ' + devpath  + ' > ' + devpath + '.txt')
-                with open(devpath + '.txt', 'r') as f:
+                with open(devpath + '.txt', 'r', encoding='UTF-8') as f:
                     for i in range(0, 3):
                         print(f.readline())
             else:
                 os.system('python src/utils/evaluation_script/conll17_ud_eval.py -v -w src/utils/evaluation_script/weights.clas ' + options.conll_dev + ' ' + devpath + ' > ' + devpath + '.txt')
-                with open(devpath + '.txt', 'r') as f:
+                with open(devpath + '.txt', 'r', encoding='UTF-8') as f:
                     for l in f:
                         if l.startswith('UAS'):
                             print('UAS:%s' % l.strip().split()[-1])
@@ -100,7 +100,7 @@ if __name__ == '__main__':
                             print('LAS:%s' % l.strip().split()[-1])
             print('Finished predicting dev')
     else:
-        with open(options.params, 'r', encoding='UTF-8') as paramsfp:
+        with open(options.params, 'rb') as paramsfp:
             words, enum_word, pos, rels, onto, cpos, stored_opt = pickle.load(paramsfp)
 
         stored_opt.external_embedding = options.external_embedding
@@ -120,7 +120,7 @@ if __name__ == '__main__':
             os.system('perl src/utils/eval.pl -g ' + options.conll_test + ' -s ' + tespath  + ' > ' + tespath + '.txt')
         else:
             os.system('python src/utils/evaluation_script/conll17_ud_eval.py -v -w src/utils/evaluation_script/weights.clas ' + options.conll_test + ' ' + tespath + ' > ' + testpath + '.txt')
-            with open(testpath + '.txt', 'r') as f:
+            with open(testpath + '.txt', 'r', encoding='UTF-8') as f:
                 for l in f:
                     if l.startswith('UAS'):
                         print('UAS:%s' % l.strip().split()[-1])

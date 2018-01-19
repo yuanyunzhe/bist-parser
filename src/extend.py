@@ -3,6 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch import optim
 from torch.nn.init import *
+import shutil
 
 def get_data(x):
     if torch.cuda.is_available():
@@ -104,14 +105,15 @@ class DependencyModel(nn.Module):
         self.olookup = nn.Embedding(len(onto) + 3, self.odims)
         self.clookup = nn.Embedding(len(cpos) + 3, self.cdims)
 
+        self.hidden_units = options.hidden_units
+        self.hidden2_units = options.hidden2_units
+
+        # Network Structure
         self.lstm_for_1 = lstm_for_1
         self.lstm_back_1 = lstm_back_1
         self.lstm_for_2 = nn.LSTM(self.ldims * 2, self.ldims)
         self.lstm_back_2 = nn.LSTM(self.ldims * 2, self.ldims)
         self.hid_for_1, self.hid_back_1, self.hid_for_2, self.hid_back_2 = [self.init_hidden(self.ldims) for _ in range(4)]
-
-        self.hidden_units = options.hidden_units
-        self.hidden2_units = options.hidden2_units
 
     def init_hidden(self, dim):
         if torch.cuda.is_available():
@@ -156,3 +158,13 @@ class DependencyModel(nn.Module):
             sentence[i].vec = cat([lstm0, lstm1])
 
         self.vec = vec_cat[0].cpu().data
+
+
+class DependencyParser(object):
+    def save(self, fn):
+        tmp = fn + '.tmp'
+        torch.save(self.model.state_dict(), tmp)
+        shutil.move(tmp, fn)
+
+    def load(self, fn):
+        self.model.load_state_dict(torch.load(fn))

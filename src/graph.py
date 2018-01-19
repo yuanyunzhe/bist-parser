@@ -152,7 +152,7 @@ class GraphModel(DependencyModel):
         return e
 
 
-class Graph:
+class Graph(DependencyParser):
     def __init__(self, vocab, pos, rels, enum_word, options, onto, cpos):
         model = GraphModel(vocab, pos, rels, enum_word, options, onto, cpos)
         self.model = model.cuda() if torch.cuda.is_available() else model
@@ -161,20 +161,11 @@ class Graph:
     def predict(self, conll_path):
         with open(conll_path, 'r') as conllFP:
             for iSentence, sentence in enumerate(read_conll(conllFP,False)):
-                self.model.hid_for_1, self.model.hid_back_1, self.model.hid_for_2, self.model.hid_back_2 = [
-                    self.model.init_hidden(self.model.ldims) for _ in range(4)]
-                conll_sentence = [entry for entry in sentence if isinstance(
-                    entry, utils.ConllEntry)]
+                self.model.hid_for_1, self.model.hid_back_1, self.model.hid_for_2, self.model.hid_back_2 = [self.model.init_hidden(self.model.ldims) for _ in range(4)]
+                conll_sentence = [entry for entry in sentence if isinstance(entry, utils.ConllEntry)]
                 self.model.predict(conll_sentence)
                 yield conll_sentence
 
-    def save(self, fn):
-        tmp = fn + '.tmp'
-        torch.save(self.model.state_dict(), tmp)
-        shutil.move(tmp, fn)
-
-    def load(self, fn):
-        self.model.load_state_dict(torch.load(fn))
 
     def train(self, conll_path):
         print('pytorch version:', torch.__version__)

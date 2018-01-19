@@ -153,7 +153,7 @@ class TransitionModel(DependencyModel):
     def forward(self, sentence, errs):
         self.getWordEmbeddings(sentence, True)
 
-        dloss, deerrors, dlerrors, detotal = 0, 0, 0, 0
+        dloss, deerrors, detotal = 0, 0, 0
         stack = ParseForest([])
         buf = ParseForest(sentence)
         for root in sentence:
@@ -205,11 +205,10 @@ class TransitionModel(DependencyModel):
                 dloss += 1.0 + bestWrong[2] - bestValid[2]
                 errs.append(loss)
             if best[1] != 2 and (child.pred_parent_id != child.parent_id or child.pred_relation != child.relation):
-                dlerrors += 1
                 if child.pred_parent_id != child.parent_id:
                     deerrors += 1
             detotal += 1
-        return dloss, deerrors, dlerrors, detotal
+        return dloss, deerrors, detotal
 
     def init(self):
         evec = self.elookup(scalar(1)) if self.external_embedding is not None else None
@@ -219,7 +218,7 @@ class TransitionModel(DependencyModel):
         self.empty = paddingVec if self.nnvecs == 1 else cat([paddingVec for _ in range(self.nnvecs)])
 
 
-class Transition:
+class Transition(DependencyParser):
     def __init__(self, vocab, pos, rels, enum_word, options, onto, cpos):
         model = TransitionModel(vocab, pos, rels, enum_word, options, onto, cpos)
         self.model = model.cuda() if torch.cuda.is_available() else model
@@ -228,13 +227,6 @@ class Transition:
         self.gpu = options.gpu
         # self.external_embedding = self.model.external_embedding
 
-    def save(self, fn):
-        tmp = fn + '.tmp'
-        torch.save(self.model.state_dict(), tmp)
-        shutil.move(tmp, fn)
-
-    def load(self, fn):
-        self.model.load_state_dict(torch.load(fn))
 
     def predict(self, conll_path):
         self.model.init()
@@ -261,12 +253,15 @@ class Transition:
             shuffledData = list(read_conll(conllFP, proj=True))
             random.shuffle(shuffledData)
             errs = []
-            eeloss = 0.0
             self.model.init()
             for iSentence, sentence in enumerate(shuffledData):
                 self.model.hid_for_1, self.model.hid_back_1, self.model.hid_for_2, self.model.hid_back_2 = [self.model.init_hidden(self.model.ldims) for _ in range(4)]
                 if iSentence % 100 == 0 and iSentence != 0:
-                    print('Processing sentence number:', iSentence, 'Loss:', eloss / etotal, 'Errors:', (float(eerrors)) / etotal, 'Labeled Errors:', (float(lerrors) / etotal) , 'Time', time.time()-start)
+                    print('Processing sentence number:', iSentence,
+                          'Loss:', eloss / etotal,
+                          'Errors:', (float(eerrors)) / etotal,
+                          'Labeled Errors:', (float(lerrors) / etotal) ,
+                          'Time', time.time()-start)
                     start = time.time()
                     eerrors = 0
                     eloss = 0.0

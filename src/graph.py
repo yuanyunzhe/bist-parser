@@ -41,6 +41,9 @@ class GraphModel(DependencyModel):
             (self.hidden2_units if self.hidden2_units > 0 else self.hidden_units, len(self.irels)))
         self.routBias = Parameter((len(self.irels)))
 
+        self.evl = 0
+        self.ebd = 0
+
     def __getExpr(self, sentence, i, j, train):
 
         if sentence[i].headfov is None:
@@ -130,14 +133,20 @@ class GraphModel(DependencyModel):
                 enumerate(scores), key=itemgetter(1))[0]]
 
     def forward(self, sentence, errs, lerrs):
+        tmp = time.time()
         self.getWordEmbeddings(sentence, True)
+        self.ebd += time.time() - tmp
 
+        tmp = time.time()
         scores, exprs = self.__evaluate(sentence, True)
+        self.evl += time.time() - tmp
         gold = [entry.parent_id for entry in sentence]
         heads = decoder.parse_proj(scores, gold)
 
         for modifier, head in enumerate(gold[1:]):
+            tmp = time.time()
             rscores, rexprs = self.__evaluateLabel(sentence, head, modifier + 1)
+            self.evl += time.time() - tmp
             goldLabelInd = self.rels[sentence[modifier + 1].relation]
             wrongLabelInd = \
                 max(((l, scr) for l, scr in enumerate(rscores)

@@ -100,12 +100,18 @@ class Hybrid(DependencyParser):
                           'Errors:', (float(eerrors)) / etotal,
                           'Time', time.time() - start,
                           '\nGFor', gfor, 'GBack', gback,
-                          '\nTFor', tfor, 'TBack', tback)
+                          '\nTFor', tfor, 'TBack', tback,
+                          '\nGEvaluation', self.graphModel.evl, 'GEmbedding', self.graphModel.ebd,
+                          '\nTEvaluation', self.transitionModel.evl, 'TEmbedding', self.transitionModel.ebd,
+                          '\nTMultiply', self.transitionModel.mm, 'TTranspose', self.transitionModel.tr,)
                     start = time.time()
                     eerrors = 0
                     eloss = 0.0
                     etotal = 0
                     gfor, gback, tfor, tback = 0, 0, 0, 0
+                    self.transitionModel.evl, self.transitionModel.ebd = 0, 0
+                    self.transitionModel.mm, self.transitionModel.tr = 0, 0
+                    self.graphModel.evl, self.graphModel.ebd = 0, 0
 
                 conll_sentence0 = [entry for entry in sentence if isinstance(entry, utils.ConllEntry)]
                 conll_sentence1 = [entry for entry in sentence if isinstance(entry, utils.ConllEntry)]

@@ -45,11 +45,17 @@ class TransitionModel(DependencyModel):
             self.rhid2Layer = Parameter((self.hidden_units, self.hidden2_units))
             self.rhid2Bias = Parameter((self.hidden2_units))
 
+        self.evl = 0
+        self.ebd = 0
+        self.mm = 0
+        self.tr = 0
+
     def __evaluate(self, stack, buf, train):
         topStack = [ stack.roots[-i-1].lstms if len(stack) > i else [self.empty] for i in range(self.k) ]
         topBuffer = [ buf.roots[i].lstms if len(buf) > i else [self.empty] for i in range(1) ]
         input = cat(chain(*(topStack + topBuffer)))
 
+        tmp = time.time()
         if self.hidden2_units > 0:
             routput = torch.mm(
                 self.activation(
@@ -82,6 +88,7 @@ class TransitionModel(DependencyModel):
                 self.activation(torch.mm(input, self.hidLayer) + self.hidBias),
                 self.outLayer
             ) + self.outBias
+        self.mm += time.time() - tmp
 
         scrs, uscrs = get_data(routput), get_data(output)
         scrs = scrs[0]
@@ -98,9 +105,11 @@ class TransitionModel(DependencyModel):
             output0 = output[0]
             output1 = output[1]
             output2 = output[2]
+            tmp = time.time()
             ret = [[(rel, 0, scrs[1 + j * 2] + uscrs1, routput[1 + j * 2 ] + output1) for j, rel in enumerate(self.irels)] if left_arc_conditions else [],
                    [(rel, 1, scrs[2 + j * 2] + uscrs2, routput[2 + j * 2 ] + output2) for j, rel in enumerate(self.irels)] if right_arc_conditions else [],
                    [(None, 2, scrs[0] + uscrs0, routput[0] + output0)] if shift_conditions else []]
+            self.tr += time.time() - tmp
         else:
             s1, r1 = max(zip(scrs[1::2],self.irels))
             s2, r2 = max(zip(scrs[2::2],self.irels))
@@ -151,7 +160,9 @@ class TransitionModel(DependencyModel):
                     parent.lstms[bestOp + hoffset] = child.vec
 
     def forward(self, sentence, errs):
+        tmp = time.time()
         self.getWordEmbeddings(sentence, True)
+        self.ebd += time.time() - tmp
 
         dloss, deerrors, detotal = 0, 0, 0
         stack = ParseForest([])
@@ -160,7 +171,9 @@ class TransitionModel(DependencyModel):
             root.lstms = [root.vec for _ in range(self.nnvecs)]
         hoffset = 1 if self.headFlag else 0
         while not (len(buf) == 1 and len(stack) == 0):
+            tmp = time.time()
             scores = self.__evaluate(stack, buf, True)
+            self.evl += time.time() - tmp
             scores.append([(None, 3, -np.inf ,None)])
             alpha = stack.roots[:-2] if len(stack) > 2 else []
             s1 = [stack.roots[-2]] if len(stack) > 1 else []

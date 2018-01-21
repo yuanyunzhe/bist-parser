@@ -55,6 +55,10 @@ if __name__ == '__main__':
 
     if torch.cuda.is_available() and options.gpu >= 0:
         torch.cuda.set_device(options.gpu)
+        print("Using GPU")
+    else:
+        torch.cuda.is_available=lambda:False
+        print("Using CPU")
 
     max_thread = multiprocessing.cpu_count()
     active_thread = options.numthread if max_thread > options.numthread else max_thread

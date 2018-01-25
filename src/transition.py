@@ -14,8 +14,8 @@ import shutil
 
 
 class TransitionModel(DependencyModel):
-    def __init__(self, vocab, pos, rels, enum_word, options, onto, cpos, lstm_for_1, lstm_back_1):
-        DependencyModel.__init__(self, vocab, pos, rels, enum_word, options, onto, cpos, lstm_for_1, lstm_back_1)
+    def __init__(self, vocab, pos, rels, enum_word, options, onto, cpos, lstm_shared):
+        DependencyModel.__init__(self, vocab, pos, rels, enum_word, options, onto, cpos, lstm_shared)
 
         self.oracle = options.oracle
         self.headFlag = options.headFlag
@@ -101,13 +101,17 @@ class TransitionModel(DependencyModel):
         uscrs1 = uscrs[1]
         uscrs2 = uscrs[2]
         if train:
+            tmp = time.time()
             output, routput = output.t(), routput.t()
             output0 = output[0]
             output1 = output[1]
             output2 = output[2]
-            tmp = time.time()
-            ret = [[(rel, 0, scrs[1 + j * 2] + uscrs1, routput[1 + j * 2 ] + output1) for j, rel in enumerate(self.irels)] if left_arc_conditions else [],
-                   [(rel, 1, scrs[2 + j * 2] + uscrs2, routput[2 + j * 2 ] + output2) for j, rel in enumerate(self.irels)] if right_arc_conditions else [],
+
+            # ret = [[(rel, 0, scrs[1 + j * 2] + uscrs1, output1) for j, rel in enumerate(self.irels)] if left_arc_conditions else [],
+            #        [(rel, 1, scrs[2 + j * 2] + uscrs2, output2) for j, rel in enumerate(self.irels)] if right_arc_conditions else [],
+            #        [(None, 2, scrs[0] + uscrs0, output0)] if shift_conditions else []]
+            ret = [[(rel, 0, scrs[1 + j * 2] + uscrs1, routput[1 + j * 2] + output1) for j, rel in enumerate(self.irels)] if left_arc_conditions else [],
+                   [(rel, 1, scrs[2 + j * 2] + uscrs2, routput[2 + j * 2] + output2) for j, rel in enumerate(self.irels)] if right_arc_conditions else [],
                    [(None, 2, scrs[0] + uscrs0, routput[0] + output0)] if shift_conditions else []]
             self.tr += time.time() - tmp
         else:
@@ -120,107 +124,109 @@ class TransitionModel(DependencyModel):
                    [(None, 2, scrs[0] + uscrs0)] if shift_conditions else []]
         return ret
 
-    def getWordEmbeddings(self, sentence, train):
-        DependencyModel.getWordEmbeddings(self, sentence, train)
+    def getWordEmbeddings(self, sentences, train):
+        DependencyModel.getWordEmbeddings(self, sentences, train)
 
-    def predict(self, sentence):
-        self.getWordEmbeddings(sentence, False)
+    def predict(self, sentences):
+        self.getWordEmbeddings(sentences, False)
 
-        stack = ParseForest([])
-        buf = ParseForest(sentence)
-        for root in sentence:
-            root.lstms = [root.vec for _ in range(self.nnvecs)]
-        hoffset = 1 if self.headFlag else 0
+        for sentence in sentences:
+            stack = ParseForest([])
+            buf = ParseForest(sentence)
+            for root in sentence:
+                root.lstms = [root.vec for _ in range(self.nnvecs)]
+            hoffset = 1 if self.headFlag else 0
 
-        while not (len(buf) == 1 and len(stack) == 0):
-            scores = self.__evaluate(stack, buf, False)
-            best = max(chain(*scores), key=itemgetter(2))
-            if best[1] == 2:
-                stack.roots.append(buf.roots[0])
-                del buf.roots[0]
-            elif best[1] == 0:
-                child = stack.roots.pop()
-                parent = buf.roots[0]
-                child.pred_parent_id = parent.id
-                child.pred_relation = best[0]
-                bestOp = 0
-                if self.rlMostFlag:
-                    parent.lstms[bestOp + hoffset] = child.lstms[bestOp + hoffset]
-                if self.rlFlag:
-                    parent.lstms[bestOp + hoffset] = child.vec
-            elif best[1] == 1:
-                child = stack.roots.pop()
-                parent = stack.roots[-1]
-                child.pred_parent_id = parent.id
-                child.pred_relation = best[0]
-                bestOp = 1
-                if self.rlMostFlag:
-                    parent.lstms[bestOp + hoffset] = child.lstms[bestOp + hoffset]
-                if self.rlFlag:
-                    parent.lstms[bestOp + hoffset] = child.vec
+            while not (len(buf) == 1 and len(stack) == 0):
+                scores = self.__evaluate(stack, buf, False)
+                best = max(chain(*scores), key=itemgetter(2))
+                if best[1] == 2:
+                    stack.roots.append(buf.roots[0])
+                    del buf.roots[0]
+                elif best[1] == 0:
+                    child = stack.roots.pop()
+                    parent = buf.roots[0]
+                    child.pred_parent_id = parent.id
+                    child.pred_relation = best[0]
+                    bestOp = 0
+                    if self.rlMostFlag:
+                        parent.lstms[bestOp + hoffset] = child.lstms[bestOp + hoffset]
+                    if self.rlFlag:
+                        parent.lstms[bestOp + hoffset] = child.vec
+                elif best[1] == 1:
+                    child = stack.roots.pop()
+                    parent = stack.roots[-1]
+                    child.pred_parent_id = parent.id
+                    child.pred_relation = best[0]
+                    bestOp = 1
+                    if self.rlMostFlag:
+                        parent.lstms[bestOp + hoffset] = child.lstms[bestOp + hoffset]
+                    if self.rlFlag:
+                        parent.lstms[bestOp + hoffset] = child.vec
 
-    def forward(self, sentence, errs):
+    def forward(self, sentences, errs):
         tmp = time.time()
-        self.getWordEmbeddings(sentence, True)
+        self.getWordEmbeddings(sentences, True)
         self.ebd += time.time() - tmp
 
         dloss, deerrors, detotal = 0, 0, 0
-        stack = ParseForest([])
-        buf = ParseForest(sentence)
-        for root in sentence:
-            root.lstms = [root.vec for _ in range(self.nnvecs)]
-        hoffset = 1 if self.headFlag else 0
-        while not (len(buf) == 1 and len(stack) == 0):
-            tmp = time.time()
-            scores = self.__evaluate(stack, buf, True)
-            self.evl += time.time() - tmp
-            scores.append([(None, 3, -np.inf ,None)])
-            alpha = stack.roots[:-2] if len(stack) > 2 else []
-            s1 = [stack.roots[-2]] if len(stack) > 1 else []
-            s0 = [stack.roots[-1]] if len(stack) > 0 else []
-            b = [buf.roots[0]] if len(buf) > 0 else []
-            beta = buf.roots[1:] if len(buf) > 1 else []
-            left_cost  = (len([h for h in s1 + beta if h.id == s0[0].parent_id]) +
-                          len([d for d in b + beta if d.parent_id == s0[0].id])) if len(scores[0]) > 0 else 1
-            right_cost = (len([h for h in b + beta if h.id == s0[0].parent_id]) +
-                          len([d for d in b + beta if d.parent_id == s0[0].id])) if len(scores[1]) > 0 else 1
-            shift_cost = (len([h for h in s1 + alpha if h.id == b[0].parent_id]) +
-                          len([d for d in s0 + s1 + alpha if d.parent_id == b[0].id])) if len(scores[2]) > 0 else 1
-            costs = (left_cost, right_cost, shift_cost, 1)
-            bestValid = max((s for s in chain(*scores) if costs[s[1]] == 0 and ( s[1] == 2 or  s[0] == stack.roots[-1].relation)), key=itemgetter(2))
-            bestWrong = max((s for s in chain(*scores) if costs[s[1]] != 0 or  ( s[1] != 2 and s[0] != stack.roots[-1].relation)), key=itemgetter(2))
-            best = bestValid if ((not self.oracle) or (bestValid[2] - bestWrong[2] > 1.0) or (bestValid[2] > bestWrong[2] and random.random() > 0.1)) else bestWrong
-            if best[1] == 2:
-                stack.roots.append(buf.roots[0])
-                del buf.roots[0]
-            elif best[1] == 0:
-                child = stack.roots.pop()
-                parent = buf.roots[0]
-                child.pred_parent_id = parent.id
-                child.pred_relation = best[0]
-                bestOp = 0
-                if self.rlMostFlag:
-                    parent.lstms[bestOp + hoffset] = child.lstms[bestOp + hoffset]
-                if self.rlFlag:
-                    parent.lstms[bestOp + hoffset] = child.vec
-            elif best[1] == 1:
-                child = stack.roots.pop()
-                parent = stack.roots[-1]
-                child.pred_parent_id = parent.id
-                child.pred_relation = best[0]
-                bestOp = 1
-                if self.rlMostFlag:
-                    parent.lstms[bestOp + hoffset] = child.lstms[bestOp + hoffset]
-                if self.rlFlag:
-                    parent.lstms[bestOp + hoffset] = child.vec
-            if bestValid[2] < bestWrong[2] + 1.0:
-                loss = bestWrong[3] - bestValid[3]
-                dloss += 1.0 + bestWrong[2] - bestValid[2]
-                errs.append(loss)
-            if best[1] != 2 and (child.pred_parent_id != child.parent_id or child.pred_relation != child.relation):
-                if child.pred_parent_id != child.parent_id:
-                    deerrors += 1
-            detotal += 1
+        for sentence in sentences:
+            stack = ParseForest([])
+            buf = ParseForest(sentence)
+            for root in sentence:
+                root.lstms = [root.vec for _ in range(self.nnvecs)]
+            hoffset = 1 if self.headFlag else 0
+            while not (len(buf) == 1 and len(stack) == 0):
+                tmp = time.time()
+                scores = self.__evaluate(stack, buf, True)
+                self.evl += time.time() - tmp
+                scores.append([(None, 3, -np.inf ,None)])
+                alpha = stack.roots[:-2] if len(stack) > 2 else []
+                s1 = [stack.roots[-2]] if len(stack) > 1 else []
+                s0 = [stack.roots[-1]] if len(stack) > 0 else []
+                b = [buf.roots[0]] if len(buf) > 0 else []
+                beta = buf.roots[1:] if len(buf) > 1 else []
+                left_cost  = (len([h for h in s1 + beta if h.id == s0[0].parent_id]) +
+                              len([d for d in b + beta if d.parent_id == s0[0].id])) if len(scores[0]) > 0 else 1
+                right_cost = (len([h for h in b + beta if h.id == s0[0].parent_id]) +
+                              len([d for d in b + beta if d.parent_id == s0[0].id])) if len(scores[1]) > 0 else 1
+                shift_cost = (len([h for h in s1 + alpha if h.id == b[0].parent_id]) +
+                              len([d for d in s0 + s1 + alpha if d.parent_id == b[0].id])) if len(scores[2]) > 0 else 1
+                costs = (left_cost, right_cost, shift_cost, 1)
+                bestValid = max((s for s in chain(*scores) if costs[s[1]] == 0 and ( s[1] == 2 or  s[0] == stack.roots[-1].relation)), key=itemgetter(2))
+                bestWrong = max((s for s in chain(*scores) if costs[s[1]] != 0 or  ( s[1] != 2 and s[0] != stack.roots[-1].relation)), key=itemgetter(2))
+                best = bestValid if ((not self.oracle) or (bestValid[2] - bestWrong[2] > 1.0) or (bestValid[2] > bestWrong[2] and random.random() > 0.1)) else bestWrong
+                if best[1] == 2:
+                    stack.roots.append(buf.roots[0])
+                    del buf.roots[0]
+                elif best[1] == 0:
+                    child = stack.roots.pop()
+                    parent = buf.roots[0]
+                    child.pred_parent_id = parent.id
+                    child.pred_relation = best[0]
+                    bestOp = 0
+                    if self.rlMostFlag:
+                        parent.lstms[bestOp + hoffset] = child.lstms[bestOp + hoffset]
+                    if self.rlFlag:
+                        parent.lstms[bestOp + hoffset] = child.vec
+                elif best[1] == 1:
+                    child = stack.roots.pop()
+                    parent = stack.roots[-1]
+                    child.pred_parent_id = parent.id
+                    child.pred_relation = best[0]
+                    bestOp = 1
+                    if self.rlMostFlag:
+                        parent.lstms[bestOp + hoffset] = child.lstms[bestOp + hoffset]
+                    if self.rlFlag:
+                        parent.lstms[bestOp + hoffset] = child.vec
+                if bestValid[2] < bestWrong[2] + 1.0:
+                    loss = bestWrong[3] - bestValid[3]
+                    dloss += 1.0 + bestWrong[2] - bestValid[2]
+                    errs.append(loss)
+                if best[1] != 2 and (child.pred_parent_id != child.parent_id or child.pred_relation != child.relation):
+                    if child.pred_parent_id != child.parent_id:
+                        deerrors += 1
+                detotal += 1
         return dloss, deerrors, detotal
 
     def init(self):
@@ -254,7 +260,6 @@ class Transition(DependencyParser):
 
     def train(self, conll_path):
         mloss = 0.0
-        batch = 0
         eloss = 0.0
         eerrors = 0
         lerrors = 0

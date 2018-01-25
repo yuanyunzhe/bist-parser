@@ -16,8 +16,8 @@ import decoder
 import torch.autograd as autograd
 
 class GraphModel(DependencyModel):
-    def __init__(self, vocab, pos, rels, enum_word, options, onto, cpos, lstm_for_1, lstm_back_1):
-        DependencyModel.__init__(self, vocab, pos, rels, enum_word, options, onto, cpos, lstm_for_1, lstm_back_1)
+    def __init__(self, vocab, pos, rels, enum_word, options, onto, cpos, lstm_shared):
+        DependencyModel.__init__(self, vocab, pos, rels, enum_word, options, onto, cpos, lstm_shared)
 
         self.hidLayerFOH = Parameter((self.ldims * 2, self.hidden_units))
         self.hidLayerFOM = Parameter((self.ldims * 2, self.hidden_units))
@@ -105,54 +105,57 @@ class GraphModel(DependencyModel):
 
         return get_data(output).numpy()[0], output[0]
 
-    def getWordEmbeddings(self, sentence, train):
-        DependencyModel.getWordEmbeddings(self, sentence, train)
-        for entry in sentence:
-            entry.lstms = [entry.vec, entry.vec]
-            entry.headfov = None
-            entry.modfov = None
+    def getWordEmbeddings(self, sentences, train):
+        DependencyModel.getWordEmbeddings(self, sentences, train)
+        for sentence in sentences:
+            for entry in sentence:
+                entry.lstms = [entry.vec, entry.vec]
+                entry.headfov = None
+                entry.modfov = None
 
-            entry.rheadfov = None
-            entry.rmodfov = None
+                entry.rheadfov = None
+                entry.rmodfov = None
 
-    def predict(self, sentence):
-        self.getWordEmbeddings(sentence, False)
+    def predict(self, sentences):
+        self.getWordEmbeddings(sentences, False)
 
-        scores, exprs = self.__evaluate(sentence, True)
-        heads = decoder.parse_proj(scores)
+        for sentence in sentences:
+            scores, exprs = self.__evaluate(sentence, True)
+            heads = decoder.parse_proj(scores)
 
-        for entry, head in zip(sentence, heads):
-            entry.pred_parent_id = head
-            entry.pred_relation = '_'
+            for entry, head in zip(sentence, heads):
+                entry.pred_parent_id = head
+                entry.pred_relation = '_'
 
-        head_list = list(heads)
-        for modifier, head in enumerate(head_list[1:]):
-            scores, exprs = self.__evaluateLabel(
-                sentence, head, modifier + 1)
-            sentence[modifier + 1].pred_relation = self.irels[max(
-                enumerate(scores), key=itemgetter(1))[0]]
+            head_list = list(heads)
+            for modifier, head in enumerate(head_list[1:]):
+                scores, exprs = self.__evaluateLabel(
+                    sentence, head, modifier + 1)
+                sentence[modifier + 1].pred_relation = self.irels[max(
+                    enumerate(scores), key=itemgetter(1))[0]]
 
-    def forward(self, sentence, errs, lerrs):
+    def forward(self, sentences, errs, lerrs):
         tmp = time.time()
-        self.getWordEmbeddings(sentence, True)
+        self.getWordEmbeddings(sentences, True)
         self.ebd += time.time() - tmp
 
-        tmp = time.time()
-        scores, exprs = self.__evaluate(sentence, True)
-        self.evl += time.time() - tmp
-        gold = [entry.parent_id for entry in sentence]
-        heads = decoder.parse_proj(scores, gold)
-
-        for modifier, head in enumerate(gold[1:]):
+        for sentence in sentences:
             tmp = time.time()
-            rscores, rexprs = self.__evaluateLabel(sentence, head, modifier + 1)
+            scores, exprs = self.__evaluate(sentence, True)
             self.evl += time.time() - tmp
-            goldLabelInd = self.rels[sentence[modifier + 1].relation]
-            wrongLabelInd = \
-                max(((l, scr) for l, scr in enumerate(rscores)
-                     if l != goldLabelInd), key=itemgetter(1))[0]
-            if rscores[goldLabelInd] < rscores[wrongLabelInd] + 1:
-                lerrs += [rexprs[wrongLabelInd] - rexprs[goldLabelInd]]
+            gold = [entry.parent_id for entry in sentence]
+            heads = decoder.parse_proj(scores, gold)
+
+            for modifier, head in enumerate(gold[1:]):
+                tmp = time.time()
+                rscores, rexprs = self.__evaluateLabel(sentence, head, modifier + 1)
+                self.evl += time.time() - tmp
+                goldLabelInd = self.rels[sentence[modifier + 1].relation]
+                wrongLabelInd = \
+                    max(((l, scr) for l, scr in enumerate(rscores)
+                         if l != goldLabelInd), key=itemgetter(1))[0]
+                if rscores[goldLabelInd] < rscores[wrongLabelInd] + 1:
+                    lerrs += [rexprs[wrongLabelInd] - rexprs[goldLabelInd]]
 
         e = sum([1 for h, g in zip(heads[1:], gold[1:]) if h != g])
         if e > 0:

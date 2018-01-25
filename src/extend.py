@@ -3,7 +3,11 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch import optim
 from torch.nn.init import *
+import utils
 import shutil
+
+len_sen = lambda x: sum([1 if isinstance(i, utils.ConllEntry) else 0 for i in x])
+
 
 def get_data(x):
     if torch.cuda.is_available():
@@ -49,13 +53,14 @@ def get_optim(opt, parameters):
 
 
 class DependencyModel(nn.Module):
-    def __init__(self, vocab, pos, rels, enum_word, options, onto, cpos, lstm_for_1, lstm_back_1):
+    def __init__(self, vocab, pos, rels, enum_word, options, onto, cpos, lstm_shared):
         nn.Module.__init__(self)
         random.seed(1)
 
         self.gpu = options.gpu
         self.activations = {'tanh': F.tanh, 'sigmoid': F.sigmoid, 'relu': F.relu}
         self.activation = self.activations[options.activation]
+        self.batch = options.batch
 
         self.ldims = options.lstm_dims
         self.wdims = options.wembedding_dims
@@ -109,55 +114,50 @@ class DependencyModel(nn.Module):
         self.hidden2_units = options.hidden2_units
 
         # Network Structure
-        self.lstm_for_1 = lstm_for_1
-        self.lstm_back_1 = lstm_back_1
-        self.lstm_for_2 = nn.LSTM(self.ldims * 2, self.ldims)
-        self.lstm_back_2 = nn.LSTM(self.ldims * 2, self.ldims)
-        self.hid_for_1, self.hid_back_1, self.hid_for_2, self.hid_back_2 = [self.init_hidden(self.ldims) for _ in range(4)]
+        self.lstm_shared = lstm_shared
+        self.lstm_specific = nn.LSTM(self.ldims * 2, self.ldims, batch_first=True, bidirectional=True)
+        # self.hid1, self.hid2 = [self.init_hidden(self.ldims) for _ in range(2)]
 
-    def init_hidden(self, dim):
+    def init_hidden(self, batch, dim):
+        h = torch.zeros(2, batch, dim)
+        c = torch.zeros(2, batch, dim)
         if torch.cuda.is_available():
-            m = torch.zeros(1, 1, dim).cuda()
-        else:
-            m = torch.zeros(1, 1, dim)
-        return torch.autograd.Variable(m), torch.autograd.Variable(m)
+            h, c = h.cuda(), c.cuda()
+        return torch.autograd.Variable(h), torch.autograd.Variable(c)
 
-    def getWordEmbeddings(self, sentence, train):
-        for entry in sentence:
-            c = float(self.wordsCount.get(entry.norm, 0))
-            dropFlag = not train or (random.random() < (c / (0.25 + c)))
-            wordvec = self.wlookup(scalar(int(self.vocab.get(entry.norm, 0)) if dropFlag else 0)) if self.wdims > 0 else None
-            posvec = self.plookup(scalar(int(self.pos[entry.pos]))) if self.pdims > 0 else None
-            ontovec = self.olookup(scalar(int(self.onto[entry.onto]))) if self.odims > 0 else None
-            cposvec = self.clookup(scalar(int(self.cpos[entry.cpos]))) if self.cdims > 0 else None
-            if self.external_embedding is not None:
-                if entry.form in self.external_embedding:
-                    evec = self.elookup(scalar(self.extrnd[entry.form]))
-                elif entry.norm in self.external_embedding:
-                    evec = self.elookup(scalar(self.extrnd[entry.norm]))
+    def getWordEmbeddings(self, sentences, train):
+        batch = len(sentences)
+        for sentence in sentences:
+            for entry in sentence:
+                c = float(self.wordsCount.get(entry.norm, 0))
+                dropFlag = not train or (random.random() < (c / (0.25 + c)))
+                wordvec = self.wlookup(scalar(int(self.vocab.get(entry.norm, 0)) if dropFlag else 0)) if self.wdims > 0 else None
+                posvec = self.plookup(scalar(int(self.pos[entry.pos]))) if self.pdims > 0 else None
+                ontovec = self.olookup(scalar(int(self.onto[entry.onto]))) if self.odims > 0 else None
+                cposvec = self.clookup(scalar(int(self.cpos[entry.cpos]))) if self.cdims > 0 else None
+                if self.external_embedding is not None:
+                    if entry.form in self.external_embedding:
+                        evec = self.elookup(scalar(self.extrnd[entry.form]))
+                    elif entry.norm in self.external_embedding:
+                        evec = self.elookup(scalar(self.extrnd[entry.norm]))
+                    else:
+                        evec = self.elookup(scalar(0))
                 else:
-                    evec = self.elookup(scalar(0))
-            else:
-                evec = None
-            entry.vec = cat([wordvec, posvec, ontovec, cposvec, evec])
+                    evec = None
+                entry.vec = cat([wordvec, posvec, ontovec, cposvec, evec])
+            sentence[0].ebd = torch.cat([entry.vec for entry in sentence])
+            # print("\t",len_sen(sentences[0]), sentence[0].ebd.shape)
+        ebd = torch.cat([sentence[0].ebd for sentence in sentences]).view(batch, len_sen(sentences[0]), -1)
+        h0, c0 = self.init_hidden(batch, self.ldims)
+        # print(ebd.shape, h0.shape, batch, len_sen(sentences[0]), self.ldims)
+        out_shared, _ = self.lstm_shared(ebd, (h0, c0))
+        h1, c1 = self.init_hidden(batch, self.ldims)
+        out, _ = self.lstm_specific(out_shared, (h1, c1))
+        for i in range(batch):
+            for j in range(len(sentences[i])):
 
-        num_vec = len(sentence)
-        vec_for = torch.cat([entry.vec for entry in sentence]).view(num_vec, 1, -1)
-        vec_back = torch.cat([entry.vec for entry in reversed(sentence)]).view(num_vec, 1, -1)
-        res_for_1, hid_for_1 = self.lstm_for_1(vec_for, self.hid_for_1)
-        res_back_1, hid_back_1 = self.lstm_back_1(vec_back, self.hid_back_1)
-        vec_cat = [cat([res_for_1[i], res_back_1[num_vec - i - 1]]) for i in range(num_vec)]
-        vec_for_2 = torch.cat(vec_cat).view(num_vec, 1, -1)
-        vec_back_2 = torch.cat(list(reversed(vec_cat))).view(num_vec, 1, -1)
-        res_for_2, self.hid_for_2 = self.lstm_for_2(vec_for_2, self.hid_for_2)
-        res_back_2, self.hid_back_2 = self.lstm_back_2(vec_back_2, self.hid_back_2)
-
-        for i in range(num_vec):
-            lstm0 = res_for_2[i]
-            lstm1 = res_back_2[num_vec - i - 1]
-            sentence[i].vec = cat([lstm0, lstm1])
-
-        self.vec = vec_cat[0].cpu().data
+                sentences[i][j].vec = out[i][j].view(1, -1)
+        # self.vec = out_shared[0].cpu().data
 
 
 class DependencyParser(object):
@@ -168,3 +168,15 @@ class DependencyParser(object):
 
     def load(self, fn):
         self.model.load_state_dict(torch.load(fn))
+
+
+# class RNN(nn.Module):
+#     def __init__(self, input_size, hidden_size, num_layers):
+#         super(RNN, self).__init__()
+#         self.hidden_size = hidden_size
+#         self.num_layers = num_layers
+#         self.shared = nn.LSTM(input_size, hidden_size, num_layers, batch_first=True, bidirectional=True)
+#         self.graph = nn.LSTM(input_size, hidden_size, num_layers, batch_first=True, bidirectional=True)
+#         self.transition = nn.LSTM(input_size, hidden_size, num_layers, batch_first=True, bidirectional=True)
+#
+#     def forward(self, *input):

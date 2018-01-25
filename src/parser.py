@@ -12,13 +12,18 @@ if __name__ == '__main__':
 
     # GPU and multiprocessing
     parser.add_option("--gpu", type="int", dest="gpu", default=0)
+    parser.add_option("--gpu2", type="int", dest="gpu", default=1)
+    parser.add_option("--batch", type="int", dest="batch", default=1)
     parser.add_option("--numthread", type="int", dest="numthread", default=8)
 
     # I/O
     parser.add_option("--outdir", type="string", dest="output", default="results")
-    parser.add_option("--train", dest="conll_train", help="Annotated CONLL train file", metavar="FILE", default="corpus/en-ud-train-dropped.conllu")
-    parser.add_option("--dev", dest="conll_dev", help="Annotated CONLL dev file", metavar="FILE", default="corpus/en-ud-dev-dropped.conllu")
-    parser.add_option("--test", dest="conll_test", help="Annotated CONLL test file", metavar="FILE", default="corpus/en-ud-test-dropped.conllu")
+    # parser.add_option("--train", dest="conll_train", help="Annotated CONLL train file", metavar="FILE", default="corpus/taobao1/train-drop.conll")
+    # parser.add_option("--dev", dest="conll_dev", help="Annotated CONLL dev file", metavar="FILE", default="corpus/taobao1/dev-drop.conll")
+    # parser.add_option("--test", dest="conll_test", help="Annotated CONLL test file", metavar="FILE", default="corpus/taobao1/test-drop.conll")
+    parser.add_option("--train", dest="conll_train", help="Annotated CONLL train file", metavar="FILE", default="corpus/ud/en-ud-train-dropped.conllu")
+    parser.add_option("--dev", dest="conll_dev", help="Annotated CONLL dev file", metavar="FILE", default="corpus/ud/en-ud-dev-dropped.conllu")
+    parser.add_option("--test", dest="conll_test", help="Annotated CONLL test file", metavar="FILE", default="corpus/ud/en-ud-test-dropped.conllu")
     parser.add_option("--params", dest="params", help="Parameters file", metavar="FILE", default="params.pickle")
     parser.add_option("--extrn", dest="external_embedding", help="External embeddings", metavar="FILE")
     parser.add_option("--model", dest="model", help="Load/Save model file", metavar="FILE", default="barchybrid.model")

@@ -27,18 +27,13 @@ class GraphModel(DependencyModel):
         self.rhidLayerFOM = Parameter((2 * self.ldims, self.hidden_units))
         self.rhidBias = Parameter((self.hidden_units))
         self.rcatBias = Parameter((self.hidden_units * 2))
-        if self.hidden2_units:
-            self.hid2Layer = Parameter(
-                (self.hidden_units * 2, self.hidden2_units))
-            self.hid2Bias = Parameter((self.hidden2_units))
-            self.rhid2Layer = Parameter(
-                (self.hidden_units * 2, self.hidden2_units))
-            self.rhid2Bias = Parameter((self.hidden2_units))
-        self.outLayer = Parameter(
-            (self.hidden2_units if self.hidden2_units > 0 else self.hidden_units, 1))
+        self.hid2Layer = Parameter((self.hidden_units * 2, self.hidden2_units))
+        self.hid2Bias = Parameter((self.hidden2_units))
+        self.rhid2Layer = Parameter((self.hidden_units * 2, self.hidden2_units))
+        self.rhid2Bias = Parameter((self.hidden2_units))
+        self.outLayer = Parameter((self.hidden2_units if self.hidden2_units > 0 else self.hidden_units, 1))
         self.outBias = 0  # Parameter(1)
-        self.routLayer = Parameter(
-            (self.hidden2_units if self.hidden2_units > 0 else self.hidden_units, len(self.irels)))
+        self.routLayer = Parameter((self.hidden2_units if self.hidden2_units > 0 else self.hidden_units, len(self.irels)))
         self.routBias = Parameter((len(self.irels)))
 
         self.evl = 0

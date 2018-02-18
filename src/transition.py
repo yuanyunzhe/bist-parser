@@ -91,6 +91,7 @@ class TransitionModel(DependencyModel):
         self.mm += time.time() - tmp
 
         scrs, uscrs = get_data(routput), get_data(output)
+        # print(scrs - uscrs)
         scrs = scrs[0]
         uscrs = uscrs[0]
         #transition conditions
